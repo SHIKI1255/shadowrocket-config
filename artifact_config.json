@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "repo_slug": "shadowrocket-config",
+  "artifact_version": "1.0.0",
+  "module": "tools/governance/artifacts.psm1"
+}

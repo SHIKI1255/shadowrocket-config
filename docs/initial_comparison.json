@@ -1,0 +1,2311 @@
+{
+  "counts": {
+    "A": {
+      "conflicts": 44,
+      "duplicates": 290,
+      "expanded": 14337,
+      "unique": 14047
+    },
+    "B": {
+      "conflicts": 42,
+      "duplicates": 309,
+      "expanded": 14382,
+      "unique": 14073
+    },
+    "new": {
+      "conflicts": 42,
+      "duplicates": 0,
+      "expanded": 14111,
+      "unique": 14111
+    }
+  },
+  "general_and_host_unchanged": true,
+  "inputs_sha256": {
+    "original_a": "abfb1267340acb4ef577f1f00d68ae681c0b0bc80ba4b2232de4cc67c0c876f3",
+    "original_b": "dd42fcd59a706d411d6e294db33e97bcad57850a3d98dde4a105a2e36d14743a"
+  },
+  "limitation": "Static model only. UNRESOLVED needs destination IP/geolocation. No live iPhone validation.",
+  "rows": [
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openai.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openai.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "auth.openai.com"
+      },
+      "name": "ChatGPT login",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openai.com,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "chatgpt.com"
+      },
+      "name": "ChatGPT",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "ws.chatgpt.com"
+      },
+      "name": "ChatGPT WebSocket",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,oaiusercontent.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,oaiusercontent.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "files.oaiusercontent.com"
+      },
+      "name": "ChatGPT upload",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,oaiusercontent.com,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,oaistatic.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,oaistatic.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "cdn.oaistatic.com"
+      },
+      "name": "OpenAI static",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,oaistatic.com,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,oaistatsig.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "ab.oaistatsig.com"
+      },
+      "name": "OpenAI stats",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,oaistatsig.com,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,azure.com,DIRECT",
+        "source": "Microsoft.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "chatgpt-async-webps-prod-eastus-1.webpubsub.azure.com"
+      },
+      "name": "ChatGPT Azure",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.livekit.cloud,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.livekit.cloud,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "chatgpt.livekit.cloud"
+      },
+      "name": "Voice ChatGPT",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.livekit.cloud,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,turn.livekit.cloud,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,turn.livekit.cloud,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "turn.livekit.cloud"
+      },
+      "name": "Voice relay",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,turn.livekit.cloud,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,host.livekit.cloud,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,host.livekit.cloud,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "host.livekit.cloud"
+      },
+      "name": "Voice host",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,host.livekit.cloud,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.site,PROXY",
+        "source": "Proxy_Domain.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.site,PROXY",
+        "source": "Proxy_Domain.list"
+      },
+      "input": {
+        "domain": "chatgpt.site"
+      },
+      "name": "OpenAI sites",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,chatgpt.site,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "crixet.com"
+      },
+      "name": "Prism legacy",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,crixet.com,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-KEYWORD,openai,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,cdn.openaimerge.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "cdn.openaimerge.com"
+      },
+      "name": "OpenAI merge",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,cdn.openaimerge.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,cdn.workos.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "cdn.workos.com"
+      },
+      "name": "WorkOS cdn",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,cdn.workos.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,forwarder.workos.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "forwarder.workos.com"
+      },
+      "name": "WorkOS forwarder",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,forwarder.workos.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,setup.workos.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "setup.workos.com"
+      },
+      "name": "WorkOS setup",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,setup.workos.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,images.workoscdn.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "images.workoscdn.com"
+      },
+      "name": "WorkOS images",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,images.workoscdn.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,workos.imgix.net,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "workos.imgix.net"
+      },
+      "name": "WorkOS imgix",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,workos.imgix.net,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,challenges.cloudflare.com,PROXY",
+        "source": "Copilot.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,challenges.cloudflare.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "challenges.cloudflare.com"
+      },
+      "name": "Challenge",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,challenges.cloudflare.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,stripe.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,js.stripe.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "js.stripe.com"
+      },
+      "name": "Stripe js",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,js.stripe.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,sentry.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,sentry.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "o207216.ingest.sentry.io"
+      },
+      "name": "Sentry OpenAI",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,o207216.ingest.sentry.io,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,sentry.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,sentry.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "o33249.ingest.sentry.io"
+      },
+      "name": "Sentry ChatGPT",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,o33249.ingest.sentry.io,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "rum.browser-intake-datadoghq.com"
+      },
+      "name": "Datadog exact helper",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,rum.browser-intake-datadoghq.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "click.ct.sendgrid.net"
+      },
+      "name": "Email link",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,ct.sendgrid.net,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,openai-api.arkoselabs.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,openai-api.arkoselabs.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "openai-api.arkoselabs.com"
+      },
+      "name": "Arkose legacy",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,openai-api.arkoselabs.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "client-api.arkoselabs.com"
+      },
+      "name": "Arkose client legacy",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,api.statsig.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,api.statsig.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "api.statsig.com"
+      },
+      "name": "Statsig legacy",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,api.statsig.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,events.statsigapi.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,events.statsigapi.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "events.statsigapi.net"
+      },
+      "name": "Statsig events",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,events.statsigapi.net,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,featuregates.org,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,featuregates.org,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "featuregates.org"
+      },
+      "name": "Featuregates legacy",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,featuregates.org,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claude.ai,PROXY",
+        "source": "Claude.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claude.ai,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "claude.ai"
+      },
+      "name": "Claude",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claude.ai,PROXY",
+        "source": "claude"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claude.com,PROXY",
+        "source": "Proxy_Domain.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claude.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "claude.com"
+      },
+      "name": "Claude new entry",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claude.com,PROXY",
+        "source": "claude"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claudeusercontent.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "files.claudeusercontent.com"
+      },
+      "name": "Claude upload",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claudeusercontent.com,PROXY",
+        "source": "claude"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claudemcpcontent.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "claudemcpcontent.com"
+      },
+      "name": "Claude MCP content",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,claudemcpcontent.com,PROXY",
+        "source": "claude"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,servd-anthropic-website.b-cdn.net,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "servd-anthropic-website.b-cdn.net"
+      },
+      "name": "Claude CDN",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,servd-anthropic-website.b-cdn.net,PROXY",
+        "source": "claude"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,gemini.google.com,PROXY",
+        "source": "Gemini.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,gemini.google.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "gemini.google.com"
+      },
+      "name": "Gemini",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,gemini.google.com,PROXY",
+        "source": "gemini"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,google.com,PROXY",
+        "source": "Google.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,aistudio.google.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "aistudio.google.com"
+      },
+      "name": "AI Studio",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,aistudio.google.com,PROXY",
+        "source": "gemini"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-KEYWORD,generativelanguage,PROXY",
+        "source": "Gemini.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,generativelanguage.googleapis.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "generativelanguage.googleapis.com"
+      },
+      "name": "Gemini API",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,generativelanguage.googleapis.com,PROXY",
+        "source": "gemini"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,ai.google.dev,PROXY",
+        "source": "Gemini.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,ai.google.dev,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "ai.google.dev"
+      },
+      "name": "Gemini docs",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,ai.google.dev,PROXY",
+        "source": "gemini"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "copilot.com"
+      },
+      "name": "Copilot new",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,copilot.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,microsoft,DIRECT",
+        "source": "Microsoft.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,microsoft,DIRECT",
+        "source": "Microsoft.list"
+      },
+      "input": {
+        "domain": "copilot.cloud.microsoft"
+      },
+      "name": "Copilot cloud",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,copilot.cloud.microsoft,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "copilot.microsoft.com"
+      },
+      "name": "Copilot original",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,sydney.bing.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,sydney.bing.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "sydney.bing.com"
+      },
+      "name": "Copilot Bing",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,sydney.bing.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,apple-relay.apple.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,apple-relay.apple.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "apple-relay.apple.com"
+      },
+      "name": "Apple Intelligence relay",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,apple-relay.apple.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "apple-relay.cloudflare.com"
+      },
+      "name": "Apple Intelligence cloudflare",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,cloudflare.com,PROXY",
+        "source": "Proxy_Domain.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,cloudflare.com,PROXY",
+        "source": "Proxy_Domain.list"
+      },
+      "input": {
+        "domain": "cp4.cloudflare.com"
+      },
+      "name": "Apple Intelligence cp4",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,cp4.cloudflare.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,apple.com,DIRECT",
+        "source": "Apple_Domain.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,humb.apple.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "humb.apple.com"
+      },
+      "name": "Apple shared helper",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,humb.apple.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,apple.com,DIRECT",
+        "source": "Apple_Domain.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,apple.com,DIRECT",
+        "source": "Apple_Domain.list"
+      },
+      "input": {
+        "domain": "www.apple.com"
+      },
+      "name": "Apple ordinary",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,apple.com,DIRECT",
+        "source": "apple_domains"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,microsoftonline.com,DIRECT",
+        "source": "Microsoft.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,microsoftonline.com,DIRECT",
+        "source": "Microsoft.list"
+      },
+      "input": {
+        "domain": "login.microsoftonline.com"
+      },
+      "name": "Microsoft ordinary",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,microsoftonline.com,DIRECT",
+        "source": "microsoft"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,azure.com,DIRECT",
+        "source": "Microsoft.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,azure.com,DIRECT",
+        "source": "Microsoft.list"
+      },
+      "input": {
+        "domain": "example.azure.com"
+      },
+      "name": "Azure ordinary",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,azure.com,DIRECT",
+        "source": "microsoft"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,githubusercontent.com,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,githubusercontent.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "raw.githubusercontent.com"
+      },
+      "name": "GitHub update",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,githubusercontent.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,telegram.org,PROXY",
+        "source": "Telegram.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,telegram.org,PROXY",
+        "source": "Telegram.list"
+      },
+      "input": {
+        "domain": "api.telegram.org"
+      },
+      "name": "Telegram",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,telegram.org,PROXY",
+        "source": "telegram"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,x.com,PROXY",
+        "source": "Twitter.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,x.com,PROXY",
+        "source": "Twitter.list"
+      },
+      "input": {
+        "domain": "x.com"
+      },
+      "name": "Twitter",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,x.com,PROXY",
+        "source": "twitter"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,tiktok.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,tiktok.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "tiktok.com"
+      },
+      "name": "TikTok",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,tiktok.com,PROXY",
+        "source": "tiktok"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,tiktokcdn.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,tiktokcdn.com,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "tiktokcdn.com"
+      },
+      "name": "TikTok media",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-KEYWORD,tiktokcdn,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,tiktokv.us,PROXY",
+        "source": "TikTok.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,tiktokv.us,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "tiktokv.us"
+      },
+      "name": "TikTok USA",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,tiktokv.us,PROXY",
+        "source": "tiktok"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,byteoversea.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,byteoversea.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "input": {
+        "domain": "byteoversea.com"
+      },
+      "name": "TikTok legacy byteoversea",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,byteoversea.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,ibytedtos.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,ibytedtos.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "input": {
+        "domain": "ibytedtos.com"
+      },
+      "name": "TikTok legacy ibytedtos",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,ibytedtos.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,ipstatp.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,ipstatp.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "input": {
+        "domain": "ipstatp.com"
+      },
+      "name": "TikTok legacy ipstatp",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,ipstatp.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,snssdk.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,snssdk.com,DIRECT",
+        "source": "China_Domain.list"
+      },
+      "input": {
+        "domain": "snssdk.com"
+      },
+      "name": "Domestic ByteDance snssdk",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,snssdk.com,DIRECT",
+        "source": "china_domains"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,bytedapm.com,PROXY",
+        "source": "TikTok.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,bytedapm.com,DIRECT",
+        "source": "China_Domain.list"
+      },
+      "input": {
+        "domain": "bytedapm.com"
+      },
+      "name": "Domestic ByteDance bytedapm",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,bytedapm.com,DIRECT",
+        "source": "china_domains"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,bilibili.com,DIRECT",
+        "source": "BiliBili.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,bilibili.com,DIRECT",
+        "source": "BiliBili.list"
+      },
+      "input": {
+        "domain": "www.bilibili.com"
+      },
+      "name": "BiliBili",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,bilibili.com,DIRECT",
+        "source": "bilibili"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-KEYWORD,baidu,DIRECT",
+        "source": "China.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-KEYWORD,baidu,DIRECT",
+        "source": "China.list"
+      },
+      "input": {
+        "domain": "www.baidu.com"
+      },
+      "name": "Baidu",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-KEYWORD,baidu,DIRECT",
+        "source": "china"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-KEYWORD,taobao,DIRECT",
+        "source": "China.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-KEYWORD,taobao,DIRECT",
+        "source": "China.list"
+      },
+      "input": {
+        "domain": "www.taobao.com"
+      },
+      "name": "Taobao",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-KEYWORD,taobao,DIRECT",
+        "source": "china"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,steamserver.net,DIRECT",
+        "source": "SteamCN.list"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,steamserver.net,DIRECT",
+        "source": "SteamCN.list"
+      },
+      "input": {
+        "domain": "steamserver.net"
+      },
+      "name": "Steam China",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,steamserver.net,DIRECT",
+        "source": "steam_cn"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,steampowered.com,PROXY",
+        "source": "Steam.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,steampowered.com,PROXY",
+        "source": "Steam.list"
+      },
+      "input": {
+        "domain": "store.steampowered.com"
+      },
+      "name": "Steam international",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,steampowered.com,PROXY",
+        "source": "steam"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,lan,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,lan,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "nas.lan"
+      },
+      "name": "LAN",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,lan,DIRECT",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,local,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,local,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "printer.local"
+      },
+      "name": "Local",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,local,DIRECT",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,home.arpa,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,home.arpa,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "router.home.arpa"
+      },
+      "name": "Home arpa",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,home.arpa,DIRECT",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,captive.apple.com,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,captive.apple.com,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "captive.apple.com"
+      },
+      "name": "Captive portal",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,captive.apple.com,DIRECT",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,pool.ntp.org,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,pool.ntp.org,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "0.pool.ntp.org"
+      },
+      "name": "NTP",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,pool.ntp.org,DIRECT",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,time.apple.com,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,time.apple.com,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "time.apple.com"
+      },
+      "name": "Apple time",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,time.apple.com,DIRECT",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,dns.alidns.com,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,dns.alidns.com,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "dns.alidns.com"
+      },
+      "name": "Direct DNS",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,dns.alidns.com,DIRECT",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,dns.google,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,dns.google,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "dns.google"
+      },
+      "name": "Proxy DNS",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,dns.google,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,checkout.mzxnyysm.com,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,checkout.mzxnyysm.com,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "checkout.mzxnyysm.com"
+      },
+      "name": "Personal exception",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,checkout.mzxnyysm.com,DIRECT",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,127.0.0.0/8,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,127.0.0.0/8,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "input": {
+        "ip": "127.0.0.1"
+      },
+      "name": "Local IP 127.0.0.1",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,127.0.0.0/8,DIRECT,no-resolve",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "input": {
+        "ip": "192.168.1.1"
+      },
+      "name": "Local IP 192.168.1.1",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "input": {
+        "ip": "10.0.0.1"
+      },
+      "name": "Local IP 10.0.0.1",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "input": {
+        "ip": "172.16.3.1"
+      },
+      "name": "Local IP 172.16.3.1",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,169.254.0.0/16,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,169.254.0.0/16,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "input": {
+        "ip": "169.254.1.1"
+      },
+      "name": "Local IP 169.254.1.1",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,169.254.0.0/16,DIRECT,no-resolve",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,::1/128,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,::1/128,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "input": {
+        "ip": "::1"
+      },
+      "name": "Local IP ::1",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,::1/128,DIRECT,no-resolve",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,fc00::/7,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,fc00::/7,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "input": {
+        "ip": "fd00::1"
+      },
+      "name": "Local IP fd00::1",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,fc00::/7,DIRECT,no-resolve",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,fe80::/10,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,fe80::/10,DIRECT,no-resolve",
+        "source": "original_static"
+      },
+      "input": {
+        "ip": "fe80::1"
+      },
+      "name": "Local IP fe80::1",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "IP-CIDR,fe80::/10,DIRECT,no-resolve",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "DIRECT",
+        "rule": "GEOIP,CN,DIRECT",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "DIRECT",
+        "rule": "GEOIP,CN,DIRECT",
+        "source": "original_static"
+      },
+      "input": {
+        "asn": "9999",
+        "country": "CN",
+        "domain": "unknown.example",
+        "ip": "1.2.3.4"
+      },
+      "name": "CN fallback",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "GEOIP,CN,DIRECT",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "asn": "15169",
+        "country": "US",
+        "domain": "unknown.example",
+        "ip": "8.8.4.4"
+      },
+      "name": "Other fallback",
+      "new": {
+        "policy": "PROXY",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,auth0.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,auth0.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "auth0.com"
+      },
+      "name": "Shared/scope: auth0.com",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,auth0.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,auth0.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "login.auth0.com"
+      },
+      "name": "Shared/scope: login.auth0.com",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,stripe.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,stripe.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "stripe.com"
+      },
+      "name": "Shared/scope: stripe.com",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,stripe.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,stripe.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "api.stripe.com"
+      },
+      "name": "Shared/scope: api.stripe.com",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,sentry.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,sentry.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "sentry.io"
+      },
+      "name": "Shared/scope: sentry.io",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,sentry.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,sentry.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "other.ingest.sentry.io"
+      },
+      "name": "Shared/scope: other.ingest.sentry.io",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,algolia.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,algolia.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "algolia.net"
+      },
+      "name": "Shared/scope: algolia.net",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,launchdarkly.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,launchdarkly.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "launchdarkly.com"
+      },
+      "name": "Shared/scope: launchdarkly.com",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,identrust.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,identrust.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "identrust.com"
+      },
+      "name": "Shared/scope: identrust.com",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,observeit.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,observeit.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "observeit.net"
+      },
+      "name": "Shared/scope: observeit.net",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,segment.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,segment.io,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "segment.io"
+      },
+      "name": "Shared/scope: segment.io",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,static.cloudflareinsights.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,static.cloudflareinsights.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "static.cloudflareinsights.com"
+      },
+      "name": "Shared/scope: static.cloudflareinsights.com",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,browser-intake-datadoghq.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,browser-intake-datadoghq.com,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "browser-intake-datadoghq.com"
+      },
+      "name": "Shared/scope: browser-intake-datadoghq.com",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openaicom.imgix.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,openaicom.imgix.net,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "openaicom.imgix.net"
+      },
+      "name": "Shared/scope: openaicom.imgix.net",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,openaicom.imgix.net,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openaicom.imgix.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openaicom.imgix.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "sub.openaicom.imgix.net"
+      },
+      "name": "Shared/scope: sub.openaicom.imgix.net",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openaiapi-site.azureedge.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,openaiapi-site.azureedge.net,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "openaiapi-site.azureedge.net"
+      },
+      "name": "Shared/scope: openaiapi-site.azureedge.net",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,openaiapi-site.azureedge.net,PROXY",
+        "source": "openai"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openaiapi-site.azureedge.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,openaiapi-site.azureedge.net,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "sub.openaiapi-site.azureedge.net"
+      },
+      "name": "Shared/scope: sub.openaiapi-site.azureedge.net",
+      "new": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN-SUFFIX,azureedge.net,DIRECT",
+        "source": "microsoft"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-KEYWORD,openai,PROXY",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-KEYWORD,openai,PROXY",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "domain": "random-openaicom-api.example"
+      },
+      "name": "Shared/scope: random-openaicom-api.example",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,cloudflare.com,PROXY",
+        "source": "Proxy_Domain.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,cloudflare.com,PROXY",
+        "source": "Proxy_Domain.list"
+      },
+      "input": {
+        "domain": "cp4.cloudflare.com"
+      },
+      "name": "Shared/scope: cp4.cloudflare.com",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,cp4.cloudflare.com,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "b": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "original_static"
+      },
+      "input": {
+        "domain": "ct.sendgrid.net"
+      },
+      "name": "Shared/scope: ct.sendgrid.net",
+      "new": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,ct.sendgrid.net,PROXY",
+        "source": "custom"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "IP-CIDR,24.199.123.28/32,PROXY,no-resolve",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "IP-CIDR,24.199.123.28/32,PROXY,no-resolve",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "ip": "24.199.123.28"
+      },
+      "name": "Removed fixed AI IP: 24.199.123.28",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "IP-CIDR,64.23.132.171/32,PROXY,no-resolve",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "IP-CIDR,64.23.132.171/32,PROXY,no-resolve",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "ip": "64.23.132.171"
+      },
+      "name": "Removed fixed AI IP: 64.23.132.171",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "IP-ASN,14061,PROXY,no-resolve",
+        "source": "Copilot.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "IP-ASN,14061,PROXY,no-resolve",
+        "source": "Copilot.list"
+      },
+      "input": {
+        "asn": "14061",
+        "ip": "1.2.3.4"
+      },
+      "name": "Removed cloud ASN: 14061",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    },
+    {
+      "a": {
+        "policy": "PROXY",
+        "rule": "IP-ASN,20473,PROXY,no-resolve",
+        "source": "OpenAI.list"
+      },
+      "b": {
+        "policy": "PROXY",
+        "rule": "IP-ASN,20473,PROXY,no-resolve",
+        "source": "OpenAI.list"
+      },
+      "input": {
+        "asn": "20473",
+        "ip": "1.2.3.4"
+      },
+      "name": "Removed cloud ASN: 20473",
+      "new": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      }
+    }
+  ],
+  "upstream_commits": {
+    "ACL4SSR/ACL4SSR": "bd00af4d515306cb24b951d51c4a7984f3fbe321",
+    "blackmatrix7/ios_rule_script": "5c22b5056f6288c27935489f74f8681fadbdba87",
+    "v2fly/domain-list-community": "bcea25493ed28c387660fe49ce1ceb242d2efca0"
+  }
+}

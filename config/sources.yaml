@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "repositories": {
+    "blackmatrix7": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "license": "GPL-2.0",
+      "license_path": "LICENSE"
+    },
+    "v2fly": {
+      "repo": "v2fly/domain-list-community",
+      "ref": "master",
+      "license": "MIT",
+      "license_path": "LICENSE"
+    }
+  },
+  "limits": {
+    "min_ratio": 0.8,
+    "max_ratio": 1.5,
+    "max_removed_ratio": 0.2,
+    "max_added_ratio": 0.5
+  },
+  "sources": [
+    {
+      "id": "openai",
+      "repository": "v2fly",
+      "path": "data/openai",
+      "format": "v2fly",
+      "policy": "PROXY",
+      "regex_overrides": {
+        "^chatgpt-async-webps-prod-\\S+-\\d+\\.webpubsub\\.azure\\.com$": "DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com"
+      }
+    },
+    {
+      "id": "claude",
+      "repository": "v2fly",
+      "path": "data/anthropic",
+      "format": "v2fly",
+      "policy": "PROXY"
+    },
+    {
+      "id": "gemini",
+      "repository": "v2fly",
+      "path": "data/google-deepmind",
+      "format": "v2fly",
+      "policy": "PROXY"
+    },
+    {
+      "id": "voice",
+      "url": "https://openai.com/chatgpt-voice.json",
+      "format": "voice",
+      "policy": "PROXY"
+    },
+    {
+      "id": "copilot",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Copilot/Copilot.list",
+      "format": "shadowrocket",
+      "policy": "PROXY",
+      "allow_rules": [
+        "DOMAIN,api.msn.com",
+        "DOMAIN,assets.msn.com",
+        "DOMAIN,copilot.microsoft.com",
+        "DOMAIN,gateway.bingviz.microsoft.net",
+        "DOMAIN,gateway.bingviz.microsoftapp.net",
+        "DOMAIN,in.appcenter.ms",
+        "DOMAIN,location.microsoft.com",
+        "DOMAIN,odc.officeapps.live.com",
+        "DOMAIN,r.bing.com",
+        "DOMAIN,self.events.data.microsoft.com",
+        "DOMAIN,services.bingapis.com",
+        "DOMAIN,sydney.bing.com",
+        "DOMAIN,www.bing.com",
+        "DOMAIN-SUFFIX,api.microsoftapp.net",
+        "DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io",
+        "DOMAIN-SUFFIX,edgeservices.bing.com"
+      ]
+    },
+    {
+      "id": "github",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/GitHub/GitHub.list",
+      "format": "shadowrocket",
+      "policy": "PROXY"
+    },
+    {
+      "id": "telegram",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Telegram/Telegram.list",
+      "format": "shadowrocket",
+      "policy": "PROXY"
+    },
+    {
+      "id": "google",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Google/Google.list",
+      "format": "shadowrocket",
+      "policy": "PROXY"
+    },
+    {
+      "id": "twitter",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Twitter/Twitter.list",
+      "format": "shadowrocket",
+      "policy": "PROXY"
+    },
+    {
+      "id": "tiktok",
+      "repository": "v2fly",
+      "path": "data/tiktok",
+      "format": "v2fly",
+      "policy": "PROXY",
+      "exclude_domains": [
+        "bytedapm.com"
+      ]
+    },
+    {
+      "id": "crypto",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Crypto/Crypto.list",
+      "format": "shadowrocket",
+      "policy": "PROXY"
+    },
+    {
+      "id": "steam_cn",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/SteamCN/SteamCN.list",
+      "format": "shadowrocket",
+      "policy": "DIRECT"
+    },
+    {
+      "id": "steam",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Steam/Steam.list",
+      "format": "shadowrocket",
+      "policy": "PROXY"
+    },
+    {
+      "id": "apple",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Apple/Apple.list",
+      "format": "shadowrocket",
+      "policy": "DIRECT"
+    },
+    {
+      "id": "apple_domains",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Apple/Apple_Domain.list",
+      "format": "domain_set",
+      "policy": "DIRECT"
+    },
+    {
+      "id": "microsoft",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Microsoft/Microsoft.list",
+      "format": "shadowrocket",
+      "policy": "DIRECT"
+    },
+    {
+      "id": "bilibili",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/BiliBili/BiliBili.list",
+      "format": "shadowrocket",
+      "policy": "DIRECT"
+    },
+    {
+      "id": "proxy",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Proxy/Proxy.list",
+      "format": "shadowrocket",
+      "policy": "PROXY"
+    },
+    {
+      "id": "proxy_domains",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/Proxy/Proxy_Domain.list",
+      "format": "domain_set",
+      "policy": "PROXY"
+    },
+    {
+      "id": "china",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/China/China.list",
+      "format": "shadowrocket",
+      "policy": "DIRECT"
+    },
+    {
+      "id": "china_domains",
+      "repository": "blackmatrix7",
+      "path": "rule/Shadowrocket/China/China_Domain.list",
+      "format": "domain_set",
+      "policy": "DIRECT"
+    }
+  ]
+}

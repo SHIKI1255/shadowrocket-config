@@ -1,0 +1,596 @@
+[
+  {
+    "name": "ChatGPT login",
+    "input": {
+      "domain": "auth.openai.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "ChatGPT",
+    "input": {
+      "domain": "chatgpt.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "ChatGPT WebSocket",
+    "input": {
+      "domain": "ws.chatgpt.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "ChatGPT upload",
+    "input": {
+      "domain": "files.oaiusercontent.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "OpenAI static",
+    "input": {
+      "domain": "cdn.oaistatic.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "OpenAI stats",
+    "input": {
+      "domain": "ab.oaistatsig.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "ChatGPT Azure",
+    "input": {
+      "domain": "chatgpt-async-webps-prod-eastus-1.webpubsub.azure.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Voice ChatGPT",
+    "input": {
+      "domain": "chatgpt.livekit.cloud"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Voice relay",
+    "input": {
+      "domain": "turn.livekit.cloud"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Voice host",
+    "input": {
+      "domain": "host.livekit.cloud"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "OpenAI sites",
+    "input": {
+      "domain": "chatgpt.site"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Prism legacy",
+    "input": {
+      "domain": "crixet.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "OpenAI merge",
+    "input": {
+      "domain": "cdn.openaimerge.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "WorkOS cdn",
+    "input": {
+      "domain": "cdn.workos.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "WorkOS forwarder",
+    "input": {
+      "domain": "forwarder.workos.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "WorkOS setup",
+    "input": {
+      "domain": "setup.workos.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "WorkOS images",
+    "input": {
+      "domain": "images.workoscdn.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "WorkOS imgix",
+    "input": {
+      "domain": "workos.imgix.net"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Challenge",
+    "input": {
+      "domain": "challenges.cloudflare.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Stripe js",
+    "input": {
+      "domain": "js.stripe.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Sentry OpenAI",
+    "input": {
+      "domain": "o207216.ingest.sentry.io"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Sentry ChatGPT",
+    "input": {
+      "domain": "o33249.ingest.sentry.io"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Datadog exact helper",
+    "input": {
+      "domain": "rum.browser-intake-datadoghq.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Email link",
+    "input": {
+      "domain": "click.ct.sendgrid.net"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Arkose legacy",
+    "input": {
+      "domain": "openai-api.arkoselabs.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Arkose client legacy",
+    "input": {
+      "domain": "client-api.arkoselabs.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Statsig legacy",
+    "input": {
+      "domain": "api.statsig.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Statsig events",
+    "input": {
+      "domain": "events.statsigapi.net"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Featuregates legacy",
+    "input": {
+      "domain": "featuregates.org"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Claude",
+    "input": {
+      "domain": "claude.ai"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Claude new entry",
+    "input": {
+      "domain": "claude.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Claude upload",
+    "input": {
+      "domain": "files.claudeusercontent.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Claude MCP content",
+    "input": {
+      "domain": "claudemcpcontent.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Claude CDN",
+    "input": {
+      "domain": "servd-anthropic-website.b-cdn.net"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Gemini",
+    "input": {
+      "domain": "gemini.google.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "AI Studio",
+    "input": {
+      "domain": "aistudio.google.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Gemini API",
+    "input": {
+      "domain": "generativelanguage.googleapis.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Gemini docs",
+    "input": {
+      "domain": "ai.google.dev"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Copilot new",
+    "input": {
+      "domain": "copilot.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Copilot cloud",
+    "input": {
+      "domain": "copilot.cloud.microsoft"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Copilot original",
+    "input": {
+      "domain": "copilot.microsoft.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Copilot Bing",
+    "input": {
+      "domain": "sydney.bing.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Apple Intelligence relay",
+    "input": {
+      "domain": "apple-relay.apple.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Apple Intelligence cloudflare",
+    "input": {
+      "domain": "apple-relay.cloudflare.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Apple Intelligence cp4",
+    "input": {
+      "domain": "cp4.cloudflare.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Apple shared helper",
+    "input": {
+      "domain": "humb.apple.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Apple ordinary",
+    "input": {
+      "domain": "www.apple.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Microsoft ordinary",
+    "input": {
+      "domain": "login.microsoftonline.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Azure ordinary",
+    "input": {
+      "domain": "example.azure.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "GitHub update",
+    "input": {
+      "domain": "raw.githubusercontent.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Telegram",
+    "input": {
+      "domain": "api.telegram.org"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Twitter",
+    "input": {
+      "domain": "x.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "TikTok",
+    "input": {
+      "domain": "tiktok.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "TikTok media",
+    "input": {
+      "domain": "tiktokcdn.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "TikTok USA",
+    "input": {
+      "domain": "tiktokv.us"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "TikTok legacy byteoversea",
+    "input": {
+      "domain": "byteoversea.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "TikTok legacy ibytedtos",
+    "input": {
+      "domain": "ibytedtos.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "TikTok legacy ipstatp",
+    "input": {
+      "domain": "ipstatp.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Domestic ByteDance snssdk",
+    "input": {
+      "domain": "snssdk.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Domestic ByteDance bytedapm",
+    "input": {
+      "domain": "bytedapm.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "BiliBili",
+    "input": {
+      "domain": "www.bilibili.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Baidu",
+    "input": {
+      "domain": "www.baidu.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Taobao",
+    "input": {
+      "domain": "www.taobao.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Steam China",
+    "input": {
+      "domain": "steamserver.net"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Steam international",
+    "input": {
+      "domain": "store.steampowered.com"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "LAN",
+    "input": {
+      "domain": "nas.lan"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local",
+    "input": {
+      "domain": "printer.local"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Home arpa",
+    "input": {
+      "domain": "router.home.arpa"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Captive portal",
+    "input": {
+      "domain": "captive.apple.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "NTP",
+    "input": {
+      "domain": "0.pool.ntp.org"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Apple time",
+    "input": {
+      "domain": "time.apple.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Direct DNS",
+    "input": {
+      "domain": "dns.alidns.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Proxy DNS",
+    "input": {
+      "domain": "dns.google"
+    },
+    "policy": "PROXY"
+  },
+  {
+    "name": "Personal exception",
+    "input": {
+      "domain": "checkout.mzxnyysm.com"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local IP 127.0.0.1",
+    "input": {
+      "ip": "127.0.0.1"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local IP 192.168.1.1",
+    "input": {
+      "ip": "192.168.1.1"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local IP 10.0.0.1",
+    "input": {
+      "ip": "10.0.0.1"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local IP 172.16.3.1",
+    "input": {
+      "ip": "172.16.3.1"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local IP 169.254.1.1",
+    "input": {
+      "ip": "169.254.1.1"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local IP ::1",
+    "input": {
+      "ip": "::1"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local IP fd00::1",
+    "input": {
+      "ip": "fd00::1"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Local IP fe80::1",
+    "input": {
+      "ip": "fe80::1"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "CN fallback",
+    "input": {
+      "domain": "unknown.example",
+      "ip": "1.2.3.4",
+      "country": "CN",
+      "asn": "9999"
+    },
+    "policy": "DIRECT"
+  },
+  {
+    "name": "Other fallback",
+    "input": {
+      "domain": "unknown.example",
+      "ip": "8.8.4.4",
+      "country": "US",
+      "asn": "15169"
+    },
+    "policy": "PROXY"
+  }
+]

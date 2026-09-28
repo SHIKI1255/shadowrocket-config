@@ -1,0 +1,11 @@
+version: 1
+repo_slug: shadowrocket-config
+default_task: Read
+local_shell: pwsh
+runtime: Python 3.12 standard library
+governed_entry: D:/CodexProjects/repo-naming-governance/govern.ps1
+required: [current_target, task_specific_context, local_git_state]
+source_entry: scripts/build.py
+artifact_entry: artifact.ps1
+public_repository: SHIKI1255/shadowrocket-config
+forbidden_public_content: [credentials, proxy_nodes, subscription_tokens, private_keys]

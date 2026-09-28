@@ -1,0 +1,90 @@
+# Local/system/DNS exceptions; retain original priority and no-resolve behavior.
+DOMAIN,localhost,DIRECT
+DOMAIN-SUFFIX,lan,DIRECT
+DOMAIN-SUFFIX,local,DIRECT
+DOMAIN-SUFFIX,home.arpa,DIRECT
+IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+IP-CIDR,255.255.255.255/32,DIRECT,no-resolve
+IP-CIDR,::1/128,DIRECT,no-resolve
+IP-CIDR,fc00::/7,DIRECT,no-resolve
+IP-CIDR,fe80::/10,DIRECT,no-resolve
+IP-CIDR,ff00::/8,DIRECT,no-resolve
+DOMAIN,captive.apple.com,DIRECT
+DOMAIN,dns.alidns.com,DIRECT
+DOMAIN,doh.pub,DIRECT
+DOMAIN,dns.pub,DIRECT
+DOMAIN,time.apple.com,DIRECT
+DOMAIN,time-ios.apple.com,DIRECT
+DOMAIN,localhost.ptlogin2.qq.com,DIRECT
+DOMAIN-SUFFIX,pool.ntp.org,DIRECT
+# Personal exception approved by owner; operator and exact purpose unverified.
+DOMAIN-SUFFIX,checkout.mzxnyysm.com,DIRECT
+
+# Apple Intelligence: https://support.apple.com/en-us/101555
+# cp4 already matched the general proxy set; explicitly pin as a critical service.
+DOMAIN-SUFFIX,apple-relay.akamaized.net,PROXY
+DOMAIN-SUFFIX,apple-relay.apple.com,PROXY
+DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com,PROXY
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,PROXY
+DOMAIN,cp4.cloudflare.com,PROXY
+
+# Copilot entry points; preserve earlier overrides ahead of Microsoft DIRECT.
+DOMAIN-SUFFIX,copilot.microsoft.com,PROXY
+DOMAIN-SUFFIX,copilot.bing.com,PROXY
+DOMAIN-SUFFIX,copilot.com,PROXY
+DOMAIN-SUFFIX,copilot.cloud.microsoft,PROXY
+DOMAIN,sydney.bing.com,PROXY
+DOMAIN,services.bingapis.com,PROXY
+DOMAIN,gateway.bingviz.microsoft.net,PROXY
+DOMAIN,gateway.bingviz.microsoftapp.net,PROXY
+
+# Configuration download and proxy DNS endpoints.
+DOMAIN-SUFFIX,githubusercontent.com,PROXY
+DOMAIN,cloudflare-dns.com,PROXY
+DOMAIN,dns.google,PROXY
+
+# Existing explicit wildcard: reviewed replacement for the single known v2fly regexp.
+DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com,PROXY
+
+# OpenAI official network requirements, reviewed 2026-09-28:
+# https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# Core service domains and voice hosts are generated from v2fly; these are helpers.
+DOMAIN-SUFFIX,ct.sendgrid.net,PROXY
+DOMAIN-SUFFIX,intercom.io,PROXY
+DOMAIN-SUFFIX,intercomcdn.com,PROXY
+DOMAIN,cdn.openaimerge.com,PROXY
+DOMAIN,cdn.workos.com,PROXY
+DOMAIN,challenges.cloudflare.com,PROXY
+DOMAIN,forwarder.workos.com,PROXY
+DOMAIN,images.workoscdn.com,PROXY
+DOMAIN,js.intercomcdn.com,PROXY
+DOMAIN,js.stripe.com,PROXY
+DOMAIN,o207216.ingest.sentry.io,PROXY
+DOMAIN,o33249.ingest.sentry.io,PROXY
+DOMAIN,rum.browser-intake-datadoghq.com,PROXY
+DOMAIN,setup.workos.com,PROXY
+DOMAIN,workos.imgix.net,PROXY
+# Shared Apple endpoint also listed by OpenAI; preserve B's explicit PROXY.
+DOMAIN,humb.apple.com,PROXY
+
+# Legacy login compatibility, retained separately, not entire provider domains.
+# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket/OpenAI/OpenAI.list
+DOMAIN,openai-api.arkoselabs.com,PROXY
+DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY
+DOMAIN,api.statsig.com,PROXY
+DOMAIN-SUFFIX,events.statsigapi.net,PROXY
+DOMAIN-SUFFIX,featuregates.org,PROXY
+
+# Legacy ACL4SSR TikTok compatibility; no ongoing ACL4SSR download dependency.
+# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/TikTok.list
+DOMAIN-SUFFIX,byteoversea.com,PROXY
+DOMAIN-SUFFIX,ibytedtos.com,PROXY
+DOMAIN-SUFFIX,ipstatp.com,PROXY
+DOMAIN-KEYWORD,tiktokcdn,PROXY
+# snssdk.com and bytedapm.com retain China DIRECT via the general sources.
