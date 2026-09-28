@@ -68,3 +68,9 @@ General 和 Host 保留原值（仅新增 update-url）；`fallback-dns-server =
 - [第三方归属及许可](docs/third_party.md)
 
 生成器仅用 Python 3.12 标准库，无需 pip 安装。Windows 本地使用 PowerShell 7；治理目录和产物管理不参与 GitHub 运行。
+
+## 30 天维护记录
+
+工作流现在在验证和发布结束后检查 `.github/maintenance.json`，首次初始化，之后每满 30 天提交一次真实维护记录。记录包含本次验证/发布结果、运行链接和当前 release 提交，规则未变时不会改动订阅内容。失败时可记录失败但不能发布无效配置。
+
+使用仓库 GITHUB_TOKEN，仅受信任的 main 分支任务可写入；并发修改时跳过旧任务，维护提交不会循环触发构建。若定时工作流已被 GitHub 停用，需在 Actions 启用后手动运行；保活不保证 GitHub 调度永不延迟。现有分流、DNS 和订阅链接保持原样。

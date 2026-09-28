@@ -3,6 +3,7 @@ name: Validate and publish
 on:
   push:
     branches: [main]
+    paths-ignore: ['.github/maintenance.json']
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -87,3 +88,26 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           PYTHONDONTWRITEBYTECODE: '1'
         run: python -B scripts/publish.py "$env:RUNNER_TEMP/release"
+
+  maintenance:
+    # Runs after publication (also after failure); never advances main mid-publish.
+    if: always() && github.ref == 'refs/heads/main' && contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name)
+    needs: [validate, publish]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Record maintenance when 30 days have elapsed
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          VALIDATE_RESULT: ${{ needs.validate.result }}
+          PUBLISH_RESULT: ${{ needs.publish.result }}
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -B scripts/keepalive.py
