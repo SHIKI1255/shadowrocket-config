@@ -5939,8 +5939,8 @@
     "skipped": []
   },
   "gemini": {
-    "raw_count": 43,
-    "retained_count": 43,
+    "raw_count": 46,
+    "retained_count": 46,
     "rules": [
       "DOMAIN-SUFFIX,deepmind.com,PROXY",
       "DOMAIN-SUFFIX,deepmind.google,PROXY",
@@ -5960,11 +5960,14 @@
       "DOMAIN-SUFFIX,gemini.google,PROXY",
       "DOMAIN-SUFFIX,gemini.google.com,PROXY",
       "DOMAIN-SUFFIX,gemini.gstatic.com,PROXY",
+      "DOMAIN,geminiweb-pa.clients.google.com,PROXY",
+      "DOMAIN,geminiweb-pa.clients6.google.com,PROXY",
       "DOMAIN,cloudaicompanion.googleapis.com,PROXY",
       "DOMAIN,cloudcode-pa.googleapis.com,PROXY",
       "DOMAIN,daily-cloudcode-pa.googleapis.com,PROXY",
       "DOMAIN,notebooklm-pa.googleapis.com,PROXY",
       "DOMAIN,notebooklm.googleapis.com,PROXY",
+      "DOMAIN-SUFFIX,labstailwind.pa.googleapis.com,PROXY",
       "DOMAIN-SUFFIX,notebook.google,PROXY",
       "DOMAIN-SUFFIX,notebook.google.com,PROXY",
       "DOMAIN-SUFFIX,notebooklm.google,PROXY",
