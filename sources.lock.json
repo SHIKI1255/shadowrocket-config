@@ -3,7 +3,7 @@
     "licenses/blackmatrix7.txt": {
       "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
       "source_id": null,
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/LICENSE"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/LICENSE"
     },
     "licenses/v2fly.txt": {
       "sha256": "b9d84a22870d3f21c91a4c6e410c9cc51d00902f5233ad0c84011479244bf7d2",
@@ -11,29 +11,29 @@
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2d71342eea1720da57261b55663c9d55619e9b1c/LICENSE"
     },
     "snapshots/apple.txt": {
-      "sha256": "f08cc8fd93fbe5e81f6def6224b6a75c4ebb636d8224f29734a46b390adbdcf1",
+      "sha256": "e2aa2d025038d4dd876e7ffc071d08218e28f0a2e0952c998a235c382152e791",
       "source_id": "apple",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Apple/Apple.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Apple/Apple.list"
     },
     "snapshots/apple_domains.txt": {
       "sha256": "da43be83adf67a00dfa65d883a423251b9a1497d45611f41d07bbb495852c8a4",
       "source_id": "apple_domains",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Apple/Apple_Domain.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Apple/Apple_Domain.list"
     },
     "snapshots/bilibili.txt": {
       "sha256": "9b22a7bdf97792346bf480771841b6cd1097ec7ad034b34528c14f3798107854",
       "source_id": "bilibili",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/BiliBili/BiliBili.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/BiliBili/BiliBili.list"
     },
     "snapshots/china.txt": {
       "sha256": "65477cd1e2917a8ca09ba08132e9d9131c54c0d9e1cfcba0be2eaa8ea1a04b75",
       "source_id": "china",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/China/China.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/China/China.list"
     },
     "snapshots/china_domains.txt": {
       "sha256": "d35eec789ae09a6d2b6dd48ed2c52d6d811f433b1e73a92b2f9246b778fa7923",
       "source_id": "china_domains",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/China/China_Domain.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/China/China_Domain.list"
     },
     "snapshots/claude.txt": {
       "sha256": "3d0e231009271bad865131381da71b489b18ca699f38afe3a0ebef00011f1b88",
@@ -43,12 +43,12 @@
     "snapshots/copilot.txt": {
       "sha256": "12773330de34b84b7fd2f3f2af598480ea62d8574d8e9b8ae9d011a53c044d39",
       "source_id": "copilot",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Copilot/Copilot.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Copilot/Copilot.list"
     },
     "snapshots/crypto.txt": {
       "sha256": "4fe49a0fd839fe32a88640ee891197bfd926faf70c2ea1c812383d02f16184e7",
       "source_id": "crypto",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Crypto/Crypto.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Crypto/Crypto.list"
     },
     "snapshots/gemini.txt": {
       "sha256": "6a9195976e75c2b6adb255ec5cc4af6d8b66d0dd2a877437642deed6da244874",
@@ -58,17 +58,17 @@
     "snapshots/github.txt": {
       "sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b",
       "source_id": "github",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/GitHub/GitHub.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/GitHub/GitHub.list"
     },
     "snapshots/google.txt": {
       "sha256": "c6efe08ab4c0a12ddba20f5e75abfba2dd63a42b810f8cb5c303433a38e93b73",
       "source_id": "google",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Google/Google.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Google/Google.list"
     },
     "snapshots/microsoft.txt": {
       "sha256": "22df1a1017ad5d41755bf020ca8eb9afeedc7bdc2c649ed2074b255227a7ed8e",
       "source_id": "microsoft",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Microsoft/Microsoft.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Microsoft/Microsoft.list"
     },
     "snapshots/openai.txt": {
       "sha256": "19a100966b3c5b0dff2e7038ba66366ef10d6384781b3eda6de4d1e79712dcc6",
@@ -76,29 +76,29 @@
       "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2d71342eea1720da57261b55663c9d55619e9b1c/data/openai"
     },
     "snapshots/proxy.txt": {
-      "sha256": "a160f4832ef4fd048f7bf5c72e9d64fd788d68563d5cc68eb940c56dc6d442a4",
+      "sha256": "a5720713f2b11a1c57e792c6f917bd9a0fbe9334f7b40a779da879734f7f44e5",
       "source_id": "proxy",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Proxy/Proxy.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Proxy/Proxy.list"
     },
     "snapshots/proxy_domains.txt": {
-      "sha256": "0592c0391390533ad87419ebe6bd3f46ed0519a6901c420db6908fc304090b71",
+      "sha256": "01775a50d340150a1e8802d7b48431dc50e5ad512c69a2403a1a619d9536d376",
       "source_id": "proxy_domains",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Proxy/Proxy_Domain.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Proxy/Proxy_Domain.list"
     },
     "snapshots/steam.txt": {
       "sha256": "35826051b8797c7636210389fafadea23a16af51378feee20ededbb652b43332",
       "source_id": "steam",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Steam/Steam.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Steam/Steam.list"
     },
     "snapshots/steam_cn.txt": {
       "sha256": "82c144434e9199c524d95caa8e3659c9f6f1de9fd23b223a58b5d3c821923936",
       "source_id": "steam_cn",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/SteamCN/SteamCN.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/SteamCN/SteamCN.list"
     },
     "snapshots/telegram.txt": {
       "sha256": "09f093cce5b3e2994147a2640e03040aac75e1db7bf2103fd1c9a2509b0176ab",
       "source_id": "telegram",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Telegram/Telegram.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Telegram/Telegram.list"
     },
     "snapshots/tiktok.txt": {
       "sha256": "e57322c704e4fe5ef3b202e4b86e82767fbe7f1af2c01f065fde4764205d0e4f",
@@ -108,7 +108,7 @@
     "snapshots/twitter.txt": {
       "sha256": "64c836f2431ca0d4728cc545bb74280ee50c886e346040012e6cdd2f3eee3f97",
       "source_id": "twitter",
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/c9b2158695596a1ba866adcf74def8d5ab348e25/rule/Shadowrocket/Twitter/Twitter.list"
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/Twitter/Twitter.list"
     },
     "snapshots/voice.txt": {
       "sha256": "8f03f3c594165eeff009915c7e2beb4bdfb9d429fb1955c205e3b33ec781899a",
@@ -118,7 +118,7 @@
   },
   "repositories": {
     "blackmatrix7": {
-      "commit": "c9b2158695596a1ba866adcf74def8d5ab348e25",
+      "commit": "5fe08949edb51935c67e0766dc4bc94c0dad0509",
       "license": "GPL-2.0",
       "ref": "master",
       "repo": "blackmatrix7/ios_rule_script"

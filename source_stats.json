@@ -29,9 +29,9 @@
       "USER-AGENT,passd*,DIRECT",
       "USER-AGENT,Music*,DIRECT",
       "USER-AGENT,AppleNews*,DIRECT",
+      "USER-AGENT,AppleTV*,DIRECT",
       "USER-AGENT,com.apple.news*,DIRECT",
       "USER-AGENT,com.apple.trustd*,DIRECT",
-      "USER-AGENT,AppleTV*,DIRECT",
       "USER-AGENT,com.apple.tv*,DIRECT",
       "IP-CIDR,139.178.128.0/18,DIRECT,no-resolve",
       "IP-CIDR,144.178.0.0/19,DIRECT,no-resolve",
@@ -7597,8 +7597,8 @@
     "skipped": []
   },
   "proxy_domains": {
-    "raw_count": 6798,
-    "retained_count": 6798,
+    "raw_count": 6800,
+    "retained_count": 6800,
     "rules": [
       "DOMAIN-SUFFIX,000webhost.com,PROXY",
       "DOMAIN-SUFFIX,030buy.com,PROXY",
@@ -9759,6 +9759,7 @@
       "DOMAIN-SUFFIX,fututrustee.com,PROXY",
       "DOMAIN-SUFFIX,fux.com,PROXY",
       "DOMAIN-SUFFIX,fuyin.net,PROXY",
+      "DOMAIN-SUFFIX,fuyin116.com,PROXY",
       "DOMAIN-SUFFIX,fuyindiantai.org,PROXY",
       "DOMAIN-SUFFIX,fuyu.org.tw,PROXY",
       "DOMAIN-SUFFIX,fw.cm,PROXY",
@@ -11376,6 +11377,7 @@
       "DOMAIN-SUFFIX,mummysgold.com,PROXY",
       "DOMAIN-SUFFIX,murmur.tw,PROXY",
       "DOMAIN-SUFFIX,muscdn.com,PROXY",
+      "DOMAIN-SUFFIX,muse.ai,PROXY",
       "DOMAIN-SUFFIX,musicade.net,PROXY",
       "DOMAIN-SUFFIX,musical.ly,PROXY",
       "DOMAIN-SUFFIX,musixmatch.com,PROXY",
