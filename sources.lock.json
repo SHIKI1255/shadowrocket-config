@@ -8,7 +8,7 @@
     "licenses/v2fly.txt": {
       "sha256": "b9d84a22870d3f21c91a4c6e410c9cc51d00902f5233ad0c84011479244bf7d2",
       "source_id": null,
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2d71342eea1720da57261b55663c9d55619e9b1c/LICENSE"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2c892a618f4e23c549d28edd0f3f75407521b1aa/LICENSE"
     },
     "snapshots/apple.txt": {
       "sha256": "e2aa2d025038d4dd876e7ffc071d08218e28f0a2e0952c998a235c382152e791",
@@ -36,9 +36,9 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Shadowrocket/China/China_Domain.list"
     },
     "snapshots/claude.txt": {
-      "sha256": "3d0e231009271bad865131381da71b489b18ca699f38afe3a0ebef00011f1b88",
+      "sha256": "bf48dc1b342bbfd06f2a93ee8ce180fc424d9c041dafd2d182ffb3f4186698b4",
       "source_id": "claude",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2d71342eea1720da57261b55663c9d55619e9b1c/data/anthropic"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2c892a618f4e23c549d28edd0f3f75407521b1aa/data/anthropic"
     },
     "snapshots/copilot.txt": {
       "sha256": "12773330de34b84b7fd2f3f2af598480ea62d8574d8e9b8ae9d011a53c044d39",
@@ -53,7 +53,7 @@
     "snapshots/gemini.txt": {
       "sha256": "6a9195976e75c2b6adb255ec5cc4af6d8b66d0dd2a877437642deed6da244874",
       "source_id": "gemini",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2d71342eea1720da57261b55663c9d55619e9b1c/data/google-deepmind"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2c892a618f4e23c549d28edd0f3f75407521b1aa/data/google-deepmind"
     },
     "snapshots/github.txt": {
       "sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b",
@@ -73,7 +73,7 @@
     "snapshots/openai.txt": {
       "sha256": "19a100966b3c5b0dff2e7038ba66366ef10d6384781b3eda6de4d1e79712dcc6",
       "source_id": "openai",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2d71342eea1720da57261b55663c9d55619e9b1c/data/openai"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2c892a618f4e23c549d28edd0f3f75407521b1aa/data/openai"
     },
     "snapshots/proxy.txt": {
       "sha256": "a5720713f2b11a1c57e792c6f917bd9a0fbe9334f7b40a779da879734f7f44e5",
@@ -103,7 +103,7 @@
     "snapshots/tiktok.txt": {
       "sha256": "e57322c704e4fe5ef3b202e4b86e82767fbe7f1af2c01f065fde4764205d0e4f",
       "source_id": "tiktok",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2d71342eea1720da57261b55663c9d55619e9b1c/data/tiktok"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/2c892a618f4e23c549d28edd0f3f75407521b1aa/data/tiktok"
     },
     "snapshots/twitter.txt": {
       "sha256": "64c836f2431ca0d4728cc545bb74280ee50c886e346040012e6cdd2f3eee3f97",
@@ -124,7 +124,7 @@
       "repo": "blackmatrix7/ios_rule_script"
     },
     "v2fly": {
-      "commit": "2d71342eea1720da57261b55663c9d55619e9b1c",
+      "commit": "2c892a618f4e23c549d28edd0f3f75407521b1aa",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community"

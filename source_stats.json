@@ -5517,13 +5517,14 @@
     "skipped": []
   },
   "claude": {
-    "raw_count": 8,
-    "retained_count": 8,
+    "raw_count": 9,
+    "retained_count": 9,
     "rules": [
       "DOMAIN-SUFFIX,anthropic.com,PROXY",
       "DOMAIN-SUFFIX,clau.de,PROXY",
       "DOMAIN-SUFFIX,claude.ai,PROXY",
       "DOMAIN-SUFFIX,claude.com,PROXY",
+      "DOMAIN-SUFFIX,claude.dev,PROXY",
       "DOMAIN-SUFFIX,claudemcpclient.com,PROXY",
       "DOMAIN-SUFFIX,claudemcpcontent.com,PROXY",
       "DOMAIN-SUFFIX,claudeusercontent.com,PROXY",
