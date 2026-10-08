@@ -1,5 +1,45 @@
 [
   {
+    "name": "Copilot services",
+    "input": {
+      "domain": "services.bingapis.com"
+    },
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,services.bingapis.com,PROXY"
+  },
+  {
+    "name": "Copilot Microsoft gateway",
+    "input": {
+      "domain": "gateway.bingviz.microsoft.net"
+    },
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,gateway.bingviz.microsoft.net,PROXY"
+  },
+  {
+    "name": "Copilot Microsoftapp gateway",
+    "input": {
+      "domain": "gateway.bingviz.microsoftapp.net"
+    },
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,gateway.bingviz.microsoftapp.net,PROXY"
+  },
+  {
+    "name": "WorkOS frontend",
+    "input": {
+      "domain": "frontend-apps-multi-region.workos.com"
+    },
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,frontend-apps-multi-region.workos.com,PROXY"
+  },
+  {
+    "name": "Intercom CDN",
+    "input": {
+      "domain": "js.intercomcdn.com"
+    },
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,intercomcdn.com,PROXY"
+  },
+  {
     "name": "ChatGPT login",
     "input": {
       "domain": "auth.openai.com"
@@ -46,7 +86,8 @@
     "input": {
       "domain": "chatgpt-async-webps-prod-eastus-1.webpubsub.azure.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com,PROXY"
   },
   {
     "name": "Voice ChatGPT",
@@ -291,7 +332,8 @@
     "input": {
       "domain": "sydney.bing.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,sydney.bing.com,PROXY"
   },
   {
     "name": "Apple Intelligence relay",

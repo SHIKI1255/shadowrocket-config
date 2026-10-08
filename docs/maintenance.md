@@ -11,6 +11,16 @@ DNS/IPv6 等设置在 `config/base.conf` 修改。来源顺序、过滤或固定
 不要直接修改 release 分支中的生成配置；下一次发布会覆盖它。
 新来源或已确认的来源数量大变化，需要一起人工审阅验证基线，不自动把失败视为可接受。
 
+## 关键规则保障（2026-10-08 复核）
+
+本轮核对 [OpenAI 官方网络要求](https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps)，补充精确端点 `frontend-apps-multi-region.workos.com`。官方要求是允许访问；PROXY 是本配置沿用的分流选择。
+
+四条 Copilot 精确入口（sydney.bing.com、services.bingapis.com、gateway.bingviz.microsoft.net、gateway.bingviz.microsoftapp.net）由现有过滤后的 Copilot 源维护。Azure 通配由 OpenAI 源生成，必须保留 sources.yaml 中已审阅的 regex_overrides。js.intercomcdn.com 由 intercomcdn.com 后缀规则覆盖。GitHub 下载与 byteoversea/ibytedtos 的手写项作为优先匹配保障保留。
+
+分流用例的可选 `expected_rule` 使用完整、规范化的大写规则行；七个关键用例同时检查策略和实际命中规则。Quantumult X 转换后也按规范化规则检查；若将来为 IP 用例添加此字段，需注意其原生规则会移除 no-resolve。未填写此字段的旧用例仍只检查策略。报告继续记录 actual.rule 和 actual.source，不强制固定来源名字。
+
+上游删除、扩大关键规则或出现提前直连时必须停止发布，不能直接删除 expected_rule 或改预期值消除失败。应先检查来源和顺序，确认等价覆盖后才调整测试，或恢复必要的本地保障。维护精简不代表提速，也不替代手机网络验收。
+
 ## 本地构建
 
 在源码目录、PowerShell 7、现有 Python 3.12 下执行：

@@ -35,24 +35,23 @@ DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,PROXY
 DOMAIN,cp4.cloudflare.com,PROXY
 
 # Copilot entry points; preserve earlier overrides ahead of Microsoft DIRECT.
+# Four exact Bing gateways are maintained by the filtered copilot source.
+# Their expected-rule tests guard against removal or a broader replacement.
 DOMAIN-SUFFIX,copilot.microsoft.com,PROXY
 DOMAIN-SUFFIX,copilot.bing.com,PROXY
 DOMAIN-SUFFIX,copilot.com,PROXY
 DOMAIN-SUFFIX,copilot.cloud.microsoft,PROXY
-DOMAIN,sydney.bing.com,PROXY
-DOMAIN,services.bingapis.com,PROXY
-DOMAIN,gateway.bingviz.microsoft.net,PROXY
-DOMAIN,gateway.bingviz.microsoftapp.net,PROXY
 
 # Configuration download and proxy DNS endpoints.
+# Keep these early guards even when an upstream contains the same selector.
 DOMAIN-SUFFIX,githubusercontent.com,PROXY
 DOMAIN,cloudflare-dns.com,PROXY
 DOMAIN,dns.google,PROXY
 
-# Existing explicit wildcard: reviewed replacement for the single known v2fly regexp.
-DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com,PROXY
+# The OpenAI source generates the Azure wildcard using sources.yaml regex_overrides.
+# Keep that reviewed mapping and its expected-rule test.
 
-# OpenAI official network requirements, reviewed 2026-09-28:
+# OpenAI official network requirements, reviewed 2026-10-08:
 # https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
 # Core service domains and voice hosts are generated from v2fly; these are helpers.
 DOMAIN-SUFFIX,ct.sendgrid.net,PROXY
@@ -62,8 +61,8 @@ DOMAIN,cdn.openaimerge.com,PROXY
 DOMAIN,cdn.workos.com,PROXY
 DOMAIN,challenges.cloudflare.com,PROXY
 DOMAIN,forwarder.workos.com,PROXY
+DOMAIN,frontend-apps-multi-region.workos.com,PROXY
 DOMAIN,images.workoscdn.com,PROXY
-DOMAIN,js.intercomcdn.com,PROXY
 DOMAIN,js.stripe.com,PROXY
 DOMAIN,o207216.ingest.sentry.io,PROXY
 DOMAIN,o33249.ingest.sentry.io,PROXY
@@ -82,6 +81,7 @@ DOMAIN-SUFFIX,events.statsigapi.net,PROXY
 DOMAIN-SUFFIX,featuregates.org,PROXY
 
 # Legacy ACL4SSR TikTok compatibility; no ongoing ACL4SSR download dependency.
+# byteoversea/ibytedtos intentionally retain priority over later general sources.
 # https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/TikTok.list
 DOMAIN-SUFFIX,byteoversea.com,PROXY
 DOMAIN-SUFFIX,ibytedtos.com,PROXY

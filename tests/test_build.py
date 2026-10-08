@@ -155,6 +155,34 @@ class RoutingTests(unittest.TestCase):
             self.assertEqual(status, '302')
 
 
+    def test_expected_rule_accepts_match_and_reports_source(self):
+        cases = json.loads((b.ROOT/'tests/routing_cases.json').read_text())
+        for case in (c for c in cases if 'expected_rule' in c):
+            with self.subTest(case=case['name']):
+                rr = [b.parse_rule(case['expected_rule'], source='upstream')]
+                result = b.check_cases(rr, [case])[0]
+                self.assertEqual(result['actual']['rule'], case['expected_rule'])
+                self.assertEqual(result['actual']['source'], 'upstream')
+
+    def test_expected_rule_rejects_missing_broader_and_preempted_matches(self):
+        cases = json.loads((b.ROOT/'tests/routing_cases.json').read_text())
+        for case in (c for c in cases if 'expected_rule' in c):
+            domain = case['input']['domain']
+            variants = {
+                'missing': rules('FINAL,PROXY'),
+                'broader_same_policy': rules('DOMAIN-SUFFIX,' + domain.rsplit('.', 1)[-1] + ',PROXY'),
+                'earlier_direct': rules('DOMAIN,' + domain + ',DIRECT', case['expected_rule']),
+            }
+            for reason, rr in variants.items():
+                with self.subTest(case=case['name'], reason=reason), self.assertRaises(b.BuildError):
+                    b.check_cases(rr, [case])
+
+    def test_policy_only_cases_remain_compatible(self):
+        case = {'name': 'Legacy policy check', 'input': {'domain': 'sydney.bing.com'}, 'policy': 'PROXY'}
+        result = b.check_cases(rules('DOMAIN-SUFFIX,bing.com,PROXY'), [case])
+        self.assertEqual(result[0]['actual']['rule'], 'DOMAIN-SUFFIX,bing.com,PROXY')
+
+
 class GateTests(unittest.TestCase):
     limits = {'min_ratio': 0.8, 'max_ratio': 1.5, 'max_removed_ratio': 0.2, 'max_added_ratio': 0.5}
 
