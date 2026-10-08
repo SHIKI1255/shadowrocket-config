@@ -1,5 +1,5 @@
 {
-  "config_sha256": "198bc6c0aeb2eadb11fdb6ca4ae31d284ec45824517a9565dd68f09c7f325373",
+  "config_sha256": "eb435d2653caa084b76acfd7590e33860b2f32921d76a8ebb3fd813be482d86c",
   "conflicts": [
     {
       "later": "DIRECT",
@@ -296,8 +296,73 @@
       "winner_source": "microsoft"
     }
   ],
-  "removed_exact_duplicates": 262,
+  "removed_exact_duplicates": 257,
   "routing_cases": [
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,services.bingapis.com,PROXY",
+        "source": "copilot"
+      },
+      "expected_rule": "DOMAIN,services.bingapis.com,PROXY",
+      "input": {
+        "domain": "services.bingapis.com"
+      },
+      "name": "Copilot services",
+      "policy": "PROXY"
+    },
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,gateway.bingviz.microsoft.net,PROXY",
+        "source": "copilot"
+      },
+      "expected_rule": "DOMAIN,gateway.bingviz.microsoft.net,PROXY",
+      "input": {
+        "domain": "gateway.bingviz.microsoft.net"
+      },
+      "name": "Copilot Microsoft gateway",
+      "policy": "PROXY"
+    },
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,gateway.bingviz.microsoftapp.net,PROXY",
+        "source": "copilot"
+      },
+      "expected_rule": "DOMAIN,gateway.bingviz.microsoftapp.net,PROXY",
+      "input": {
+        "domain": "gateway.bingviz.microsoftapp.net"
+      },
+      "name": "Copilot Microsoftapp gateway",
+      "policy": "PROXY"
+    },
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,frontend-apps-multi-region.workos.com,PROXY",
+        "source": "custom"
+      },
+      "expected_rule": "DOMAIN,frontend-apps-multi-region.workos.com,PROXY",
+      "input": {
+        "domain": "frontend-apps-multi-region.workos.com"
+      },
+      "name": "WorkOS frontend",
+      "policy": "PROXY"
+    },
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,intercomcdn.com,PROXY",
+        "source": "custom"
+      },
+      "expected_rule": "DOMAIN-SUFFIX,intercomcdn.com,PROXY",
+      "input": {
+        "domain": "js.intercomcdn.com"
+      },
+      "name": "Intercom CDN",
+      "policy": "PROXY"
+    },
     {
       "actual": {
         "policy": "PROXY",
@@ -374,8 +439,9 @@
       "actual": {
         "policy": "PROXY",
         "rule": "DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com,PROXY",
-        "source": "custom"
+        "source": "openai"
       },
+      "expected_rule": "DOMAIN-WILDCARD,chatgpt-async-webps-prod-*.webpubsub.azure.com,PROXY",
       "input": {
         "domain": "chatgpt-async-webps-prod-eastus-1.webpubsub.azure.com"
       },
@@ -794,8 +860,9 @@
       "actual": {
         "policy": "PROXY",
         "rule": "DOMAIN,sydney.bing.com,PROXY",
-        "source": "custom"
+        "source": "copilot"
       },
+      "expected_rule": "DOMAIN,sydney.bing.com,PROXY",
       "input": {
         "domain": "sydney.bing.com"
       },
@@ -1319,9 +1386,9 @@
     "config/base.conf": "af905302ff81f0d12e02818dad0caa7d03b9f3529d1a9e00ef536cfa88de5ed4",
     "config/sources.yaml": "d048170f9c48c629570d22bd6985fb3df0874615d6ccdf407222f6f6df23b48b",
     "docs/third_party.md": "d176eb4fc494ca8292dd3fb15ce12b5cc4d9d2699b5703eeddce99ea14f6e20a",
-    "rules/custom.list": "aff72c2a9c60ed8af35a25ccfaac87b5b94a265c423d0273a09bcf269a1cc76c",
-    "scripts/build.py": "e34155cd1626c9bc7ea0243ee911b14dd48aaba0e120e36f8cf62320503ff6b3",
-    "tests/routing_cases.json": "dc581723ff374ac26b94f181607a65ea107b467e2dd5b6e190690a2b08a3b979",
+    "rules/custom.list": "b3f44a82835ff0cc27ebcb6198a45f5eafd6cb3e073ecb4ed50b5715eb7af145",
+    "scripts/build.py": "076e8a82c47b92e0a0dc871f0fd2c777fbcfcbf4ae07368ca0c8a9bc22974fe3",
+    "tests/routing_cases.json": "f1751ac11ad9bbf4c10996d8a0df0229146d42509039631dd3897cc37a49a1a8",
     "tests/source_baseline.json": "e047df6092a2a9c89b3fcee0c3469e64497f44b6c68a01e398a753204573d9d1"
   },
   "validation": "static only; Shadowrocket iOS compilation and live access unverified",
