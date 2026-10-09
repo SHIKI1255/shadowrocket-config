@@ -1,5 +1,5 @@
 {
-  "config_sha256": "eb435d2653caa084b76acfd7590e33860b2f32921d76a8ebb3fd813be482d86c",
+  "config_sha256": "f6f7ae44b7f9c4531fb5d683aee5ee1958e8591c86bdbef216fc1a60f9cb90bd",
   "conflicts": [
     {
       "later": "DIRECT",
@@ -393,6 +393,7 @@
         "rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY",
         "source": "openai"
       },
+      "expected_rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY",
       "input": {
         "domain": "ws.chatgpt.com"
       },
@@ -514,6 +515,7 @@
         "rule": "DOMAIN,cdn.openaimerge.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,cdn.openaimerge.com,PROXY",
       "input": {
         "domain": "cdn.openaimerge.com"
       },
@@ -526,6 +528,7 @@
         "rule": "DOMAIN,cdn.workos.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,cdn.workos.com,PROXY",
       "input": {
         "domain": "cdn.workos.com"
       },
@@ -538,6 +541,7 @@
         "rule": "DOMAIN,forwarder.workos.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,forwarder.workos.com,PROXY",
       "input": {
         "domain": "forwarder.workos.com"
       },
@@ -550,6 +554,7 @@
         "rule": "DOMAIN,setup.workos.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,setup.workos.com,PROXY",
       "input": {
         "domain": "setup.workos.com"
       },
@@ -562,6 +567,7 @@
         "rule": "DOMAIN,images.workoscdn.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,images.workoscdn.com,PROXY",
       "input": {
         "domain": "images.workoscdn.com"
       },
@@ -574,6 +580,7 @@
         "rule": "DOMAIN,workos.imgix.net,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,workos.imgix.net,PROXY",
       "input": {
         "domain": "workos.imgix.net"
       },
@@ -586,6 +593,7 @@
         "rule": "DOMAIN,challenges.cloudflare.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,challenges.cloudflare.com,PROXY",
       "input": {
         "domain": "challenges.cloudflare.com"
       },
@@ -598,6 +606,7 @@
         "rule": "DOMAIN,js.stripe.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,js.stripe.com,PROXY",
       "input": {
         "domain": "js.stripe.com"
       },
@@ -610,6 +619,7 @@
         "rule": "DOMAIN,o207216.ingest.sentry.io,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,o207216.ingest.sentry.io,PROXY",
       "input": {
         "domain": "o207216.ingest.sentry.io"
       },
@@ -622,6 +632,7 @@
         "rule": "DOMAIN,o33249.ingest.sentry.io,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,o33249.ingest.sentry.io,PROXY",
       "input": {
         "domain": "o33249.ingest.sentry.io"
       },
@@ -634,6 +645,7 @@
         "rule": "DOMAIN,rum.browser-intake-datadoghq.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,rum.browser-intake-datadoghq.com,PROXY",
       "input": {
         "domain": "rum.browser-intake-datadoghq.com"
       },
@@ -646,6 +658,7 @@
         "rule": "DOMAIN-SUFFIX,ct.sendgrid.net,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,ct.sendgrid.net,PROXY",
       "input": {
         "domain": "click.ct.sendgrid.net"
       },
@@ -658,6 +671,7 @@
         "rule": "DOMAIN,openai-api.arkoselabs.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,openai-api.arkoselabs.com,PROXY",
       "input": {
         "domain": "openai-api.arkoselabs.com"
       },
@@ -670,6 +684,7 @@
         "rule": "DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY",
       "input": {
         "domain": "client-api.arkoselabs.com"
       },
@@ -682,6 +697,7 @@
         "rule": "DOMAIN,api.statsig.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,api.statsig.com,PROXY",
       "input": {
         "domain": "api.statsig.com"
       },
@@ -694,6 +710,7 @@
         "rule": "DOMAIN-SUFFIX,events.statsigapi.net,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,events.statsigapi.net,PROXY",
       "input": {
         "domain": "events.statsigapi.net"
       },
@@ -706,6 +723,7 @@
         "rule": "DOMAIN-SUFFIX,featuregates.org,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,featuregates.org,PROXY",
       "input": {
         "domain": "featuregates.org"
       },
@@ -826,6 +844,7 @@
         "rule": "DOMAIN-SUFFIX,copilot.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,copilot.com,PROXY",
       "input": {
         "domain": "copilot.com"
       },
@@ -838,6 +857,7 @@
         "rule": "DOMAIN-SUFFIX,copilot.cloud.microsoft,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,copilot.cloud.microsoft,PROXY",
       "input": {
         "domain": "copilot.cloud.microsoft"
       },
@@ -850,6 +870,7 @@
         "rule": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY",
       "input": {
         "domain": "copilot.microsoft.com"
       },
@@ -875,6 +896,7 @@
         "rule": "DOMAIN-SUFFIX,apple-relay.apple.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,apple-relay.apple.com,PROXY",
       "input": {
         "domain": "apple-relay.apple.com"
       },
@@ -887,6 +909,7 @@
         "rule": "DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY",
       "input": {
         "domain": "apple-relay.cloudflare.com"
       },
@@ -899,6 +922,7 @@
         "rule": "DOMAIN,cp4.cloudflare.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,cp4.cloudflare.com,PROXY",
       "input": {
         "domain": "cp4.cloudflare.com"
       },
@@ -911,6 +935,7 @@
         "rule": "DOMAIN,humb.apple.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,humb.apple.com,PROXY",
       "input": {
         "domain": "humb.apple.com"
       },
@@ -959,6 +984,7 @@
         "rule": "DOMAIN-SUFFIX,githubusercontent.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,githubusercontent.com,PROXY",
       "input": {
         "domain": "raw.githubusercontent.com"
       },
@@ -1007,6 +1033,7 @@
         "rule": "DOMAIN-KEYWORD,tiktokcdn,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-KEYWORD,tiktokcdn,PROXY",
       "input": {
         "domain": "tiktokcdn.com"
       },
@@ -1031,6 +1058,7 @@
         "rule": "DOMAIN-SUFFIX,byteoversea.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,byteoversea.com,PROXY",
       "input": {
         "domain": "byteoversea.com"
       },
@@ -1043,6 +1071,7 @@
         "rule": "DOMAIN-SUFFIX,ibytedtos.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,ibytedtos.com,PROXY",
       "input": {
         "domain": "ibytedtos.com"
       },
@@ -1055,6 +1084,7 @@
         "rule": "DOMAIN-SUFFIX,ipstatp.com,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,ipstatp.com,PROXY",
       "input": {
         "domain": "ipstatp.com"
       },
@@ -1151,6 +1181,7 @@
         "rule": "DOMAIN-SUFFIX,lan,DIRECT",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,lan,DIRECT",
       "input": {
         "domain": "nas.lan"
       },
@@ -1163,6 +1194,7 @@
         "rule": "DOMAIN-SUFFIX,local,DIRECT",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,local,DIRECT",
       "input": {
         "domain": "printer.local"
       },
@@ -1175,6 +1207,7 @@
         "rule": "DOMAIN-SUFFIX,home.arpa,DIRECT",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,home.arpa,DIRECT",
       "input": {
         "domain": "router.home.arpa"
       },
@@ -1187,6 +1220,7 @@
         "rule": "DOMAIN,captive.apple.com,DIRECT",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,captive.apple.com,DIRECT",
       "input": {
         "domain": "captive.apple.com"
       },
@@ -1199,6 +1233,7 @@
         "rule": "DOMAIN-SUFFIX,pool.ntp.org,DIRECT",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN-SUFFIX,pool.ntp.org,DIRECT",
       "input": {
         "domain": "0.pool.ntp.org"
       },
@@ -1211,6 +1246,7 @@
         "rule": "DOMAIN,time.apple.com,DIRECT",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,time.apple.com,DIRECT",
       "input": {
         "domain": "time.apple.com"
       },
@@ -1223,6 +1259,7 @@
         "rule": "DOMAIN,dns.alidns.com,DIRECT",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,dns.alidns.com,DIRECT",
       "input": {
         "domain": "dns.alidns.com"
       },
@@ -1235,6 +1272,7 @@
         "rule": "DOMAIN,dns.google,PROXY",
         "source": "custom"
       },
+      "expected_rule": "DOMAIN,dns.google,PROXY",
       "input": {
         "domain": "dns.google"
       },
@@ -1244,14 +1282,90 @@
     {
       "actual": {
         "policy": "DIRECT",
-        "rule": "DOMAIN-SUFFIX,checkout.mzxnyysm.com,DIRECT",
-        "source": "custom"
+        "rule": "GEOIP,CN,DIRECT",
+        "source": "fallback"
+      },
+      "expected_rule": "GEOIP,CN,DIRECT",
+      "input": {
+        "asn": "9999",
+        "country": "CN",
+        "domain": "checkout.mzxnyysm.com",
+        "ip": "1.2.3.4"
+      },
+      "name": "Removed personal exception checkout.mzxnyysm.com CN",
+      "policy": "DIRECT"
+    },
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      },
+      "expected_rule": "FINAL,PROXY",
+      "input": {
+        "asn": "9999",
+        "country": "US",
+        "domain": "checkout.mzxnyysm.com",
+        "ip": "8.8.4.4"
+      },
+      "name": "Removed personal exception checkout.mzxnyysm.com foreign",
+      "policy": "PROXY"
+    },
+    {
+      "actual": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
       },
       "input": {
         "domain": "checkout.mzxnyysm.com"
       },
-      "name": "Personal exception",
+      "name": "Removed personal exception checkout.mzxnyysm.com unresolved",
+      "policy": "UNRESOLVED"
+    },
+    {
+      "actual": {
+        "policy": "DIRECT",
+        "rule": "GEOIP,CN,DIRECT",
+        "source": "fallback"
+      },
+      "expected_rule": "GEOIP,CN,DIRECT",
+      "input": {
+        "asn": "9999",
+        "country": "CN",
+        "domain": "sub.checkout.mzxnyysm.com",
+        "ip": "1.2.3.4"
+      },
+      "name": "Removed personal exception sub.checkout.mzxnyysm.com CN",
       "policy": "DIRECT"
+    },
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      },
+      "expected_rule": "FINAL,PROXY",
+      "input": {
+        "asn": "9999",
+        "country": "US",
+        "domain": "sub.checkout.mzxnyysm.com",
+        "ip": "8.8.4.4"
+      },
+      "name": "Removed personal exception sub.checkout.mzxnyysm.com foreign",
+      "policy": "PROXY"
+    },
+    {
+      "actual": {
+        "policy": "UNRESOLVED",
+        "rule": "FINAL,PROXY",
+        "source": "fallback"
+      },
+      "input": {
+        "domain": "sub.checkout.mzxnyysm.com"
+      },
+      "name": "Removed personal exception sub.checkout.mzxnyysm.com unresolved",
+      "policy": "UNRESOLVED"
     },
     {
       "actual": {
@@ -1378,17 +1492,69 @@
       },
       "name": "Other fallback",
       "policy": "PROXY"
+    },
+    {
+      "actual": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,doh.pub,DIRECT",
+        "source": "custom"
+      },
+      "expected_rule": "DOMAIN,doh.pub,DIRECT",
+      "input": {
+        "domain": "doh.pub"
+      },
+      "name": "Direct DNS DoH.pub",
+      "policy": "DIRECT"
+    },
+    {
+      "actual": {
+        "policy": "DIRECT",
+        "rule": "DOMAIN,dns.pub,DIRECT",
+        "source": "custom"
+      },
+      "expected_rule": "DOMAIN,dns.pub,DIRECT",
+      "input": {
+        "domain": "dns.pub"
+      },
+      "name": "Direct DNS DNSPod",
+      "policy": "DIRECT"
+    },
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "DOMAIN,cloudflare-dns.com,PROXY",
+        "source": "custom"
+      },
+      "expected_rule": "DOMAIN,cloudflare-dns.com,PROXY",
+      "input": {
+        "domain": "cloudflare-dns.com"
+      },
+      "name": "Proxy DNS Cloudflare",
+      "policy": "PROXY"
+    },
+    {
+      "actual": {
+        "policy": "PROXY",
+        "rule": "DOMAIN-SUFFIX,apple-relay.fastly-edge.com,PROXY",
+        "source": "custom"
+      },
+      "expected_rule": "DOMAIN-SUFFIX,apple-relay.fastly-edge.com,PROXY",
+      "input": {
+        "domain": "apple-relay.fastly-edge.com"
+      },
+      "name": "Apple Intelligence Fastly",
+      "policy": "PROXY"
     }
   ],
-  "rules": 14153,
+  "rules": 14152,
   "schema_version": 1,
   "source_files_sha256": {
     "config/base.conf": "af905302ff81f0d12e02818dad0caa7d03b9f3529d1a9e00ef536cfa88de5ed4",
     "config/sources.yaml": "d048170f9c48c629570d22bd6985fb3df0874615d6ccdf407222f6f6df23b48b",
     "docs/third_party.md": "d176eb4fc494ca8292dd3fb15ce12b5cc4d9d2699b5703eeddce99ea14f6e20a",
-    "rules/custom.list": "b3f44a82835ff0cc27ebcb6198a45f5eafd6cb3e073ecb4ed50b5715eb7af145",
+    "rules/custom.list": "0d90fcddb20e23a9b932028c4ab6f77b0cb1d54b2d4594ead065b4790891a1b6",
     "scripts/build.py": "076e8a82c47b92e0a0dc871f0fd2c777fbcfcbf4ae07368ca0c8a9bc22974fe3",
-    "tests/routing_cases.json": "f1751ac11ad9bbf4c10996d8a0df0229146d42509039631dd3897cc37a49a1a8",
+    "tests/routing_cases.json": "fb974bc0c71ee03cdd39f4362b335ccbe808308cf120fd6d1c2e962489f29e5a",
     "tests/source_baseline.json": "e047df6092a2a9c89b3fcee0c3469e64497f44b6c68a01e398a753204573d9d1"
   },
   "validation": "static only; Shadowrocket iOS compilation and live access unverified",
