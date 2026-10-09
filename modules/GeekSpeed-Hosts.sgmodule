@@ -1,0 +1,7 @@
+#!name=GeekSpeed Hosts
+#!desc=GeekSpeed 节点入口映射；依据机场 Clash 订阅维护
+
+[Host]
+bgp.geekspeed.info = 27.44.143.240
+cm.geekapp.uk = 117.144.104.167
+cu.geekapp.de = 23.144.252.2
