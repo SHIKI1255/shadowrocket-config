@@ -58,7 +58,8 @@
     "input": {
       "domain": "ws.chatgpt.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,chatgpt.com,PROXY"
   },
   {
     "name": "ChatGPT upload",
@@ -129,119 +130,136 @@
     "input": {
       "domain": "cdn.openaimerge.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,cdn.openaimerge.com,PROXY"
   },
   {
     "name": "WorkOS cdn",
     "input": {
       "domain": "cdn.workos.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,cdn.workos.com,PROXY"
   },
   {
     "name": "WorkOS forwarder",
     "input": {
       "domain": "forwarder.workos.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,forwarder.workos.com,PROXY"
   },
   {
     "name": "WorkOS setup",
     "input": {
       "domain": "setup.workos.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,setup.workos.com,PROXY"
   },
   {
     "name": "WorkOS images",
     "input": {
       "domain": "images.workoscdn.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,images.workoscdn.com,PROXY"
   },
   {
     "name": "WorkOS imgix",
     "input": {
       "domain": "workos.imgix.net"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,workos.imgix.net,PROXY"
   },
   {
     "name": "Challenge",
     "input": {
       "domain": "challenges.cloudflare.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,challenges.cloudflare.com,PROXY"
   },
   {
     "name": "Stripe js",
     "input": {
       "domain": "js.stripe.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,js.stripe.com,PROXY"
   },
   {
     "name": "Sentry OpenAI",
     "input": {
       "domain": "o207216.ingest.sentry.io"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,o207216.ingest.sentry.io,PROXY"
   },
   {
     "name": "Sentry ChatGPT",
     "input": {
       "domain": "o33249.ingest.sentry.io"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,o33249.ingest.sentry.io,PROXY"
   },
   {
     "name": "Datadog exact helper",
     "input": {
       "domain": "rum.browser-intake-datadoghq.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,rum.browser-intake-datadoghq.com,PROXY"
   },
   {
     "name": "Email link",
     "input": {
       "domain": "click.ct.sendgrid.net"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,ct.sendgrid.net,PROXY"
   },
   {
     "name": "Arkose legacy",
     "input": {
       "domain": "openai-api.arkoselabs.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,openai-api.arkoselabs.com,PROXY"
   },
   {
     "name": "Arkose client legacy",
     "input": {
       "domain": "client-api.arkoselabs.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY"
   },
   {
     "name": "Statsig legacy",
     "input": {
       "domain": "api.statsig.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,api.statsig.com,PROXY"
   },
   {
     "name": "Statsig events",
     "input": {
       "domain": "events.statsigapi.net"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,events.statsigapi.net,PROXY"
   },
   {
     "name": "Featuregates legacy",
     "input": {
       "domain": "featuregates.org"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,featuregates.org,PROXY"
   },
   {
     "name": "Claude",
@@ -311,21 +329,24 @@
     "input": {
       "domain": "copilot.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,copilot.com,PROXY"
   },
   {
     "name": "Copilot cloud",
     "input": {
       "domain": "copilot.cloud.microsoft"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,copilot.cloud.microsoft,PROXY"
   },
   {
     "name": "Copilot original",
     "input": {
       "domain": "copilot.microsoft.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY"
   },
   {
     "name": "Copilot Bing",
@@ -340,28 +361,32 @@
     "input": {
       "domain": "apple-relay.apple.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,apple-relay.apple.com,PROXY"
   },
   {
     "name": "Apple Intelligence cloudflare",
     "input": {
       "domain": "apple-relay.cloudflare.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY"
   },
   {
     "name": "Apple Intelligence cp4",
     "input": {
       "domain": "cp4.cloudflare.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,cp4.cloudflare.com,PROXY"
   },
   {
     "name": "Apple shared helper",
     "input": {
       "domain": "humb.apple.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,humb.apple.com,PROXY"
   },
   {
     "name": "Apple ordinary",
@@ -389,7 +414,8 @@
     "input": {
       "domain": "raw.githubusercontent.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,githubusercontent.com,PROXY"
   },
   {
     "name": "Telegram",
@@ -417,7 +443,8 @@
     "input": {
       "domain": "tiktokcdn.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-KEYWORD,tiktokcdn,PROXY"
   },
   {
     "name": "TikTok USA",
@@ -431,21 +458,24 @@
     "input": {
       "domain": "byteoversea.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,byteoversea.com,PROXY"
   },
   {
     "name": "TikTok legacy ibytedtos",
     "input": {
       "domain": "ibytedtos.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,ibytedtos.com,PROXY"
   },
   {
     "name": "TikTok legacy ipstatp",
     "input": {
       "domain": "ipstatp.com"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,ipstatp.com,PROXY"
   },
   {
     "name": "Domestic ByteDance snssdk",
@@ -501,63 +531,122 @@
     "input": {
       "domain": "nas.lan"
     },
-    "policy": "DIRECT"
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN-SUFFIX,lan,DIRECT"
   },
   {
     "name": "Local",
     "input": {
       "domain": "printer.local"
     },
-    "policy": "DIRECT"
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN-SUFFIX,local,DIRECT"
   },
   {
     "name": "Home arpa",
     "input": {
       "domain": "router.home.arpa"
     },
-    "policy": "DIRECT"
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN-SUFFIX,home.arpa,DIRECT"
   },
   {
     "name": "Captive portal",
     "input": {
       "domain": "captive.apple.com"
     },
-    "policy": "DIRECT"
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN,captive.apple.com,DIRECT"
   },
   {
     "name": "NTP",
     "input": {
       "domain": "0.pool.ntp.org"
     },
-    "policy": "DIRECT"
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN-SUFFIX,pool.ntp.org,DIRECT"
   },
   {
     "name": "Apple time",
     "input": {
       "domain": "time.apple.com"
     },
-    "policy": "DIRECT"
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN,time.apple.com,DIRECT"
   },
   {
     "name": "Direct DNS",
     "input": {
       "domain": "dns.alidns.com"
     },
-    "policy": "DIRECT"
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN,dns.alidns.com,DIRECT"
   },
   {
     "name": "Proxy DNS",
     "input": {
       "domain": "dns.google"
     },
-    "policy": "PROXY"
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,dns.google,PROXY"
   },
   {
-    "name": "Personal exception",
+    "name": "Removed personal exception checkout.mzxnyysm.com CN",
+    "input": {
+      "domain": "checkout.mzxnyysm.com",
+      "ip": "1.2.3.4",
+      "country": "CN",
+      "asn": "9999"
+    },
+    "policy": "DIRECT",
+    "expected_rule": "GEOIP,CN,DIRECT"
+  },
+  {
+    "name": "Removed personal exception checkout.mzxnyysm.com foreign",
+    "input": {
+      "domain": "checkout.mzxnyysm.com",
+      "ip": "8.8.4.4",
+      "country": "US",
+      "asn": "9999"
+    },
+    "policy": "PROXY",
+    "expected_rule": "FINAL,PROXY"
+  },
+  {
+    "name": "Removed personal exception checkout.mzxnyysm.com unresolved",
     "input": {
       "domain": "checkout.mzxnyysm.com"
     },
-    "policy": "DIRECT"
+    "policy": "UNRESOLVED"
+  },
+  {
+    "name": "Removed personal exception sub.checkout.mzxnyysm.com CN",
+    "input": {
+      "domain": "sub.checkout.mzxnyysm.com",
+      "ip": "1.2.3.4",
+      "country": "CN",
+      "asn": "9999"
+    },
+    "policy": "DIRECT",
+    "expected_rule": "GEOIP,CN,DIRECT"
+  },
+  {
+    "name": "Removed personal exception sub.checkout.mzxnyysm.com foreign",
+    "input": {
+      "domain": "sub.checkout.mzxnyysm.com",
+      "ip": "8.8.4.4",
+      "country": "US",
+      "asn": "9999"
+    },
+    "policy": "PROXY",
+    "expected_rule": "FINAL,PROXY"
+  },
+  {
+    "name": "Removed personal exception sub.checkout.mzxnyysm.com unresolved",
+    "input": {
+      "domain": "sub.checkout.mzxnyysm.com"
+    },
+    "policy": "UNRESOLVED"
   },
   {
     "name": "Local IP 127.0.0.1",
@@ -634,5 +723,37 @@
       "asn": "15169"
     },
     "policy": "PROXY"
+  },
+  {
+    "name": "Direct DNS DoH.pub",
+    "input": {
+      "domain": "doh.pub"
+    },
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN,doh.pub,DIRECT"
+  },
+  {
+    "name": "Direct DNS DNSPod",
+    "input": {
+      "domain": "dns.pub"
+    },
+    "policy": "DIRECT",
+    "expected_rule": "DOMAIN,dns.pub,DIRECT"
+  },
+  {
+    "name": "Proxy DNS Cloudflare",
+    "input": {
+      "domain": "cloudflare-dns.com"
+    },
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN,cloudflare-dns.com,PROXY"
+  },
+  {
+    "name": "Apple Intelligence Fastly",
+    "input": {
+      "domain": "apple-relay.fastly-edge.com"
+    },
+    "policy": "PROXY",
+    "expected_rule": "DOMAIN-SUFFIX,apple-relay.fastly-edge.com,PROXY"
   }
 ]
