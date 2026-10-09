@@ -16,6 +16,18 @@ https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/release/shadowro
 手机上的设置名称和后台执行时机依 Shadowrocket / iOS 版本而定；服务器定时发布与手机主动拉取是两个环节，不能保证同一时刻完成。
 远程更新会覆盖手机上对该配置的本地修改，长期规则请改下面三个源码文件。
 
+## 可选 Hosts 模块
+
+[GeekSpeed Hosts 模块及安装、更新、回退说明](modules/README.md)独立维护当前 GeekSpeed 节点使用的三条入口映射。
+模块需在 Shadowrocket 的模块管理中单独安装，不会随上面的主配置自动导入；原机场节点订阅继续使用。
+
+```text
+https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/main/modules/GeekSpeed-Hosts.sgmodule
+```
+
+模块直接从 `main/modules/` 分发，不进入每日生成的 `release` 配置。机场入口变化需要人工核对并更新模块，手机再手动或后台拉取。
+已有的 BGP 手动 Hosts 验证不等于独立模块已通过实机验收；详见模块说明中的验收状态。
+
 ## 日常维护只看这三处
 
 | 文件 | 维护内容 |
