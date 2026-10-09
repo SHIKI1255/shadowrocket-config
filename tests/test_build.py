@@ -168,10 +168,11 @@ class RoutingTests(unittest.TestCase):
         cases = json.loads((b.ROOT/'tests/routing_cases.json').read_text())
         for case in (c for c in cases if 'expected_rule' in c):
             domain = case['input']['domain']
+            opposite = 'DIRECT' if case['policy'] == 'PROXY' else 'PROXY'
             variants = {
-                'missing': rules('FINAL,PROXY'),
-                'broader_same_policy': rules('DOMAIN-SUFFIX,' + domain.rsplit('.', 1)[-1] + ',PROXY'),
-                'earlier_direct': rules('DOMAIN,' + domain + ',DIRECT', case['expected_rule']),
+                'missing': rules('FINAL,' + opposite),
+                'broader_same_policy': rules('DOMAIN-KEYWORD,' + domain.rsplit('.', 1)[-1] + ',' + case['policy']),
+                'earlier_opposite': rules('DOMAIN,' + domain + ',' + opposite, case['expected_rule']),
             }
             for reason, rr in variants.items():
                 with self.subTest(case=case['name'], reason=reason), self.assertRaises(b.BuildError):
@@ -181,6 +182,22 @@ class RoutingTests(unittest.TestCase):
         case = {'name': 'Legacy policy check', 'input': {'domain': 'sydney.bing.com'}, 'policy': 'PROXY'}
         result = b.check_cases(rules('DOMAIN-SUFFIX,bing.com,PROXY'), [case])
         self.assertEqual(result[0]['actual']['rule'], 'DOMAIN-SUFFIX,bing.com,PROXY')
+
+    def test_front_guards_survive_upstream_duplicates_and_conflicts(self):
+        custom = [b.parse_rule(line, source='custom') for _, line in
+                  b.records((b.ROOT/'rules/custom.list').read_text())]
+        domains = ['githubusercontent.com', 'byteoversea.com', 'ibytedtos.com']
+        upstream = [b.parse_rule('DOMAIN-SUFFIX,' + domain + ',' + policy, source='upstream')
+                    for domain in domains for policy in ['PROXY', 'DIRECT']]
+        merged, conflicts, duplicates = b.merge_rules(custom + upstream)
+        self.assertEqual(duplicates, 3)
+        self.assertEqual(len(conflicts), 3)
+        with self.assertRaises(b.BuildError):
+            b.check_conflicts(conflicts, [])
+        for domain in domains:
+            actual = b.route(merged, domain='cdn.' + domain)
+            self.assertEqual(actual, {'policy': 'PROXY',
+                'rule': 'DOMAIN-SUFFIX,' + domain + ',PROXY', 'source': 'custom'})
 
 
 class GateTests(unittest.TestCase):

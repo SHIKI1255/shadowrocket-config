@@ -22,8 +22,6 @@ DOMAIN,time.apple.com,DIRECT
 DOMAIN,time-ios.apple.com,DIRECT
 DOMAIN,localhost.ptlogin2.qq.com,DIRECT
 DOMAIN-SUFFIX,pool.ntp.org,DIRECT
-# Personal exception approved by owner; operator and exact purpose unverified.
-DOMAIN-SUFFIX,checkout.mzxnyysm.com,DIRECT
 
 # Apple Intelligence: https://support.apple.com/en-us/101555
 # cp4 already matched the general proxy set; explicitly pin as a critical service.
@@ -72,7 +70,8 @@ DOMAIN,workos.imgix.net,PROXY
 # Shared Apple endpoint also listed by OpenAI; preserve B's explicit PROXY.
 DOMAIN,humb.apple.com,PROXY
 
-# Legacy login compatibility, retained separately, not entire provider domains.
+# Legacy login compatibility; current necessity is unverified, not an official requirement.
+# Retain these scoped exceptions pending device login/challenge regression testing.
 # https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket/OpenAI/OpenAI.list
 DOMAIN,openai-api.arkoselabs.com,PROXY
 DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY
