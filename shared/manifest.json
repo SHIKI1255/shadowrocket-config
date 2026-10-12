@@ -1,19 +1,19 @@
 {
-  "bundle_sha256": "c9fda25b70b724a742f972a3f76006396210edbf3f46a7d09398011af6570143",
-  "provenance_sha256": "4a5cb8ba4a6891e2a75c231ea59741b9f07130bab2c2da7f5dcc43fa9b15ae96",
+  "bundle_sha256": "bcf7e5e4ad4e1faae7cab07cd27e7d37739ccfa4c2da84de72363c8a9a64a733",
+  "provenance_sha256": "edd85eb0a5ec4e320cb912441ed4aa97c7411094281f6f47a713ab8b03bc9047",
   "schema_version": 1,
-  "shared_version": "13d6d3ab9a49c6f06c843f0e50cd17a617f15a6a2dbb631edfb8ee6c81d6b969",
+  "shared_version": "e9b07d7aeb539cb09c2829a5acaff9cf69f2e599e0b25d74b3d64ed9fcab7bc5",
   "source_files_sha256": {
-    "shared/README.md": "d7baa7762922c5483351059c44e8e07988acb1379dc5e65675698d2ac7d03768",
+    "shared/README.md": "22d3fa1ec407f7f19222777053629b6423e43163ce0027942f537f9a2f4e38df",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
     "shared/baseline.json": "ae16bbfaa705cfc0c50a520cc1b3744dcf9a26714963daf38de5eec9d4d7888f",
     "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
     "shared/core.py": "ba0252c32e6d31c87414bcee6326c7c89e760fea000975789ee88d9accbea1b7",
     "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
     "shared/engine.py": "8aa25f4bcf4b772967264ea539af15339db6f6246779ac2c2cd0e6bf3ae6fcd0",
-    "shared/platforms.json": "cad8d8b4245774571ea4756be5e30ae12682e45416ad34b67a7568594a672053",
+    "shared/platforms.json": "9b643e1fc056cc14723d085312f5b8f1dff34df1410cbf1bd353b8f9250edbb3",
     "shared/quantumult.py": "6c9db71793715c73c16f7c632b1bf1e4e990e59a3ec24c9b8ca0f273b375f89d",
-    "shared/routing_cases.json": "ae17868901494d7fb12d20eddc95170268054c8a6b4f0d744332559fa25303d1",
+    "shared/routing_cases.json": "4f814937474e520862bd844c64ad4b6c088634a64f85a3ad668ec03d937a243d",
     "shared/sources.yaml": "8df2864fac0ee86a7892deac917843413993a393c1ba8d3084ea33ab29170ce1"
   },
   "upstreams": {

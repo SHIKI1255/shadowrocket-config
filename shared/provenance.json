@@ -322,6 +322,13 @@
       "origins": [
         "personal_direct"
       ],
+      "rule": "PROCESS-NAME,ssr-stove-shield.exe,DIRECT"
+    },
+    {
+      "category": "personal_direct",
+      "origins": [
+        "personal_direct"
+      ],
       "rule": "PROCESS-NAME,DQJL.exe,DIRECT"
     },
     {
