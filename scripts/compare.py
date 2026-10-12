@@ -6,7 +6,8 @@ from pathlib import Path
 import re
 import sys
 
-import build as b
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from shared import engine as b, core
 
 
 def section(text, name):
@@ -42,9 +43,9 @@ def main():
     parser.add_argument('--release', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
-    conf = b.load_config(b.ROOT)
-    lock, inputs = b.replay(conf, args.release)
-    current, _, _, _ = b.assemble(b.ROOT, conf, inputs)
+    conf = core.read_json("sources.yaml")
+    lock, inputs = core.collect(conf, args.release)
+    current, _, _, _, _ = core.assemble(conf, inputs, "shadowrocket")
     revisions = {r['repo']: r['commit'] for r in lock['repositories'].values()}
     revisions['ACL4SSR/ACL4SSR'] = json.loads(b.fetch(b.API + 'repos/ACL4SSR/ACL4SSR/commits/master'))['sha']
     downloads = {entry['url']: inputs[path] for path, entry in lock['files'].items()}
@@ -56,7 +57,7 @@ def main():
         before_b = [line for _, line in b.records(section(text_b, name))]
         after = [line for _, line in b.records(section(new_text, name)) if not line.startswith('update-url = ')]
         b.require(before_a == before_b == after, name + ' settings/order drifted')
-    cases = json.loads((b.ROOT/'tests/routing_cases.json').read_text())
+    cases = core.case_rows('shadowrocket')
     for domain in ['auth0.com','login.auth0.com','stripe.com','api.stripe.com','sentry.io','other.ingest.sentry.io',
                    'algolia.net','launchdarkly.com','identrust.com','observeit.net','segment.io',
                    'static.cloudflareinsights.com','browser-intake-datadoghq.com','openaicom.imgix.net',

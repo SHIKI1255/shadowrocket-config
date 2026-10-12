@@ -19,3 +19,7 @@ based on the Python matcher. Commit/push/publish require user authorization.
 
 Run `python -B -m unittest discover -s tests -v`, then a network build and offline
 rebuild for changes affecting the generator or routing. Only stage named task files.
+
+Public rule/source/conversion authority: SHIKI1255/shadowrocket-config/shared.
+Consumers read versioned JSON data only; never execute downloaded source code.
+Do not reintroduce local custom/source copies. Client templates and protocol contracts stay here.

@@ -63,6 +63,10 @@ def publish(directory: Path) -> dict:
     require(re.fullmatch(r"[0-9a-f]{40}", sha), "Missing source revision")
     files = verified_files(directory)
     manifest = json.loads(files["manifest.json"])
+    if manifest.get("schema_version") == 2 and REPOSITORY != "SHIKI1255/shadowrocket-config":
+        consumer = json.loads(files["shared-consumer.lock.json"])
+        require(re.fullmatch(r"[a-f0-9]{40}", consumer["shared_release"]), "Local candidate data cannot be published")
+        require(consumer["shared_version"] == manifest["shared_version"], "Shared release mismatch")
     root = Path(__file__).resolve().parents[1]
     for path, expected in manifest["source_files_sha256"].items():
         require(digest((root / path).read_bytes()) == expected, f"Builder/source drift: {path}")

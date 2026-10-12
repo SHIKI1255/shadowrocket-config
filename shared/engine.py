@@ -6,6 +6,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 import fnmatch
 import hashlib
+import http.client
 import ipaddress
 import io
 import json
@@ -64,7 +65,7 @@ def fetch(url: str, *, missing_ok=False) -> bytes | None:
         if missing_ok and exc.code == 404:
             return None
         raise BuildError(f"Download failed: HTTP {exc.code}: {url}") from None
-    except (OSError, urllib.error.URLError) as exc:
+    except (OSError, urllib.error.URLError, http.client.HTTPException) as exc:
         raise BuildError(f"Download failed: {url}: {type(exc).__name__}") from None
     require(0 < len(data) <= MAX_BYTES, f"Empty or oversized source: {url}")
     return data
