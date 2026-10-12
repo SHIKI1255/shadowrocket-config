@@ -3961,6 +3961,20 @@
     }
   },
   {
+    "name": "CZN game process precedes service proxy",
+    "input": {
+      "domain": "chatgpt.com",
+      "process": "ssr-stove-shield.exe"
+    },
+    "expect": {
+      "clash": {
+        "policy": "DIRECT",
+        "expected_rule": "PROCESS-NAME,ssr-stove-shield.exe,DIRECT",
+        "expected_category": "personal_direct"
+      }
+    }
+  },
+  {
     "name": "Process/domain order Codex.exe chatgpt.com",
     "input": {
       "domain": "chatgpt.com",

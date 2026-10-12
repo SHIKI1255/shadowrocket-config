@@ -6,7 +6,7 @@
 
 - `custom.list`：48 条公共业务域名规则及原因。10 条 DIRECT 在 38 条 PROXY 之前；不加入节点或凭据。
 - `sources.yaml`：21 项上游来源、固定提交方式、过滤、异常阈值及平台源格式。Apple/Proxy/China 的域名补充仍下载，输出合并到主分类。
-- `platforms.json`：本机保护、QX 本地保护范围、15 条 Clash 个人进程规则。改动本地保护需要用户同步模板/覆写。
+- `platforms.json`：本机保护、QX 本地保护范围、16 条 Clash 个人进程规则。改动本地保护需要用户同步模板/覆写；仅增减既有个人集合中的进程规则，刷新远程集合即可。
 - `categories.json`：稳定英文 ID 与中文说明。ID 不含序号；显示名称不能改变执行顺序。
 - `routing_cases.json`：同一输入按平台登记策略、实际命中及分类。过程、UA、正则/no-resolve 差异不可伪装等价。
 - `baseline.json`：人工审核数量及精确冲突登记。禁止为通过构建自动更新。
@@ -20,6 +20,8 @@ DIRECT/PROXY 是公共策略意图。Clash PROXY 映射机场主选择组；手�
 client-api.arkoselabs.com 和 events.statsigapi.net 统一现有手机后缀范围，Clash 的原精确记录被替换；不扩大到 arkoselabs.com/statsigapi.net 父域。
 历史兼容不是当前官方必需项。已删除的 checkout.mzxnyysm.com 例外不恢复。
 Windows 进程 DIRECT 在服务域名代理之前：紫鸟访问 ChatGPT 仍可能直连；Codex 访问个人办公域名仍先直连。
+
+STOVE 版 CZN（卡厄思梦境）使用 `ssr-stove-shield.exe` 直连，E7 保留 `EpicSeven.exe` 直连。CZN 名称依据[公开客户端运行记录](https://www.reddit.com/r/winehq/comments/1qejenw/unable_to_update_game_from_stove_launcher_when/)核对（2026-10-12）；尚未本机安装及联网验收。不扩展到 STOVE 启动器或辅助进程。该规则发布至 Clash `personal_direct.list`，不加入手机规则，也不改变 DNS 或本地覆写。
 
 类型、值、策略、选项完全相同才去重，保留首次位置及所有来源。后缀覆盖仅形成 overlaps.json 审核报告。
 GitHub/字节/办公前置项即使上游重复也不移除其优先意图；不同类型、no-resolve、不同策略不合并。
