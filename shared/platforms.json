@@ -64,6 +64,7 @@
       "PROCESS-NAME,biubiu.exe,DIRECT",
       "PROCESS-NAME,bbupdate.exe,DIRECT",
       "PROCESS-NAME,EpicSeven.exe,DIRECT",
+      "PROCESS-NAME,ssr-stove-shield.exe,DIRECT",
       "PROCESS-NAME,DQJL.exe,DIRECT",
       "PROCESS-NAME,Twitch Drops Miner (by DevilXD).exe,PROXY",
       "PROCESS-NAME,Codex.exe,PROXY"
