@@ -1,0 +1,76 @@
+# Shared personal DIRECT domains precede all personal PROXY rules.
+DOMAIN-SUFFIX,erp.lingxing.com,DIRECT
+DOMAIN-SUFFIX,feishu.cn,DIRECT
+DOMAIN-SUFFIX,feishu.net,DIRECT
+DOMAIN-SUFFIX,larkoffice.com,DIRECT
+DOMAIN-SUFFIX,feishucdn.com,DIRECT
+DOMAIN-SUFFIX,ziniao.com,DIRECT
+DOMAIN-SUFFIX,uuyc.163.com,DIRECT
+DOMAIN-SUFFIX,uu.163.com,DIRECT
+DOMAIN-SUFFIX,snssdk.com,DIRECT
+DOMAIN-SUFFIX,bytedapm.com,DIRECT
+
+# Apple Intelligence: https://support.apple.com/en-us/101555
+# cp4 already matched the general proxy set; explicitly pin as a critical service.
+DOMAIN-SUFFIX,apple-relay.akamaized.net,PROXY
+DOMAIN-SUFFIX,apple-relay.apple.com,PROXY
+DOMAIN-SUFFIX,apple-relay.cloudflare.com,PROXY
+DOMAIN-SUFFIX,apple-relay.fastly-edge.com,PROXY
+DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,PROXY
+DOMAIN,cp4.cloudflare.com,PROXY
+
+# Copilot entry points; preserve earlier overrides ahead of Microsoft DIRECT.
+# Four exact Bing gateways are maintained by the filtered copilot source.
+# Their expected-rule tests guard against removal or a broader replacement.
+DOMAIN-SUFFIX,copilot.microsoft.com,PROXY
+DOMAIN-SUFFIX,copilot.bing.com,PROXY
+DOMAIN-SUFFIX,copilot.com,PROXY
+DOMAIN-SUFFIX,copilot.cloud.microsoft,PROXY
+
+# Configuration download and proxy DNS endpoints.
+# Keep these early guards even when an upstream contains the same selector.
+DOMAIN-SUFFIX,githubusercontent.com,PROXY
+DOMAIN,cloudflare-dns.com,PROXY
+DOMAIN,dns.google,PROXY
+
+# The OpenAI source generates the Azure wildcard using sources.yaml regex_overrides.
+# Keep that reviewed mapping and its expected-rule test.
+
+# OpenAI official network requirements, reviewed 2026-10-08:
+# https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# Core service domains and voice hosts are generated from v2fly; these are helpers.
+DOMAIN-SUFFIX,ct.sendgrid.net,PROXY
+DOMAIN-SUFFIX,intercom.io,PROXY
+DOMAIN-SUFFIX,intercomcdn.com,PROXY
+DOMAIN,cdn.openaimerge.com,PROXY
+DOMAIN,cdn.workos.com,PROXY
+DOMAIN,challenges.cloudflare.com,PROXY
+DOMAIN,forwarder.workos.com,PROXY
+DOMAIN,frontend-apps-multi-region.workos.com,PROXY
+DOMAIN,images.workoscdn.com,PROXY
+DOMAIN,js.stripe.com,PROXY
+DOMAIN,o207216.ingest.sentry.io,PROXY
+DOMAIN,o33249.ingest.sentry.io,PROXY
+DOMAIN,rum.browser-intake-datadoghq.com,PROXY
+DOMAIN,setup.workos.com,PROXY
+DOMAIN,workos.imgix.net,PROXY
+# Shared Apple endpoint also listed by OpenAI; retain the explicit PROXY policy.
+DOMAIN,humb.apple.com,PROXY
+
+# Legacy login compatibility; current necessity is unverified, not an official requirement.
+# Retain these scoped exceptions pending device login/challenge regression testing.
+# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket/OpenAI/OpenAI.list
+DOMAIN,openai-api.arkoselabs.com,PROXY
+DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY
+DOMAIN,api.statsig.com,PROXY
+DOMAIN-SUFFIX,events.statsigapi.net,PROXY
+DOMAIN-SUFFIX,featuregates.org,PROXY
+
+# Legacy ACL4SSR TikTok compatibility; no ongoing ACL4SSR download dependency.
+# byteoversea/ibytedtos intentionally retain priority over later general sources.
+# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/TikTok.list
+DOMAIN-SUFFIX,byteoversea.com,PROXY
+DOMAIN-SUFFIX,ibytedtos.com,PROXY
+DOMAIN-SUFFIX,ipstatp.com,PROXY
+DOMAIN-KEYWORD,tiktokcdn,PROXY
+# snssdk.com and bytedapm.com are explicit personal DIRECT exceptions above.
