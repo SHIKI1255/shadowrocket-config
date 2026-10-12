@@ -8,6 +8,12 @@ from shared import core, engine as e
 
 
 class SharedCore(unittest.TestCase):
+    def test_unknown_source_schema_and_duplicate_ids_stop(self):
+        for data in [{'schema_version':9,'sources':[]},
+                     {'schema_version':1,'sources':[{'id':'x'},{'id':'x'}]}]:
+            with patch('pathlib.Path.read_text',return_value=json.dumps(data)),self.assertRaises(e.BuildError):
+                core.read_json('sources.yaml')
+
     def test_all_original_case_coverage_retained(self):
         for client, count in [('shadowrocket',98),('quantumultx',98),('clash',122)]:
             self.assertGreaterEqual(len(core.case_rows(client)),count+50)

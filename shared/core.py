@@ -19,7 +19,13 @@ SUPPLEMENTS = {'apple_domains': 'apple', 'proxy_domains': 'proxy', 'china_domain
 
 
 def read_json(name):
-    return json.loads((ROOT / 'shared' / name).read_text(encoding='utf-8'))
+    data = json.loads((ROOT / 'shared' / name).read_text(encoding='utf-8'))
+    if name == 'sources.yaml':
+        require(data.get('schema_version') == 1, 'Unknown source schema')
+        ids = [s['id'] for s in data['sources']]
+        require(len(ids) == len(set(ids)) and all(re.fullmatch(r'[a-z][a-z0-9_]*', i) for i in ids),
+                'Invalid or duplicate source identifier')
+    return data
 
 
 def source_specs(conf, client):
