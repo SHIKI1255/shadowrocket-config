@@ -1,0 +1,173 @@
+{
+  "clash": [
+    {
+      "category": "copilot",
+      "earlier": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY",
+      "rule": "DOMAIN,copilot.microsoft.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,crixet.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,backend-v2.crixet.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,openai.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,chat.openai.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,oaiusercontent.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,files.oaiusercontent.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,go.jp,PROXY",
+      "rule": "DOMAIN-SUFFIX,jma.go.jp,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,go.jp,PROXY",
+      "rule": "DOMAIN-SUFFIX,npa.go.jp,PROXY"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN,download.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN,ntservicepack.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,update.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,windowsupdate.microsoft.com,DIRECT"
+    }
+  ],
+  "quantumultx": [
+    {
+      "category": "copilot",
+      "earlier": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY",
+      "rule": "DOMAIN,copilot.microsoft.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,crixet.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,backend-v2.crixet.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,openai.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,chat.openai.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,oaiusercontent.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,files.oaiusercontent.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,go.jp,PROXY",
+      "rule": "DOMAIN-SUFFIX,jma.go.jp,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,go.jp,PROXY",
+      "rule": "DOMAIN-SUFFIX,npa.go.jp,PROXY"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,update.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,windowsupdate.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN,download.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN,ntservicepack.microsoft.com,DIRECT"
+    }
+  ],
+  "shadowrocket": [
+    {
+      "category": "copilot",
+      "earlier": "DOMAIN-SUFFIX,copilot.microsoft.com,PROXY",
+      "rule": "DOMAIN,copilot.microsoft.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,crixet.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,backend-v2.crixet.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,openai.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,chat.openai.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,oaiusercontent.com,PROXY",
+      "rule": "DOMAIN-SUFFIX,files.oaiusercontent.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,go.jp,PROXY",
+      "rule": "DOMAIN-SUFFIX,jma.go.jp,PROXY"
+    },
+    {
+      "category": "proxy",
+      "earlier": "DOMAIN-SUFFIX,go.jp,PROXY",
+      "rule": "DOMAIN-SUFFIX,npa.go.jp,PROXY"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,update.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN-SUFFIX,windowsupdate.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN,download.microsoft.com,DIRECT"
+    },
+    {
+      "category": "china",
+      "earlier": "DOMAIN-SUFFIX,microsoft.com,DIRECT",
+      "rule": "DOMAIN,ntservicepack.microsoft.com,DIRECT"
+    }
+  ]
+}
