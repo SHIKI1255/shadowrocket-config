@@ -1,27 +1,14 @@
-# Local/system/DNS exceptions; retain original priority and no-resolve behavior.
-DOMAIN,localhost,DIRECT
-DOMAIN-SUFFIX,lan,DIRECT
-DOMAIN-SUFFIX,local,DIRECT
-DOMAIN-SUFFIX,home.arpa,DIRECT
-IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
-IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
-IP-CIDR,255.255.255.255/32,DIRECT,no-resolve
-IP-CIDR,::1/128,DIRECT,no-resolve
-IP-CIDR,fc00::/7,DIRECT,no-resolve
-IP-CIDR,fe80::/10,DIRECT,no-resolve
-IP-CIDR,ff00::/8,DIRECT,no-resolve
-DOMAIN,captive.apple.com,DIRECT
-DOMAIN,dns.alidns.com,DIRECT
-DOMAIN,doh.pub,DIRECT
-DOMAIN,dns.pub,DIRECT
-DOMAIN,time.apple.com,DIRECT
-DOMAIN,time-ios.apple.com,DIRECT
-DOMAIN,localhost.ptlogin2.qq.com,DIRECT
-DOMAIN-SUFFIX,pool.ntp.org,DIRECT
+# Shared personal DIRECT domains precede all personal PROXY rules.
+DOMAIN-SUFFIX,erp.lingxing.com,DIRECT
+DOMAIN-SUFFIX,feishu.cn,DIRECT
+DOMAIN-SUFFIX,feishu.net,DIRECT
+DOMAIN-SUFFIX,larkoffice.com,DIRECT
+DOMAIN-SUFFIX,feishucdn.com,DIRECT
+DOMAIN-SUFFIX,ziniao.com,DIRECT
+DOMAIN-SUFFIX,uuyc.163.com,DIRECT
+DOMAIN-SUFFIX,uu.163.com,DIRECT
+DOMAIN-SUFFIX,snssdk.com,DIRECT
+DOMAIN-SUFFIX,bytedapm.com,DIRECT
 
 # Apple Intelligence: https://support.apple.com/en-us/101555
 # cp4 already matched the general proxy set; explicitly pin as a critical service.
@@ -67,7 +54,7 @@ DOMAIN,o33249.ingest.sentry.io,PROXY
 DOMAIN,rum.browser-intake-datadoghq.com,PROXY
 DOMAIN,setup.workos.com,PROXY
 DOMAIN,workos.imgix.net,PROXY
-# Shared Apple endpoint also listed by OpenAI; preserve B's explicit PROXY.
+# Shared Apple endpoint also listed by OpenAI; retain the explicit PROXY policy.
 DOMAIN,humb.apple.com,PROXY
 
 # Legacy login compatibility; current necessity is unverified, not an official requirement.
@@ -86,4 +73,4 @@ DOMAIN-SUFFIX,byteoversea.com,PROXY
 DOMAIN-SUFFIX,ibytedtos.com,PROXY
 DOMAIN-SUFFIX,ipstatp.com,PROXY
 DOMAIN-KEYWORD,tiktokcdn,PROXY
-# snssdk.com and bytedapm.com retain China DIRECT via the general sources.
+# snssdk.com and bytedapm.com are explicit personal DIRECT exceptions above.

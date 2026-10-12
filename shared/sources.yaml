@@ -74,35 +74,40 @@
         "DOMAIN-SUFFIX,api.microsoftapp.net",
         "DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io",
         "DOMAIN-SUFFIX,edgeservices.bing.com"
-      ]
+      ],
+      "clash_path": "rule/Clash/Copilot/Copilot.list"
     },
     {
       "id": "github",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/GitHub/GitHub.list",
       "format": "shadowrocket",
-      "policy": "PROXY"
+      "policy": "PROXY",
+      "clash_path": "rule/Clash/GitHub/GitHub.list"
     },
     {
       "id": "telegram",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/Telegram/Telegram.list",
       "format": "shadowrocket",
-      "policy": "PROXY"
+      "policy": "PROXY",
+      "clash_path": "rule/Clash/Telegram/Telegram.list"
     },
     {
       "id": "google",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/Google/Google.list",
       "format": "shadowrocket",
-      "policy": "PROXY"
+      "policy": "PROXY",
+      "clash_path": "rule/Clash/Google/Google.list"
     },
     {
       "id": "twitter",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/Twitter/Twitter.list",
       "format": "shadowrocket",
-      "policy": "PROXY"
+      "policy": "PROXY",
+      "clash_path": "rule/Clash/Twitter/Twitter.list"
     },
     {
       "id": "tiktok",
@@ -119,28 +124,32 @@
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/Crypto/Crypto.list",
       "format": "shadowrocket",
-      "policy": "PROXY"
+      "policy": "PROXY",
+      "clash_path": "rule/Clash/Crypto/Crypto.list"
     },
     {
       "id": "steam_cn",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/SteamCN/SteamCN.list",
       "format": "shadowrocket",
-      "policy": "DIRECT"
+      "policy": "DIRECT",
+      "clash_path": "rule/Clash/SteamCN/SteamCN.list"
     },
     {
       "id": "steam",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/Steam/Steam.list",
       "format": "shadowrocket",
-      "policy": "PROXY"
+      "policy": "PROXY",
+      "clash_path": "rule/Clash/Steam/Steam.list"
     },
     {
       "id": "apple",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/Apple/Apple.list",
       "format": "shadowrocket",
-      "policy": "DIRECT"
+      "policy": "DIRECT",
+      "clash_path": "rule/Clash/Apple/Apple.list"
     },
     {
       "id": "apple_domains",
@@ -154,21 +163,24 @@
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/Microsoft/Microsoft.list",
       "format": "shadowrocket",
-      "policy": "DIRECT"
+      "policy": "DIRECT",
+      "clash_path": "rule/Clash/Microsoft/Microsoft.list"
     },
     {
       "id": "bilibili",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/BiliBili/BiliBili.list",
       "format": "shadowrocket",
-      "policy": "DIRECT"
+      "policy": "DIRECT",
+      "clash_path": "rule/Clash/BiliBili/BiliBili.list"
     },
     {
       "id": "proxy",
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/Proxy/Proxy.list",
       "format": "shadowrocket",
-      "policy": "PROXY"
+      "policy": "PROXY",
+      "clash_path": "rule/Clash/Proxy/Proxy.list"
     },
     {
       "id": "proxy_domains",
@@ -182,7 +194,8 @@
       "repository": "blackmatrix7",
       "path": "rule/Shadowrocket/China/China.list",
       "format": "shadowrocket",
-      "policy": "DIRECT"
+      "policy": "DIRECT",
+      "clash_path": "rule/Clash/China/China.list"
     },
     {
       "id": "china_domains",

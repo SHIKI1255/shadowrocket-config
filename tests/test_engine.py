@@ -1,23 +1,10 @@
-import copy
-import json
-import os
+import copy,json,os,re,sys,tempfile,unittest
 from pathlib import Path
-import re
-import sys
-import tempfile
-import unittest
 from unittest.mock import patch
-import urllib.error
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-import build as b
-import publish as p
-
-
-def rules(*lines):
-    return [b.parse_rule(line) for line in lines]
-
-
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from shared import engine as b, core, quantumult as q
+b.load_config=lambda root:core.read_json('sources.yaml')
+def rules(*lines):return [b.parse_rule(line) for line in lines]
 class ConversionTests(unittest.TestCase):
     def parse(self, text, fmt='v2fly', **extra):
         return b.parse_source({'id': 'test', 'format': fmt, 'policy': 'PROXY', **extra}, text.encode())
@@ -108,7 +95,6 @@ class ConversionTests(unittest.TestCase):
             with self.subTest(entry=entry), self.assertRaises(b.BuildError):
                 self.parse(json.dumps(obj), 'voice')
 
-
 class RoutingTests(unittest.TestCase):
     def test_first_match_and_exact_dedup(self):
         original = rules('DOMAIN-SUFFIX,example.com,DIRECT', 'DOMAIN-SUFFIX,example.com,PROXY',
@@ -156,7 +142,7 @@ class RoutingTests(unittest.TestCase):
 
 
     def test_expected_rule_accepts_match_and_reports_source(self):
-        cases = json.loads((b.ROOT/'tests/routing_cases.json').read_text())
+        cases = core.case_rows('shadowrocket')
         for case in (c for c in cases if 'expected_rule' in c):
             with self.subTest(case=case['name']):
                 rr = [b.parse_rule(case['expected_rule'], source='upstream')]
@@ -165,7 +151,7 @@ class RoutingTests(unittest.TestCase):
                 self.assertEqual(result['actual']['source'], 'upstream')
 
     def test_expected_rule_rejects_missing_broader_and_preempted_matches(self):
-        cases = json.loads((b.ROOT/'tests/routing_cases.json').read_text())
+        cases = core.case_rows('shadowrocket')
         for case in (c for c in cases if 'expected_rule' in c):
             domain = case['input']['domain']
             opposite = 'DIRECT' if case['policy'] == 'PROXY' else 'PROXY'
@@ -185,7 +171,7 @@ class RoutingTests(unittest.TestCase):
 
     def test_front_guards_survive_upstream_duplicates_and_conflicts(self):
         custom = [b.parse_rule(line, source='custom') for _, line in
-                  b.records((b.ROOT/'rules/custom.list').read_text())]
+                  b.records((b.ROOT/'shared/custom.list').read_text())]
         domains = ['githubusercontent.com', 'byteoversea.com', 'ibytedtos.com']
         upstream = [b.parse_rule('DOMAIN-SUFFIX,' + domain + ',' + policy, source='upstream')
                     for domain in domains for policy in ['PROXY', 'DIRECT']]
@@ -199,122 +185,49 @@ class RoutingTests(unittest.TestCase):
             self.assertEqual(actual, {'policy': 'PROXY',
                 'rule': 'DOMAIN-SUFFIX,' + domain + ',PROXY', 'source': 'custom'})
 
+class QuantumultConversion(unittest.TestCase):
+    def native(self, *lines):
+        return [q.convert(b.parse_rule(line)) for line in lines]
 
-class GateTests(unittest.TestCase):
-    limits = {'min_ratio': 0.8, 'max_ratio': 1.5, 'max_removed_ratio': 0.2, 'max_added_ratio': 0.5}
+    def test_ipv6_wildcard_and_no_resolve(self):
+        rules = self.native('IP-CIDR,2001:4860::/32,PROXY,no-resolve',
+                            'IP-ASN,15169,PROXY,no-resolve', 'DOMAIN-WILDCARD,chatgpt-*.azure.com,PROXY')
+        self.assertEqual([r.line for r in rules], ['ip6-cidr, 2001:4860::/32, proxy',
+                          'ip-asn, 15169, proxy', 'host-wildcard, chatgpt-*.azure.com, proxy'])
+        for r in rules: self.assertEqual(q.parse_native(r.line).line, r.line)
 
-    def test_abnormal_addition_removal_and_inventory_fail(self):
-        baseline = {'x': {'raw_count': 10, 'retained_count': 10}}
-        for stats in [{'x': {'raw_count': 7, 'retained_count': 7}},
-                      {'x': {'raw_count': 16, 'retained_count': 16}}, {}]:
-            with self.subTest(stats=stats), self.assertRaises(b.BuildError):
-                b.check_limits(stats, baseline, self.limits)
-        b.check_limits({'x': {'raw_count': 8, 'retained_count': 8}}, baseline, self.limits)
+    def test_native_expected_rule_guards_after_conversion(self):
+        cases = core.case_rows('quantumultx')
+        for case in (c for c in cases if 'expected_rule' in c):
+            domain = case['input']['domain']
+            good = self.native(case['expected_rule'])
+            b.check_case_result(case, q.route_native(good, **case['input']), context='Native routing')
+            opposite = 'DIRECT' if case['policy'] == 'PROXY' else 'PROXY'
+            variants = {
+                'missing': self.native('FINAL,' + opposite),
+                'broader_same_policy': self.native('DOMAIN-KEYWORD,' + domain.rsplit('.', 1)[-1] + ',' + case['policy']),
+                'earlier_opposite': self.native('DOMAIN,' + domain + ',' + opposite, case['expected_rule']),
+            }
+            for reason, rr in variants.items():
+                with self.subTest(case=case['name'], reason=reason), self.assertRaises(b.BuildError):
+                    b.check_case_result(case, q.route_native(rr, **case['input']), context='Native routing')
 
-    def test_same_count_replacement_fails_against_previous_release(self):
-        old = {'x': {'raw_count': 2, 'retained_count': 2, 'rules': ['one', 'two']}}
-        new = {'x': {'raw_count': 2, 'retained_count': 2, 'rules': ['three', 'four']}}
-        with self.assertRaises(b.BuildError):
-            b.check_limits(new, old, self.limits)
+    def test_native_unknown_format_family_policy_or_options_fail(self):
+        for line in ['ip-cidr, ::1/128, direct', 'ip6-cidr, 1.2.3.4/32, proxy',
+                     'host, example.com, proxy, no-resolve', 'host, x.com, secret',
+                     'DOMAIN,x.com,PROXY', 'host-regex, .*, proxy']:
+            with self.subTest(line=line), self.assertRaises(b.BuildError): q.parse_native(line)
 
-    def test_http_error_does_not_become_empty_success(self):
-        error = urllib.error.HTTPError('url', 503, 'failure', None, None)
-        with patch('build.urllib.request.urlopen', side_effect=error), self.assertRaises(b.BuildError):
-            b.fetch('https://openai.com/chatgpt-voice.json')
+    def test_host_priority_over_user_agent(self):
+        rules = self.native('USER-AGENT,Example*,DIRECT', 'DOMAIN-SUFFIX,openai.com,PROXY', 'FINAL,PROXY')
+        self.assertEqual(q.route_native(rules, domain='api.openai.com', user_agent='Example/1')['policy'], 'PROXY')
+        self.assertEqual(q.route_native(rules, domain='other.test', user_agent='Example/1')['policy'], 'DIRECT')
 
-    def test_credentials_in_url_rejected(self):
-        for url in ['https://user:password@openai.com/file', 'https://openai.com/file?token=x', 'http://openai.com/file']:
-            with self.subTest(url=url), self.assertRaises(b.BuildError):
-                b.fetch(url)
+    def test_dns_dependent_fallback_not_falsely_proven(self):
+        rules = self.native('IP-ASN,15169,PROXY,no-resolve', 'GEOIP,CN,DIRECT', 'FINAL,PROXY')
+        self.assertEqual(q.route_native(rules, domain='unknown.test')['policy'], 'UNRESOLVED')
+        self.assertEqual(q.route_native(rules, ip='1.2.3.4', asn='9999', country='CN')['policy'], 'DIRECT')
 
-    def test_release_read_failure_is_not_first_release(self):
-        with patch('build.fetch', side_effect=b.BuildError('HTTP 503')), self.assertRaises(b.BuildError):
-            b.previous_stats()
-
-    def test_existing_output_is_preserved(self):
-        with tempfile.TemporaryDirectory() as temp:
-            path = Path(temp)
-            (path/'shadowrocket.conf').write_text('last good')
-            with self.assertRaises(b.BuildError):
-                b.write_files(path, {'shadowrocket.conf': b'bad'})
-            self.assertEqual((path/'shadowrocket.conf').read_text(), 'last good')
-
-    def test_replay_hash_tampering_stops_build(self):
-        with tempfile.TemporaryDirectory() as temp:
-            path = Path(temp)
-            (path/'snapshots').mkdir()
-            (path/'snapshots/x.txt').write_bytes(b'tampered')
-            (path/'sources.lock.json').write_bytes(b.json_bytes({'schema_version': 1,
-                'files': {'snapshots/x.txt': {'sha256': b.digest(b'correct')}}}))
-            with self.assertRaises(b.BuildError):
-                b.replay({'sources': [{'id': 'x'}], 'repositories': {}}, path)
-
-    def test_json_yaml_config_inventory_and_no_extra_services(self):
-        conf = b.load_config(b.ROOT)
-        self.assertEqual(len(conf['sources']), 21)
-        self.assertFalse(any(s['id'] in {'capcut', 'trae'} for s in conf['sources']))
-
-
-class PublishTests(unittest.TestCase):
-    def make_release(self, directory):
-        files = {'shadowrocket.conf': b'good', 'manifest.json': b.json_bytes({'config_sha256': b.digest(b'good'), 'source_files_sha256': {}}),
-                 'sources.lock.json': b'{}', 'source_stats.json': b'{}', 'THIRD_PARTY.md': b'notice'}
-        files['SHA256SUMS'] = b.checksum_files(files)
-        for name, data in files.items():
-            (directory/name).write_bytes(data)
-        return files
-
-    def test_tampering_and_unlisted_file_block_publish(self):
-        with tempfile.TemporaryDirectory() as temp:
-            path = Path(temp)
-            self.make_release(path)
-            p.verified_files(path)
-            (path/'extra.txt').write_text('unknown')
-            with self.assertRaises(b.BuildError):
-                p.verified_files(path)
-            (path/'shadowrocket.conf').write_text('changed')
-            with self.assertRaises(b.BuildError):
-                p.verified_files(path)
-
-    def test_pr_cannot_publish(self):
-        with patch.dict(os.environ, {'GITHUB_REPOSITORY': b.REPOSITORY, 'GITHUB_REF': 'refs/heads/main',
-                                     'GITHUB_EVENT_NAME': 'pull_request'}), patch('publish.api') as api:
-            with self.assertRaises(b.BuildError):
-                p.publish(Path('.'))
-            api.assert_not_called()
-
-    def test_stale_main_stops_before_any_write(self):
-        with tempfile.TemporaryDirectory() as temp:
-            path = Path(temp)
-            self.make_release(path)
-            with patch.dict(os.environ, {'GITHUB_REPOSITORY': b.REPOSITORY, 'GITHUB_REF': 'refs/heads/main',
-                                         'GITHUB_EVENT_NAME': 'push', 'GITHUB_SHA': 'a'*40}), \
-                 patch('publish.api', return_value={'object': {'sha': 'b'*40}}) as api:
-                with self.assertRaises(b.BuildError):
-                    p.publish(path)
-                self.assertEqual(api.call_count, 1)
-
-    def test_failed_fast_forward_keeps_previous_release(self):
-        with tempfile.TemporaryDirectory() as temp:
-            path = Path(temp)
-            self.make_release(path)
-            writes = []
-            def fake(path, payload=None, method=None, missing_ok=False):
-                if path == 'git/ref/heads/main': return {'object': {'sha': 'a'*40}}
-                if path == 'git/ref/heads/release': return {'object': {'sha': 'b'*40}}
-                if path == 'git/trees': return {'sha': 'c'*40}
-                if path == 'git/commits/' + 'b'*40: return {'tree': {'sha': 'd'*40}}
-                if path == 'git/commits': return {'sha': 'e'*40}
-                if path == 'git/refs/heads/release':
-                    writes.append(payload)
-                    raise b.BuildError('Concurrent update rejected')
-                self.fail(path)
-            with patch.dict(os.environ, {'GITHUB_REPOSITORY': b.REPOSITORY, 'GITHUB_REF': 'refs/heads/main',
-                                         'GITHUB_EVENT_NAME': 'push', 'GITHUB_SHA': 'a'*40}), patch('publish.api', side_effect=fake):
-                with self.assertRaises(b.BuildError):
-                    p.publish(path)
-            self.assertEqual(writes, [{'sha': 'e'*40, 'force': False}])
-
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_conversion_induced_conflict_stops(self):
+        rules = self.native('IP-CIDR,8.8.8.8/32,PROXY,no-resolve', 'IP-CIDR,8.8.8.8/32,DIRECT')
+        with self.assertRaises(b.BuildError): q.check_native_conflicts(rules, [])

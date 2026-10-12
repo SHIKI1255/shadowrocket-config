@@ -1,87 +1,27 @@
-# 维护与回退
+# 维护、更新与回退
 
-## 常见修改
+公共规则的唯一维护位置、分类命名、排序、去重、验证和回退见[公共维护说明](https://github.com/SHIKI1255/shadowrocket-config/tree/main/shared)。本仓库不再独立维护 custom.list、sources.yaml 或公共回归清单。
 
-个人网站直连/代理：在 `rules/custom.list` 加入 `DOMAIN,具体主机,DIRECT` 或 `DOMAIN-SUFFIX,域名,PROXY`。
-DOMAIN 只匹配该主机；DOMAIN-SUFFIX 会包含子域名。具体例外放在同文件的宽泛规则之前。
-不要把登录服务的整个云厂商、ASN 或公共服务父域加入 AI 规则。
-保存后在 `tests/routing_cases.json` 加入实际要保证的域名用例，避免后续上游覆盖。
+## 维护与更新
 
-DNS/IPv6 等设置在 `config/base.conf` 修改。来源顺序、过滤或固定版本在 `config/sources.yaml` 修改。
-不要直接修改 release 分支中的生成配置；下一次发布会覆盖它。
-新来源或已确认的来源数量大变化，需要一起人工审阅验证基线，不自动把失败视为可接受。
+公共修改只在 https://github.com/SHIKI1255/shadowrocket-config/tree/main/shared 进行。平台 DNS/基础模板在本仓库 config 中；config/shared.json 是协议/分类结构契约，结构变化需要审阅后同步本地模板。
 
-## 关键规则保障（2026-10-08 复核）
+GitHub 每日北京时间 06:17、main 修改及手动触发构建。消费者固定公共发布 SHA 并校验数据，只读取资源，不执行远程代码。[当前发布清单](https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/release/manifest.json)中的 shared_version 用于核对三端版本。沿用 30 天维护记录；不承诺构建后手机立即刷新。
 
-本轮核对 [OpenAI 官方网络要求](https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps)，补充精确端点 `frontend-apps-multi-region.workos.com`。官方要求是允许访问；PROXY 是本配置沿用的分流选择。
+下载失败、未知语法/协议、异常增删、未知冲突或用例失败均保留上一版。首次无缓存失败不算安装成功；Clash 必须核对缓存加载。
 
-四条 Copilot 精确入口（sydney.bing.com、services.bingapis.com、gateway.bingviz.microsoft.net、gateway.bingviz.microsoftapp.net）由现有过滤后的 Copilot 源维护。Azure 通配由 OpenAI 源生成，必须保留 sources.yaml 中已审阅的 regex_overrides。js.intercomcdn.com 由 intercomcdn.com 后缀规则覆盖。GitHub 下载与 byteoversea/ibytedtos 的手写项作为优先匹配保障保留。
+普通域名规则自动刷新；主配置、资源结构、DNS 架构及适配脚本变化需手动同步。机场订阅和 Hosts 模块仍独立维护，不把私有订阅放到 GitHub。
 
-分流用例的可选 `expected_rule` 使用完整、规范化的大写规则行；七个关键用例同时检查策略和实际命中规则。Quantumult X 转换后也按规范化规则检查；若将来为 IP 用例添加此字段，需注意其原生规则会移除 no-resolve。未填写此字段的旧用例仍只检查策略。报告继续记录 actual.rule 和 actual.source，不强制固定来源名字。
+## 验证与回退
 
-上游删除、扩大关键规则或出现提前直连时必须停止发布，不能直接删除 expected_rule 或改预期值消除失败。应先检查来源和顺序，确认等价覆盖后才调整测试，或恢复必要的本地保障。维护精简不代表提速，也不替代手机网络验收。
-
-## 本地构建
-
-在源码目录、PowerShell 7、现有 Python 3.12 下执行：
+Python 3.12 标准库，Windows 使用 PowerShell 7；Clash 还运行 Node 适配和隔离 Mihomo 检查。
 
 ```powershell
 python -B -m unittest discover -s tests -v
-# 使用唯一 Id；产物进入本项目 workbench 分区，目录已有内容时构建会拒绝覆盖。
-./artifact.ps1 -Action New -Kind outputs -Id build_yyyymmdd_nn
-python -B scripts/build.py --output D:/CodexProjects/codex_workbench/projects/shadowrocket-config/outputs/build_yyyymmdd_nn/release
-python -B scripts/build.py --replay D:/CodexProjects/codex_workbench/projects/shadowrocket-config/outputs/build_yyyymmdd_nn/release --output D:/CodexProjects/codex_workbench/projects/shadowrocket-config/outputs/build_yyyymmdd_nn/replay
+python -B scripts/build.py --output <新的仓库外目录> --previous-release
+python -B scripts/build.py --replay <构建目录> --output <新的离线目录>
 ```
 
-两次 `SHA256SUMS` 应完全一致。非 Windows 或未接入本地治理的机器直接传入一个仓库外的空输出目录即可。
-构建本身不需要 GitHub 凭据；本地匿名 API 受 GitHub 频率限制。Actions 使用仓库自带的 GITHUB_TOKEN，不能把令牌写进配置。
-源码 edits 使用正常文本编辑；提交只暂存本次涉及文件。
+两次 SHA256SUMS 必须一致。固定版本将 release 替换为发布 SHA；完全冻结还需冻结内部资源地址。恢复本地备份由使用者操作，不自动重载应用。手机解析、实际联网、语音与后台刷新另行验收。
 
-## 更新被阻止时
-
-先查看 Actions 中的 `BUILD STOPPED` / `PUBLISH STOPPED`。旧 release 不会被替换。
-
-| 原因 | 处理 |
-| --- | --- |
-| 下载失败、HTTP 错误 | 检查上游可达性，恢复后手动运行；不以空内容替代 |
-| 规则数量骤变或大量替换 | 核对上游差异和来源文件是否改版；必要时暂时固定旧提交 |
-| 未知语法/标签/正则/include | 理解语义后补充精确转换和对应测试，不扩大匹配凑数 |
-| 新策略冲突 | 确认优先级及影响；更新精确冲突登记和关键用例 |
-| Routing regression | 查看失败域名对应首个规则，修复顺序/过滤，不改预期值掩盖问题 |
-| Stale build / 并发更新 | 让最新 main 重新运行；发布使用非强制快进 |
-
-需要更新基线时使用 `scripts/build.py --audit --output <仓库外新目录>`，只生成候选审计文件，不生成可发布配置。
-逐项检查 `candidate_baseline.json` 的数量、策略及 winner_source；审阅 `source_stats.json` 中被过滤的记录。
-确认确属有意变化后更新 `tests/source_baseline.json`，附上原因及测试，再正常构建。
-42 条首版冲突登记覆盖同一选择器的异策略；域名父子包含、关键词、UA/IP 的全部可能交叉没有被穷尽，手机验收仍有必要。
-
-## 冻结与回退
-
-1. 在 release 的 Git 历史选定上一个已验证提交，记下完整 SHA；其 `sources.lock.json` 包含所有输入版本。
-2. 手机急需恢复时，可导入 `https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/<release提交SHA>/shadowrocket.conf`。
-   注意其中 update-url 仍指向滚动 release；要长期冻结，先关闭手机自动配置更新，或者在自己的冻结副本中移除 update-url。
-3. 服务端恢复旧输入：在 Actions 的手动运行中，`replay_commit` 填入该 release 完整 SHA。
-   同样经过当前语法、冲突、数量及分流检查；不能用回退绕开校验。当前源码与旧输入不兼容时，先恢复相应源码版本。
-4. 防止下一次每日任务又升级：把 `sources.yaml` 两个仓库的 ref 固定为旧 lock 内的提交号；
-   把 voice.url 暂改为该 release SHA 下的 `snapshots/voice.txt` 固定地址。修复后再恢复 master 和 OpenAI 官方 URL。
-5. 回退也发布一个新的 release 提交，保留历史，不 force push、不删除旧版本。`--replay` 可完全离线复现归档输入。
-
-回放和回退只重用来源字节，当前 base/custom/测试仍由 main 决定。完全复现需要同时使用 manifest 所对应的源码版本；
-发布提交消息包含其 main SHA，manifest 保存影响生成内容的源码文件哈希。
-
-## 手机验收清单（尚待实机执行）
-
-1. 保留原 A/B 配置；下载新远程配置，手动更新并编译，确认没有语法报错。
-2. 配置路由模式下检查 ChatGPT 登录、文件上传、语音（Wi-Fi/蜂窝，节点 UDP 能力）；Claude 内容上传、Gemini、Copilot 新入口。
-3. 检查 Apple Intelligence 与普通 Apple 服务；国内网站、局域网、SteamCN、snssdk/bytedapm、个人直连例外。
-4. 查看请求日志，确认实际命中策略；对失败服务区分规则、DNS、节点地区/UDP、账号限制。
-5. 启用配置自动更新和 iOS 后台刷新；下一次服务器成功发布后，确认手机确实获取到新版本。
-
-GitHub 定时发布可能延迟；手机后台刷新受系统调度约束。手动或 push 构建通过不等于已经观察到次日 schedule 事件。
-如果 GitHub 因长时间无活动停用了定时任务，在 Actions 页面重新启用；不通过无意义提交伪造更新。
-
-## 本机文件与边界
-
-源码：`D:/CodexProjects/shadowrocket-config`。本次原件备份、首次构建、缓存和报告分别位于该项目 workbench 的 inputs / outputs / cache / reports 中。
-原 Downloads 文件不改动。治理登记只新增本仓库一项；不提交其他治理仓库已有改动。
-`artifact.ps1` 与 vendored `tools/governance/artifacts.psm1` 仅用于本机产物生命周期，不触发安装或环境切换。
+[公共规则与必要平台差异](https://github.com/SHIKI1255/shadowrocket-config/tree/main/shared) · [第三方许可](docs/third_party.md)

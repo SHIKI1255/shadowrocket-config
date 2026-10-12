@@ -1,3 +1,5 @@
+> 历史迁移记录：以下描述对应统一前版本。当前维护入口和对齐变更以[公共说明](https://github.com/SHIKI1255/shadowrocket-config/tree/main/shared)为准。
+
 # 初始配置差异报告（2026-09-28）
 
 A = shadowrocket-optimized.conf；B = shadowrocket-optimized (2).conf。使用同一固定上游版本展开比较。
