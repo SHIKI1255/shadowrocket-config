@@ -17,6 +17,8 @@ class HomeLanTemplate(unittest.TestCase):
     def test_optional_node_preserves_selected_node_routing(self):
         text = renderer.shadowrocket(self.base, self.data)['shadowrocket.conf'].decode()
         self.assertEqual(text.count(renderer.HOME_LAN_NODE), 1)
+        self.assertTrue(renderer.HOME_LAN_NODE.startswith('Home-LAN = socks5,'))
+        self.assertIn('udp-relay=true', renderer.HOME_LAN_NODE)
         self.assertEqual(text.split('[Rule]\n')[1].split('\n[')[0].strip(), self.data['rules_text'].strip())
         self.assertNotIn('[Proxy Group]', text)
         self.assertIn('udp-policy-not-supported-behaviour = REJECT', text)
@@ -29,7 +31,8 @@ class HomeLanTemplate(unittest.TestCase):
         changes = [node + '\n' + node, '', node.replace('192.168.5.4', '203.0.113.1'),
                    node.replace('7897', '1080'), node.replace('socks5,', 'http,'),
                    node.replace(', , ,', ', user, secret,'), node + ', password=secret',
-                   node + ', tls=true', node.replace('udp-relay=false', 'udp-relay=true'),
+                   node + ', tls=true', node.replace('udp-relay=true', 'udp-relay=false'),
+                   node.replace('Home-LAN', 'other'),
                    node.replace('tfo=false', 'tfo=true'),
                    node + '\nother = socks5, 192.168.5.5, 7897']
         for changed in changes:

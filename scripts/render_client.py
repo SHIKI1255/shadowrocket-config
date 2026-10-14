@@ -2,7 +2,7 @@
 import json,re
 from shared_data import require,json_bytes,records,digest,deterministic_zip
 
-HOME_LAN_NODE = '家庭局域网 = socks5, 192.168.5.4, 7897, , , udp-relay=false, tfo=false'
+HOME_LAN_NODE = 'Home-LAN = socks5, 192.168.5.4, 7897, , , udp-relay=true, tfo=false'
 
 
 def shadowrocket(base,data):
