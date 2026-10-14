@@ -1,8 +1,8 @@
 {
-  "bundle_sha256": "bcf7e5e4ad4e1faae7cab07cd27e7d37739ccfa4c2da84de72363c8a9a64a733",
-  "provenance_sha256": "edd85eb0a5ec4e320cb912441ed4aa97c7411094281f6f47a713ab8b03bc9047",
+  "bundle_sha256": "3ce5a081d531fc9fd32b3dd804eaffe2ce03752a7741dc8420a047382d9b084c",
+  "provenance_sha256": "aa8d94ea88893adaee9c7ca7f53e933309e1445debacae9689150f766a4d0493",
   "schema_version": 1,
-  "shared_version": "e9b07d7aeb539cb09c2829a5acaff9cf69f2e599e0b25d74b3d64ed9fcab7bc5",
+  "shared_version": "d3c1582b8401cdb58e683ba601aea75a0add2908ba33a70dab4efe5b48042f34",
   "source_files_sha256": {
     "shared/README.md": "22d3fa1ec407f7f19222777053629b6423e43163ce0027942f537f9a2f4e38df",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
@@ -18,7 +18,7 @@
   },
   "upstreams": {
     "blackmatrix7": {
-      "commit": "19c84682407580056d0ae2f27e406f70db679de1",
+      "commit": "d8363caa2c1e47fb735615316032bed3f475ee57",
       "license": "GPL-2.0",
       "ref": "master",
       "repo": "blackmatrix7/ios_rule_script"
