@@ -21346,6 +21346,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,appleenews.com,DIRECT"
     },
     {
@@ -21363,14 +21371,6 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,applemusic.co,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21634,6 +21634,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,apple-dns.net,DIRECT"
     },
     {
@@ -21642,23 +21650,7 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,cdn-apple.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21715,6 +21707,14 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,apzones.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,cdn-apple.com,DIRECT"
     },
     {
       "category": "apple",
@@ -120737,13 +120737,6 @@
       "origins": [
         "apple"
       ],
-      "rule": "USER-AGENT,AppleTV*,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple"
-      ],
       "rule": "USER-AGENT,com.apple.news*,DIRECT"
     },
     {
@@ -120752,6 +120745,13 @@
         "apple"
       ],
       "rule": "USER-AGENT,com.apple.trustd*,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple"
+      ],
+      "rule": "USER-AGENT,AppleTV*,DIRECT"
     },
     {
       "category": "apple",
@@ -220106,13 +220106,6 @@
       "origins": [
         "apple"
       ],
-      "rule": "USER-AGENT,AppleTV*,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple"
-      ],
       "rule": "USER-AGENT,com.apple.news*,DIRECT"
     },
     {
@@ -220121,6 +220114,13 @@
         "apple"
       ],
       "rule": "USER-AGENT,com.apple.trustd*,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple"
+      ],
+      "rule": "USER-AGENT,AppleTV*,DIRECT"
     },
     {
       "category": "apple",
