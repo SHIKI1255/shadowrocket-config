@@ -103,7 +103,9 @@ class KeepaliveTests(unittest.TestCase):
         self.assertIn('needs: [validate, publish]', block)
         self.assertIn("github.ref == 'refs/heads/main'", block)
         self.assertIn('contents: write', block)
-        self.assertIn("paths-ignore: ['.github/maintenance.json']", workflow)
+        push = workflow.split('  push:', 1)[1].split('  pull_request:', 1)[0]
+        self.assertIn('paths-ignore:', push)
+        self.assertIn("- '.github/maintenance.json'", push)
         self.assertNotIn('pull_request_target', workflow)
 
 
