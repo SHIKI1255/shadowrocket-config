@@ -218,12 +218,23 @@ class PublicationAndTransportTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             sync.save_state(Path(temp), pending)
             with self.assertRaisesRegex(HostsError, "fixed_raw_pending"):
-                sync.run(Path(temp), True, gh, downloader=Mock(return_value=b"old"))
+                sync.run(Path(temp), True, gh, sleeper=Mock(), downloader=Mock(return_value=b"old"))
             def raw(url): return gh.files[MODULE if url.endswith("sgmodule") else README]
             result = sync.run(Path(temp), True, gh, downloader=raw)
             self.assertEqual(result["status"], "published")
             self.assertTrue(json.loads((Path(temp) / "publication.json").read_text())["verified"])
             self.assertFalse(gh.created)
+
+    def test_merge_visibility_delay_retries_only_readback(self):
+        gh = FakeGitHub()
+        pending = {"number": 123, "head": HEAD, "base": BASE,
+                   "hashes": {p: digest(gh.files[p]) for p in ALLOWED_FILES}}
+        gh.api = Mock(side_effect=[{"merged": False}, {"merged": True, "merge_commit_sha": MERGED}])
+        sleeper = Mock()
+        raw = lambda url: gh.files[MODULE if url.endswith("sgmodule") else README]
+        self.assertEqual(sync.verify_published(gh, pending, raw, sleeper), MERGED)
+        sleeper.assert_called_once_with(5)
+        self.assertFalse(gh.created or gh.merged)
 
     def test_known_and_unknown_errors_never_emit_secret(self):
         for error in (RuntimeError("https://private.example?token=" + SECRET),

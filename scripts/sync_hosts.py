@@ -317,7 +317,7 @@ def save_state(directory: Path, value):
     os.replace(temporary, directory / "publication.json")
 
 
-def verify_published(gh, pending, downloader=download):
+def verify_published_once(gh, pending, downloader=download):
     pr = gh.api(f"pulls/{pending['number']}")
     require(pr.get("merged") and SHA.fullmatch(pr.get("merge_commit_sha") or ""), "merge_pending")
     sha = pr["merge_commit_sha"]
@@ -328,6 +328,18 @@ def verify_published(gh, pending, downloader=download):
     return sha
 
 
+def verify_published(gh, pending, downloader=download, sleeper=time.sleep):
+    # GitHub may report an open PR briefly after an atomic merge; Raw can lag too.
+    # Retry readback only, never repeat a commit, ref update or merge.
+    for attempt in range(3):
+        try:
+            return verify_published_once(gh, pending, downloader)
+        except HostsError as exc:
+            if exc.code not in {"merge_pending", "fixed_raw_pending", "rolling_raw_pending"} or attempt == 2:
+                raise
+            sleeper((5, 10)[attempt])
+
+
 def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=download):
     gh = gh or GitHub()
     with runtime_lock(directory):
@@ -336,7 +348,7 @@ def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=
             pending = json.loads(state_path.read_text(encoding="utf-8"))
             if pending and not pending.get("verified"):
                 # Never create a second PR, merge an old candidate or reread private data here.
-                sha = verify_published(gh, pending, downloader)
+                sha = verify_published(gh, pending, downloader, sleeper)
                 pending.update(verified=True, merged_sha=sha)
                 save_state(directory, pending)
                 return {"status": "published", "commit": sha, "pr": pending["number"],
@@ -364,7 +376,7 @@ def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=
         sha = gh.merge(pending)
         pending["merged_sha"] = sha
         save_state(directory, pending)
-        verified_sha = verify_published(gh, pending, downloader)
+        verified_sha = verify_published(gh, pending, downloader, sleeper)
         require(verified_sha == sha, "merge_readback")
         pending["verified"] = True
         save_state(directory, pending)
