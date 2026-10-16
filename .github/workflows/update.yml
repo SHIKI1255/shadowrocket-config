@@ -3,9 +3,33 @@ name: Validate and publish
 on:
   push:
     branches: [main]
-    paths-ignore: ['.github/maintenance.json']
+    paths-ignore:
+      - '.github/maintenance.json'
+      - 'AGENTS.md'
+      - 'local_task_preflight_profile.yaml'
+      - 'tests/test_keepalive.py'
+      - 'modules/**'
+      - 'scripts/hosts_core.py'
+      - 'scripts/sync_hosts.py'
+      - 'scripts/validate_hosts.py'
+      - 'tests/test_hosts*.py'
+      - 'requirements-hosts.txt'
+      - '.github/workflows/hosts.yml'
+      - '.github/workflows/update.yml'
   pull_request:
     branches: [main]
+    paths-ignore:
+      - 'AGENTS.md'
+      - 'local_task_preflight_profile.yaml'
+      - 'tests/test_keepalive.py'
+      - 'modules/**'
+      - 'scripts/hosts_core.py'
+      - 'scripts/sync_hosts.py'
+      - 'scripts/validate_hosts.py'
+      - 'tests/test_hosts*.py'
+      - 'requirements-hosts.txt'
+      - '.github/workflows/hosts.yml'
+      - '.github/workflows/update.yml'
   workflow_dispatch:
     inputs:
       replay_commit:

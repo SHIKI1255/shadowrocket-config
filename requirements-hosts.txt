@@ -1,0 +1,2 @@
+# Local Hosts synchronizer and its dedicated CI only; rule generation stays stdlib-only.
+PyYAML==6.0.3

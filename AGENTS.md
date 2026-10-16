@@ -1,6 +1,10 @@
 # Shadowrocket configuration
 
-Use PowerShell 7 for local shell commands. Python 3.12 standard library only.
+Use PowerShell 7 for local shell commands. Public rule generation and module
+validation use Python 3.12 standard library only. The user-authorized local Hosts
+synchronizer alone may use the existing PyYAML 6.0.3 installation; its dedicated
+CI installs that pinned dependency for synthetic-input tests. Never install or
+change a local dependency automatically.
 Source, reusable tests and documentation belong here; generated outputs and
 download caches belong outside this checkout. No nodes, credentials, certificates,
 subscription tokens or personal traffic logs may be committed to this public repo.
@@ -23,3 +27,9 @@ rebuild for changes affecting the generator or routing. Only stage named task fi
 Public rule/source/conversion authority: SHIKI1255/shadowrocket-config/shared.
 Consumers read versioned JSON data only; never execute downloaded source code.
 Do not reintroduce local custom/source copies. Client templates and protocol contracts stay here.
+
+Hosts synchronization: only modules/GeekSpeed-Hosts.sgmodule and modules/README.md
+may be published by the recurring task. Complete-set changes require two matching
+provider reads and the quantity gate. Never publish private subscriptions or raw
+responses. Keep state outside the checkout; do not weaken guards, merge stale
+pending PRs, force-push or change unrelated files to recover a scheduled failure.
