@@ -8,7 +8,7 @@ from __future__ import annotations
 import argparse
 import base64
 from contextlib import contextmanager
-from datetime import datetime, timezone, timedelta
+from datetime import datetime
 import json
 import os
 from pathlib import Path
@@ -22,7 +22,8 @@ import urllib.parse
 import urllib.request
 
 from hosts_core import (ALLOWED_FILES, HostsError, MODULE, README, REPOSITORY, RAW_ROOT,
-                        SHA, check_quantity, differences, digest, normalize_hosts,
+                        SHA, BEIJING, check_quantity, differences, digest, normalize_hosts,
+                        format_timestamp, module_timestamp,
                         ordered_hosts, parse_module, render_module, require,
                         update_readme, validate_readme)
 
@@ -147,14 +148,16 @@ def candidate(previous, readme, base_sha, fetch, sleeper=time.sleep, now=None):
     require(first["hosts"] == second["hosts"], "source_changed_between_reads")
     check_quantity(previous, second["hosts"])
     hosts = ordered_hosts(previous, second["hosts"])
-    checked_at = (now or datetime.now(timezone(timedelta(hours=8)))).strftime("%Y-%m-%d")
+    checked_at = format_timestamp(now if now is not None else datetime.now(BEIJING))
     files = {
-        MODULE: render_module(hosts),
+        MODULE: render_module(hosts, checked_at),
         README: update_readme(readme, hosts, second["references"], second["node_count"],
                               checked_at, base_sha).encode("utf-8"),
     }
-    validate_readme(files[README].decode("utf-8"), parse_module(files[MODULE]))
-    return {"files": files, "diff": differences(previous, hosts), "hosts_count": len(hosts)}
+    require(parse_module(files[MODULE]) == second["hosts"], "roundtrip_mismatch")
+    validate_readme(files[README].decode("utf-8"), hosts, module_timestamp(files[MODULE]))
+    return {"files": files, "diff": differences(previous, hosts), "hosts_count": len(hosts),
+            "checked_at": checked_at}
 
 
 class GitHub:
@@ -219,7 +222,8 @@ class GitHub:
             "head": branch, "base": "main", "body":
             "Update the complete optional Hosts module from two matching local provider reads. "
             "Only the module and its documentation change. The private subscription stays in memory.\n\n"
-            "Validation: strict YAML and module round-trip, quantity gate, reference counts and scoped PR CI. "
+            "Validation: strict YAML and module round-trip, quantity gate, matching content timestamps, "
+            "reference counts and scoped PR CI. The source must still match immediately before merge. "
             "Mobile connectivity requires separate verification.\n\n"
             f"Previous fixed module: {RAW_ROOT}/{base}/{MODULE}\n"})
         return {"base": base, "head": head, "number": pr["number"],
@@ -352,19 +356,21 @@ def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=
                 pending.update(verified=True, merged_sha=sha)
                 save_state(directory, pending)
                 return {"status": "published", "commit": sha, "pr": pending["number"],
-                        "module_sha256": pending["hashes"][MODULE]}
+                        "module_sha256": pending["hashes"][MODULE], "verification_only": True}
         require(not gh.open_sync_prs(), "existing_sync_pr")
         base = gh.head()
         gh.check_runner(base)
-        previous = parse_module(gh.file(MODULE, base))
+        previous_module = gh.file(MODULE, base)
+        previous = parse_module(previous_module)
         readme = gh.file(README, base).decode("utf-8")
-        validate_readme(readme, previous)
+        validate_readme(readme, previous, module_timestamp(previous_module))
         url = source_url()
         result = candidate(previous, readme, base,
                            lambda: downloader(url, private=True), sleeper=sleeper)
         if result is None:
             return {"status": "unchanged", "commit": base, "hosts_count": len(previous)}
-        summary = {"hosts_count": result["hosts_count"], "diff": result["diff"]}
+        summary = {"hosts_count": result["hosts_count"], "diff": result["diff"],
+                   "checked_at": result["checked_at"]}
         if not publish:
             return {"status": "candidate", "base": base, **summary}
         pending = gh.create_pr(base, result["files"])
@@ -373,6 +379,9 @@ def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=
         print(json.dumps({"status": "pr_created", "pr": pending["number"],
                           "url": f"https://github.com/{REPOSITORY}/pull/{pending['number']}"}), flush=True)
         gh.wait_ci(pending, sleeper=sleeper)
+        # CI may take minutes. A stale candidate must never advance main.
+        latest = subscription(downloader(url, private=True))
+        require(latest["hosts"] == parse_module(result["files"][MODULE]), "source_changed_before_merge")
         sha = gh.merge(pending)
         pending["merged_sha"] = sha
         save_state(directory, pending)
