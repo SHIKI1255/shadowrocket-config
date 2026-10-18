@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 import sys
 
-from hosts_core import HostsError, MODULE, README, digest, parse_module, validate_readme
+from hosts_core import HostsError, MODULE, README, digest, module_timestamp, parse_module, validate_readme
 
 
 def main():
@@ -11,7 +11,7 @@ def main():
         root = Path(__file__).resolve().parents[1]
         content = (root / MODULE).read_bytes()
         hosts = parse_module(content)
-        validate_readme((root / README).read_text(encoding="utf-8"), hosts)
+        validate_readme((root / README).read_text(encoding="utf-8"), hosts, module_timestamp(content))
         print(json.dumps({"status": "valid", "hosts": len(hosts), "sha256": digest(content)}))
         return 0
     except HostsError as exc:

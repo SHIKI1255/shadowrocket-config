@@ -1,11 +1,13 @@
 """Public module validation and lossless complete-set replacement."""
 from pathlib import Path
+from datetime import datetime, timedelta, timezone
 import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from hosts_core import (BEGIN, END, HEADER, MODULE, README, HostsError, check_quantity,
+                        TIME_MARKER, format_timestamp, module_timestamp,
                         normalize_hosts, ordered_hosts, parse_module, render_module,
                         update_readme, validate_readme)
 
@@ -16,8 +18,57 @@ def hosts(count=16):
 
 class HostsCoreTests(unittest.TestCase):
     def test_current_module_and_documentation(self):
-        current = parse_module((ROOT / MODULE).read_bytes())
-        validate_readme((ROOT / README).read_text(encoding="utf-8"), current)
+        data = (ROOT / MODULE).read_bytes()
+        current = parse_module(data)
+        validate_readme((ROOT / README).read_text(encoding="utf-8"), current, module_timestamp(data))
+
+    def test_legacy_and_timestamp_headers_preserve_mapping(self):
+        legacy = render_module(hosts())
+        self.assertIsNone(module_timestamp(legacy))
+        stamped = render_module(hosts(), "2026-10-18 09:00:05 +08:00")
+        self.assertEqual(module_timestamp(stamped), "2026-10-18 09:00:05 +08:00")
+        self.assertEqual(parse_module(stamped), parse_module(legacy))
+        self.assertEqual(stamped.decode().count(TIME_MARKER), 1)
+        self.assertEqual(parse_module(stamped.replace(b"\n", b"\r\n")), hosts())
+
+    def test_invalid_duplicate_and_extra_timestamps_are_rejected(self):
+        stamp = "2026-10-18 09:00:05 +08:00"
+        valid = render_module(hosts(2), stamp)
+        for invalid in ("2026-02-30 09:00:05 +08:00", "2026-10-18 24:00:00 +08:00",
+                        "2026-10-18 9:00:05 +08:00", "2026-10-18 09:00:05 +00:00",
+                        "2026-10-18", stamp + " extra", stamp + TIME_MARKER + stamp):
+            with self.subTest(invalid=invalid), self.assertRaises(HostsError):
+                parse_module(valid.replace(stamp.encode(), invalid.encode()))
+        for extra in ("\n#!desc=duplicate\n", "\n#" + TIME_MARKER + stamp + "\n"):
+            with self.assertRaises(HostsError):
+                parse_module(valid + extra.encode())
+
+    def test_timestamp_uses_beijing_across_date_and_timezone_boundaries(self):
+        self.assertEqual(format_timestamp(datetime(2026, 12, 31, 16, 0, 1, tzinfo=timezone.utc)),
+                         "2027-01-01 00:00:01 +08:00")
+        self.assertEqual(format_timestamp(datetime(2026, 10, 18, 23, 45,
+                         tzinfo=timezone(timedelta(hours=-7)))), "2026-10-19 14:45:00 +08:00")
+        with self.assertRaisesRegex(HostsError, "timestamp_timezone"):
+            format_timestamp(datetime(2026, 10, 18))
+
+    def test_readme_and_module_timestamp_must_match_and_be_unique(self):
+        stamp = "2026-10-18 09:00:05 +08:00"
+        entries = hosts(2)
+        template = "Before\n" + BEGIN + "\nold\n" + END + "\nAfter\n"
+        text = update_readme(template, entries, dict.fromkeys(entries, 0), 1, stamp, "a" * 40)
+        validate_readme(text, entries, module_timestamp(render_module(entries, stamp)))
+        with self.assertRaisesRegex(HostsError, "readme_timestamp_mismatch"):
+            validate_readme(text, entries, "2026-10-18 09:00:06 +08:00")
+        with self.assertRaisesRegex(HostsError, "readme_timestamp"):
+            validate_readme(text, entries)
+        heading = next(line for line in text.splitlines() if line.startswith("Hosts 内容更新时间："))
+        with self.assertRaisesRegex(HostsError, "readme_timestamp"):
+            validate_readme(text.replace(heading, heading + "\n" + heading), entries, stamp)
+        with self.assertRaisesRegex(HostsError, "readme_timestamp"):
+            validate_readme(text.replace(heading, heading + "\nHosts 内容更新时间：invalid"), entries, stamp)
+        legacy = update_readme(template, entries, dict.fromkeys(entries, 0), 1, "2026-10-18", "a" * 40)
+        with self.assertRaisesRegex(HostsError, "readme_timestamp_mismatch"):
+            validate_readme(legacy, entries, stamp)
 
     def test_full_replacement_preserves_existing_order(self):
         old = hosts(4)
@@ -50,6 +101,11 @@ class HostsCoreTests(unittest.TestCase):
         for size in (0, 8, 32):
             with self.subTest(size=size), self.assertRaisesRegex(HostsError, "quantity_gate"):
                 check_quantity(hosts(), hosts(size))
+        for size in (9, 17, 33):
+            check_quantity(hosts(17), hosts(size))
+        for size in (8, 34):
+            with self.subTest(size=size), self.assertRaisesRegex(HostsError, "quantity_gate"):
+                check_quantity(hosts(17), hosts(size))
 
     def test_module_rejects_extra_sections_metadata_and_duplicates(self):
         valid = render_module(hosts(2))

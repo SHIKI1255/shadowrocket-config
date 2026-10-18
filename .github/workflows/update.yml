@@ -15,7 +15,6 @@ on:
       - 'tests/test_hosts*.py'
       - 'requirements-hosts.txt'
       - '.github/workflows/hosts.yml'
-      - '.github/workflows/update.yml'
   pull_request:
     branches: [main]
     paths-ignore:
@@ -29,7 +28,6 @@ on:
       - 'tests/test_hosts*.py'
       - 'requirements-hosts.txt'
       - '.github/workflows/hosts.yml'
-      - '.github/workflows/update.yml'
   workflow_dispatch:
     inputs:
       replay_commit:

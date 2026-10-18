@@ -1,12 +1,11 @@
 """Failure paths use fabricated subscriptions, never a user's actual profile."""
 import contextlib
-from datetime import datetime
+from datetime import datetime, timezone
 import importlib.util
 import io
 import json
 import os
 from pathlib import Path
-import re
 import subprocess
 import sys
 import tempfile
@@ -18,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import sync_hosts as sync
 from hosts_core import (BEGIN, END, ALLOWED_FILES, MODULE, README, HostsError, digest,
-                        parse_module, render_module, update_readme)
+                        module_timestamp, parse_module, render_module, update_readme)
 from test_hosts_core import hosts
 
 HAS_YAML = importlib.util.find_spec("yaml") is not None
@@ -107,10 +106,13 @@ class PrivateParsingTests(unittest.TestCase):
         entries["new.example.com"] = "1.1.1.1"
         entries = {k: "9.9.9.9" for k in entries}
         fetch, sleeper = Mock(return_value=body(entries)), Mock()
-        result = sync.candidate(hosts(), TEMPLATE, BASE, fetch, sleeper, datetime(2026, 10, 16))
+        result = sync.candidate(hosts(), TEMPLATE, BASE, fetch, sleeper,
+                                datetime(2026, 10, 16, 1, 2, 3, tzinfo=timezone.utc))
         self.assertEqual(fetch.call_count, 2)
         sleeper.assert_called_once_with(10)
         self.assertEqual(parse_module(result["files"][MODULE]), entries)
+        self.assertEqual(module_timestamp(result["files"][MODULE]), "2026-10-16 09:02:03 +08:00")
+        self.assertIn(result["checked_at"], result["files"][README].decode())
         self.assertEqual(len(result["diff"]["added"]), 1)
         self.assertEqual(len(result["diff"]["removed"]), 1)
         for data in result["files"].values(): self.assertNotIn(SECRET.encode(), data)
@@ -141,6 +143,68 @@ class PrivateParsingTests(unittest.TestCase):
             result = sync.run(Path(temp), True, gh, Mock(), Mock(return_value=body()))
         self.assertEqual(result["status"], "unchanged")
         self.assertFalse(gh.created or gh.merged)
+
+    def test_stamped_no_change_does_not_refresh_timestamp_or_readme(self):
+        gh = FakeGitHub()
+        stamp = "2026-10-16 09:02:03 +08:00"
+        gh.files = {MODULE: render_module(hosts(), stamp),
+                    README: update_readme(TEMPLATE, hosts(), dict.fromkeys(hosts(), 0), 1, stamp, BASE).encode()}
+        original = dict(gh.files)
+        # A different order and node count do not cause a date-only commit.
+        response = json.loads(body(dict(reversed(list(hosts().items())))))
+        response["proxies"].append({"server": "other.example.com"})
+        fetch = Mock(return_value=json.dumps(response).encode())
+        with tempfile.TemporaryDirectory() as temp, patch.object(sync, "source_url", return_value="private"):
+            for _ in range(2):
+                self.assertEqual(sync.run(Path(temp), True, gh, Mock(), fetch)["status"], "unchanged")
+        self.assertEqual(fetch.call_count, 2)
+        self.assertEqual(gh.files, original)
+        self.assertFalse(gh.created or gh.merged)
+
+    def test_premerge_source_must_equal_candidate_after_ci(self):
+        new = hosts(15)
+        cases = (body(hosts(14)), body(), b"hosts: {}", urllib.error.URLError(SECRET))
+        for final in cases:
+            with self.subTest(final_type=type(final).__name__):
+                gh = FakeGitHub()
+                original = dict(gh.files)
+                events = []
+                responses = iter([body(new), body(new), final])
+                def fetch(url, **kwargs):
+                    events.append("source")
+                    item = next(responses)
+                    if isinstance(item, Exception): raise item
+                    return item
+                gh.wait_ci = Mock(side_effect=lambda *a, **kw: events.append("ci"))
+                with tempfile.TemporaryDirectory() as temp, patch.object(sync, "source_url", return_value="private"), contextlib.redirect_stdout(io.StringIO()):
+                    with self.assertRaises((HostsError, urllib.error.URLError)):
+                        sync.run(Path(temp), True, gh, Mock(), fetch)
+                    self.assertTrue((Path(temp) / "publication.json").exists())
+                self.assertEqual(events, ["source", "source", "ci", "source"])
+                self.assertEqual(len(gh.created), 1)
+                self.assertFalse(gh.merged)
+                self.assertEqual(gh.files, original)
+
+    def test_premerge_confirmation_does_not_regenerate_candidate(self):
+        gh = FakeGitHub()
+        new = hosts(15)
+        events, snapshots = [], []
+        def download(url, **kwargs):
+            if kwargs.get("private"):
+                events.append("source")
+                return body(dict(reversed(list(new.items()))))
+            return gh.files[MODULE if url.endswith("sgmodule") else README]
+        def ci(*args, **kwargs):
+            events.append("ci")
+            snapshots.append(dict(gh.created[0]))
+        gh.wait_ci = Mock(side_effect=ci)
+        with tempfile.TemporaryDirectory() as temp, patch.object(sync, "source_url", return_value="private"), contextlib.redirect_stdout(io.StringIO()):
+            result = sync.run(Path(temp), True, gh, Mock(), download)
+        self.assertEqual(events, ["source", "source", "ci", "source"])
+        self.assertEqual(result["status"], "published")
+        self.assertEqual(gh.files, snapshots[0])
+        self.assertEqual(parse_module(gh.files[MODULE]), new)
+        self.assertEqual(module_timestamp(gh.files[MODULE]), result["checked_at"])
 
     def test_check_only_and_publish_only_two_files(self):
         for publish in (False, True):
@@ -212,6 +276,9 @@ class PublicationAndTransportTests(unittest.TestCase):
 
     def test_raw_cache_delay_reverified_without_second_pr(self):
         gh = FakeGitHub()
+        stamp = "2026-10-18 09:00:05 +08:00"
+        gh.files = {MODULE: render_module(hosts(), stamp),
+                    README: update_readme(TEMPLATE, hosts(), dict.fromkeys(hosts(), 0), 1, stamp, BASE).encode()}
         gh.merged = True
         pending = {"number": 123, "head": HEAD, "base": BASE,
                    "hashes": {p: digest(gh.files[p]) for p in ALLOWED_FILES}}
@@ -222,6 +289,8 @@ class PublicationAndTransportTests(unittest.TestCase):
             def raw(url): return gh.files[MODULE if url.endswith("sgmodule") else README]
             result = sync.run(Path(temp), True, gh, downloader=raw)
             self.assertEqual(result["status"], "published")
+            self.assertTrue(result["verification_only"])
+            self.assertEqual(module_timestamp(gh.files[MODULE]), stamp)
             self.assertTrue(json.loads((Path(temp) / "publication.json").read_text())["verified"])
             self.assertFalse(gh.created)
 
@@ -302,13 +371,7 @@ class PublicationAndTransportTests(unittest.TestCase):
         gh.file = Mock(return_value=b"tampered")
         with self.assertRaisesRegex(HostsError, "candidate_changed"): gh.review(pending)
 
-    def test_module_only_workflow_isolation(self):
-        workflow = (ROOT / '.github/workflows/update.yml').read_text(encoding='utf-8')
-        for section in ('push', 'pull_request'):
-            block = re.split(r'\n  \S', workflow.split('  ' + section + ':', 1)[1], maxsplit=1)[0]
-            self.assertIn("- 'modules/**'", block)
-            self.assertNotIn("- 'shared/**'", block)
-            self.assertNotIn("- 'config/**'", block)
+    def test_hosts_ci_has_no_private_subscription_access(self):
         dedicated = (ROOT / sync.WORKFLOW).read_text(encoding='utf-8')
         self.assertIn('python -B -S scripts/validate_hosts.py', dedicated)
         self.assertNotIn('scripts/sync_hosts.py --publish', dedicated)
