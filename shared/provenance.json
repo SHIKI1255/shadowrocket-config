@@ -681,6 +681,13 @@
       "origins": [
         "openai"
       ],
+      "rule": "DOMAIN-SUFFIX,openai.org,PROXY"
+    },
+    {
+      "category": "openai",
+      "origins": [
+        "openai"
+      ],
       "rule": "DOMAIN-SUFFIX,sora.com,PROXY"
     },
     {
@@ -19146,6 +19153,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,appstore.co.id,DIRECT"
     },
     {
@@ -21378,6 +21393,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,applemusic.com.au,DIRECT"
     },
     {
@@ -21634,23 +21657,7 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,apple-dns.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
     },
     {
       "category": "apple",
@@ -29124,6 +29131,14 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,7mmtv.tv,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,7x24hrs.com,PROXY"
     },
     {
       "category": "proxy",
@@ -56147,7 +56162,23 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,meta.ai,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,meta.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,metaaivm.com,PROXY"
     },
     {
       "category": "proxy",
@@ -111874,6 +111905,13 @@
       "origins": [
         "openai"
       ],
+      "rule": "DOMAIN-SUFFIX,openai.org,PROXY"
+    },
+    {
+      "category": "openai",
+      "origins": [
+        "openai"
+      ],
       "rule": "DOMAIN-SUFFIX,sora.com,PROXY"
     },
     {
@@ -139181,6 +139219,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,7x24hrs.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,8-d.com,PROXY"
     },
     {
@@ -162820,7 +162865,21 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,meta.ai,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,meta.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,metaaivm.com,PROXY"
     },
     {
       "category": "proxy",
@@ -211243,6 +211302,13 @@
       "origins": [
         "openai"
       ],
+      "rule": "DOMAIN-SUFFIX,openai.org,PROXY"
+    },
+    {
+      "category": "openai",
+      "origins": [
+        "openai"
+      ],
       "rule": "DOMAIN-SUFFIX,sora.com,PROXY"
     },
     {
@@ -238550,6 +238616,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,7x24hrs.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,8-d.com,PROXY"
     },
     {
@@ -262189,7 +262262,21 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,meta.ai,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,meta.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,metaaivm.com,PROXY"
     },
     {
       "category": "proxy",

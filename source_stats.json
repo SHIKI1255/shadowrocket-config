@@ -1193,6 +1193,7 @@
         "DOMAIN-SUFFIX,applepaysupplies.tv,DIRECT",
         "DOMAIN-SUFFIX,applewallet.com,DIRECT",
         "DOMAIN-SUFFIX,applewallet.tv,DIRECT",
+        "DOMAIN-SUFFIX,appsto.re,DIRECT",
         "DOMAIN-SUFFIX,appstore.co.id,DIRECT",
         "DOMAIN-SUFFIX,appstore.com,DIRECT",
         "DOMAIN-SUFFIX,appstore.hk,DIRECT",
@@ -1472,6 +1473,7 @@
         "DOMAIN-SUFFIX,appleenews.com,DIRECT",
         "DOMAIN-SUFFIX,applemusic.berlin,DIRECT",
         "DOMAIN-SUFFIX,applemusic.co,DIRECT",
+        "DOMAIN-SUFFIX,applemusic.com,DIRECT",
         "DOMAIN-SUFFIX,applemusic.com.au,DIRECT",
         "DOMAIN-SUFFIX,applemusic.hamburg,DIRECT",
         "DOMAIN-SUFFIX,applemusic.wang,DIRECT",
@@ -1504,9 +1506,7 @@
         "DOMAIN-SUFFIX,iphoto.wang,DIRECT",
         "DOMAIN-SUFFIX,musickit.net,DIRECT",
         "DOMAIN-SUFFIX,wwwapplemusic.com,DIRECT",
-        "DOMAIN-SUFFIX,applemusic.com,DIRECT",
         "DOMAIN-SUFFIX,apple-dns.net,DIRECT",
-        "DOMAIN-SUFFIX,appsto.re,DIRECT",
         "DOMAIN-SUFFIX,digicert.com,DIRECT",
         "DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT",
         "DOMAIN-SUFFIX,apple-icloud.cn,DIRECT",
@@ -12630,8 +12630,8 @@
       "skipped": []
     },
     "openai": {
-      "raw_count": 23,
-      "retained_count": 20,
+      "raw_count": 24,
+      "retained_count": 21,
       "rules": [
         "DOMAIN-SUFFIX,chat.com,PROXY",
         "DOMAIN-SUFFIX,chatgpt.com,PROXY",
@@ -12641,6 +12641,7 @@
         "DOMAIN-SUFFIX,oaistatsig.com,PROXY",
         "DOMAIN-SUFFIX,oaiusercontent.com,PROXY",
         "DOMAIN-SUFFIX,openai.com,PROXY",
+        "DOMAIN-SUFFIX,openai.org,PROXY",
         "DOMAIN-SUFFIX,sora.com,PROXY",
         "DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net,PROXY",
         "DOMAIN,openaiapi-site.azureedge.net,PROXY",
@@ -12656,25 +12657,25 @@
       ],
       "skipped": [
         {
-          "line": 23,
+          "line": 24,
           "reason": "ads attribute",
           "rule": "DOMAIN,browser-intake-datadoghq.com,PROXY"
         },
         {
-          "line": 24,
+          "line": 25,
           "reason": "ads attribute",
           "rule": "DOMAIN,o33249.ingest.sentry.io,PROXY"
         },
         {
-          "line": 25,
+          "line": 26,
           "reason": "ads attribute",
           "rule": "DOMAIN,openai.qualtrics.com,PROXY"
         }
       ]
     },
     "proxy": {
-      "raw_count": 6962,
-      "retained_count": 6962,
+      "raw_count": 6965,
+      "retained_count": 6965,
       "rules": [
         "DOMAIN,api.waqi.info,PROXY",
         "DOMAIN,aqi.aqicn.org,PROXY",
@@ -12815,6 +12816,7 @@
         "DOMAIN-SUFFIX,7capture.com,PROXY",
         "DOMAIN-SUFFIX,7cow.com,PROXY",
         "DOMAIN-SUFFIX,7mmtv.tv,PROXY",
+        "DOMAIN-SUFFIX,7x24hrs.com,PROXY",
         "DOMAIN-SUFFIX,8-d.com,PROXY",
         "DOMAIN-SUFFIX,85cc.net,PROXY",
         "DOMAIN-SUFFIX,85cc.us,PROXY",
@@ -16294,7 +16296,9 @@
         "DOMAIN-SUFFIX,meshrep.com,PROXY",
         "DOMAIN-SUFFIX,mesotw.com,PROXY",
         "DOMAIN-SUFFIX,messenger.com,PROXY",
+        "DOMAIN-SUFFIX,meta.ai,PROXY",
         "DOMAIN-SUFFIX,meta.com,PROXY",
+        "DOMAIN-SUFFIX,metaaivm.com,PROXY",
         "DOMAIN-SUFFIX,metacafe.com,PROXY",
         "DOMAIN-SUFFIX,metacubex.one,PROXY",
         "DOMAIN-SUFFIX,metafilter.com,PROXY",
@@ -19642,8 +19646,8 @@
       "skipped": []
     },
     "proxy_domains": {
-      "raw_count": 6836,
-      "retained_count": 6836,
+      "raw_count": 6839,
+      "retained_count": 6839,
       "rules": [
         "DOMAIN-SUFFIX,000webhost.com,PROXY",
         "DOMAIN-SUFFIX,030buy.com,PROXY",
@@ -19775,6 +19779,7 @@
         "DOMAIN-SUFFIX,7capture.com,PROXY",
         "DOMAIN-SUFFIX,7cow.com,PROXY",
         "DOMAIN-SUFFIX,7mmtv.tv,PROXY",
+        "DOMAIN-SUFFIX,7x24hrs.com,PROXY",
         "DOMAIN-SUFFIX,8-d.com,PROXY",
         "DOMAIN-SUFFIX,85cc.net,PROXY",
         "DOMAIN-SUFFIX,85cc.us,PROXY",
@@ -23254,7 +23259,9 @@
         "DOMAIN-SUFFIX,meshrep.com,PROXY",
         "DOMAIN-SUFFIX,mesotw.com,PROXY",
         "DOMAIN-SUFFIX,messenger.com,PROXY",
+        "DOMAIN-SUFFIX,meta.ai,PROXY",
         "DOMAIN-SUFFIX,meta.com,PROXY",
+        "DOMAIN-SUFFIX,metaaivm.com,PROXY",
         "DOMAIN-SUFFIX,metacafe.com,PROXY",
         "DOMAIN-SUFFIX,metacubex.one,PROXY",
         "DOMAIN-SUFFIX,metafilter.com,PROXY",
@@ -34162,8 +34169,8 @@
       "skipped": []
     },
     "openai": {
-      "raw_count": 23,
-      "retained_count": 20,
+      "raw_count": 24,
+      "retained_count": 21,
       "rules": [
         "DOMAIN-SUFFIX,chat.com,PROXY",
         "DOMAIN-SUFFIX,chatgpt.com,PROXY",
@@ -34173,6 +34180,7 @@
         "DOMAIN-SUFFIX,oaistatsig.com,PROXY",
         "DOMAIN-SUFFIX,oaiusercontent.com,PROXY",
         "DOMAIN-SUFFIX,openai.com,PROXY",
+        "DOMAIN-SUFFIX,openai.org,PROXY",
         "DOMAIN-SUFFIX,sora.com,PROXY",
         "DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net,PROXY",
         "DOMAIN,openaiapi-site.azureedge.net,PROXY",
@@ -34188,17 +34196,17 @@
       ],
       "skipped": [
         {
-          "line": 23,
+          "line": 24,
           "reason": "ads attribute",
           "rule": "DOMAIN,browser-intake-datadoghq.com,PROXY"
         },
         {
-          "line": 24,
+          "line": 25,
           "reason": "ads attribute",
           "rule": "DOMAIN,o33249.ingest.sentry.io,PROXY"
         },
         {
-          "line": 25,
+          "line": 26,
           "reason": "ads attribute",
           "rule": "DOMAIN,openai.qualtrics.com,PROXY"
         }
@@ -34346,8 +34354,8 @@
       "skipped": []
     },
     "proxy_domains": {
-      "raw_count": 6836,
-      "retained_count": 6836,
+      "raw_count": 6839,
+      "retained_count": 6839,
       "rules": [
         "DOMAIN-SUFFIX,000webhost.com,PROXY",
         "DOMAIN-SUFFIX,030buy.com,PROXY",
@@ -34479,6 +34487,7 @@
         "DOMAIN-SUFFIX,7capture.com,PROXY",
         "DOMAIN-SUFFIX,7cow.com,PROXY",
         "DOMAIN-SUFFIX,7mmtv.tv,PROXY",
+        "DOMAIN-SUFFIX,7x24hrs.com,PROXY",
         "DOMAIN-SUFFIX,8-d.com,PROXY",
         "DOMAIN-SUFFIX,85cc.net,PROXY",
         "DOMAIN-SUFFIX,85cc.us,PROXY",
@@ -37958,7 +37967,9 @@
         "DOMAIN-SUFFIX,meshrep.com,PROXY",
         "DOMAIN-SUFFIX,mesotw.com,PROXY",
         "DOMAIN-SUFFIX,messenger.com,PROXY",
+        "DOMAIN-SUFFIX,meta.ai,PROXY",
         "DOMAIN-SUFFIX,meta.com,PROXY",
+        "DOMAIN-SUFFIX,metaaivm.com,PROXY",
         "DOMAIN-SUFFIX,metacafe.com,PROXY",
         "DOMAIN-SUFFIX,metacubex.one,PROXY",
         "DOMAIN-SUFFIX,metafilter.com,PROXY",
