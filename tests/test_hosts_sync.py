@@ -286,13 +286,189 @@ class PublicationAndTransportTests(unittest.TestCase):
             sync.save_state(Path(temp), pending)
             with self.assertRaisesRegex(HostsError, "fixed_raw_pending"):
                 sync.run(Path(temp), True, gh, sleeper=Mock(), downloader=Mock(return_value=b"old"))
-            def raw(url): return gh.files[MODULE if url.endswith("sgmodule") else README]
-            result = sync.run(Path(temp), True, gh, downloader=raw)
-            self.assertEqual(result["status"], "published")
-            self.assertTrue(result["verification_only"])
+            def raw(url, **kwargs):
+                return body() if kwargs.get("private") else gh.files[MODULE if url.endswith("sgmodule") else README]
+            out = io.StringIO()
+            with patch.object(sync, "source_url", return_value="private"), contextlib.redirect_stdout(out):
+                result = sync.run(Path(temp), True, gh, downloader=raw)
+            self.assertEqual(result["status"], "unchanged")
+            self.assertTrue(result["source_checked"])
+            recovery = json.loads(out.getvalue())
+            self.assertEqual(recovery["status"], "publication_recovered")
+            self.assertFalse(recovery["source_checked"])
             self.assertEqual(module_timestamp(gh.files[MODULE]), stamp)
             self.assertTrue(json.loads((Path(temp) / "publication.json").read_text())["verified"])
             self.assertFalse(gh.created)
+
+    def pending_publication(self, gh):
+        return {"number": 123, "head": HEAD, "base": BASE, "merged_sha": MERGED,
+                "hashes": {p: digest(gh.files[p]) for p in ALLOWED_FILES}}
+
+    def test_rolling_raw_delay_both_files_and_bounded_exhaustion(self):
+        for stale_path in ALLOWED_FILES:
+            for clears in (True, False):
+                with self.subTest(path=stale_path, clears=clears):
+                    gh = FakeGitHub()
+                    gh.merged = True
+                    gh.api = Mock(wraps=gh.api)
+                    gh.merge = Mock(wraps=gh.merge)
+                    sleeper, out = Mock(), io.StringIO()
+                    urls = []
+                    def raw(url):
+                        urls.append(url)
+                        path = MODULE if url.endswith("sgmodule") else README
+                        if url == f"{sync.RAW_ROOT}/main/{stale_path}" and (not clears or gh.api.call_count < 8):
+                            return b"old"
+                        return gh.files[path]
+                    with contextlib.redirect_stdout(out):
+                        if clears:
+                            self.assertEqual(sync.verify_published(gh, self.pending_publication(gh), raw, sleeper), MERGED)
+                        else:
+                            with self.assertRaises(sync.PublicationError) as error:
+                                sync.verify_published(gh, self.pending_publication(gh), raw, sleeper)
+                            self.assertEqual(error.exception.code, "rolling_raw_pending")
+                            self.assertEqual(error.exception.details, {
+                                "phase": "rolling_raw", "merged": True, "pr": 123,
+                                "commit": MERGED, "pending_file": stale_path,
+                                "attempt": 8, "retry_count": 7})
+                    self.assertEqual(gh.api.call_count, 8)
+                    self.assertEqual([c.args[0] for c in sleeper.call_args_list], [5, 10, 20, 40, 60, 60, 60])
+                    self.assertEqual(len(out.getvalue().splitlines()), 7)
+                    self.assertTrue(all("?" not in url for url in urls))
+                    self.assertFalse(gh.created)
+                    gh.merge.assert_not_called()
+
+    def test_non_visibility_errors_never_retry(self):
+        for code in ("http_rejected", "response_size", "download_exhausted", "published_hash_mismatch"):
+            with self.subTest(code=code):
+                gh = FakeGitHub()
+                gh.merged = True
+                pending = self.pending_publication(gh)
+                raw, sleeper = Mock(side_effect=HostsError(code)), Mock()
+                if code == "published_hash_mismatch":
+                    gh.file = Mock(return_value=b"wrong")
+                with self.assertRaises(sync.PublicationError) as error:
+                    sync.verify_published(gh, pending, raw, sleeper)
+                self.assertEqual(error.exception.code, code)
+                self.assertEqual(error.exception.details["attempt"], 1)
+                sleeper.assert_not_called()
+
+    def test_recovery_then_changed_source_creates_one_fresh_pr(self):
+        gh = FakeGitHub()
+        gh.merged = True
+        original = self.pending_publication(gh)
+        events = []
+        def raw(url, **kwargs):
+            if kwargs.get("private"):
+                events.append("source")
+                with self.assertRaisesRegex(HostsError, "already_running"):
+                    with sync.runtime_lock(directory): pass
+                if events.count("source") == 1:
+                    self.assertTrue(json.loads((directory / "publication.json").read_text())["verified"])
+                return body(hosts(15))
+            return gh.files[MODULE if url.endswith("sgmodule") else README]
+        gh.head = Mock(side_effect=lambda: events.append("head") or MERGED)
+        # Only private reads count when asserting two reads plus the pre-merge check.
+        with tempfile.TemporaryDirectory() as temp, patch.object(sync, "source_url", return_value="private"), contextlib.redirect_stdout(io.StringIO()):
+            directory = Path(temp)
+            sync.save_state(directory, original)
+            result = sync.run(directory, True, gh, Mock(), raw)
+            self.assertTrue(json.loads((directory / "publication.json").read_text())["verified"])
+        self.assertEqual(events, ["head", "source", "source", "source"])
+        self.assertEqual(result["status"], "published")
+        self.assertEqual(len(gh.created), 1)
+        self.assertEqual(parse_module(gh.files[MODULE]), hosts(15))
+
+    def test_recovery_then_source_failure_or_interrupt_is_not_success(self):
+        for failure, status, reason in ((HostsError("download_exhausted"), "needs_attention", "download_exhausted"),
+                                        (KeyboardInterrupt(), "needs_attention", "interrupted")):
+            with self.subTest(reason=reason):
+                gh = FakeGitHub()
+                gh.merged = True
+                def raw(url, **kwargs):
+                    if kwargs.get("private"): raise failure
+                    return gh.files[MODULE if url.endswith("sgmodule") else README]
+                real_run = sync.run
+                with tempfile.TemporaryDirectory() as temp, patch.object(sync, "source_url", return_value="private"):
+                    directory = Path(temp)
+                    sync.save_state(directory, self.pending_publication(gh))
+                    out = io.StringIO()
+                    with patch.object(sync, "run", side_effect=lambda d, **kw: real_run(d, gh=gh, sleeper=Mock(), downloader=raw, **kw)), contextlib.redirect_stdout(out):
+                        self.assertEqual(sync.main(["--publish", "--state-dir", temp]), 1)
+                    events = [json.loads(line) for line in out.getvalue().splitlines()]
+                    self.assertEqual(events[0]["status"], "publication_recovered")
+                    self.assertEqual(events[-1], {"status": status, "reason": reason})
+                    self.assertTrue(json.loads((directory / "publication.json").read_text())["verified"])
+                    # A later process resumes a fresh check without repeating recovery.
+                    def good_raw(url, **kwargs):
+                        return body() if kwargs.get("private") else gh.files[MODULE if url.endswith("sgmodule") else README]
+                    resumed = io.StringIO()
+                    with contextlib.redirect_stdout(resumed):
+                        result = real_run(directory, True, gh, Mock(), good_raw)
+                    self.assertEqual(result["status"], "unchanged")
+                    self.assertEqual(resumed.getvalue(), "")
+                    self.assertFalse(gh.created)
+
+    def test_unmerged_recovery_never_reads_source_or_changes_state(self):
+        gh, sleeper = FakeGitHub(), Mock()
+        with tempfile.TemporaryDirectory() as temp, patch.object(sync, "source_url") as source, contextlib.redirect_stdout(io.StringIO()):
+            directory = Path(temp)
+            pending = self.pending_publication(gh)
+            del pending["merged_sha"]
+            sync.save_state(directory, pending)
+            before = (directory / "publication.json").read_bytes()
+            with self.assertRaisesRegex(HostsError, "merge_pending"):
+                sync.run(directory, True, gh, sleeper, Mock())
+            self.assertEqual((directory / "publication.json").read_bytes(), before)
+            source.assert_not_called()
+            self.assertFalse(gh.created or gh.merged)
+
+    def test_interrupt_before_recovery_save_is_safe_to_resume(self):
+        gh = FakeGitHub()
+        gh.merged = True
+        raw = lambda url, **kw: body() if kw.get("private") else gh.files[MODULE if url.endswith("sgmodule") else README]
+        with tempfile.TemporaryDirectory() as temp, contextlib.redirect_stdout(io.StringIO()):
+            directory = Path(temp)
+            sync.save_state(directory, self.pending_publication(gh))
+            before = (directory / "publication.json").read_bytes()
+            with patch.object(sync.os, "replace", side_effect=KeyboardInterrupt()), patch.object(sync, "source_url") as source:
+                with self.assertRaises(KeyboardInterrupt):
+                    sync.run(directory, True, gh, Mock(), raw)
+                source.assert_not_called()
+            self.assertEqual((directory / "publication.json").read_bytes(), before)
+            with patch.object(sync, "source_url", return_value="private"):
+                self.assertEqual(sync.run(directory, True, gh, Mock(), raw)["status"], "unchanged")
+            self.assertTrue(json.loads((directory / "publication.json").read_text())["verified"])
+            self.assertFalse(gh.created)
+
+    def test_readback_rejects_invalid_state_without_leaking_identifiers(self):
+        gh = FakeGitHub()
+        for field, value in (("number", SECRET), ("merged_sha", SECRET), ("hashes", {SECRET: "bad"})):
+            with self.subTest(field=field):
+                pending = self.pending_publication(gh)
+                pending[field] = value
+                with self.assertRaises(sync.PublicationError) as error:
+                    sync.verify_published(gh, pending, Mock(), Mock())
+                self.assertNotIn(SECRET, json.dumps(error.exception.details))
+                self.assertEqual(error.exception.details["attempt"], 1)
+
+    def test_readback_failure_cli_reports_public_stage_and_nonzero(self):
+        gh = FakeGitHub()
+        gh.merged = True
+        with tempfile.TemporaryDirectory() as temp:
+            directory = Path(temp)
+            sync.save_state(directory, self.pending_publication(gh))
+            real_run, out = sync.run, io.StringIO()
+            with patch.object(sync, "run", side_effect=lambda d, **kw: real_run(d, gh=gh, sleeper=Mock(), downloader=Mock(return_value=SECRET.encode()), **kw)), contextlib.redirect_stdout(out):
+                self.assertEqual(sync.main(["--publish", "--state-dir", temp]), 1)
+            result = json.loads(out.getvalue().splitlines()[-1])
+            self.assertEqual(result["status"], "needs_attention")
+            self.assertTrue(result["merged"])
+            self.assertEqual(result["commit"], MERGED)
+            self.assertEqual(result["phase"], "fixed_raw")
+            self.assertEqual(result["attempt"], 8)
+            self.assertFalse(json.loads((directory / "publication.json").read_text()).get("verified"))
+            self.assertNotIn(SECRET, out.getvalue())
 
     def test_merge_visibility_delay_retries_only_readback(self):
         gh = FakeGitHub()
