@@ -33,6 +33,7 @@ SOURCE_HOST = "api.geekspeed.org"
 MAX_BYTES = 10 * 1024 * 1024
 BRANCH_PREFIX = "automation/geekspeed-hosts-"
 WORKFLOW = ".github/workflows/hosts.yml"
+READBACK_DELAYS = (5, 10, 20, 40, 60, 60, 60)
 RUNTIME_FILES = ("scripts/hosts_core.py", "scripts/sync_hosts.py", "scripts/validate_hosts.py",
                  "requirements-hosts.txt", WORKFLOW)
 
@@ -321,27 +322,58 @@ def save_state(directory: Path, value):
     os.replace(temporary, directory / "publication.json")
 
 
+class PublicationError(HostsError):
+    """Readback failure with only validated public identifiers and fixed stages."""
+    def __init__(self, code, details):
+        super().__init__(code)
+        self.details = dict(details)
+
+
 def verify_published_once(gh, pending, downloader=download):
-    pr = gh.api(f"pulls/{pending['number']}")
-    require(pr.get("merged") and SHA.fullmatch(pr.get("merge_commit_sha") or ""), "merge_pending")
-    sha = pr["merge_commit_sha"]
-    for path, expected in pending["hashes"].items():
-        require(digest(gh.file(path, sha)) == expected, "published_hash_mismatch")
-        require(digest(downloader(f"{RAW_ROOT}/{sha}/{path}")) == expected, "fixed_raw_pending")
-        require(digest(downloader(f"{RAW_ROOT}/main/{path}")) == expected, "rolling_raw_pending")
-    return sha
+    details = {"phase": "merge_visibility", "merged": False}
+    try:
+        require(type(pending.get("number")) is int and pending["number"] > 0,
+                "publication_state_invalid")
+        details["pr"] = pending["number"]
+        known_sha = pending.get("merged_sha")
+        if known_sha is not None:
+            require(isinstance(known_sha, str) and SHA.fullmatch(known_sha),
+                    "publication_state_invalid")
+            details.update(merged=True, commit=known_sha)
+        require(set(pending["hashes"]) == set(ALLOWED_FILES), "publication_scope")
+        pr = gh.api(f"pulls/{pending['number']}")
+        sha = pr.get("merge_commit_sha")
+        require(pr.get("merged") and isinstance(sha, str) and SHA.fullmatch(sha),
+                "merge_pending")
+        require(known_sha is None or known_sha == sha, "merge_readback")
+        details.update(merged=True, commit=sha)
+        for path in ALLOWED_FILES:
+            expected = pending["hashes"][path]
+            details.update(pending_file=path, phase="published_api")
+            require(digest(gh.file(path, sha)) == expected, "published_hash_mismatch")
+            details["phase"] = "fixed_raw"
+            require(digest(downloader(f"{RAW_ROOT}/{sha}/{path}")) == expected, "fixed_raw_pending")
+            details["phase"] = "rolling_raw"
+            require(digest(downloader(f"{RAW_ROOT}/main/{path}")) == expected, "rolling_raw_pending")
+        return sha
+    except HostsError as exc:
+        raise PublicationError(exc.code, details) from None
 
 
 def verify_published(gh, pending, downloader=download, sleeper=time.sleep):
     # GitHub may report an open PR briefly after an atomic merge; Raw can lag too.
     # Retry readback only, never repeat a commit, ref update or merge.
-    for attempt in range(3):
+    for attempt in range(len(READBACK_DELAYS) + 1):
         try:
             return verify_published_once(gh, pending, downloader)
-        except HostsError as exc:
-            if exc.code not in {"merge_pending", "fixed_raw_pending", "rolling_raw_pending"} or attempt == 2:
+        except PublicationError as exc:
+            exc.details.update(attempt=attempt + 1, retry_count=attempt)
+            if (exc.code not in {"merge_pending", "fixed_raw_pending", "rolling_raw_pending"}
+                    or attempt == len(READBACK_DELAYS)):
                 raise
-            sleeper((5, 10)[attempt])
+            print(json.dumps({"status": "publication_pending", "reason": exc.code,
+                              **exc.details, "next_retry_seconds": READBACK_DELAYS[attempt]}), flush=True)
+            sleeper(READBACK_DELAYS[attempt])
 
 
 def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=download):
@@ -351,12 +383,12 @@ def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=
         if state_path.exists():
             pending = json.loads(state_path.read_text(encoding="utf-8"))
             if pending and not pending.get("verified"):
-                # Never create a second PR, merge an old candidate or reread private data here.
+                # Recover the old publication before checking a fresh source under this lock.
                 sha = verify_published(gh, pending, downloader, sleeper)
                 pending.update(verified=True, merged_sha=sha)
                 save_state(directory, pending)
-                return {"status": "published", "commit": sha, "pr": pending["number"],
-                        "module_sha256": pending["hashes"][MODULE], "verification_only": True}
+                print(json.dumps({"status": "publication_recovered", "commit": sha,
+                                  "pr": pending["number"], "source_checked": False}), flush=True)
         require(not gh.open_sync_prs(), "existing_sync_pr")
         base = gh.head()
         gh.check_runner(base)
@@ -368,9 +400,10 @@ def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=
         result = candidate(previous, readme, base,
                            lambda: downloader(url, private=True), sleeper=sleeper)
         if result is None:
-            return {"status": "unchanged", "commit": base, "hosts_count": len(previous)}
+            return {"status": "unchanged", "commit": base, "hosts_count": len(previous),
+                    "source_checked": True}
         summary = {"hosts_count": result["hosts_count"], "diff": result["diff"],
-                   "checked_at": result["checked_at"]}
+                   "checked_at": result["checked_at"], "source_checked": True}
         if not publish:
             return {"status": "candidate", "base": base, **summary}
         pending = gh.create_pr(base, result["files"])
@@ -384,6 +417,8 @@ def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=
         require(latest["hosts"] == parse_module(result["files"][MODULE]), "source_changed_before_merge")
         sha = gh.merge(pending)
         pending["merged_sha"] = sha
+        print(json.dumps({"status": "merged", "pr": pending["number"], "commit": sha,
+                          "publication_verified": False}), flush=True)
         save_state(directory, pending)
         verified_sha = verify_published(gh, pending, downloader, sleeper)
         require(verified_sha == sha, "merge_readback")
@@ -406,7 +441,8 @@ def main(argv=None):
         print(json.dumps(result, ensure_ascii=False), flush=True)
         return 0
     except HostsError as exc:
-        print(json.dumps({"status": "needs_attention", "reason": exc.code}), flush=True)
+        details = exc.details if isinstance(exc, PublicationError) else {}
+        print(json.dumps({"status": "needs_attention", "reason": exc.code, **details}), flush=True)
     except KeyboardInterrupt:
         print(json.dumps({"status": "needs_attention", "reason": "interrupted"}), flush=True)
     except Exception:
