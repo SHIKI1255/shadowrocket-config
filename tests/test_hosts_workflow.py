@@ -48,7 +48,9 @@ class WorkflowTriggerTests(unittest.TestCase):
             (["modules/GeekSpeed-Hosts.sgmodule"], (False, True)),
             (["modules/README.md"], (False, True)),
             (["modules/GeekSpeed-Hosts.sgmodule", "modules/README.md"], (False, True)),
-            (["scripts/sync_hosts.py", "tests/test_hosts_sync.py"], (False, True)),
+            (["scripts/sync_hosts.py", "tests/test_hosts_sync.py"], (True, True)),
+            (["tests/test_hosts_sync.py"], (True, True)),
+            (["tests/test_hosts_workflow.py"], (True, True)),
             ([HOSTS], (False, True)),
             (["scripts/build.py"], (True, False)),
             (["scripts/publish.py"], (True, False)),
@@ -84,6 +86,15 @@ class WorkflowTriggerTests(unittest.TestCase):
         for text in (simple.replace("'tests/test_hosts*.py'", "unquoted"),
                      simple.replace("test_hosts*", "!test_hosts*")):
             with self.assertRaises(ValueError): workflow_runs(text, "push", [UPDATE])
+
+    def test_hosts_test_ignore_regression_is_detected_for_each_event(self):
+        for event in ("push", "pull_request"):
+            with self.subTest(event=event):
+                start = "  " + event + ":\n    branches: [main]\n    paths-ignore:\n"
+                self.assertIn(start, self.update)
+                mutant = self.update.replace(start, start + "      - 'tests/test_hosts*.py'\n", 1)
+                with self.assertRaises(AssertionError):
+                    self.assert_trigger_matrix(mutant, self.hosts)
 
 
 if __name__ == "__main__":

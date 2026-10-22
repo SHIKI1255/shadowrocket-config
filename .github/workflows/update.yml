@@ -12,7 +12,6 @@ on:
       - 'scripts/hosts_core.py'
       - 'scripts/sync_hosts.py'
       - 'scripts/validate_hosts.py'
-      - 'tests/test_hosts*.py'
       - 'requirements-hosts.txt'
       - '.github/workflows/hosts.yml'
   pull_request:
@@ -25,7 +24,6 @@ on:
       - 'scripts/hosts_core.py'
       - 'scripts/sync_hosts.py'
       - 'scripts/validate_hosts.py'
-      - 'tests/test_hosts*.py'
       - 'requirements-hosts.txt'
       - '.github/workflows/hosts.yml'
   workflow_dispatch:

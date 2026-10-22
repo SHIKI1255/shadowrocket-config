@@ -178,6 +178,33 @@ def overlaps(rules):
     return result
 
 
+def source_state_sha256(row):
+    """Identify the complete ordered rule state and its counts, not just a size."""
+    return digest(json_bytes({k: row[k] for k in ('raw_count', 'retained_count', 'rules')}))
+
+
+def check_previous_limits(stats, previous, accepted, limits):
+    """Apply only a reviewed exact transition; all other deltas keep their gates."""
+    require(set(stats) == set(previous), 'Source inventory changed: review baseline')
+    comparison = dict(previous)
+    for name, current in stats.items():
+        transition = accepted[name].get('reviewed_transition')
+        if transition is None:
+            continue
+        require(isinstance(transition, dict)
+                and set(transition) == {'from_sha256', 'to_sha256'}
+                and all(isinstance(v, str) and re.fullmatch(r'[a-f0-9]{64}', v)
+                        for v in transition.values()),
+                'Malformed reviewed transition: ' + name)
+        if source_state_sha256(previous[name]) == transition['from_sha256']:
+            require(source_state_sha256(current) == transition['to_sha256'],
+                    'Unreviewed source transition: ' + name)
+            # The reviewed new state is the comparison baseline for this source
+            # only. Future runs compare normally against the newly published state.
+            comparison[name] = current
+    check_limits(stats, comparison, limits)
+
+
 def build(conf, lock, inputs, previous=None, audit=False):
     labels = read_json('categories.json')
     accepted = read_json('baseline.json')
@@ -197,7 +224,7 @@ def build(conf, lock, inputs, previous=None, audit=False):
             check_conflicts(conflicts, accepted[source_client]['allowed_conflicts'])
             old = (previous or {}).get(source_client)
             if old is None and previous and 'openai' in previous and source_client == 'shadowrocket': old = previous
-            if old: check_limits(stats, old, conf['limits'])
+            if old: check_previous_limits(stats, old, accepted[source_client]['sources'], conf['limits'])
         cases = evaluate(rules, client)
         voice = [r for r in rules if r.source == 'voice']
         require(voice and all(route(rules, ip=str(ipaddress.ip_network(r.value).network_address))['policy'] == 'PROXY'
