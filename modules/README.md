@@ -11,7 +11,7 @@ https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/main/modules/Gee
 
 <!-- hosts-sync:snapshot:start -->
 
-Hosts 内容更新时间：**2026-10-21 19:56:20 +08:00**。完整同步 **18 条 Hosts**；当次订阅共 **111 个节点**。
+Hosts 内容更新时间：**2026-10-22 08:02:56 +08:00**。完整同步 **18 条 Hosts**；当次订阅共 **111 个节点**。
 
 此时间是该版映射完成来源确认、生成候选的北京时间，不是服务商修改、合并或每日检查时间。
 未被当前节点引用的映射仍完整保留；不据此判断其必需、失效或可用。
@@ -29,17 +29,17 @@ Hosts 内容更新时间：**2026-10-21 19:56:20 +08:00**。完整同步 **18 �
 | `newcm.geeknode.top` | `23.144.252.4` | 0 | 服务商订阅；当前映射待手机实测 |
 | `cm7.geekapp.de` | `204.235.242.80` | 0 | 服务商订阅；当前映射待手机实测 |
 | `cm8.geekapp.de` | `204.235.242.82` | 0 | 服务商订阅；当前映射待手机实测 |
-| `cm.geekapp.uk` | `3.39.243.222` | 27 | 服务商订阅；当前映射待手机实测 |
+| `cm.geekapp.uk` | `43.200.177.100` | 27 | 服务商订阅；当前映射待手机实测 |
 | `cu.geekapp.de` | `23.144.252.11` | 0 | 服务商订阅；当前映射待手机实测 |
 | `bgp.geekspeed.info` | `23.144.252.18` | 26 | 服务商订阅；当前映射待手机实测 |
 | `ct.geekapp.de` | `106.13.255.58` | 0 | 服务商订阅；当前映射待手机实测 |
 | `cu.geekapp.uk` | `23.144.252.18` | 25 | 服务商订阅；当前映射待手机实测 |
 | `sg.geekapp.de` | `34.21.240.91` | 0 | 服务商订阅；当前映射待手机实测 |
-| `jp.geekspeed.icu` | `3.39.243.222` | 0 | 服务商订阅；当前映射待手机实测 |
+| `jp.geekspeed.icu` | `43.202.252.160` | 0 | 服务商订阅；当前映射待手机实测 |
 
 当前 3 个入口被节点引用，对应 78 个节点。
 
-[本次更新前的固定版本](https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/e6081e749e5f4fb69761a212d901c24937ee14f8/modules/GeekSpeed-Hosts.sgmodule)。旧 IP 是否仍可用需另外验证。
+[本次更新前的固定版本](https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/44e97e4a9bb2c4fdf899c66176436cab4ca5442e/modules/GeekSpeed-Hosts.sgmodule)。旧 IP 是否仍可用需另外验证。
 
 <!-- hosts-sync:snapshot:end -->
 
