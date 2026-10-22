@@ -1,6 +1,7 @@
 """Failure paths use fabricated subscriptions, never a user's actual profile."""
 import contextlib
 from datetime import datetime, timezone
+from functools import wraps
 import importlib.util
 import io
 import json
@@ -33,6 +34,23 @@ def body(entries=None, secret=SECRET):
     entries = hosts() if entries is None else entries
     return json.dumps({"hosts": entries, "proxies": [{"server": next(iter(entries), "a.example.com"),
                        "password": secret, "name": secret}], "subscription_url": secret}).encode()
+
+
+def with_subscription_parsers(test):
+    """Exercise recovery with JSON fixtures, plus real YAML when installed."""
+    @wraps(test)
+    def run(self):
+        # body() emits JSON. Replace only parsing, retaining subscription
+        # validation and every recovery/publication assertion in both modes.
+        parsers = [("stdlib_json_fixture", json.loads)]
+        if HAS_YAML:
+            parsers.append(("pyyaml_integration", sync.load_yaml))
+        for name, parser in parsers:
+            with self.subTest(parser=name):
+                with patch.object(sync, "load_yaml", side_effect=parser) as parse:
+                    test(self)
+                parse.assert_called()
+    return run
 
 
 def public_files(entries=None):
@@ -274,6 +292,7 @@ class PublicationAndTransportTests(unittest.TestCase):
                 sync.run(Path(temp), True, gh)
             source.assert_not_called()
 
+    @with_subscription_parsers
     def test_raw_cache_delay_reverified_without_second_pr(self):
         gh = FakeGitHub()
         stamp = "2026-10-18 09:00:05 +08:00"
@@ -353,6 +372,7 @@ class PublicationAndTransportTests(unittest.TestCase):
                 self.assertEqual(error.exception.details["attempt"], 1)
                 sleeper.assert_not_called()
 
+    @with_subscription_parsers
     def test_recovery_then_changed_source_creates_one_fresh_pr(self):
         gh = FakeGitHub()
         gh.merged = True
@@ -379,6 +399,7 @@ class PublicationAndTransportTests(unittest.TestCase):
         self.assertEqual(len(gh.created), 1)
         self.assertEqual(parse_module(gh.files[MODULE]), hosts(15))
 
+    @with_subscription_parsers
     def test_recovery_then_source_failure_or_interrupt_is_not_success(self):
         for failure, status, reason in ((HostsError("download_exhausted"), "needs_attention", "download_exhausted"),
                                         (KeyboardInterrupt(), "needs_attention", "interrupted")):
@@ -423,6 +444,7 @@ class PublicationAndTransportTests(unittest.TestCase):
             source.assert_not_called()
             self.assertFalse(gh.created or gh.merged)
 
+    @with_subscription_parsers
     def test_interrupt_before_recovery_save_is_safe_to_resume(self):
         gh = FakeGitHub()
         gh.merged = True

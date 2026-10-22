@@ -297,8 +297,12 @@
         "retained_count": 3689
       },
       "claude": {
-        "raw_count": 9,
-        "retained_count": 9
+        "raw_count": 19,
+        "retained_count": 19,
+        "reviewed_transition": {
+          "from_sha256": "3c55f91b630ea75919b4eb502916f84b511e07c4e1ec55873d61a02df59edfef",
+          "to_sha256": "48c97b9f45197186a22aa19ccea38cdcaa09653ff8afd6e85e7bccf9f234e261"
+        }
       },
       "copilot": {
         "raw_count": 51,
@@ -681,8 +685,12 @@
         "retained_count": 3689
       },
       "claude": {
-        "raw_count": 8,
-        "retained_count": 8
+        "raw_count": 19,
+        "retained_count": 19,
+        "reviewed_transition": {
+          "from_sha256": "3c55f91b630ea75919b4eb502916f84b511e07c4e1ec55873d61a02df59edfef",
+          "to_sha256": "48c97b9f45197186a22aa19ccea38cdcaa09653ff8afd6e85e7bccf9f234e261"
+        }
       },
       "copilot": {
         "raw_count": 51,

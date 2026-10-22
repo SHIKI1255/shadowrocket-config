@@ -1,3 +1,4 @@
+import copy
 import json
 from pathlib import Path
 import sys
@@ -69,3 +70,67 @@ class SharedCore(unittest.TestCase):
     def test_source_order_preserves_exact_options(self):
         rr=[e.parse_rule('IP-CIDR,8.8.8.8/32,PROXY,no-resolve'),e.parse_rule('IP-CIDR,8.8.8.8/32,PROXY')]
         self.assertEqual(len(e.merge_rules(rr)[0]),2)
+
+    def transition_fixture(self):
+        def state(n):
+            return {'raw_count': n, 'retained_count': n,
+                    'rules': ['DOMAIN,host%d.example,PROXY' % i for i in range(n)]}
+        before, after = {'x': state(9)}, {'x': state(19)}
+        accepted = {'x': {'raw_count': 19, 'retained_count': 19,
+                         'reviewed_transition': {
+                             'from_sha256': core.source_state_sha256(before['x']),
+                             'to_sha256': core.source_state_sha256(after['x'])}}}
+        return before, after, accepted, core.read_json('sources.yaml')['limits']
+
+    def test_reviewed_transition_accepts_only_exact_old_and_new_states(self):
+        before, after, accepted, limits = self.transition_fixture()
+        original = copy.deepcopy(before)
+        with self.assertRaises(e.BuildError):
+            e.check_limits(after, before, limits)
+        core.check_previous_limits(after, before, accepted, limits)
+        self.assertEqual(before, original)
+        variants = [copy.deepcopy(after) for _ in range(5)]
+        variants[0]['x']['rules'][0] = 'DOMAIN,unreviewed.example,PROXY'
+        variants[1]['x']['rules'].reverse()
+        variants[2]['x']['raw_count'] += 1
+        variants[3]['x']['retained_count'] -= 1
+        variants[4]['x']['rules'].append('DOMAIN,extra.example,PROXY')
+        for variant in variants:
+            with self.subTest(variant=variant), self.assertRaises(e.BuildError):
+                core.check_previous_limits(variant, before, accepted, limits)
+        wrong_before = copy.deepcopy(before)
+        wrong_before['x']['rules'][0] = 'DOMAIN,other.example,PROXY'
+        with self.assertRaises(e.BuildError):
+            core.check_previous_limits(after, wrong_before, accepted, limits)
+
+    def test_reviewed_transition_does_not_exempt_other_sources_or_inventory(self):
+        before, after, accepted, limits = self.transition_fixture()
+        before['y'] = {'raw_count': 100, 'retained_count': 100, 'rules': ['old']}
+        after['y'] = {'raw_count': 151, 'retained_count': 151, 'rules': ['new']}
+        accepted['y'] = {'raw_count': 100, 'retained_count': 100}
+        with self.assertRaises(e.BuildError):
+            core.check_previous_limits(after, before, accepted, limits)
+        del after['y']
+        with self.assertRaises(e.BuildError):
+            core.check_previous_limits(after, before, accepted, limits)
+
+    def test_reviewed_transition_is_not_a_permanent_size_or_replacement_exemption(self):
+        _, after, accepted, limits = self.transition_fixture()
+        core.check_previous_limits(after, after, accepted, limits)
+        changed = copy.deepcopy(after)
+        changed['x']['raw_count'] = 100
+        with self.assertRaises(e.BuildError):
+            core.check_previous_limits(changed, after, accepted, limits)
+        changed = copy.deepcopy(after)
+        changed['x']['rules'] = ['DOMAIN,replacement.example,PROXY']
+        with self.assertRaises(e.BuildError):
+            core.check_previous_limits(changed, after, accepted, limits)
+
+    def test_reviewed_transition_rejects_malformed_records(self):
+        before, after, accepted, limits = self.transition_fixture()
+        for invalid in ({}, 'allow', {'from_sha256': 'x', 'to_sha256': 'y'},
+                        {**accepted['x']['reviewed_transition'], 'wildcard': True}):
+            bad = copy.deepcopy(accepted)
+            bad['x']['reviewed_transition'] = invalid
+            with self.subTest(invalid=invalid), self.assertRaises(e.BuildError):
+                core.check_previous_limits(after, before, bad, limits)
