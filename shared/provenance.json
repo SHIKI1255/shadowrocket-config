@@ -772,7 +772,35 @@
       "origins": [
         "claude"
       ],
+      "rule": "DOMAIN-SUFFIX,ant.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
       "rule": "DOMAIN-SUFFIX,anthropic.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,anthropic.team,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,antspace.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,chatbotclaude.com,PROXY"
     },
     {
       "category": "claude",
@@ -787,6 +815,13 @@
         "claude"
       ],
       "rule": "DOMAIN-SUFFIX,claude.ai,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claude.app,PROXY"
     },
     {
       "category": "claude",
@@ -809,6 +844,27 @@
       "origins": [
         "claude"
       ],
+      "rule": "DOMAIN-SUFFIX,claude.new,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claude.site,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudeacademy.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
       "rule": "DOMAIN-SUFFIX,claudemcpclient.com,PROXY"
     },
     {
@@ -817,6 +873,20 @@
         "claude"
       ],
       "rule": "DOMAIN-SUFFIX,claudemcpcontent.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudepages.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudestudio.com,PROXY"
     },
     {
       "category": "claude",
@@ -18729,6 +18799,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,apple-icloud.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,apple-itunes.cn,DIRECT"
     },
     {
@@ -18809,6 +18887,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,appleicloud.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,appleid-applemx.com,DIRECT"
     },
     {
@@ -18866,6 +18952,14 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,appleid.hk,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,applemx-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -19249,7 +19343,351 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,icloud-apple.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud-content.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud-isupport.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud-sandbox.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ch,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.com.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ee,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.fi,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.fr,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.hu,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ie,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.is,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.jp,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.lv,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.net.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.om,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.org,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.pt,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ro,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.se,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.si,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.sk,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.vn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudads.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudapple.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudbox.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudbrowser.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloude.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudhome.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudmail.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudmusic.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudnet.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudos.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudos.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudpay.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudsecure.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudsetup.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,ids-apple.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,ios-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -19519,6 +19957,16 @@
       "category": "apple",
       "origins": [
         "apple",
+        "apple_domains",
+        "china",
+        "china_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,me.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,myappleid.com,DIRECT"
@@ -19529,7 +19977,31 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,myicloud.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,mylcloud.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,tvappstore.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,wwwicloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21361,14 +21833,6 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,appleenews.com,DIRECT"
     },
     {
@@ -21386,14 +21850,6 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,applemusic.co,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21657,7 +22113,31 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,apple-dns.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,cdn-apple.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21681,31 +22161,7 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,apple-icloud.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,apple-livephotoskit.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,appleicloud.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,applemx-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21721,30 +22177,6 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,cdn-apple.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-apple.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-content.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,icloud-content.com.cn,DIRECT"
     },
     {
@@ -21753,369 +22185,7 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,icloud-isupport.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-sandbox.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ch,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,icloud.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.com.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ee,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.fi,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.fr,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.hu,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ie,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.is,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.jp,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.lv,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.net.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.om,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.org,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.pt,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ro,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.se,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.si,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.sk,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.vn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudads.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudapple.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudbox.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudbrowser.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloude.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudhome.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudmail.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudmusic.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudnet.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudos.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudos.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudpay.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudsecure.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudsetup.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,ios-icloud.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains",
-        "china",
-        "china_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,me.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,myicloud.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,mylcloud.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,wwwicloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -111996,7 +112066,35 @@
       "origins": [
         "claude"
       ],
+      "rule": "DOMAIN-SUFFIX,ant.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
       "rule": "DOMAIN-SUFFIX,anthropic.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,anthropic.team,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,antspace.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,chatbotclaude.com,PROXY"
     },
     {
       "category": "claude",
@@ -112011,6 +112109,13 @@
         "claude"
       ],
       "rule": "DOMAIN-SUFFIX,claude.ai,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claude.app,PROXY"
     },
     {
       "category": "claude",
@@ -112032,6 +112137,27 @@
       "origins": [
         "claude"
       ],
+      "rule": "DOMAIN-SUFFIX,claude.new,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claude.site,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudeacademy.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
       "rule": "DOMAIN-SUFFIX,claudemcpclient.com,PROXY"
     },
     {
@@ -112040,6 +112166,20 @@
         "claude"
       ],
       "rule": "DOMAIN-SUFFIX,claudemcpcontent.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudepages.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudestudio.com,PROXY"
     },
     {
       "category": "claude",
@@ -211393,7 +211533,35 @@
       "origins": [
         "claude"
       ],
+      "rule": "DOMAIN-SUFFIX,ant.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
       "rule": "DOMAIN-SUFFIX,anthropic.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,anthropic.team,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,antspace.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,chatbotclaude.com,PROXY"
     },
     {
       "category": "claude",
@@ -211408,6 +211576,13 @@
         "claude"
       ],
       "rule": "DOMAIN-SUFFIX,claude.ai,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claude.app,PROXY"
     },
     {
       "category": "claude",
@@ -211429,6 +211604,27 @@
       "origins": [
         "claude"
       ],
+      "rule": "DOMAIN-SUFFIX,claude.new,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claude.site,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudeacademy.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
       "rule": "DOMAIN-SUFFIX,claudemcpclient.com,PROXY"
     },
     {
@@ -211437,6 +211633,20 @@
         "claude"
       ],
       "rule": "DOMAIN-SUFFIX,claudemcpcontent.com,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudepages.dev,PROXY"
+    },
+    {
+      "category": "claude",
+      "origins": [
+        "claude"
+      ],
+      "rule": "DOMAIN-SUFFIX,claudestudio.com,PROXY"
     },
     {
       "category": "claude",

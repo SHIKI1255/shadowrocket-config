@@ -1,30 +1,30 @@
 {
-  "bundle_sha256": "9a8e450b5abba6372ffe88df5a03f98b9f2483428117d8cc8e1236c19c4adcc1",
-  "provenance_sha256": "d04355efa62aeb5a3ae914d96106dadba4d0d1d2d5432f48982e9342abe0b5e9",
+  "bundle_sha256": "660c1702e2f92c0c90e27858a3e23d273ec1cfb94a2edb2a9e4877eeb7803b72",
+  "provenance_sha256": "baec800029c870e30edddf2227f235ece559d744851e3d22f93cbbc0a58a932c",
   "schema_version": 1,
-  "shared_version": "67feb8cb5c9851b3f375cd8da2cf5e80219c5e765d36b5d704f1cc9b576a9acb",
+  "shared_version": "558cee1a2d4e7559cbf112d8b085afbaf097320e41af3860d25fe4c647a5144a",
   "source_files_sha256": {
-    "shared/README.md": "22d3fa1ec407f7f19222777053629b6423e43163ce0027942f537f9a2f4e38df",
+    "shared/README.md": "77c603d6ff7b388b57d6fdfe5bd48acea5ec44c4c4339583fd08a9e720cbf4cc",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
-    "shared/baseline.json": "ae16bbfaa705cfc0c50a520cc1b3744dcf9a26714963daf38de5eec9d4d7888f",
+    "shared/baseline.json": "27db7e369d7d90c2be310b9df57b7db512dd4bcf6ab52f792f9dbdb07786c386",
     "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
-    "shared/core.py": "ba0252c32e6d31c87414bcee6326c7c89e760fea000975789ee88d9accbea1b7",
+    "shared/core.py": "854f3389ae8737bf63f672b4635f330a9059538777770437db6307045625ffdf",
     "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
     "shared/engine.py": "8aa25f4bcf4b772967264ea539af15339db6f6246779ac2c2cd0e6bf3ae6fcd0",
     "shared/platforms.json": "9b643e1fc056cc14723d085312f5b8f1dff34df1410cbf1bd353b8f9250edbb3",
     "shared/quantumult.py": "6c9db71793715c73c16f7c632b1bf1e4e990e59a3ec24c9b8ca0f273b375f89d",
-    "shared/routing_cases.json": "4f814937474e520862bd844c64ad4b6c088634a64f85a3ad668ec03d937a243d",
+    "shared/routing_cases.json": "9c4bcc4dc21d4ffa879226af38bc0a9e03d1bb2fd347579dd8fff845c8391d24",
     "shared/sources.yaml": "8df2864fac0ee86a7892deac917843413993a393c1ba8d3084ea33ab29170ce1"
   },
   "upstreams": {
     "blackmatrix7": {
-      "commit": "7dd06b44f5093dd5404e1e5f3bca5452d97146ef",
+      "commit": "f9e403a75bbc4bee939c6d8dd766cf78f1b512f3",
       "license": "GPL-2.0",
       "ref": "master",
       "repo": "blackmatrix7/ios_rule_script"
     },
     "v2fly": {
-      "commit": "6b0f8edc935ee0ad2cb386ac3efd451ee2380ac5",
+      "commit": "5b6a77d14fb904a1255f02e2e1b2bcc36ed31f83",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community"
