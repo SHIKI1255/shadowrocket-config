@@ -1,5 +1,5 @@
 #!name=GeekSpeed Hosts
-#!desc=GeekSpeed Clash 订阅 Hosts 完整同步；由使用者在本机核对维护；Hosts 内容更新时间：2026-10-22 20:00:17 +08:00
+#!desc=GeekSpeed Clash 订阅 Hosts 完整同步；由使用者在本机核对维护；Hosts 内容更新时间：2026-10-23 08:01:42 +08:00
 
 [Host]
 sh.geeknode.top = 117.186.139.8
@@ -13,7 +13,7 @@ cm6.geekspeed.live = 204.235.242.88
 newcm.geeknode.top = 23.144.252.4
 cm7.geekapp.de = 204.235.242.80
 cm8.geekapp.de = 204.235.242.82
-cm.geekapp.uk = 54.116.220.163
+cm.geekapp.uk = 3.38.136.2
 cu.geekapp.de = 23.144.252.11
 bgp.geekspeed.info = 23.144.252.19
 ct.geekapp.de = 106.13.255.58
