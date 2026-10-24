@@ -9353,6 +9353,13 @@
       "origins": [
         "steam"
       ],
+      "rule": "DOMAIN-SUFFIX,dota2.com,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
       "rule": "DOMAIN-SUFFIX,dota2.wmsj.cn,PROXY"
     },
     {
@@ -9536,6 +9543,13 @@
       "origins": [
         "steam"
       ],
+      "rule": "DOMAIN-SUFFIX,steamconnecttest.com,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
       "rule": "DOMAIN-SUFFIX,steamcontent.tnkjmec.com,PROXY"
     },
     {
@@ -9662,6 +9676,13 @@
     {
       "category": "steam",
       "origins": [
+        "steam"
+      ],
+      "rule": "DOMAIN-SUFFIX,valve.net,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
         "steam",
         "proxy",
         "proxy_domains"
@@ -9695,6 +9716,90 @@
         "steam"
       ],
       "rule": "DOMAIN-KEYWORD,steamuserimages,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,103.10.124.0/23,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,103.28.54.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,146.66.152.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,146.66.155.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,155.133.224.0/19,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,162.254.192.0/21,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,185.25.180.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,192.69.96.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,205.196.6.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,208.64.200.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,208.78.164.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,45.121.184.0/24,PROXY,no-resolve"
     },
     {
       "category": "apple",
@@ -18799,14 +18904,6 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,apple-icloud.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,apple-itunes.cn,DIRECT"
     },
     {
@@ -18887,14 +18984,6 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,appleicloud.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,appleid-applemx.com,DIRECT"
     },
     {
@@ -18952,14 +19041,6 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,appleid.hk,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,applemx-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -19247,14 +19328,6 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,appstore.co.id,DIRECT"
     },
     {
@@ -19343,351 +19416,7 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,icloud-apple.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-content.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-isupport.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-sandbox.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ch,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.com.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ee,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.fi,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.fr,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.hu,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ie,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.is,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.jp,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.lv,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.net.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.om,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.org,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.pt,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ro,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.se,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.si,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.sk,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.vn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudads.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudapple.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudbox.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudbrowser.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloude.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudhome.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudmail.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudmusic.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudnet.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudos.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudos.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudpay.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudsecure.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudsetup.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,ids-apple.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,ios-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -19957,16 +19686,6 @@
       "category": "apple",
       "origins": [
         "apple",
-        "apple_domains",
-        "china",
-        "china_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,me.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,myappleid.com,DIRECT"
@@ -19977,31 +19696,7 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,myicloud.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,mylcloud.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,tvappstore.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,wwwicloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21857,6 +21552,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,applemusic.com.au,DIRECT"
     },
     {
@@ -22113,14 +21816,6 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,apple-dns.net,DIRECT"
     },
     {
@@ -22130,6 +21825,14 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
     },
     {
       "category": "apple",
@@ -22161,7 +21864,31 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,apple-icloud.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,apple-livephotoskit.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,appleicloud.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,applemx-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -22177,6 +21904,22 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,icloud-apple.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud-content.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,icloud-content.com.cn,DIRECT"
     },
     {
@@ -22185,7 +21928,369 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,icloud-isupport.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud-sandbox.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ch,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,icloud.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.com.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ee,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.fi,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.fr,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.hu,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ie,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.is,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.jp,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.lv,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.net.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.om,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.org,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.pt,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ro,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.se,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.si,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.sk,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.vn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudads.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudapple.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudbox.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudbrowser.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloude.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudhome.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudmail.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudmusic.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudnet.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudos.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudos.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudpay.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudsecure.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudsetup.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,ios-icloud.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains",
+        "china",
+        "china_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,me.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,myicloud.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,mylcloud.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,wwwicloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -120391,6 +120496,13 @@
       "origins": [
         "steam"
       ],
+      "rule": "DOMAIN-SUFFIX,dota2.com,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
       "rule": "DOMAIN-SUFFIX,dota2.wmsj.cn,PROXY"
     },
     {
@@ -120570,6 +120682,13 @@
       "origins": [
         "steam"
       ],
+      "rule": "DOMAIN-SUFFIX,steamconnecttest.com,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
       "rule": "DOMAIN-SUFFIX,steamcontent.tnkjmec.com,PROXY"
     },
     {
@@ -120695,6 +120814,13 @@
     {
       "category": "steam",
       "origins": [
+        "steam"
+      ],
+      "rule": "DOMAIN-SUFFIX,valve.net,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
         "steam",
         "proxy_domains"
       ],
@@ -120727,6 +120853,90 @@
         "steam"
       ],
       "rule": "DOMAIN-KEYWORD,steamuserimages,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,103.10.124.0/23,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,103.28.54.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,146.66.152.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,146.66.155.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,155.133.224.0/19,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,162.254.192.0/21,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,185.25.180.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,192.69.96.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,205.196.6.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,208.64.200.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,208.78.164.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,45.121.184.0/24,PROXY,no-resolve"
     },
     {
       "category": "apple",
@@ -219858,6 +220068,13 @@
       "origins": [
         "steam"
       ],
+      "rule": "DOMAIN-SUFFIX,dota2.com,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
       "rule": "DOMAIN-SUFFIX,dota2.wmsj.cn,PROXY"
     },
     {
@@ -220037,6 +220254,13 @@
       "origins": [
         "steam"
       ],
+      "rule": "DOMAIN-SUFFIX,steamconnecttest.com,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
       "rule": "DOMAIN-SUFFIX,steamcontent.tnkjmec.com,PROXY"
     },
     {
@@ -220162,6 +220386,13 @@
     {
       "category": "steam",
       "origins": [
+        "steam"
+      ],
+      "rule": "DOMAIN-SUFFIX,valve.net,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
         "steam",
         "proxy_domains"
       ],
@@ -220194,6 +220425,90 @@
         "steam"
       ],
       "rule": "DOMAIN-KEYWORD,steamuserimages,PROXY"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,103.10.124.0/23,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,103.28.54.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,146.66.152.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,146.66.155.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,155.133.224.0/19,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,162.254.192.0/21,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,185.25.180.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,192.69.96.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,205.196.6.0/24,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,208.64.200.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,208.78.164.0/22,PROXY,no-resolve"
+    },
+    {
+      "category": "steam",
+      "origins": [
+        "steam"
+      ],
+      "rule": "IP-CIDR,45.121.184.0/24,PROXY,no-resolve"
     },
     {
       "category": "apple",
