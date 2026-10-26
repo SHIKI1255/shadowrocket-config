@@ -361,8 +361,12 @@
         "retained_count": 33
       },
       "voice": {
-        "raw_count": 23,
-        "retained_count": 23
+        "raw_count": 150,
+        "retained_count": 150,
+        "reviewed_transition": {
+          "from_sha256": "4f377c5cc8a14acf0aeac4c48c7c780d8b88d7728570e1046510aaca17a780eb",
+          "to_sha256": "eb4a1c6d29cd30bb29ee70afc32f8d75b8a52ad6dc32a325d8ae60718c9adef5"
+        }
       }
     }
   },
@@ -749,8 +753,12 @@
         "retained_count": 33
       },
       "voice": {
-        "raw_count": 23,
-        "retained_count": 23
+        "raw_count": 150,
+        "retained_count": 150,
+        "reviewed_transition": {
+          "from_sha256": "4f377c5cc8a14acf0aeac4c48c7c780d8b88d7728570e1046510aaca17a780eb",
+          "to_sha256": "eb4a1c6d29cd30bb29ee70afc32f8d75b8a52ad6dc32a325d8ae60718c9adef5"
+        }
       }
     }
   }
