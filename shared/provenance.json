@@ -1248,7 +1248,161 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,13.78.198.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.33.52.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,132.196.88.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.49.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.49.233/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,135.220.40.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,137.116.45.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.104.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.96.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.166.108.88/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.178.132.252/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.183.195.174/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.184.108.82/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.184.136.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.32.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.43.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.75.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.200.47.199/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.168.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.169.179/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.23.232/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1262,7 +1416,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.204.26.194/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.207.173.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.177.184/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.183.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.186.208/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1276,7 +1458,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.214.254.250/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.190.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,191.233.251.27/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.235.237.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.195.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.199.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.207.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.209.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.114.70.148/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1290,7 +1528,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.165.158.214/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.168.48.117/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.138.58/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.252.186/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1304,7 +1563,224 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.195.180.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.195.185.53/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.195.188.94/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.196.195.248/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.197.179.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.199.240.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.203.144.245/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.145.145/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.210.247.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.232.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.248.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.253.155/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.254.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.51.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.100.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.102.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.124.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.41.247/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.51.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.74.46/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.229.39.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.234.111.90/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.242.106.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.248.121.10/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.253.201.211/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.94.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.42.209.232/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.42.216.2/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.45.59.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.55.129.73/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.66.44.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.70.109.186/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1318,7 +1794,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.89.216.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.9.65.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.150.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.178.112/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.200.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.50.34/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1332,7 +1843,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.155.233.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.190.204.74/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.197.155.147/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.197.172.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.197.185.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.155.22/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.169.177/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.186.94/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.213.138.217/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.217.222.97/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1346,7 +1920,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.218.14.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.225.200.166/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.242.133.59/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.245.198.13/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.246.114.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.255.228.31/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1360,7 +1969,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,48.193.41.165/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.103.128.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.175.203/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.220.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.4.112.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.57.68.153/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.57.79.182/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1374,7 +2025,112 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.182.134.239/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.188.151.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.230.89.145/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.233.253.172/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.243.62.231/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.104.78/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.22.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.40.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.42.34/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.55.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.67.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,68.155.152.41/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,68.221.176.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,68.221.200.92/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.147.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.148.19/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1388,7 +2144,140 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,72.146.45.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.225.202.57/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.225.219.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.120.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.136.89/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,74.248.148.7/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.241.198/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.33/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.69/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.180.16/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.241.13/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.245.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.160.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.163.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.164.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.165.37/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.154.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.112/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.144/32,PROXY,no-resolve"
     },
     {
       "category": "copilot",
@@ -18904,6 +19793,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,apple-icloud.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,apple-itunes.cn,DIRECT"
     },
     {
@@ -18984,6 +19881,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,appleicloud.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,appleid-applemx.com,DIRECT"
     },
     {
@@ -19041,6 +19946,14 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,appleid.hk,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,applemx-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -19328,6 +20241,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,appstore.co.id,DIRECT"
     },
     {
@@ -19416,7 +20337,351 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,icloud-apple.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud-content.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud-isupport.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud-sandbox.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ch,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.com.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ee,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.fi,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.fr,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.hu,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ie,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.is,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.jp,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.lv,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.net.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.om,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.org,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.pt,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.ro,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.se,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.si,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.sk,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloud.vn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudads.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudapple.cn,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudbox.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudbrowser.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloude.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudhome.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudmail.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudmusic.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudnet.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudo.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudos.de,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudos.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudpay.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudsecure.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,icloudsetup.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,ids-apple.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,ios-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -19686,6 +20951,16 @@
       "category": "apple",
       "origins": [
         "apple",
+        "apple_domains",
+        "china",
+        "china_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,me.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,myappleid.com,DIRECT"
@@ -19696,7 +20971,31 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,myicloud.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,mylcloud.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,tvappstore.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,wwwicloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21528,6 +22827,14 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,appleenews.com,DIRECT"
     },
     {
@@ -21545,14 +22852,6 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,applemusic.co,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21816,23 +23115,15 @@
         "apple",
         "apple_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,applemusic.com,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,apple-dns.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
     },
     {
       "category": "apple",
@@ -21864,31 +23155,7 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,apple-icloud.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,apple-livephotoskit.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,appleicloud.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,applemx-icloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -21904,393 +23171,7 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,icloud-apple.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-content.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,icloud-content.com.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-isupport.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud-sandbox.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ch,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.com.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ee,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.fi,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.fr,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.hu,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ie,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.is,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.jp,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.lv,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.net.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.om,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.org,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.pt,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.ro,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.se,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.si,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.sk,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.vn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudads.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudapple.cn,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudbox.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudbrowser.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloude.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudhome.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudmail.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudmusic.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudnet.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudo.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudos.de,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudos.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudpay.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudsecure.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloudsetup.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,ios-icloud.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains",
-        "china",
-        "china_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,me.com,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,myicloud.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,mylcloud.net,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,wwwicloud.com,DIRECT"
     },
     {
       "category": "apple",
@@ -28385,6 +29266,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,123av.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,123rf.com,PROXY"
     },
     {
@@ -33241,6 +34130,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,bidobido.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,biedian.me,PROXY"
     },
     {
@@ -33306,6 +34203,22 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,bigsound.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,bikaios.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,bikawebapp.com,PROXY"
     },
     {
       "category": "proxy",
@@ -37857,6 +38770,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,console.typesafe.ai,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,constitutionalism.solutions,PROXY"
     },
     {
@@ -39690,6 +40611,14 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,divdyn.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,diwodiwo.xyz,PROXY"
     },
     {
       "category": "proxy",
@@ -45209,6 +46138,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,ga.jspm.io,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,gab.com,PROXY"
     },
     {
@@ -49449,6 +50386,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,huakacomic.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,huanghuagang.org,PROXY"
     },
     {
@@ -53177,6 +54122,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,kimootoko.net,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,kindle4rss.com,PROXY"
     },
     {
@@ -55521,6 +56474,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,manhuabika.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,manhuaren.com,PROXY"
     },
     {
@@ -56857,6 +57818,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,minkch.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,minzhuhua.net,PROXY"
     },
     {
@@ -57586,6 +58555,14 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,moves-export.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,movie.eroterest.net,PROXY"
     },
     {
       "category": "proxy",
@@ -59722,6 +60699,30 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,njactb.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njav.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njav.tv,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njavtv.com,PROXY"
     },
     {
       "category": "proxy",
@@ -62537,6 +63538,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,pica-id.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,picacomic.com,PROXY"
     },
     {
@@ -63114,6 +64123,14 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,pmates.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,po-kaki-to.com,PROXY"
     },
     {
       "category": "proxy",
@@ -72617,6 +73634,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,tipatipa.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,tistory.com,PROXY"
     },
     {
@@ -78001,6 +79026,14 @@
         "proxy",
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,wikawika.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,wiki.esu.im,PROXY"
     },
     {
@@ -81362,6 +82395,14 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,zozotown.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy",
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,zozovideo.com,PROXY"
     },
     {
       "category": "proxy",
@@ -112644,7 +113685,161 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,13.78.198.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.33.52.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,132.196.88.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.49.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.49.233/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,135.220.40.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,137.116.45.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.104.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.96.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.166.108.88/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.178.132.252/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.183.195.174/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.184.108.82/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.184.136.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.32.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.43.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.75.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.200.47.199/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.168.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.169.179/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.23.232/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112658,7 +113853,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.204.26.194/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.207.173.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.177.184/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.183.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.186.208/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112672,7 +113895,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.214.254.250/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.190.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,191.233.251.27/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.235.237.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.195.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.199.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.207.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.209.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.114.70.148/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112686,7 +113965,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.165.158.214/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.168.48.117/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.138.58/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.252.186/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112700,7 +114000,224 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.195.180.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.195.185.53/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.195.188.94/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.196.195.248/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.197.179.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.199.240.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.203.144.245/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.145.145/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.210.247.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.232.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.248.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.253.155/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.254.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.51.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.100.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.102.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.124.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.41.247/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.51.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.74.46/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.229.39.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.234.111.90/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.242.106.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.248.121.10/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.253.201.211/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.94.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.42.209.232/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.42.216.2/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.45.59.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.55.129.73/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.66.44.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.70.109.186/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112714,7 +114231,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.89.216.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.9.65.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.150.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.178.112/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.200.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.50.34/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112728,7 +114280,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.155.233.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.190.204.74/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.197.155.147/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.197.172.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.197.185.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.155.22/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.169.177/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.186.94/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.213.138.217/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.217.222.97/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112742,7 +114357,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.218.14.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.225.200.166/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.242.133.59/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.245.198.13/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.246.114.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.255.228.31/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112756,7 +114406,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,48.193.41.165/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.103.128.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.175.203/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.220.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.4.112.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.57.68.153/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.57.79.182/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112770,7 +114462,112 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.182.134.239/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.188.151.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.230.89.145/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.233.253.172/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.243.62.231/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.104.78/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.22.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.40.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.42.34/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.55.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.67.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,68.155.152.41/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,68.221.176.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,68.221.200.92/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.147.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.148.19/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -112784,7 +114581,140 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,72.146.45.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.225.202.57/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.225.219.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.120.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.136.89/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,74.248.148.7/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.241.198/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.33/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.69/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.180.16/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.241.13/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.245.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.160.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.163.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.164.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.165.37/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.154.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.112/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.144/32,PROXY,no-resolve"
     },
     {
       "category": "copilot",
@@ -121125,6 +123055,13 @@
       "origins": [
         "apple"
       ],
+      "rule": "USER-AGENT,AppleTV*,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple"
+      ],
       "rule": "USER-AGENT,com.apple.news*,DIRECT"
     },
     {
@@ -121133,13 +123070,6 @@
         "apple"
       ],
       "rule": "USER-AGENT,com.apple.trustd*,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple"
-      ],
-      "rule": "USER-AGENT,AppleTV*,DIRECT"
     },
     {
       "category": "apple",
@@ -128256,13 +130186,6 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,icloud.ch,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.cn,DIRECT"
     },
     {
       "category": "apple",
@@ -138757,6 +140680,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,123av.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,123rf.com,PROXY"
     },
     {
@@ -143006,6 +144936,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,bidobido.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,biedian.me,PROXY"
     },
     {
@@ -143063,6 +145000,20 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,bigsound.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,bikaios.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,bikawebapp.com,PROXY"
     },
     {
       "category": "proxy",
@@ -147045,6 +148996,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,console.typesafe.ai,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,constitutionalism.solutions,PROXY"
     },
     {
@@ -148649,6 +150607,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,divdyn.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,diwodiwo.xyz,PROXY"
     },
     {
       "category": "proxy",
@@ -153478,6 +155443,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,ga.jspm.io,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,gab.com,PROXY"
     },
     {
@@ -157188,6 +159160,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,huakacomic.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,huanghuagang.org,PROXY"
     },
     {
@@ -160450,6 +162429,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,kimootoko.net,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,kindle4rss.com,PROXY"
     },
     {
@@ -162501,6 +164487,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,manhuabika.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,manhuaren.com,PROXY"
     },
     {
@@ -163670,6 +165663,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,minkch.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,minzhuhua.net,PROXY"
     },
     {
@@ -164308,6 +166308,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,moves-export.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,movie.eroterest.net,PROXY"
     },
     {
       "category": "proxy",
@@ -166177,6 +168184,27 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,njactb.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njav.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njav.tv,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njavtv.com,PROXY"
     },
     {
       "category": "proxy",
@@ -168640,6 +170668,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,pica-id.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,picacomic.com,PROXY"
     },
     {
@@ -169145,6 +171180,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,pmates.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,po-kaki-to.com,PROXY"
     },
     {
       "category": "proxy",
@@ -177460,6 +179502,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,tipatipa.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,tistory.com,PROXY"
     },
     {
@@ -182171,6 +184220,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,wikawika.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,wiki.esu.im,PROXY"
     },
     {
@@ -185112,6 +187168,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,zozotown.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,zozovideo.com,PROXY"
     },
     {
       "category": "proxy",
@@ -212216,7 +214279,161 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,13.78.198.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.33.52.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,132.196.88.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.49.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.49.233/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,135.220.40.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,137.116.45.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.104.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.96.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.166.108.88/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.178.132.252/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.183.195.174/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.184.108.82/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.184.136.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.32.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.43.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.75.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.200.47.199/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.168.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.169.179/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.23.232/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212230,7 +214447,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.204.26.194/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.207.173.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.177.184/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.183.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.186.208/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212244,7 +214489,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.214.254.250/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.190.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,191.233.251.27/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.235.237.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.195.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.199.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.207.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.209.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.114.70.148/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212258,7 +214559,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.165.158.214/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.168.48.117/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.138.58/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.252.186/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212272,7 +214594,224 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.195.180.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.195.185.53/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.195.188.94/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.196.195.248/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.197.179.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.199.240.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.203.144.245/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.145.145/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.210.247.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.232.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.248.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.253.155/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.254.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.51.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.100.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.102.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.124.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.41.247/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.51.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.74.46/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.229.39.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.234.111.90/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.242.106.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.248.121.10/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.253.201.211/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.94.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.42.209.232/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.42.216.2/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.45.59.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.55.129.73/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.66.44.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.70.109.186/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212286,7 +214825,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.89.216.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.9.65.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.150.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.178.112/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.200.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.50.34/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212300,7 +214874,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.155.233.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.190.204.74/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.197.155.147/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.197.172.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.197.185.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.155.22/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.169.177/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.186.94/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.213.138.217/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.217.222.97/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212314,7 +214951,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.218.14.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.225.200.166/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.242.133.59/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.245.198.13/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.246.114.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.255.228.31/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212328,7 +215000,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,48.193.41.165/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.103.128.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.175.203/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.220.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.4.112.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.57.68.153/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.57.79.182/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212342,7 +215056,112 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.182.134.239/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.188.151.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.230.89.145/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.233.253.172/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.243.62.231/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.104.78/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.22.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.40.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.42.34/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.55.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,57.154.67.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,68.155.152.41/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,68.221.176.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,68.221.200.92/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.147.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.148.19/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -212356,7 +215175,140 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,72.146.45.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.225.202.57/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.225.219.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.120.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.136.89/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,74.248.148.7/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.241.198/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.33/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.69/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.180.16/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.241.13/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.245.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.160.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.163.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.164.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.165.37/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.154.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.112/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.159.144/32,PROXY,no-resolve"
     },
     {
       "category": "copilot",
@@ -220697,6 +223649,13 @@
       "origins": [
         "apple"
       ],
+      "rule": "USER-AGENT,AppleTV*,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple"
+      ],
       "rule": "USER-AGENT,com.apple.news*,DIRECT"
     },
     {
@@ -220705,13 +223664,6 @@
         "apple"
       ],
       "rule": "USER-AGENT,com.apple.trustd*,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple"
-      ],
-      "rule": "USER-AGENT,AppleTV*,DIRECT"
     },
     {
       "category": "apple",
@@ -227828,13 +230780,6 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,icloud.ch,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple_domains"
-      ],
-      "rule": "DOMAIN-SUFFIX,icloud.cn,DIRECT"
     },
     {
       "category": "apple",
@@ -238329,6 +241274,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,123av.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,123rf.com,PROXY"
     },
     {
@@ -242578,6 +245530,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,bidobido.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,biedian.me,PROXY"
     },
     {
@@ -242635,6 +245594,20 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,bigsound.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,bikaios.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,bikawebapp.com,PROXY"
     },
     {
       "category": "proxy",
@@ -246617,6 +249590,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,console.typesafe.ai,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,constitutionalism.solutions,PROXY"
     },
     {
@@ -248221,6 +251201,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,divdyn.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,diwodiwo.xyz,PROXY"
     },
     {
       "category": "proxy",
@@ -253050,6 +256037,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,ga.jspm.io,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,gab.com,PROXY"
     },
     {
@@ -256760,6 +259754,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,huakacomic.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,huanghuagang.org,PROXY"
     },
     {
@@ -260022,6 +263023,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,kimootoko.net,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,kindle4rss.com,PROXY"
     },
     {
@@ -262073,6 +265081,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,manhuabika.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,manhuaren.com,PROXY"
     },
     {
@@ -263242,6 +266257,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,minkch.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,minzhuhua.net,PROXY"
     },
     {
@@ -263880,6 +266902,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,moves-export.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,movie.eroterest.net,PROXY"
     },
     {
       "category": "proxy",
@@ -265749,6 +268778,27 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,njactb.org,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njav.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njav.tv,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,njavtv.com,PROXY"
     },
     {
       "category": "proxy",
@@ -268212,6 +271262,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,pica-id.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,picacomic.com,PROXY"
     },
     {
@@ -268717,6 +271774,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,pmates.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,po-kaki-to.com,PROXY"
     },
     {
       "category": "proxy",
@@ -277032,6 +280096,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,tipatipa.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,tistory.com,PROXY"
     },
     {
@@ -281743,6 +284814,13 @@
       "origins": [
         "proxy_domains"
       ],
+      "rule": "DOMAIN-SUFFIX,wikawika.xyz,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
       "rule": "DOMAIN-SUFFIX,wiki.esu.im,PROXY"
     },
     {
@@ -284684,6 +287762,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,zozotown.com,PROXY"
+    },
+    {
+      "category": "proxy",
+      "origins": [
+        "proxy_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,zozovideo.com,PROXY"
     },
     {
       "category": "proxy",

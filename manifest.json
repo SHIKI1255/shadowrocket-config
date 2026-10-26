@@ -1,5 +1,5 @@
 {
-  "config_sha256": "5188453efb466bccfabb21bceb4d61f43cb9ee996fbc0cce8feb1ce7534072f7",
+  "config_sha256": "b70ebcdfb06f5109b9f776b8bd949a239df03fd6d04577d0337b9a9c2064ce42",
   "conflicts": [
     {
       "later": "DIRECT",
@@ -2904,9 +2904,9 @@
       "policy": "PROXY"
     }
   ],
-  "rules": 14187,
+  "rules": 14333,
   "schema_version": 2,
-  "shared_version": "8e65822205600da5e8f4a3937d8163c6e6321f61bc6fe6c0037d7cc7a9117f2d",
+  "shared_version": "3660ca4704bdd8105f77d72b3be15bff6bdbede830f19e67051861e462eaae52",
   "source_files_sha256": {
     "config/base.conf": "d8405d2cbe6773ae64d861a80994ad29845a1167c1f8ed0bda997849fd723acb",
     "config/shared.json": "648d492aa8922dc7ccfd51c40cf9c7e3a704e4d7c05652a4f91d5353c87b1bbf",
@@ -2920,9 +2920,9 @@
     "scripts/shared_data.py": "3aa79718d4e135e46b8adfd53e03d9cfefc879e7aa73bf81e7ed4b413b720fbe",
     "scripts/sync_hosts.py": "0a3c9ec4ce58b2f8f6936f7081d7673a9e8f6386702968649b8cc7331adf2c6d",
     "scripts/validate_hosts.py": "183f337c04ea6654abfa4c1c603289344f676dc647447fa09d94cdf938c1e9bd",
-    "shared/README.md": "77c603d6ff7b388b57d6fdfe5bd48acea5ec44c4c4339583fd08a9e720cbf4cc",
+    "shared/README.md": "e994a92c42fa8ec924c26ec786fd6a09a717f27ecbf58790012dd68deaab1179",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
-    "shared/baseline.json": "27db7e369d7d90c2be310b9df57b7db512dd4bcf6ab52f792f9dbdb07786c386",
+    "shared/baseline.json": "876d6b085d544d1a5c0ab2788cfe820fc0cf049e9b133bfb447278117b68570e",
     "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
     "shared/core.py": "854f3389ae8737bf63f672b4635f330a9059538777770437db6307045625ffdf",
     "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
@@ -2931,6 +2931,8 @@
     "shared/quantumult.py": "6c9db71793715c73c16f7c632b1bf1e4e990e59a3ec24c9b8ca0f273b375f89d",
     "shared/routing_cases.json": "9c4bcc4dc21d4ffa879226af38bc0a9e03d1bb2fd347579dd8fff845c8391d24",
     "shared/sources.yaml": "8df2864fac0ee86a7892deac917843413993a393c1ba8d3084ea33ab29170ce1",
+    "tests/fixtures/voice-20260326.json": "89e961ec1ad6b0f1d457002a48b1bd81df8cb2144754ad6e1811c934bb97686a",
+    "tests/fixtures/voice-20261025.json": "18289db5eb05643462ca3d5e7f05d7692e712fd3bbe1e7840102ca8b4167b9a2",
     "tests/test_consumer.py": "7b5824b4a59dfae5ee51e2f909153e55c80a1207efce2e7a6a939c132003eacc",
     "tests/test_core.py": "9d61bd933168f17aa5f1eaa92efe9e4e9c7ec493a849f7a0eba6423739c8303e",
     "tests/test_engine.py": "a4f2463a494c48d4658ff8aea77c1c3df4bfd39c4ba6cbaf2c46744bfbca8d37",
@@ -2939,8 +2941,9 @@
     "tests/test_hosts_sync.py": "b43356d5d0b317c23d30cdc8e6ded331ee76579c0a498d60d3b5577457ce323f",
     "tests/test_hosts_workflow.py": "1a017425978a03fa458cd6940a5349f5d3397247127a20d4c07c6432a48f8906",
     "tests/test_keepalive.py": "cab0051f8fb94cdb56d875ec59bfbed21366d51e4e49b1306bfd973cedaeaf67",
-    "tests/test_publish.py": "7bf8aa2bc2dca9ea9913fa88d328a1536bcd0da23c1573222136bc7a0a8ae5c1"
+    "tests/test_publish.py": "7bf8aa2bc2dca9ea9913fa88d328a1536bcd0da23c1573222136bc7a0a8ae5c1",
+    "tests/test_voice_transition.py": "414a0b2c90c19a9b43b05cd881e55d84a808392b56de6b577640fd93b8a36a8b"
   },
   "validation": "Static generation verified; client parsing and real network acceptance are separate.",
-  "voice_ip_cases": 23
+  "voice_ip_cases": 150
 }

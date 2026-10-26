@@ -1,12 +1,12 @@
 {
-  "bundle_sha256": "3b0a6c8ae565b00d018e55a4bc93cb8e8856c81c710f8fc453afecb76d32ff7a",
-  "provenance_sha256": "9cc81464a3bd53bae7958007dd1b70c58feab8c23a062df9cf42a68ad6335278",
+  "bundle_sha256": "7669dc0029bebba8747e95cfbaecb0acc596b9fdbaa09f684a6e13eb244425ee",
+  "provenance_sha256": "4eb0df67768fcf16af1ab2ffbcb6d3d9344e106a0c31589a02c129651a641fb3",
   "schema_version": 1,
-  "shared_version": "8e65822205600da5e8f4a3937d8163c6e6321f61bc6fe6c0037d7cc7a9117f2d",
+  "shared_version": "3660ca4704bdd8105f77d72b3be15bff6bdbede830f19e67051861e462eaae52",
   "source_files_sha256": {
-    "shared/README.md": "77c603d6ff7b388b57d6fdfe5bd48acea5ec44c4c4339583fd08a9e720cbf4cc",
+    "shared/README.md": "e994a92c42fa8ec924c26ec786fd6a09a717f27ecbf58790012dd68deaab1179",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
-    "shared/baseline.json": "27db7e369d7d90c2be310b9df57b7db512dd4bcf6ab52f792f9dbdb07786c386",
+    "shared/baseline.json": "876d6b085d544d1a5c0ab2788cfe820fc0cf049e9b133bfb447278117b68570e",
     "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
     "shared/core.py": "854f3389ae8737bf63f672b4635f330a9059538777770437db6307045625ffdf",
     "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
@@ -18,13 +18,13 @@
   },
   "upstreams": {
     "blackmatrix7": {
-      "commit": "00d82f6c6c374abb947fabc9c1b69f2a22e71dbc",
+      "commit": "9b29c945b9164a02c7018ed333cb9b5bc1bcb417",
       "license": "GPL-2.0",
       "ref": "master",
       "repo": "blackmatrix7/ios_rule_script"
     },
     "v2fly": {
-      "commit": "44e37212c1154407744543bd1ea5e5750fd44902",
+      "commit": "664598567e92d797bea11bb83cf939d1f37e9512",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community"
