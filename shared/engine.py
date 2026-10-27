@@ -186,7 +186,12 @@ def parse_source(spec: dict, data: bytes) -> tuple[list[Rule], dict]:
                 require(bool(fields) and all(re.fullmatch(r"@!?[a-z0-9_-]+", x) for x in fields[1:]),
                         "Unknown v2fly attributes")
                 entry, tags = fields[0], fields[1:]
-                require(set(tags) <= {"@ads", "@!cn"}, "Unknown v2fly attribute semantics")
+                # v2fly #4143 adds telemetry metadata while retaining @ads.
+                # Only this reviewed pair preserves our existing ads exclusion.
+                # Standalone telemetry and other new combinations need review.
+                tag_set = set(tags)
+                require(tag_set <= {"@ads", "@!cn"} or tag_set == {"@ads", "@telemetry"},
+                        "Unknown v2fly attribute semantics: " + " ".join(tags))
                 prefix, value = entry.split(":", 1) if ":" in entry else ("domain", entry)
                 if prefix == "regexp":
                     if "regex_overrides" in spec:
