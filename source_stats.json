@@ -11162,8 +11162,8 @@
       "skipped": []
     },
     "gemini": {
-      "raw_count": 46,
-      "retained_count": 46,
+      "raw_count": 49,
+      "retained_count": 49,
       "rules": [
         "DOMAIN-SUFFIX,deepmind.com,PROXY",
         "DOMAIN-SUFFIX,deepmind.google,PROXY",
@@ -11185,6 +11185,9 @@
         "DOMAIN-SUFFIX,gemini.gstatic.com,PROXY",
         "DOMAIN,geminiweb-pa.clients.google.com,PROXY",
         "DOMAIN,geminiweb-pa.clients6.google.com,PROXY",
+        "DOMAIN,appsgenaiserver-pa.clients.google.com,PROXY",
+        "DOMAIN,appsgenaiserver-pa.clients6.google.com,PROXY",
+        "DOMAIN,appsgenaiserver-pa.googleapis.com,PROXY",
         "DOMAIN,cloudaicompanion.googleapis.com,PROXY",
         "DOMAIN,cloudcode-pa.googleapis.com,PROXY",
         "DOMAIN,daily-cloudcode-pa.googleapis.com,PROXY",
@@ -32899,8 +32902,8 @@
       "skipped": []
     },
     "gemini": {
-      "raw_count": 46,
-      "retained_count": 46,
+      "raw_count": 49,
+      "retained_count": 49,
       "rules": [
         "DOMAIN-SUFFIX,deepmind.com,PROXY",
         "DOMAIN-SUFFIX,deepmind.google,PROXY",
@@ -32922,6 +32925,9 @@
         "DOMAIN-SUFFIX,gemini.gstatic.com,PROXY",
         "DOMAIN,geminiweb-pa.clients.google.com,PROXY",
         "DOMAIN,geminiweb-pa.clients6.google.com,PROXY",
+        "DOMAIN,appsgenaiserver-pa.clients.google.com,PROXY",
+        "DOMAIN,appsgenaiserver-pa.clients6.google.com,PROXY",
+        "DOMAIN,appsgenaiserver-pa.googleapis.com,PROXY",
         "DOMAIN,cloudaicompanion.googleapis.com,PROXY",
         "DOMAIN,cloudcode-pa.googleapis.com,PROXY",
         "DOMAIN,daily-cloudcode-pa.googleapis.com,PROXY",

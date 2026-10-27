@@ -1,5 +1,5 @@
 {
-  "config_sha256": "b70ebcdfb06f5109b9f776b8bd949a239df03fd6d04577d0337b9a9c2064ce42",
+  "config_sha256": "d9d06f405e655cc840e25e08976f615ee63925a0872ef8480d1509e470b9761f",
   "conflicts": [
     {
       "later": "DIRECT",
@@ -2904,9 +2904,9 @@
       "policy": "PROXY"
     }
   ],
-  "rules": 14333,
+  "rules": 14336,
   "schema_version": 2,
-  "shared_version": "3660ca4704bdd8105f77d72b3be15bff6bdbede830f19e67051861e462eaae52",
+  "shared_version": "a7a3cbd49d9840fe885beb4b7d7ea63729d5d53328ce8a3687e847e22c0355e2",
   "source_files_sha256": {
     "config/base.conf": "d8405d2cbe6773ae64d861a80994ad29845a1167c1f8ed0bda997849fd723acb",
     "config/shared.json": "648d492aa8922dc7ccfd51c40cf9c7e3a704e4d7c05652a4f91d5353c87b1bbf",
@@ -2920,17 +2920,19 @@
     "scripts/shared_data.py": "3aa79718d4e135e46b8adfd53e03d9cfefc879e7aa73bf81e7ed4b413b720fbe",
     "scripts/sync_hosts.py": "0a3c9ec4ce58b2f8f6936f7081d7673a9e8f6386702968649b8cc7331adf2c6d",
     "scripts/validate_hosts.py": "183f337c04ea6654abfa4c1c603289344f676dc647447fa09d94cdf938c1e9bd",
-    "shared/README.md": "e994a92c42fa8ec924c26ec786fd6a09a717f27ecbf58790012dd68deaab1179",
+    "shared/README.md": "a6b237253b3ef331a027236deede865e7310040b1f92c4926a06fae388d42da3",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
     "shared/baseline.json": "876d6b085d544d1a5c0ab2788cfe820fc0cf049e9b133bfb447278117b68570e",
     "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
-    "shared/core.py": "854f3389ae8737bf63f672b4635f330a9059538777770437db6307045625ffdf",
+    "shared/core.py": "d0aeb2c9740c38d159cccfa21bd692330117df6a4fef0fd1bce86de5555d2446",
     "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
-    "shared/engine.py": "8aa25f4bcf4b772967264ea539af15339db6f6246779ac2c2cd0e6bf3ae6fcd0",
+    "shared/engine.py": "8698db573bceb2c890de90a55001dc9bd825e877fd937ee93f0c4d47d7878128",
     "shared/platforms.json": "9b643e1fc056cc14723d085312f5b8f1dff34df1410cbf1bd353b8f9250edbb3",
     "shared/quantumult.py": "6c9db71793715c73c16f7c632b1bf1e4e990e59a3ec24c9b8ca0f273b375f89d",
     "shared/routing_cases.json": "9c4bcc4dc21d4ffa879226af38bc0a9e03d1bb2fd347579dd8fff845c8391d24",
     "shared/sources.yaml": "8df2864fac0ee86a7892deac917843413993a393c1ba8d3084ea33ab29170ce1",
+    "tests/fixtures/openai-after-telemetry.txt": "25d53e9af3e04d926210d6436bd791594ef4b86f2dc3c108510ac8059d76d969",
+    "tests/fixtures/openai-before-telemetry.txt": "ec1043e63c31bbef51efe13a3e2af29a3f66b8b4692f517d75a864cbc4a3d88d",
     "tests/fixtures/voice-20260326.json": "89e961ec1ad6b0f1d457002a48b1bd81df8cb2144754ad6e1811c934bb97686a",
     "tests/fixtures/voice-20261025.json": "18289db5eb05643462ca3d5e7f05d7692e712fd3bbe1e7840102ca8b4167b9a2",
     "tests/test_consumer.py": "7b5824b4a59dfae5ee51e2f909153e55c80a1207efce2e7a6a939c132003eacc",
@@ -2942,6 +2944,7 @@
     "tests/test_hosts_workflow.py": "1a017425978a03fa458cd6940a5349f5d3397247127a20d4c07c6432a48f8906",
     "tests/test_keepalive.py": "cab0051f8fb94cdb56d875ec59bfbed21366d51e4e49b1306bfd973cedaeaf67",
     "tests/test_publish.py": "7bf8aa2bc2dca9ea9913fa88d328a1536bcd0da23c1573222136bc7a0a8ae5c1",
+    "tests/test_v2fly_telemetry.py": "0b921ae3923a51e4a207d45a190031b3f5cf59308810c3b80173328bf3ac767d",
     "tests/test_voice_transition.py": "414a0b2c90c19a9b43b05cd881e55d84a808392b56de6b577640fd93b8a36a8b"
   },
   "validation": "Static generation verified; client parsing and real network acceptance are separate.",

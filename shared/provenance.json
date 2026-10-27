@@ -1052,6 +1052,27 @@
       "origins": [
         "gemini"
       ],
+      "rule": "DOMAIN,appsgenaiserver-pa.clients.google.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN,appsgenaiserver-pa.clients6.google.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN,appsgenaiserver-pa.googleapis.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
       "rule": "DOMAIN,cloudaicompanion.googleapis.com,PROXY"
     },
     {
@@ -113489,6 +113510,27 @@
       "origins": [
         "gemini"
       ],
+      "rule": "DOMAIN,appsgenaiserver-pa.clients.google.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN,appsgenaiserver-pa.clients6.google.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN,appsgenaiserver-pa.googleapis.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
       "rule": "DOMAIN,cloudaicompanion.googleapis.com,PROXY"
     },
     {
@@ -214077,6 +214119,27 @@
         "gemini"
       ],
       "rule": "DOMAIN,geminiweb-pa.clients6.google.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN,appsgenaiserver-pa.clients.google.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN,appsgenaiserver-pa.clients6.google.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN,appsgenaiserver-pa.googleapis.com,PROXY"
     },
     {
       "category": "gemini",

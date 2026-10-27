@@ -1,16 +1,16 @@
 {
-  "bundle_sha256": "7669dc0029bebba8747e95cfbaecb0acc596b9fdbaa09f684a6e13eb244425ee",
-  "provenance_sha256": "4eb0df67768fcf16af1ab2ffbcb6d3d9344e106a0c31589a02c129651a641fb3",
+  "bundle_sha256": "516152e208cb815e349a8c09f5a2c799039f778aadd646275f444976d8fe05ff",
+  "provenance_sha256": "72a315d577bc26febbc2e5c9dc8651824720386aabc8f05b8992f5aae55a4a02",
   "schema_version": 1,
-  "shared_version": "3660ca4704bdd8105f77d72b3be15bff6bdbede830f19e67051861e462eaae52",
+  "shared_version": "a7a3cbd49d9840fe885beb4b7d7ea63729d5d53328ce8a3687e847e22c0355e2",
   "source_files_sha256": {
-    "shared/README.md": "e994a92c42fa8ec924c26ec786fd6a09a717f27ecbf58790012dd68deaab1179",
+    "shared/README.md": "a6b237253b3ef331a027236deede865e7310040b1f92c4926a06fae388d42da3",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
     "shared/baseline.json": "876d6b085d544d1a5c0ab2788cfe820fc0cf049e9b133bfb447278117b68570e",
     "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
-    "shared/core.py": "854f3389ae8737bf63f672b4635f330a9059538777770437db6307045625ffdf",
+    "shared/core.py": "d0aeb2c9740c38d159cccfa21bd692330117df6a4fef0fd1bce86de5555d2446",
     "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
-    "shared/engine.py": "8aa25f4bcf4b772967264ea539af15339db6f6246779ac2c2cd0e6bf3ae6fcd0",
+    "shared/engine.py": "8698db573bceb2c890de90a55001dc9bd825e877fd937ee93f0c4d47d7878128",
     "shared/platforms.json": "9b643e1fc056cc14723d085312f5b8f1dff34df1410cbf1bd353b8f9250edbb3",
     "shared/quantumult.py": "6c9db71793715c73c16f7c632b1bf1e4e990e59a3ec24c9b8ca0f273b375f89d",
     "shared/routing_cases.json": "9c4bcc4dc21d4ffa879226af38bc0a9e03d1bb2fd347579dd8fff845c8391d24",
@@ -24,7 +24,7 @@
       "repo": "blackmatrix7/ios_rule_script"
     },
     "v2fly": {
-      "commit": "664598567e92d797bea11bb83cf939d1f37e9512",
+      "commit": "fa3cb96fbc210b8d6466251a1d71b4a6e63a9c85",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community"
