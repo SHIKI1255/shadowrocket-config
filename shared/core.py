@@ -78,6 +78,11 @@ def collect(conf, replay_dir=None, replay_commit=''):
     for data in files.values(): decode(data)
     lock = {'schema_version': 2, 'repositories': revisions,
             'files': {p: {'url': requests[p], 'sha256': digest(data)} for p, data in files.items()}}
+    # Public-source identities survive a later parse failure in the CI log.
+    # Do not log response bodies, request headers or environment values.
+    print(json.dumps({'event': 'public_source_snapshot', 'repositories': revisions,
+                      'files_sha256': {p: row['sha256'] for p, row in lock['files'].items()}},
+                     sort_keys=True))
     return lock, files
 
 
