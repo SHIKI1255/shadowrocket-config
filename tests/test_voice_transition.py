@@ -1,4 +1,4 @@
-"""Regression coverage for the reviewed official 23 -> 150 voice transition."""
+"""Strict regression coverage for historical and active official voice transitions."""
 import copy
 import ipaddress
 import json
@@ -16,15 +16,29 @@ NEW_STATE = "eb4a1c6d29cd30bb29ee70afc32f8d75b8a52ad6dc32a325d8ae60718c9adef5"
 
 
 class ReviewedVoiceTransition(unittest.TestCase):
+    old_fixture = "voice-20260326.json"
+    new_fixture = "voice-20261025.json"
+    old_count, new_count, collapsed_count = 23, 150, 150
+    old_state, new_state = OLD_STATE, NEW_STATE
+    active_baseline = False
+
     @classmethod
     def setUpClass(cls):
         cls.old_rules, cls.old = e.parse_source(
-            SPEC, (FIXTURES / "voice-20260326.json").read_bytes())
-        cls.new_json = json.loads((FIXTURES / "voice-20261025.json").read_bytes())
+            SPEC, (FIXTURES / cls.old_fixture).read_bytes())
+        cls.new_json = json.loads((FIXTURES / cls.new_fixture).read_bytes())
         cls.new_rules, cls.new = e.parse_source(
-            SPEC, (FIXTURES / "voice-20261025.json").read_bytes())
+            SPEC, (FIXTURES / cls.new_fixture).read_bytes())
         cls.limits = core.read_json("sources.yaml")["limits"]
         cls.accepted = core.read_json("baseline.json")
+        if not cls.active_baseline:
+            # Preserve the previously reviewed 23 -> 150 contract as historical
+            # coverage; the subclass below exercises the actual active baselines.
+            for client in ("shadowrocket", "clash"):
+                cls.accepted[client]["sources"]["voice"] = {
+                    "raw_count": 150, "retained_count": 150,
+                    "reviewed_transition": {
+                        "from_sha256": OLD_STATE, "to_sha256": NEW_STATE}}
 
     def check_transition(self, current, previous=None, client="shadowrocket"):
         core.check_previous_limits(
@@ -32,20 +46,23 @@ class ReviewedVoiceTransition(unittest.TestCase):
             {"voice": self.accepted[client]["sources"]["voice"]}, self.limits)
 
     def test_reviewed_snapshot_is_exact_public_single_address_expansion(self):
-        self.assertEqual((self.old["raw_count"], self.old["retained_count"]), (23, 23))
-        self.assertEqual((self.new["raw_count"], self.new["retained_count"]), (150, 150))
-        self.assertEqual(core.source_state_sha256(self.old), OLD_STATE)
-        self.assertEqual(core.source_state_sha256(self.new), NEW_STATE)
+        self.assertEqual((self.old["raw_count"], self.old["retained_count"]),
+                         (self.old_count, self.old_count))
+        self.assertEqual((self.new["raw_count"], self.new["retained_count"]),
+                         (self.new_count, self.new_count))
+        self.assertEqual(core.source_state_sha256(self.old), self.old_state)
+        self.assertEqual(core.source_state_sha256(self.new), self.new_state)
         self.assertEqual(self.new["skipped"], [])
         old_values = {r.value for r in self.old_rules}
         networks = [ipaddress.ip_network(r.value, strict=True) for r in self.new_rules]
-        self.assertEqual(len(set(networks)), 150)
+        self.assertEqual(len(set(networks)), self.new_count)
         self.assertTrue(all(n.version == 4 and n.prefixlen == 32 and n.is_global for n in networks))
-        self.assertEqual(len(list(ipaddress.collapse_addresses(networks))), 150)
+        self.assertEqual(len(list(ipaddress.collapse_addresses(networks))), self.collapsed_count)
         self.assertEqual([r for r in self.new_rules if r.value in old_values], self.old_rules)
-        self.assertEqual(len({r.value for r in self.new_rules} - old_values), 127)
+        self.assertEqual(len({r.value for r in self.new_rules} - old_values),
+                         self.new_count - self.old_count)
 
-    def test_real_baselines_accept_only_the_reviewed_transition(self):
+    def test_reviewed_baselines_accept_only_the_reviewed_transition(self):
         self.assertEqual(self.limits, {
             "min_ratio": 0.8, "max_ratio": 1.5,
             "max_removed_ratio": 0.2, "max_added_ratio": 0.5})
@@ -55,8 +72,9 @@ class ReviewedVoiceTransition(unittest.TestCase):
             with self.subTest(client=client):
                 accepted = self.accepted[client]["sources"]["voice"]
                 self.assertEqual(accepted, {
-                    "raw_count": 150, "retained_count": 150,
-                    "reviewed_transition": {"from_sha256": OLD_STATE, "to_sha256": NEW_STATE}})
+                    "raw_count": self.new_count, "retained_count": self.new_count,
+                    "reviewed_transition": {
+                        "from_sha256": self.old_state, "to_sha256": self.new_state}})
                 e.check_limits({"voice": self.new}, {"voice": accepted}, self.limits)
                 self.check_transition(self.new, client=client)
 
@@ -81,14 +99,16 @@ class ReviewedVoiceTransition(unittest.TestCase):
 
     def test_following_release_keeps_quantity_and_replacement_gates(self):
         self.check_transition(self.new, previous=self.new)
-        for count in (119, 226):
+        for count in ((self.new_count * 8 - 1) // 10, self.new_count * 3 // 2 + 1):
             state = copy.deepcopy(self.new)
             state["raw_count"] = state["retained_count"] = count
             with self.subTest(count=count), self.assertRaises(e.BuildError):
                 self.check_transition(state, previous=self.new)
         state = copy.deepcopy(self.new)
         # Unchanged counts do not excuse wholesale address replacement.
-        state["rules"] = [f"IP-CIDR,8.8.8.{i}/32,PROXY,no-resolve" for i in range(150)]
+        state["rules"] = [
+            f"IP-CIDR,{ipaddress.ip_address('8.8.0.0') + i}/32,PROXY,no-resolve"
+            for i in range(self.new_count)]
         with self.assertRaises(e.BuildError):
             self.check_transition(state, previous=self.new)
 
@@ -130,7 +150,8 @@ class ReviewedVoiceTransition(unittest.TestCase):
         self.assertEqual(duplicates, 1)
         with_option_difference = e.parse_rule(
             f"IP-CIDR,{self.new_rules[0].value},PROXY", source="voice")
-        self.assertEqual(len(e.merge_rules(self.new_rules + [with_option_difference])[0]), 151)
+        self.assertEqual(len(e.merge_rules(self.new_rules + [with_option_difference])[0]),
+                         self.new_count + 1)
 
     def test_changed_schema_private_broad_and_wrong_family_still_fail(self):
         for prefix in ({"ipv4Prefix": "10.0.0.1/32"}, {"ipv4Prefix": "8.0.0.0/8"},
@@ -142,3 +163,42 @@ class ReviewedVoiceTransition(unittest.TestCase):
         for data in ({**self.new_json, "extra": True}, {**self.new_json, "prefixes": []}):
             with self.subTest(data_keys=list(data)), self.assertRaises(e.BuildError):
                 e.parse_source(SPEC, json.dumps(data).encode())
+
+
+class ReviewedVoice402Transition(ReviewedVoiceTransition):
+    old_fixture = "voice-20261025.json"
+    new_fixture = "voice-20261027.json"
+    old_count, new_count, collapsed_count = 150, 402, 400
+    old_state = NEW_STATE
+    new_state = "b6a91feb1ae7cb6c24e01958d87211f94a2380f85ef932e8f08c4d5e0a62b398"
+    active_baseline = True
+
+    def test_old_permission_and_count_only_update_cannot_authorize_expansion(self):
+        stale = {"raw_count": 402, "retained_count": 402,
+                 "reviewed_transition": {"from_sha256": OLD_STATE, "to_sha256": NEW_STATE}}
+        for accepted in (stale, {"raw_count": 402, "retained_count": 402}):
+            with self.subTest(accepted=accepted), self.assertRaises(e.BuildError):
+                core.check_previous_limits(
+                    {"voice": self.new}, {"voice": self.old}, {"voice": accepted}, self.limits)
+
+    def test_following_release_exact_quantity_boundaries(self):
+        for count, allowed in ((321, False), (322, True), (603, True), (604, False)):
+            rules = list(self.new_rules[:count])
+            while len(rules) < count:
+                address = ipaddress.ip_address("8.8.0.0") + len(rules)
+                rules.append(e.parse_rule(f"IP-CIDR,{address}/32,PROXY,no-resolve",
+                                          source="voice"))
+            state = {"raw_count": count, "retained_count": count,
+                     "rules": [r.line for r in rules], "skipped": []}
+            with self.subTest(count=count):
+                if allowed:
+                    self.check_transition(state, previous=self.new)
+                else:
+                    with self.assertRaises(e.BuildError):
+                        self.check_transition(state, previous=self.new)
+
+    def test_adjacent_addresses_remain_individual_source_records(self):
+        networks = [ipaddress.ip_network(r.value) for r in self.new_rules]
+        combined = {str(n) for n in ipaddress.collapse_addresses(networks) if n.prefixlen < 32}
+        self.assertEqual(combined, {"9.205.248.20/31", "134.138.50.120/31"})
+        self.assertTrue(all(r.value.endswith("/32") for r in self.new_rules))
