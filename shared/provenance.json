@@ -1262,6 +1262,41 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,104.211.223.134/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,104.215.182.146/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.203.193.150/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.24.72.208/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.24.89.254/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,13.71.25.29/32,PROXY,no-resolve"
     },
     {
@@ -1276,7 +1311,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,13.78.35.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,13.87.67.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.193.230/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.217.150/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.242.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.63.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,130.33.52.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,132.196.3.237/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1290,7 +1374,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,134.138.48.132/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,134.138.48.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.220/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.99/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1311,7 +1423,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,134.138.50.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.190/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,134.138.50.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,135.119.54.176/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1325,7 +1472,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,135.225.27.170/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,135.234.25.52/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,137.116.45.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,138.91.23.93/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.101.5/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1339,7 +1514,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,158.158.35.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.43.147/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.47.203/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.54.76/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.72.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,158.158.96.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.98.53/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1353,7 +1570,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.167.99.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.173.91.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.176.115.233/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.178.132.252/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.182.200.81/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1381,6 +1626,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.184.143.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.196.32.32/32,PROXY,no-resolve"
     },
     {
@@ -1388,7 +1640,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.196.41.217/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.196.43.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.43.82/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.50.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.138.215/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.138.218/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1423,6 +1710,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.202.198.115/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.198.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.202.23.232/32,PROXY,no-resolve"
     },
     {
@@ -1437,6 +1738,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.204.24.194/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.204.25.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.204.26.187/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.204.26.194/32,PROXY,no-resolve"
     },
     {
@@ -1445,6 +1767,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,172.207.173.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.162.141/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1472,6 +1801,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.213.16.221/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.214.226.198/32,PROXY,no-resolve"
     },
     {
@@ -1486,7 +1822,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.215.136.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,191.232.190.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.198.181/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.51.120/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1507,6 +1864,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.106.75.64/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.107.200.148/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.113.195.227/32,PROXY,no-resolve"
     },
     {
@@ -1515,6 +1886,20 @@
         "voice"
       ],
       "rule": "IP-CIDR,20.113.199.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.204.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.205.18/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1542,7 +1927,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.118.174.239/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.118.36.228/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.12.176.106/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.12.214.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.120.177/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.138.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.96.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.162.96.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.165.148.234/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.165.155.240/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1556,7 +2004,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.165.41.24/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.16.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.16.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.168.48.117/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.65.250/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.72.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.22.39/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.33.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.33.200/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1577,7 +2081,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.171.68.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.97.109/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.184.36.134/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.190.104.59/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.193.73.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.194.51.26/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1598,6 +2137,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.195.188.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.195.188.94/32,PROXY,no-resolve"
     },
     {
@@ -1612,6 +2158,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.197.177.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.197.179.218/32,PROXY,no-resolve"
     },
     {
@@ -1619,7 +2172,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.197.180.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.197.192.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.198.73.88/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.199.240.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.136.26/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1640,6 +2221,55 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.203.145.225/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.241.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.206.69.234/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.206.90.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.196.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.197.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.202.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.210.247.237/32,PROXY,no-resolve"
     },
     {
@@ -1647,7 +2277,98 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.211.100.168/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.124.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.160.187/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.204.106/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.207.196/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.211.232.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.28.213/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.212.83.76/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.213.73.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.214.186.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.214.225.136/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.189.48/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.211.9/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.219.87/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1682,6 +2403,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.215.69.18/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.218.37.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.218.43.103/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.219.100.169/32,PROXY,no-resolve"
     },
     {
@@ -1696,7 +2438,119 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.219.109.3/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.11.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.120.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.219.124.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.56.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.225.138.3/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.225.156.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.104.46/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.19.149/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.2.110/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.20.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.21.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.25.167/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.36.119/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.36.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.38.105/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.40.52/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1710,7 +2564,21 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.226.42.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.226.51.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.52.74/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1724,7 +2592,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.226.84.92/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.86.24/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.89.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.229.39.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.229.39.45/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.230.47.206/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1738,7 +2641,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.236.141.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.236.64.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.237.207.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.242.106.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.242.22.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.245.11.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.245.239.248/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1752,6 +2697,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.25.136.71/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.25.176.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.250.8.66/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.253.201.211/32,PROXY,no-resolve"
     },
     {
@@ -1759,7 +2725,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.29.106.142/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.109.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.73.138/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.29.94.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.37.248.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.38.171.133/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.41.220.129/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.41.97.13/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1794,7 +2809,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.58.186.41/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.59.119.195/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.61.69.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.63.211.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.66.44.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.69.27.102/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1808,7 +2858,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.70.32.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.74.221.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.78.149.97/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.83.246.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.85.214.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.86.156.204/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.101.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.130.145/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1822,6 +2921,34 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.89.236.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.40.149/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.98.73/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.9.6.44/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.9.65.240/32,PROXY,no-resolve"
     },
     {
@@ -1829,7 +2956,77 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.97.18.7/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.98.53.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.98.94.72/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.123.148/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.216.138/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.226.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.150.48.254/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.125.58/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.146.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.150.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.162.218/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1850,7 +3047,21 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.151.204.68/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.50.34/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.154.76.98/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1893,6 +3104,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,4.197.185.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.104.14/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -1955,6 +3173,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.225.221.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.232.88.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.242.133.59/32,PROXY,no-resolve"
     },
     {
@@ -1983,7 +3215,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,40.112.161.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.115.143.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,40.118.236.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.124.7.113/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.64.120.63/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.75.170.15/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,48.193.40.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,48.193.41.10/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2004,6 +3285,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,51.107.168.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.107.175.203/32,PROXY,no-resolve"
     },
     {
@@ -2011,7 +3299,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,51.107.225.131/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.238.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.238.43/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.116.220.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.3.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.3.185/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.82.1/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.84.241/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.89.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.89.99/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2039,7 +3390,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.141.0.43/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.141.4.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.143.181.161/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.148.5.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.150.164.49/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.157.177.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.159.141.180/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2060,6 +3453,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.188.65.158/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.230.89.145/32,PROXY,no-resolve"
     },
     {
@@ -2074,6 +3474,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.234.45.139/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.236.51.132/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.241.6.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.243.62.231/32,PROXY,no-resolve"
     },
     {
@@ -2081,7 +3502,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.247.69.68/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.253.104.78/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.109.199/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.109.90/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2109,6 +3551,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,57.154.51.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,57.154.55.99/32,PROXY,no-resolve"
     },
     {
@@ -2117,6 +3566,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,57.154.67.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,64.236.175.115/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2144,6 +3600,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,68.221.76.47/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,70.153.147.32/32,PROXY,no-resolve"
     },
     {
@@ -2151,7 +3614,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,70.153.147.96/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,70.153.148.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.150.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.151.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.83.155/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2166,6 +3657,41 @@
         "voice"
       ],
       "rule": "IP-CIDR,72.146.45.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.152.48.241/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.152.49.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.28.251/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.51.124/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.51.54/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2207,7 +3733,84 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,74.248.19.80/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.21.91/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.21.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.32.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.34.11/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.35.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.35.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.36.40/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.207.14/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,74.249.241.198/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.249.6/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.207/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2228,7 +3831,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,74.7.33.139/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.33.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.33.71/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,85.211.180.16/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.180.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.181.109/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.182.61/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.193.130/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.195.125/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2243,6 +3902,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,85.211.245.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.247.9/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -2277,6 +3943,48 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,9.160.35.238/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.36.206/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.213/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.69/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,9.205.154.223/32,PROXY,no-resolve"
     },
     {
@@ -2299,6 +4007,62 @@
         "voice"
       ],
       "rule": "IP-CIDR,9.205.159.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.42/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.77/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.250.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.94.183/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.94.184/32,PROXY,no-resolve"
     },
     {
       "category": "copilot",
@@ -20262,14 +22026,6 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,appstore.co.id,DIRECT"
     },
     {
@@ -22848,14 +24604,6 @@
         "apple",
         "apple_domains"
       ],
-      "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
-    },
-    {
-      "category": "apple",
-      "origins": [
-        "apple",
-        "apple_domains"
-      ],
       "rule": "DOMAIN-SUFFIX,appleenews.com,DIRECT"
     },
     {
@@ -23145,6 +24893,22 @@
         "apple_domains"
       ],
       "rule": "DOMAIN-SUFFIX,apple-dns.net,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,apple.news,DIRECT"
+    },
+    {
+      "category": "apple",
+      "origins": [
+        "apple",
+        "apple_domains"
+      ],
+      "rule": "DOMAIN-SUFFIX,appsto.re,DIRECT"
     },
     {
       "category": "apple",
@@ -113720,6 +115484,41 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,104.211.223.134/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,104.215.182.146/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.203.193.150/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.24.72.208/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.24.89.254/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,13.71.25.29/32,PROXY,no-resolve"
     },
     {
@@ -113734,7 +115533,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,13.78.35.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,13.87.67.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.193.230/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.217.150/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.242.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.63.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,130.33.52.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,132.196.3.237/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113748,7 +115596,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,134.138.48.132/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,134.138.48.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.220/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.99/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113769,7 +115645,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,134.138.50.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.190/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,134.138.50.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,135.119.54.176/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113783,7 +115694,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,135.225.27.170/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,135.234.25.52/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,137.116.45.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,138.91.23.93/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.101.5/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113797,7 +115736,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,158.158.35.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.43.147/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.47.203/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.54.76/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.72.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,158.158.96.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.98.53/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113811,7 +115792,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.167.99.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.173.91.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.176.115.233/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.178.132.252/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.182.200.81/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113839,6 +115848,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.184.143.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.196.32.32/32,PROXY,no-resolve"
     },
     {
@@ -113846,7 +115862,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.196.41.217/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.196.43.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.43.82/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.50.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.138.215/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.138.218/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113881,6 +115932,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.202.198.115/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.198.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.202.23.232/32,PROXY,no-resolve"
     },
     {
@@ -113895,6 +115960,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.204.24.194/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.204.25.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.204.26.187/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.204.26.194/32,PROXY,no-resolve"
     },
     {
@@ -113903,6 +115989,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,172.207.173.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.162.141/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113930,6 +116023,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.213.16.221/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.214.226.198/32,PROXY,no-resolve"
     },
     {
@@ -113944,7 +116044,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.215.136.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,191.232.190.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.198.181/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.51.120/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -113965,6 +116086,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.106.75.64/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.107.200.148/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.113.195.227/32,PROXY,no-resolve"
     },
     {
@@ -113973,6 +116108,20 @@
         "voice"
       ],
       "rule": "IP-CIDR,20.113.199.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.204.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.205.18/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114000,7 +116149,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.118.174.239/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.118.36.228/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.12.176.106/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.12.214.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.120.177/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.138.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.96.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.162.96.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.165.148.234/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.165.155.240/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114014,7 +116226,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.165.41.24/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.16.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.16.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.168.48.117/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.65.250/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.72.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.22.39/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.33.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.33.200/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114035,7 +116303,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.171.68.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.97.109/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.184.36.134/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.190.104.59/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.193.73.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.194.51.26/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114056,6 +116359,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.195.188.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.195.188.94/32,PROXY,no-resolve"
     },
     {
@@ -114070,6 +116380,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.197.177.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.197.179.218/32,PROXY,no-resolve"
     },
     {
@@ -114077,7 +116394,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.197.180.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.197.192.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.198.73.88/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.199.240.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.136.26/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114098,6 +116443,55 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.203.145.225/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.241.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.206.69.234/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.206.90.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.196.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.197.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.202.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.210.247.237/32,PROXY,no-resolve"
     },
     {
@@ -114105,7 +116499,98 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.211.100.168/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.124.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.160.187/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.204.106/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.207.196/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.211.232.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.28.213/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.212.83.76/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.213.73.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.214.186.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.214.225.136/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.189.48/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.211.9/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.219.87/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114140,6 +116625,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.215.69.18/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.218.37.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.218.43.103/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.219.100.169/32,PROXY,no-resolve"
     },
     {
@@ -114154,7 +116660,119 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.219.109.3/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.11.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.120.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.219.124.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.56.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.225.138.3/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.225.156.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.104.46/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.19.149/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.2.110/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.20.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.21.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.25.167/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.36.119/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.36.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.38.105/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.40.52/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114168,7 +116786,21 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.226.42.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.226.51.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.52.74/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114182,7 +116814,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.226.84.92/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.86.24/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.89.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.229.39.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.229.39.45/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.230.47.206/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114196,7 +116863,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.236.141.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.236.64.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.237.207.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.242.106.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.242.22.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.245.11.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.245.239.248/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114210,6 +116919,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.25.136.71/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.25.176.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.250.8.66/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.253.201.211/32,PROXY,no-resolve"
     },
     {
@@ -114217,7 +116947,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.29.106.142/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.109.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.73.138/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.29.94.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.37.248.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.38.171.133/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.41.220.129/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.41.97.13/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114252,7 +117031,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.58.186.41/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.59.119.195/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.61.69.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.63.211.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.66.44.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.69.27.102/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114266,7 +117080,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.70.32.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.74.221.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.78.149.97/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.83.246.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.85.214.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.86.156.204/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.101.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.130.145/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114280,6 +117143,34 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.89.236.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.40.149/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.98.73/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.9.6.44/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.9.65.240/32,PROXY,no-resolve"
     },
     {
@@ -114287,7 +117178,77 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.97.18.7/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.98.53.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.98.94.72/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.123.148/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.216.138/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.226.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.150.48.254/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.125.58/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.146.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.150.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.162.218/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114308,7 +117269,21 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.151.204.68/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.50.34/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.154.76.98/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114351,6 +117326,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,4.197.185.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.104.14/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114413,6 +117395,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.225.221.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.232.88.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.242.133.59/32,PROXY,no-resolve"
     },
     {
@@ -114441,7 +117437,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,40.112.161.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.115.143.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,40.118.236.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.124.7.113/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.64.120.63/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.75.170.15/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,48.193.40.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,48.193.41.10/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114462,6 +117507,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,51.107.168.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.107.175.203/32,PROXY,no-resolve"
     },
     {
@@ -114469,7 +117521,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,51.107.225.131/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.238.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.238.43/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.116.220.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.3.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.3.185/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.82.1/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.84.241/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.89.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.89.99/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114497,7 +117612,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.141.0.43/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.141.4.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.143.181.161/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.148.5.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.150.164.49/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.157.177.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.159.141.180/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114518,6 +117675,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.188.65.158/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.230.89.145/32,PROXY,no-resolve"
     },
     {
@@ -114532,6 +117696,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.234.45.139/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.236.51.132/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.241.6.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.243.62.231/32,PROXY,no-resolve"
     },
     {
@@ -114539,7 +117724,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.247.69.68/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.253.104.78/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.109.199/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.109.90/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114567,6 +117773,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,57.154.51.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,57.154.55.99/32,PROXY,no-resolve"
     },
     {
@@ -114575,6 +117788,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,57.154.67.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,64.236.175.115/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114602,6 +117822,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,68.221.76.47/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,70.153.147.32/32,PROXY,no-resolve"
     },
     {
@@ -114609,7 +117836,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,70.153.147.96/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,70.153.148.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.150.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.151.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.83.155/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114624,6 +117879,41 @@
         "voice"
       ],
       "rule": "IP-CIDR,72.146.45.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.152.48.241/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.152.49.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.28.251/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.51.124/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.51.54/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114665,7 +117955,84 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,74.248.19.80/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.21.91/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.21.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.32.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.34.11/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.35.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.35.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.36.40/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.207.14/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,74.249.241.198/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.249.6/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.207/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114686,7 +118053,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,74.7.33.139/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.33.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.33.71/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,85.211.180.16/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.180.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.181.109/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.182.61/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.193.130/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.195.125/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114701,6 +118124,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,85.211.245.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.247.9/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -114735,6 +118165,48 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,9.160.35.238/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.36.206/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.213/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.69/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,9.205.154.223/32,PROXY,no-resolve"
     },
     {
@@ -114757,6 +118229,62 @@
         "voice"
       ],
       "rule": "IP-CIDR,9.205.159.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.42/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.77/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.250.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.94.183/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.94.184/32,PROXY,no-resolve"
     },
     {
       "category": "copilot",
@@ -214335,6 +217863,41 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,104.211.223.134/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,104.215.182.146/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.203.193.150/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.24.72.208/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,128.24.89.254/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,13.71.25.29/32,PROXY,no-resolve"
     },
     {
@@ -214349,7 +217912,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,13.78.35.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,13.87.67.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.193.230/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.217.150/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.242.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,130.131.63.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,130.33.52.154/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,132.196.3.237/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214363,7 +217975,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,134.138.48.132/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,134.138.48.201/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.220/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.48.99/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214384,7 +218024,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,134.138.50.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.190/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,134.138.50.236/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,134.138.50.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,135.119.54.176/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214398,7 +218073,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,135.225.27.170/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,135.234.25.52/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,137.116.45.81/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,138.91.23.93/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.101.5/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214412,7 +218115,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,158.158.35.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.43.147/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.47.203/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.54.76/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.72.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,158.158.96.28/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,158.158.98.53/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214426,7 +218171,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.167.99.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.173.91.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.176.115.233/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.178.132.252/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.182.200.81/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214454,6 +218227,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.184.143.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.196.32.32/32,PROXY,no-resolve"
     },
     {
@@ -214461,7 +218241,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.196.41.217/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.196.43.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.43.82/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.196.50.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.138.215/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.198.138.218/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214496,6 +218311,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.202.198.115/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.202.198.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.202.23.232/32,PROXY,no-resolve"
     },
     {
@@ -214510,6 +218339,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.204.24.194/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.204.25.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.204.26.187/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.204.26.194/32,PROXY,no-resolve"
     },
     {
@@ -214518,6 +218368,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,172.207.173.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,172.212.162.141/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214545,6 +218402,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.213.16.221/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,172.214.226.198/32,PROXY,no-resolve"
     },
     {
@@ -214559,7 +218423,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,172.215.136.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,191.232.190.216/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.198.181/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,191.232.51.120/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214580,6 +218465,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.106.75.64/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.107.200.148/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.113.195.227/32,PROXY,no-resolve"
     },
     {
@@ -214588,6 +218487,20 @@
         "voice"
       ],
       "rule": "IP-CIDR,20.113.199.182/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.204.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.113.205.18/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214615,7 +218528,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.118.174.239/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.118.36.228/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.12.176.106/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.12.214.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.120.177/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.138.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.125.96.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.162.96.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.165.148.234/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.165.155.240/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214629,7 +218605,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.165.41.24/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.16.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.16.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.168.48.117/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.65.250/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.168.72.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.22.39/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.33.151/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.169.33.200/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214650,7 +218682,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.171.68.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.171.97.109/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.184.36.134/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.190.104.59/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.193.73.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.194.51.26/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214671,6 +218738,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.195.188.32/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.195.188.94/32,PROXY,no-resolve"
     },
     {
@@ -214685,6 +218759,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.197.177.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.197.179.218/32,PROXY,no-resolve"
     },
     {
@@ -214692,7 +218773,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.197.180.156/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.197.192.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.198.73.88/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.199.240.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.136.26/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214713,6 +218822,55 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.203.145.225/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.203.241.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.206.69.234/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.206.90.17/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.196.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.197.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.207.202.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.210.247.237/32,PROXY,no-resolve"
     },
     {
@@ -214720,7 +218878,98 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.211.100.168/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.124.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.160.187/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.204.106/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.207.196/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.211.232.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.211.28.213/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.212.83.76/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.213.73.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.214.186.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.214.225.136/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.189.48/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.211.9/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.215.219.87/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214755,6 +219004,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.215.69.18/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.218.37.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.218.43.103/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.219.100.169/32,PROXY,no-resolve"
     },
     {
@@ -214769,7 +219039,119 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.219.109.3/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.11.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.120.240/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.219.124.186/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.219.56.35/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.225.138.3/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.225.156.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.104.46/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.19.149/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.2.110/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.20.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.21.227/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.25.167/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.36.119/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.36.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.38.105/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.40.52/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214783,7 +219165,21 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.226.42.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.226.51.38/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.52.74/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214797,7 +219193,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.226.84.92/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.86.24/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.226.89.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.229.39.104/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.229.39.45/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.230.47.206/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214811,7 +219242,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.236.141.128/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.236.64.56/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.237.207.200/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.242.106.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.242.22.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.245.11.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.245.239.248/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214825,6 +219298,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.25.136.71/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.25.176.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.250.8.66/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.253.201.211/32,PROXY,no-resolve"
     },
     {
@@ -214832,7 +219326,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.29.106.142/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.109.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.29.73.138/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.29.94.5/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.37.248.26/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.38.171.133/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.41.220.129/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.41.97.13/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214867,7 +219410,42 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.58.186.41/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.59.119.195/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.61.69.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.63.211.30/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.66.44.126/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.69.27.102/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214881,7 +219459,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.70.32.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.74.221.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.78.149.97/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.83.246.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.85.214.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.86.156.204/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.101.223/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.130.145/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214895,6 +219522,34 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.89.236.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.40.149/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.89.98.73/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.9.6.44/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,20.9.65.240/32,PROXY,no-resolve"
     },
     {
@@ -214902,7 +219557,77 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,20.97.18.7/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.98.53.205/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,20.98.94.72/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.123.148/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.216.138/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,23.101.226.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.150.48.254/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.125.58/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.146.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.150.176/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.151.162.218/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214923,7 +219648,21 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.151.204.68/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.151.50.34/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.154.76.98/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -214966,6 +219705,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,4.197.185.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.201.104.14/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215028,6 +219774,20 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,4.225.221.123/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,4.232.88.121/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,4.242.133.59/32,PROXY,no-resolve"
     },
     {
@@ -215056,7 +219816,56 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,40.112.161.169/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.115.143.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,40.118.236.137/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.124.7.113/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.64.120.63/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,40.75.170.15/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,48.193.40.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,48.193.41.10/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215077,6 +219886,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,51.107.168.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.107.175.203/32,PROXY,no-resolve"
     },
     {
@@ -215084,7 +219900,70 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,51.107.225.131/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.238.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.107.238.43/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,51.116.220.101/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.3.178/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.3.185/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.82.1/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.84.241/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.89.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,51.116.89.99/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215112,7 +219991,49 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.141.0.43/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.141.4.85/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.143.181.161/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.148.5.163/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.150.164.49/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.157.177.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.159.141.180/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215133,6 +220054,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.188.65.158/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.230.89.145/32,PROXY,no-resolve"
     },
     {
@@ -215147,6 +220075,27 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.234.45.139/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.236.51.132/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.241.6.99/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.243.62.231/32,PROXY,no-resolve"
     },
     {
@@ -215154,7 +220103,28 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,52.247.69.68/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,52.253.104.78/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.109.199/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,52.253.109.90/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215182,6 +220152,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,57.154.51.173/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,57.154.55.99/32,PROXY,no-resolve"
     },
     {
@@ -215190,6 +220167,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,57.154.67.255/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,64.236.175.115/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215217,6 +220201,13 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,68.221.76.47/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,70.153.147.32/32,PROXY,no-resolve"
     },
     {
@@ -215224,7 +220215,35 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,70.153.147.96/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,70.153.148.19/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.150.120/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.151.108/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,70.153.83.155/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215239,6 +220258,41 @@
         "voice"
       ],
       "rule": "IP-CIDR,72.146.45.116/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.152.48.241/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.152.49.125/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.28.251/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.51.124/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.159.51.54/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215280,7 +220334,84 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,74.248.19.80/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.21.91/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.21.95/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.32.218/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.34.11/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.35.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.35.12/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.248.36.40/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.207.14/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,74.249.241.198/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.249.249.6/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.32.207/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215301,7 +220432,63 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,74.7.33.139/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.33.140/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,74.7.33.71/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,85.211.180.16/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.180.65/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.181.109/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.182.61/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.193.130/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.195.125/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215316,6 +220503,13 @@
         "voice"
       ],
       "rule": "IP-CIDR,85.211.245.237/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,85.211.247.9/32,PROXY,no-resolve"
     },
     {
       "category": "voice",
@@ -215350,6 +220544,48 @@
       "origins": [
         "voice"
       ],
+      "rule": "IP-CIDR,9.160.35.238/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.36.206/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.102/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.127/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.213/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.160.37.69/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
       "rule": "IP-CIDR,9.205.154.223/32,PROXY,no-resolve"
     },
     {
@@ -215372,6 +220608,62 @@
         "voice"
       ],
       "rule": "IP-CIDR,9.205.159.144/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.20/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.21/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.226/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.42/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.248.77/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.250.159/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.94.183/32,PROXY,no-resolve"
+    },
+    {
+      "category": "voice",
+      "origins": [
+        "voice"
+      ],
+      "rule": "IP-CIDR,9.205.94.184/32,PROXY,no-resolve"
     },
     {
       "category": "copilot",

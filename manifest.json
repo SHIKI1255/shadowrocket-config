@@ -1,5 +1,5 @@
 {
-  "config_sha256": "d9d06f405e655cc840e25e08976f615ee63925a0872ef8480d1509e470b9761f",
+  "config_sha256": "fd5264125666fd375ab31922580b3dd959f0db8ecce820496023eded0066e8cd",
   "conflicts": [
     {
       "later": "DIRECT",
@@ -2904,9 +2904,9 @@
       "policy": "PROXY"
     }
   ],
-  "rules": 14336,
+  "rules": 14588,
   "schema_version": 2,
-  "shared_version": "a7a3cbd49d9840fe885beb4b7d7ea63729d5d53328ce8a3687e847e22c0355e2",
+  "shared_version": "25002784a35c45a3af923bb5ada2b0885e913862ec0773cf49c4edbf5137d493",
   "source_files_sha256": {
     "config/base.conf": "d8405d2cbe6773ae64d861a80994ad29845a1167c1f8ed0bda997849fd723acb",
     "config/shared.json": "648d492aa8922dc7ccfd51c40cf9c7e3a704e4d7c05652a4f91d5353c87b1bbf",
@@ -2920,9 +2920,9 @@
     "scripts/shared_data.py": "3aa79718d4e135e46b8adfd53e03d9cfefc879e7aa73bf81e7ed4b413b720fbe",
     "scripts/sync_hosts.py": "0a3c9ec4ce58b2f8f6936f7081d7673a9e8f6386702968649b8cc7331adf2c6d",
     "scripts/validate_hosts.py": "183f337c04ea6654abfa4c1c603289344f676dc647447fa09d94cdf938c1e9bd",
-    "shared/README.md": "a6b237253b3ef331a027236deede865e7310040b1f92c4926a06fae388d42da3",
+    "shared/README.md": "53f16086eba01576473cd03bf06555aa6d1def5b624c75e3363c3cf29f97353d",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
-    "shared/baseline.json": "876d6b085d544d1a5c0ab2788cfe820fc0cf049e9b133bfb447278117b68570e",
+    "shared/baseline.json": "7202338732ff0ea448d0d4e58741f2cae20bca3ff6f36fd1a91e3e7782dde27d",
     "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
     "shared/core.py": "d0aeb2c9740c38d159cccfa21bd692330117df6a4fef0fd1bce86de5555d2446",
     "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
@@ -2935,6 +2935,7 @@
     "tests/fixtures/openai-before-telemetry.txt": "ec1043e63c31bbef51efe13a3e2af29a3f66b8b4692f517d75a864cbc4a3d88d",
     "tests/fixtures/voice-20260326.json": "89e961ec1ad6b0f1d457002a48b1bd81df8cb2144754ad6e1811c934bb97686a",
     "tests/fixtures/voice-20261025.json": "18289db5eb05643462ca3d5e7f05d7692e712fd3bbe1e7840102ca8b4167b9a2",
+    "tests/fixtures/voice-20261027.json": "685e474f5adfdca364ec6afb6e3898161a1eca4795edcf54f3beaa6417a10c0f",
     "tests/test_consumer.py": "7b5824b4a59dfae5ee51e2f909153e55c80a1207efce2e7a6a939c132003eacc",
     "tests/test_core.py": "9d61bd933168f17aa5f1eaa92efe9e4e9c7ec493a849f7a0eba6423739c8303e",
     "tests/test_engine.py": "a4f2463a494c48d4658ff8aea77c1c3df4bfd39c4ba6cbaf2c46744bfbca8d37",
@@ -2945,8 +2946,8 @@
     "tests/test_keepalive.py": "cab0051f8fb94cdb56d875ec59bfbed21366d51e4e49b1306bfd973cedaeaf67",
     "tests/test_publish.py": "7bf8aa2bc2dca9ea9913fa88d328a1536bcd0da23c1573222136bc7a0a8ae5c1",
     "tests/test_v2fly_telemetry.py": "0b921ae3923a51e4a207d45a190031b3f5cf59308810c3b80173328bf3ac767d",
-    "tests/test_voice_transition.py": "414a0b2c90c19a9b43b05cd881e55d84a808392b56de6b577640fd93b8a36a8b"
+    "tests/test_voice_transition.py": "4ee2e0499422912fdca62b05781be6c5eed54ca140af7ce02712a56890a03565"
   },
   "validation": "Static generation verified; client parsing and real network acceptance are separate.",
-  "voice_ip_cases": 150
+  "voice_ip_cases": 402
 }
