@@ -43,3 +43,5 @@ python -B scripts/build.py --replay <构建目录> --output <新的离线目录>
 两次 SHA256SUMS 必须一致。固定版本将 release 替换为发布 SHA；完全冻结还需冻结内部资源地址。恢复本地备份由使用者操作，不自动重载应用。手机解析、实际联网、语音与后台刷新另行验收。
 
 [公共规则与必要平台差异](https://github.com/SHIKI1255/shadowrocket-config/tree/main/shared) · [第三方许可](docs/third_party.md)
+
+有限重试、失败快照、人工审核候选和通知去重见[自动发布异常处理](docs/release-resilience.md)。

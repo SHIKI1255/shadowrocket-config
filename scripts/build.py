@@ -15,8 +15,8 @@ CLIENT = CONTRACT['client']
 REPOSITORY = 'SHIKI1255/' + CLIENT + '-config'
 
 
-def previous_stats():
-    sha=release_sha(REPOSITORY)
+def previous_stats(sha=''):
+    sha=sha or release_sha(REPOSITORY)
     return json.loads(fetch(RAW+REPOSITORY+'/'+sha+'/source_stats.json'))
 
 
@@ -61,7 +61,9 @@ def main():
     p.add_argument('--shared-dir',type=Path,help='Explicit local data package, for validation only')
     p.add_argument('--previous-release',action='store_true')
     p.add_argument('--audit',action='store_true')
+    p.add_argument('--diagnostics',type=Path,help='Separate public evidence directory; never publishable')
     a=p.parse_args()
+    context = {}
     try:
         require(sum(bool(x) for x in (a.replay,a.replay_commit,a.shared_dir))<=1,'Choose one input method')
         require(not a.audit or CLIENT=='shadowrocket','Audit is performed only by the common producer')
@@ -70,8 +72,13 @@ def main():
             sys.path.insert(0,str(ROOT))
             from shared import core
             conf=core.read_json('sources.yaml')
-            lock,inputs=core.collect(conf,a.replay,a.replay_commit)
-            previous=previous_stats() if a.previous_release else None
+            context['conf'] = conf
+            prior_sha=release_sha(REPOSITORY) if a.previous_release else ''
+            previous=previous_stats(prior_sha) if a.previous_release else None
+            context.update(previous_release=prior_sha, previous=previous)
+            def capture(lock, files):
+                context.update(lock=lock, inputs=files)
+            lock,inputs=core.collect(conf,a.replay,a.replay_commit,capture=capture)
             inputs=core.build(conf,lock,inputs,previous,a.audit)
             if a.audit:
                 write_files(a.output.resolve(),inputs)
@@ -82,9 +89,18 @@ def main():
                                         REPOSITORY if a.replay_commit else None)
         files=build(manifest,payload,inputs)
         write_files(a.output.resolve(),files)
+        if a.diagnostics:
+            from diagnostics import evidence
+            evidence(ROOT, a.diagnostics, context)
         print(json.dumps({'status':'validated','client':CLIENT,'files':len(files),'shared_version':manifest['shared_version'],
                           'config_sha256':json.loads(files['manifest.json'])['config_sha256']}))
     except (ValueError,OSError,KeyError,TypeError) as exc:
+        if a.diagnostics:
+            try:
+                from diagnostics import evidence
+                evidence(ROOT, a.diagnostics, context, error=exc)
+            except (ValueError,OSError,KeyError,TypeError) as diagnostic_error:
+                print('EVIDENCE STOPPED: '+type(diagnostic_error).__name__,file=sys.stderr)
         print('BUILD STOPPED: '+str(exc),file=sys.stderr);return 1
     return 0
 
