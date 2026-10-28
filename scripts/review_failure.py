@@ -118,4 +118,3 @@ def propose(report, files):
         "body":"数量检查仍阻止发布。本 PR 仅提供差异和拟议精确迁移，必须由使用者确认后另行应用并完成全部验证。\n\n"+url})
     e.require(result.get("draft") is True and result["head"]["sha"] == commit["sha"], "PR readback mismatch")
     return result["html_url"]
-

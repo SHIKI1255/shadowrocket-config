@@ -136,4 +136,3 @@ class CandidateTests(unittest.TestCase):
             review.validate_proposal(report,files)
 
 if __name__=="__main__":unittest.main()
-
