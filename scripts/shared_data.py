@@ -40,6 +40,7 @@ def records(text):
 
 
 def fetch(url, *, missing_ok=False):
+    from public_http import request_bytes
     p = urllib.parse.urlparse(url)
     require(p.scheme == 'https' and p.hostname in {'raw.githubusercontent.com','api.github.com'}, 'Unapproved public URL')
     require(not p.username and not p.password and not p.query and not p.fragment, 'Credentials/query in URL')
@@ -47,13 +48,13 @@ def fetch(url, *, missing_ok=False):
     if p.hostname == 'api.github.com' and os.environ.get('GITHUB_TOKEN'):
         headers['Authorization'] = 'Bearer ' + os.environ['GITHUB_TOKEN']
     try:
-        with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=60) as response:
-            require(urllib.parse.urlparse(response.url).hostname == p.hostname, 'Unexpected redirect')
-            data = response.read(MAX_BYTES+1)
+        data = request_bytes(urllib.request.Request(url, headers=headers),
+                             limit=MAX_BYTES, expected_host=p.hostname)
     except urllib.error.HTTPError as exc:
         if missing_ok and exc.code == 404: return None
         raise BuildError('Public download failed: HTTP '+str(exc.code)) from None
     except (OSError, urllib.error.URLError, http.client.HTTPException): raise BuildError('Public download failed') from None
+    except ValueError as exc: raise BuildError(str(exc)) from None
     require(0 < len(data) <= MAX_BYTES, 'Empty or oversized data')
     return data
 

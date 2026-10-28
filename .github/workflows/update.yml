@@ -67,10 +67,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          $argsList = @('-B', 'scripts/build.py', '--output', "$env:RUNNER_TEMP/release", '--previous-release')
+          $argsList = @('-B', 'scripts/build.py', '--output', "$env:RUNNER_TEMP/release", '--previous-release', '--diagnostics', "$env:RUNNER_TEMP/evidence")
           if ($env:REPLAY_COMMIT) { $argsList += @('--replay-commit', $env:REPLAY_COMMIT) }
           & python @argsList
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Preserve public evidence independently of publishable artifacts
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: public-evidence
+          path: ${{ runner.temp }}/evidence/
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Offline reproducibility check
         run: |
           python -B scripts/build.py --replay "$env:RUNNER_TEMP/release" --output "$env:RUNNER_TEMP/replay"
@@ -108,11 +116,46 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           PYTHONDONTWRITEBYTECODE: '1'
         run: python -B scripts/publish.py "$env:RUNNER_TEMP/release"
+      - name: Verify anonymous fixed and rolling download hashes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -B scripts/release_health.py --verify "$env:RUNNER_TEMP/release"
+
+  monitor:
+    if: always() && github.ref == 'refs/heads/main' && contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name)
+    needs: [validate, publish]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - name: Read optional public evidence
+        continue-on-error: true # Early unit/infrastructure failure may not produce evidence.
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: public-evidence
+          path: ${{ runner.temp }}/evidence
+      - name: Deduplicate incident and prepare review-only candidate
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          JOB_RESULTS: '{"validate":"${{ needs.validate.result }}","publish":"${{ needs.publish.result }}"}'
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -B scripts/release_health.py --evidence "$env:RUNNER_TEMP/evidence"
 
   maintenance:
     # Runs after publication (also after failure); never advances main mid-publish.
     if: always() && github.ref == 'refs/heads/main' && contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name)
-    needs: [validate, publish]
+    needs: [validate, publish, monitor]
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

@@ -38,7 +38,7 @@ def source_specs(conf, client):
         yield spec
 
 
-def collect(conf, replay_dir=None, replay_commit=''):
+def collect(conf, replay_dir=None, replay_commit='', capture=None):
     if replay_dir is not None or replay_commit:
         require(replay_dir is not None or re.fullmatch(r'[a-f0-9]{40}', replay_commit), 'Full replay SHA required')
         def read(path):
@@ -54,6 +54,7 @@ def collect(conf, replay_dir=None, replay_commit=''):
         files = {p: read(p) for p in lock['files']}
         for p, data in files.items():
             require(digest(data) == lock['files'][p]['sha256'], 'Snapshot hash mismatch: ' + p)
+        if capture is not None: capture(lock, files)
         return lock, files
     revisions = {}
     for name, spec in conf['repositories'].items():
@@ -72,12 +73,23 @@ def collect(conf, replay_dir=None, replay_commit=''):
         requests['licenses/' + name + '.txt'] = RAW + r['repo'] + '/' + r['commit'] + '/' + conf['repositories'][name]['license_path']
     # Fetch each URL once, including the mutable official voice JSON.
     urls = list(dict.fromkeys(requests.values()))
+    downloaded, failures = {}, []
     with ThreadPoolExecutor(max_workers=6) as pool:
-        downloaded = dict(zip(urls, pool.map(fetch, urls)))
+        futures = {url: pool.submit(fetch, url) for url in urls}
+        for url, future in futures.items():
+            try: downloaded[url] = future.result()
+            except (ValueError, OSError) as exc: failures.append(exc)
+    if failures:
+        files = {p: downloaded[url] for p, url in requests.items() if url in downloaded}
+        lock = {'schema_version': 2, 'repositories': revisions,
+                'files': {p: {'url': requests[p], 'sha256': digest(data)} for p,data in files.items()}}
+        if capture is not None: capture(lock, files)
+        raise failures[0]
     files = {p: downloaded[url] for p, url in requests.items()}
-    for data in files.values(): decode(data)
     lock = {'schema_version': 2, 'repositories': revisions,
             'files': {p: {'url': requests[p], 'sha256': digest(data)} for p, data in files.items()}}
+    if capture is not None: capture(lock, files)
+    for data in files.values(): decode(data)
     # Public-source identities survive a later parse failure in the CI log.
     # Do not log response bodies, request headers or environment values.
     print(json.dumps({'event': 'public_source_snapshot', 'repositories': revisions,

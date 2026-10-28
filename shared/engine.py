@@ -46,6 +46,7 @@ def require(condition, message):
 
 
 def fetch(url: str, *, missing_ok=False) -> bytes | None:
+    from scripts.public_http import request_bytes
     parsed = urllib.parse.urlparse(url)
     require(parsed.scheme == "https" and parsed.hostname in
             {"raw.githubusercontent.com", "api.github.com", "openai.com"},
@@ -57,16 +58,16 @@ def fetch(url: str, *, missing_ok=False) -> bytes | None:
     if parsed.hostname == "api.github.com" and token:
         headers["Authorization"] = "Bearer " + token
     try:
-        with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=60) as response:
-            require(urllib.parse.urlparse(response.url).hostname == parsed.hostname,
-                    "Unexpected cross-host redirect")
-            data = response.read(MAX_BYTES + 1)
+        data = request_bytes(urllib.request.Request(url, headers=headers),
+                             limit=MAX_BYTES, expected_host=parsed.hostname)
     except urllib.error.HTTPError as exc:
         if missing_ok and exc.code == 404:
             return None
         raise BuildError(f"Download failed: HTTP {exc.code}: {url}") from None
     except (OSError, urllib.error.URLError, http.client.HTTPException) as exc:
         raise BuildError(f"Download failed: {url}: {type(exc).__name__}") from None
+    except ValueError as exc:
+        raise BuildError(str(exc)) from None
     require(0 < len(data) <= MAX_BYTES, f"Empty or oversized source: {url}")
     return data
 
