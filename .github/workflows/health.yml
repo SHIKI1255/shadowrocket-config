@@ -1,0 +1,97 @@
+name: Repository health
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/health.yml'
+      - 'scripts/check_health.py'
+      - 'scripts/public_http.py'
+      - 'scripts/shared_data.py'
+      - 'scripts/publish.py'
+      - 'scripts/release_health.py'
+      - 'tests/test_health.py'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/health.yml'
+      - 'scripts/check_health.py'
+      - 'scripts/public_http.py'
+      - 'scripts/shared_data.py'
+      - 'scripts/publish.py'
+      - 'scripts/release_health.py'
+      - 'tests/test_health.py'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Inspect public state without changing the health issue'
+        type: boolean
+        default: false
+  schedule:
+    # UTC 00:17/12:17 = Beijing 08:17/20:17; scheduling is best effort.
+    - cron: '17 0,12 * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-health-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - name: Health decision and failure-path tests
+        run: python -B -m unittest discover -s tests -p test_health.py -v
+      - name: Inspect immutable releases and successful activity
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -B scripts/check_health.py --output "$env:RUNNER_TEMP/health/report.json"
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: health-report
+          path: ${{ runner.temp }}/health/report.json
+          if-no-files-found: error
+          retention-days: 7
+
+  notify:
+    needs: inspect
+    if: github.ref == 'refs/heads/main' && contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && !inputs.dry_run
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: health-report
+          path: ${{ runner.temp }}/health
+      - name: Deduplicate health issue or record recovery
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -B scripts/check_health.py --notify "$env:RUNNER_TEMP/health/report.json"
