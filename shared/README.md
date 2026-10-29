@@ -35,7 +35,7 @@ shared_version 由规则数据及公共源码哈希生成；manifest 包含 bund
 两消费者先解析公共 release 的提交 SHA，再全部使用固定 SHA 下载并校验，只解析 JSON/原生资源，不执行公共仓库脚本。
 消费者各自版本清单带 shared_version；本地测试的 shared_release=local 不能发布。
 
-北京时间公共/Shadowrocket 06:17、QX 06:47、Clash 07:17，每日运行；各自 main 修改、手动触发也运行。共同规则提交后，消费者在下一次构建跟进，必要时手动运行其 Actions。
+北京时间公共/Shadowrocket 每日 06:17；QX 每日 06:47/18:47、Clash 每日 07:17/19:17 检查公共版本。各自 main 修改、手动触发仍完整验证。共同规则提交后，消费者在下一次检查跟进，必要时手动运行其 Actions。
 三仓库及客户端资源刷新不是原子操作。GitHub 延迟时可能暂不同步；未知协议、下载/哈希/数量/冲突/回归失败都保留旧发布。
 各仓库使用自己的 GITHUB_TOKEN。沿用 30 天真实维护记录；不增加机场订阅 Secret、节点自动抓取或测速选 IP。
 
