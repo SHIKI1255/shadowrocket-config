@@ -6,7 +6,7 @@
     },
     "licenses/v2fly.txt": {
       "sha256": "b9d84a22870d3f21c91a4c6e410c9cc51d00902f5233ad0c84011479244bf7d2",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/LICENSE"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/LICENSE"
     },
     "snapshots/clash/apple.txt": {
       "sha256": "23ffd05d669e6281e387aff5453ba3ab0d83321a00c6eb1b8045e866bc66d7b1",
@@ -30,7 +30,7 @@
     },
     "snapshots/clash/claude.txt": {
       "sha256": "48597d05d9206b7c841be6872c7ca954685a416d7e61c9316c017ed5f28c7053",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/data/anthropic"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/data/anthropic"
     },
     "snapshots/clash/copilot.txt": {
       "sha256": "12773330de34b84b7fd2f3f2af598480ea62d8574d8e9b8ae9d011a53c044d39",
@@ -42,7 +42,7 @@
     },
     "snapshots/clash/gemini.txt": {
       "sha256": "6f768291aa81a8d88fa48fc20613f55be646674cfa24a3b3c152a97e859c33a8",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/data/google-deepmind"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/data/google-deepmind"
     },
     "snapshots/clash/github.txt": {
       "sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b",
@@ -58,7 +58,7 @@
     },
     "snapshots/clash/openai.txt": {
       "sha256": "25d53e9af3e04d926210d6436bd791594ef4b86f2dc3c108510ac8059d76d969",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/data/openai"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/data/openai"
     },
     "snapshots/clash/proxy.txt": {
       "sha256": "9d64e0fe06a55eea536c999c9a05ef35734772c140bf33d38bbec5a69f361f38",
@@ -82,7 +82,7 @@
     },
     "snapshots/clash/tiktok.txt": {
       "sha256": "e57322c704e4fe5ef3b202e4b86e82767fbe7f1af2c01f065fde4764205d0e4f",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/data/tiktok"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/data/tiktok"
     },
     "snapshots/clash/twitter.txt": {
       "sha256": "64c836f2431ca0d4728cc545bb74280ee50c886e346040012e6cdd2f3eee3f97",
@@ -114,7 +114,7 @@
     },
     "snapshots/shadowrocket/claude.txt": {
       "sha256": "48597d05d9206b7c841be6872c7ca954685a416d7e61c9316c017ed5f28c7053",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/data/anthropic"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/data/anthropic"
     },
     "snapshots/shadowrocket/copilot.txt": {
       "sha256": "12773330de34b84b7fd2f3f2af598480ea62d8574d8e9b8ae9d011a53c044d39",
@@ -126,7 +126,7 @@
     },
     "snapshots/shadowrocket/gemini.txt": {
       "sha256": "6f768291aa81a8d88fa48fc20613f55be646674cfa24a3b3c152a97e859c33a8",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/data/google-deepmind"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/data/google-deepmind"
     },
     "snapshots/shadowrocket/github.txt": {
       "sha256": "ced8ab0ecda5775d04ec8ee6a57b282181108565331a6a1d85e9a26fee25d79b",
@@ -142,7 +142,7 @@
     },
     "snapshots/shadowrocket/openai.txt": {
       "sha256": "25d53e9af3e04d926210d6436bd791594ef4b86f2dc3c108510ac8059d76d969",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/data/openai"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/data/openai"
     },
     "snapshots/shadowrocket/proxy.txt": {
       "sha256": "084785f0345a4d9e7424218afb3d295f4ebef342c83fedb1c5d9da7d584c015a",
@@ -166,7 +166,7 @@
     },
     "snapshots/shadowrocket/tiktok.txt": {
       "sha256": "e57322c704e4fe5ef3b202e4b86e82767fbe7f1af2c01f065fde4764205d0e4f",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/1b81d3cd34096e5d8cac6bca5935e80f30e990f0/data/tiktok"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/333d8a1810d04600bcb00870155a369954ed37f5/data/tiktok"
     },
     "snapshots/shadowrocket/twitter.txt": {
       "sha256": "64c836f2431ca0d4728cc545bb74280ee50c886e346040012e6cdd2f3eee3f97",
@@ -185,7 +185,7 @@
       "repo": "blackmatrix7/ios_rule_script"
     },
     "v2fly": {
-      "commit": "1b81d3cd34096e5d8cac6bca5935e80f30e990f0",
+      "commit": "333d8a1810d04600bcb00870155a369954ed37f5",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community"

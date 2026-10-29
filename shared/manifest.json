@@ -2,7 +2,7 @@
   "bundle_sha256": "b51b8d7eea6367516d346f1908883caba18b9cec85289940af6a9bf24576cc50",
   "provenance_sha256": "8550a27d7690f8aa276810ff372d5878c6106dca7086c19142f7d0f2405924a4",
   "schema_version": 1,
-  "shared_version": "ed5cb47d352e8921124bd4e694e69a28bd6097106a1613a39e14cc343ec9962d",
+  "shared_version": "5769e12fc4a1f0fd94250f246f67f12ff8c5679e669e1ce6a85b7b39e74f7546",
   "source_files_sha256": {
     "shared/README.md": "53f16086eba01576473cd03bf06555aa6d1def5b624c75e3363c3cf29f97353d",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
@@ -24,7 +24,7 @@
       "repo": "blackmatrix7/ios_rule_script"
     },
     "v2fly": {
-      "commit": "1b81d3cd34096e5d8cac6bca5935e80f30e990f0",
+      "commit": "333d8a1810d04600bcb00870155a369954ed37f5",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community"
