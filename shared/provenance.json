@@ -10216,6 +10216,20 @@
     {
       "category": "tiktok",
       "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokshop.com,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokstaticb.com,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
         "tiktok",
         "proxy",
         "proxy_domains"
@@ -10237,6 +10251,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,tiktokv.us,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokvapp.com,PROXY"
     },
     {
       "category": "tiktok",
@@ -124246,6 +124267,20 @@
     {
       "category": "tiktok",
       "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokshop.com,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokstaticb.com,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
         "tiktok",
         "proxy_domains"
       ],
@@ -124265,6 +124300,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,tiktokv.us,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokvapp.com,PROXY"
     },
     {
       "category": "tiktok",
@@ -226625,6 +226667,20 @@
     {
       "category": "tiktok",
       "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokshop.com,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokstaticb.com,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
         "tiktok",
         "proxy_domains"
       ],
@@ -226644,6 +226700,13 @@
         "proxy_domains"
       ],
       "rule": "DOMAIN-SUFFIX,tiktokv.us,PROXY"
+    },
+    {
+      "category": "tiktok",
+      "origins": [
+        "tiktok"
+      ],
+      "rule": "DOMAIN-SUFFIX,tiktokvapp.com,PROXY"
     },
     {
       "category": "tiktok",

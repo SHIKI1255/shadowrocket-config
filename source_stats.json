@@ -26701,8 +26701,8 @@
       "skipped": []
     },
     "tiktok": {
-      "raw_count": 37,
-      "retained_count": 35,
+      "raw_count": 40,
+      "retained_count": 38,
       "rules": [
         "DOMAIN-SUFFIX,muscdn.com,PROXY",
         "DOMAIN-SUFFIX,musical.ly,PROXY",
@@ -26719,9 +26719,12 @@
         "DOMAIN-SUFFIX,tiktokglobalshopv.com,PROXY",
         "DOMAIN-SUFFIX,tiktokminis.us,PROXY",
         "DOMAIN-SUFFIX,tiktokrow-cdn.com,PROXY",
+        "DOMAIN-SUFFIX,tiktokshop.com,PROXY",
+        "DOMAIN-SUFFIX,tiktokstaticb.com,PROXY",
         "DOMAIN-SUFFIX,tiktokv.com,PROXY",
         "DOMAIN-SUFFIX,tiktokv.eu,PROXY",
         "DOMAIN-SUFFIX,tiktokv.us,PROXY",
+        "DOMAIN-SUFFIX,tiktokvapp.com,PROXY",
         "DOMAIN-SUFFIX,tiktokw.eu,PROXY",
         "DOMAIN-SUFFIX,tiktokw.us,PROXY",
         "DOMAIN-SUFFIX,ttcdn-us.com,PROXY",
@@ -26747,7 +26750,7 @@
           "rule": "DOMAIN-SUFFIX,bytedapm.com,PROXY"
         },
         {
-          "line": 40,
+          "line": 43,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,analytics.tiktok.com,PROXY"
         }
@@ -41834,8 +41837,8 @@
       "skipped": []
     },
     "tiktok": {
-      "raw_count": 37,
-      "retained_count": 35,
+      "raw_count": 40,
+      "retained_count": 38,
       "rules": [
         "DOMAIN-SUFFIX,muscdn.com,PROXY",
         "DOMAIN-SUFFIX,musical.ly,PROXY",
@@ -41852,9 +41855,12 @@
         "DOMAIN-SUFFIX,tiktokglobalshopv.com,PROXY",
         "DOMAIN-SUFFIX,tiktokminis.us,PROXY",
         "DOMAIN-SUFFIX,tiktokrow-cdn.com,PROXY",
+        "DOMAIN-SUFFIX,tiktokshop.com,PROXY",
+        "DOMAIN-SUFFIX,tiktokstaticb.com,PROXY",
         "DOMAIN-SUFFIX,tiktokv.com,PROXY",
         "DOMAIN-SUFFIX,tiktokv.eu,PROXY",
         "DOMAIN-SUFFIX,tiktokv.us,PROXY",
+        "DOMAIN-SUFFIX,tiktokvapp.com,PROXY",
         "DOMAIN-SUFFIX,tiktokw.eu,PROXY",
         "DOMAIN-SUFFIX,tiktokw.us,PROXY",
         "DOMAIN-SUFFIX,ttcdn-us.com,PROXY",
@@ -41880,7 +41886,7 @@
           "rule": "DOMAIN-SUFFIX,bytedapm.com,PROXY"
         },
         {
-          "line": 40,
+          "line": 43,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,analytics.tiktok.com,PROXY"
         }
