@@ -130,5 +130,86 @@ class TelemetryCompatibility(unittest.TestCase):
         self.assertEqual(set(event), {"event", "repositories", "files_sha256"})
 
 
+ANTHROPIC_BEFORE = "48597d05d9206b7c841be6872c7ca954685a416d7e61c9316c017ed5f28c7053"
+ANTHROPIC_AFTER = "59ad6a25a6d9759995777fe98f2cf30675199fad00546a0ffe027b95ec0776f0"
+
+
+class AnthropicTelemetryExclusion(unittest.TestCase):
+    """v2fly #4268 reviewed standalone Claude telemetry is excluded, not routed."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.before = (FIXTURES / "anthropic-before-telemetry.txt").read_bytes()
+        cls.after = (FIXTURES / "anthropic-after-telemetry.txt").read_bytes()
+        cls.spec = next(s for s in core.read_json("sources.yaml")["sources"] if s["id"] == "claude")
+
+    def parse(self, entry):
+        return e.parse_source(self.spec, (entry + "\n").encode())
+
+    def test_fixed_upstream_snapshots_only_add_telemetry_lines(self):
+        self.assertEqual(e.digest(self.before), ANTHROPIC_BEFORE)
+        self.assertEqual(e.digest(self.after), ANTHROPIC_AFTER)
+        before_lines = self.before.splitlines()
+        after_lines = self.after.splitlines()
+        added = [line for line in after_lines if line not in before_lines]
+        self.assertEqual(added, [
+            b"# Claude Code telemetry",
+            b"full:http-intake.logs.us5.datadoghq.com @telemetry",
+            b"full:o1158394.ingest.us.sentry.io @telemetry",
+        ])
+        self.assertEqual(after_lines, before_lines + [
+            b"", b"# Claude Code telemetry",
+            b"full:http-intake.logs.us5.datadoghq.com @telemetry",
+            b"full:o1158394.ingest.us.sentry.io @telemetry",
+        ])
+
+    def test_standalone_telemetry_is_excluded_for_all_clients(self):
+        for client in ("shadowrocket", "quantumultx", "clash"):
+            with self.subTest(client=client):
+                old, before_stats = e.parse_source(dict(self.spec), self.before)
+                new, after_stats = e.parse_source(dict(self.spec), self.after)
+                self.assertEqual(before_stats["raw_count"], 19)
+                self.assertEqual((after_stats["raw_count"], after_stats["retained_count"]), (21, 19))
+                self.assertEqual(old, new)
+                skipped = after_stats["skipped"]
+                self.assertEqual([row["rule"] for row in skipped], [
+                    "DOMAIN,http-intake.logs.us5.datadoghq.com,PROXY",
+                    "DOMAIN,o1158394.ingest.us.sentry.io,PROXY"])
+                self.assertTrue(all(row["reason"] == "telemetry attribute" for row in skipped))
+                self.assertTrue(all(r.policy == "PROXY" for r in new))
+                if client == "quantumultx":
+                    self.assertEqual([q.convert(r).line for r in old],
+                                     [q.convert(r).line for r in new])
+
+    def test_standalone_telemetry_stays_fail_closed_outside_claude(self):
+        openai_spec = next(s for s in core.read_json("sources.yaml")["sources"] if s["id"] == "openai")
+        with self.assertRaises(e.BuildError):
+            e.parse_source(openai_spec, b"full:tracker.example @telemetry\n")
+
+    def test_unreviewed_combinations_still_stop_on_claude(self):
+        for entry in ("full:tracker.example @telemetry @!cn",
+                      "full:tracker.example @ads @telemetry @!cn",
+                      "full:tracker.example @telemetry @new_attribute"):
+            with self.subTest(entry=entry), self.assertRaises(e.BuildError):
+                self.parse(entry)
+
+    def test_telemetry_exclusion_validates_syntax_before_skipping(self):
+        for entry in ("full:tracker.example @telemetry broken",
+                      "include:other @telemetry",
+                      "keyword:tracker @telemetry",
+                      "regexp:unreviewed @telemetry"):
+            with self.subTest(entry=entry), self.assertRaises(e.BuildError):
+                self.parse(entry)
+
+    def test_semantic_error_keeps_claude_physical_line(self):
+        with self.assertRaisesRegex(e.BuildError,
+                                    r"claude:24: Unknown v2fly attribute semantics:.*@new_attribute"):
+            e.parse_source(self.spec, self.after.replace(b"@telemetry", b"@new_attribute", 1))
+
+    def test_claude_source_with_only_telemetry_is_empty_and_stops(self):
+        with self.assertRaisesRegex(e.BuildError, r"Empty rules: claude"):
+            self.parse("full:tracker.example @telemetry")
+
+
 if __name__ == "__main__":
     unittest.main()
