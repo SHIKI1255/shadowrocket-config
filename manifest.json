@@ -1,5 +1,5 @@
 {
-  "config_sha256": "4cc6014fc9c8f0ad16a546d32f2ee59cac0400bafda8f5021d5aaab64aeb1bb3",
+  "config_sha256": "242997a6197de9f06be78e4ee387930b4efe580a6438e8f17f4b5e8b80ec520c",
   "conflicts": [
     {
       "later": "DIRECT",
@@ -2904,9 +2904,9 @@
       "policy": "PROXY"
     }
   ],
-  "rules": 14591,
+  "rules": 14612,
   "schema_version": 2,
-  "shared_version": "b23de5396977dcf252b7d8b869f583a5a345fd085002e81f544261578417877f",
+  "shared_version": "7c5a2d2b3768eec3d50cd08e8be1092116795af31fc918b078ca0dab580827b5",
   "source_files_sha256": {
     "config/base.conf": "d8405d2cbe6773ae64d861a80994ad29845a1167c1f8ed0bda997849fd723acb",
     "config/shared.json": "648d492aa8922dc7ccfd51c40cf9c7e3a704e4d7c05652a4f91d5353c87b1bbf",
@@ -2927,15 +2927,17 @@
     "scripts/validate_hosts.py": "183f337c04ea6654abfa4c1c603289344f676dc647447fa09d94cdf938c1e9bd",
     "shared/README.md": "72b71384e7cec9b3ff7f203108f134fa060ee3ec49dbfd0ff0f523f674c5bfe9",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
-    "shared/baseline.json": "7202338732ff0ea448d0d4e58741f2cae20bca3ff6f36fd1a91e3e7782dde27d",
+    "shared/baseline.json": "a6742f63f4274461c01a30b14217f7188104878ee0058c7545eeccc23e89ab96",
     "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
     "shared/core.py": "d34626cb841fa1d8eaeba35331e04ae1b3b54568d602df787bc5e4ca04f45145",
     "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
-    "shared/engine.py": "ac70958583d1e45458cd3a6e9988399ba766d06ec52b5a67d6c3c4bf3a29a59f",
+    "shared/engine.py": "d8b3e95cc4660190f5bd456456f6710043c3f26ce80c90365296ec3dba70ae7e",
     "shared/platforms.json": "9b643e1fc056cc14723d085312f5b8f1dff34df1410cbf1bd353b8f9250edbb3",
     "shared/quantumult.py": "6c9db71793715c73c16f7c632b1bf1e4e990e59a3ec24c9b8ca0f273b375f89d",
     "shared/routing_cases.json": "9c4bcc4dc21d4ffa879226af38bc0a9e03d1bb2fd347579dd8fff845c8391d24",
     "shared/sources.yaml": "8df2864fac0ee86a7892deac917843413993a393c1ba8d3084ea33ab29170ce1",
+    "tests/fixtures/anthropic-after-telemetry.txt": "59ad6a25a6d9759995777fe98f2cf30675199fad00546a0ffe027b95ec0776f0",
+    "tests/fixtures/anthropic-before-telemetry.txt": "48597d05d9206b7c841be6872c7ca954685a416d7e61c9316c017ed5f28c7053",
     "tests/fixtures/openai-after-telemetry.txt": "25d53e9af3e04d926210d6436bd791594ef4b86f2dc3c108510ac8059d76d969",
     "tests/fixtures/openai-before-telemetry.txt": "ec1043e63c31bbef51efe13a3e2af29a3f66b8b4692f517d75a864cbc4a3d88d",
     "tests/fixtures/voice-20260326.json": "89e961ec1ad6b0f1d457002a48b1bd81df8cb2144754ad6e1811c934bb97686a",
@@ -2953,9 +2955,9 @@
     "tests/test_keepalive.py": "2ea97a01c7fe2007505a02663af633710132e1ac32e9c1a5af9cb5b1fb784018",
     "tests/test_publish.py": "7bf8aa2bc2dca9ea9913fa88d328a1536bcd0da23c1573222136bc7a0a8ae5c1",
     "tests/test_release_resilience.py": "b40afe8d97db91f6d12ba0bd107c6e5f444a3165573acd7d1c72ec7c175fd4fe",
-    "tests/test_v2fly_telemetry.py": "0b921ae3923a51e4a207d45a190031b3f5cf59308810c3b80173328bf3ac767d",
+    "tests/test_v2fly_telemetry.py": "0722cebefe1430e73296b44be84c1e1895ca5ac7113575454b314c3fa687d2c8",
     "tests/test_voice_transition.py": "4ee2e0499422912fdca62b05781be6c5eed54ca140af7ce02712a56890a03565"
   },
   "validation": "Static generation verified; client parsing and real network acceptance are separate.",
-  "voice_ip_cases": 402
+  "voice_ip_cases": 423
 }
