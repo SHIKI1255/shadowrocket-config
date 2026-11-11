@@ -297,7 +297,7 @@
         "retained_count": 3689
       },
       "claude": {
-        "raw_count": 19,
+        "raw_count": 21,
         "retained_count": 19,
         "reviewed_transition": {
           "from_sha256": "3c55f91b630ea75919b4eb502916f84b511e07c4e1ec55873d61a02df59edfef",
@@ -689,7 +689,7 @@
         "retained_count": 3689
       },
       "claude": {
-        "raw_count": 19,
+        "raw_count": 21,
         "retained_count": 19,
         "reviewed_transition": {
           "from_sha256": "3c55f91b630ea75919b4eb502916f84b511e07c4e1ec55873d61a02df59edfef",
