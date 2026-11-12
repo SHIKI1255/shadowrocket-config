@@ -89,7 +89,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Clash/Twitter/Twitter.list"
     },
     "snapshots/clash/voice.txt": {
-      "sha256": "976aafdf60891ddf24379d447dc98832c42ea88d46561024f42b0b8294b94da7",
+      "sha256": "94bf8fd707be38b43a0bca3456e141dd8ba4d1e03aef18e70b97d00f4bad9ea1",
       "url": "https://openai.com/chatgpt-voice.json"
     },
     "snapshots/shadowrocket/apple.txt": {
@@ -173,7 +173,7 @@
       "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/0b6897dc17e0c513d25449c935a9694818e32f0c/rule/Shadowrocket/Twitter/Twitter.list"
     },
     "snapshots/shadowrocket/voice.txt": {
-      "sha256": "976aafdf60891ddf24379d447dc98832c42ea88d46561024f42b0b8294b94da7",
+      "sha256": "94bf8fd707be38b43a0bca3456e141dd8ba4d1e03aef18e70b97d00f4bad9ea1",
       "url": "https://openai.com/chatgpt-voice.json"
     }
   },
