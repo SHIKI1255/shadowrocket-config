@@ -328,7 +328,7 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotIn("'scripts/check_health.py'", text)
         self.assertNotIn("'.github/workflows/health.yml'", text)
         self.assertIn("Offline reproducibility check", text)
-        self.assertIn("cron: '17 22 * * *'", text)
+        self.assertIn("cron: '0 10,22 * * *'", text)
         self.assertEqual(text.count("'modules/**'"), 2)
 
 
