@@ -33,8 +33,9 @@ on:
         required: false
         type: string
   schedule:
-    # UTC 22:17 = Asia/Shanghai 06:17 the following day. GitHub may delay scheduled jobs.
-    - cron: '17 22 * * *'
+    # UTC 22:00 and 10:00 = Asia/Shanghai 06:00 and 18:00, one hour before the
+    # 07:00/19:00 consumer checks. GitHub may delay scheduled jobs.
+    - cron: '0 10,22 * * *'
 
 permissions:
   contents: read
