@@ -93,6 +93,18 @@ class EvidenceTests(unittest.TestCase):
                 (p/"EVIDENCE_SHA256SUMS").write_text(bad)
                 with self.assertRaises(ValueError):review.verified_evidence(p)
 
+    def test_inner_symlink_evidence_is_rejected(self):
+        with tempfile.TemporaryDirectory() as td, patch.dict(os.environ,{"GITHUB_SHA":"a"*40,"GITHUB_RUN_ID":"1"}):
+            p=Path(td)/"evidence"
+            d.evidence(Path(td)/"source",p,{},error=ValueError())
+            real=p/"report.json"
+            data=real.read_bytes()
+            real.unlink()
+            outside=Path(td)/"outside.json"
+            outside.write_bytes(data)
+            real.symlink_to(outside)
+            with self.assertRaisesRegex(ValueError,"Symlink evidence"):review.verified_evidence(p)
+
 
 class CandidateTests(unittest.TestCase):
     def candidate(self):

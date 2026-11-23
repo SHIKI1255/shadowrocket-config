@@ -1,10 +1,11 @@
-"""Deterministic Mihomo rule resources. Python 3.12 standard library only."""
+"""Deterministic Mihomo rule resources. Python 3.12+ standard library only."""
 from __future__ import annotations
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 import fnmatch
+from functools import lru_cache
 import hashlib
 import http.client
 import ipaddress
@@ -274,6 +275,11 @@ def check_conflicts(conflicts: list[dict], allowed: list[dict]):
     require(not unknown, "Unregistered policy conflicts: " + json.dumps(unknown, ensure_ascii=False))
 
 
+@lru_cache(maxsize=None)
+def _ip_network(cidr: str):
+    return ipaddress.ip_network(cidr)
+
+
 def route(rules: list[Rule], *, domain="", ip="", country="", asn="", process="", user_agent="") -> dict:
     """Conservative static matcher; not a substitute for the Mihomo runtime.
 
@@ -303,7 +309,7 @@ def route(rules: list[Rule], *, domain="", ip="", country="", asn="", process=""
         elif kind == "PROCESS-NAME":
             matches = bool(process) and process == value
         elif kind == "IP-CIDR":
-            matches = address is not None and address in ipaddress.ip_network(value)
+            matches = address is not None and address in _ip_network(value)
             if address is None and not rule.options:
                 unresolved = True
         elif kind == "IP-ASN":

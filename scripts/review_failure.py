@@ -13,6 +13,16 @@ from publish import api
 from release_health import identity
 
 
+def _ensure_no_inner_symlink(directory: Path, rel_path: str) -> Path:
+    base = directory.resolve()
+    current = directory
+    for part in Path(rel_path).parts:
+        current = current / part
+        e.require(not current.is_symlink(), "Symlink evidence")
+    e.require(current.resolve().is_relative_to(base), "Symlink evidence")
+    return current
+
+
 def verified_evidence(directory):
     e.require(not directory.is_symlink(), "Symlink evidence")
     sums = (directory/"EVIDENCE_SHA256SUMS").read_text(encoding="utf-8")
@@ -22,8 +32,7 @@ def verified_evidence(directory):
         sha, name = line.split("  ", 1)
         e.require(not name.startswith("/") and ".." not in name.split("/") and name not in files,
                   "Unsafe evidence path")
-        p = directory/name
-        e.require(not any(x.is_symlink() for x in (p, *p.parents)), "Symlink evidence")
+        p = _ensure_no_inner_symlink(directory, name)
         e.require(p.stat().st_size <= 16*1024*1024, "Oversized evidence")
         data = p.read_bytes()
         e.require(e.digest(data) == sha, "Evidence hash mismatch")

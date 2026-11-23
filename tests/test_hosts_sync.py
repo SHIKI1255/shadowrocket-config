@@ -145,15 +145,22 @@ class PrivateParsingTests(unittest.TestCase):
     def test_source_identity_must_be_unique_and_https_origin_exact(self):
         profile = {"uid": sync.PROFILE_UID, "type": "remote",
                    "url": f"https://api.geekspeed.org/api/v1/client/subscribe?token={SECRET}"}
-        with tempfile.TemporaryDirectory() as temp, patch.object(sync.Path, "home", return_value=Path(temp)):
-            path = Path(temp) / "AppData/Roaming/io.github.clash-verge-rev.clash-verge-rev/profiles.yaml"
-            path.parent.mkdir(parents=True)
-            for rows in ([profile], [profile, profile], [], [dict(profile, url="https://other.example/?token=x")]):
-                path.write_text(json.dumps({"items": rows}), encoding="utf-8")
-                if rows == [profile]:
-                    self.assertEqual(sync.source_url(), profile["url"])
-                else:
-                    with self.assertRaises(HostsError): sync.source_url()
+        platforms = (
+            ("win32", "AppData/Roaming/io.github.clash-verge-rev.clash-verge-rev/profiles.yaml"),
+            ("darwin", "Library/Application Support/io.github.clash-verge-rev.clash-verge-rev/profiles.yaml"),
+        )
+        for platform_name, rel in platforms:
+            with self.subTest(platform=platform_name), tempfile.TemporaryDirectory() as temp, \
+                 patch.object(sync.Path, "home", return_value=Path(temp)), \
+                 patch.object(sync.sys, "platform", platform_name):
+                path = Path(temp) / rel
+                path.parent.mkdir(parents=True)
+                for rows in ([profile], [profile, profile], [], [dict(profile, url="https://other.example/?token=x")]):
+                    path.write_text(json.dumps({"items": rows}), encoding="utf-8")
+                    if rows == [profile]:
+                        self.assertEqual(sync.source_url(), profile["url"])
+                    else:
+                        with self.assertRaises(HostsError): sync.source_url()
 
     def test_no_change_run_never_creates_pr(self):
         gh = FakeGitHub()
@@ -264,7 +271,9 @@ class PublicationAndTransportTests(unittest.TestCase):
             sync.download("https://example.com", opener=opener, sleeper=sleeper)
         self.assertEqual(opener.open.call_count, 3)
         opener.open.reset_mock()
-        opener.open.side_effect = urllib.error.HTTPError("private", 403, SECRET, {}, None)
+        http_err = urllib.error.HTTPError("private", 403, SECRET, {}, None)
+        self.addCleanup(http_err.close)
+        opener.open.side_effect = http_err
         with self.assertRaisesRegex(HostsError, "http_rejected"):
             sync.download("https://example.com", opener=opener, sleeper=sleeper)
         self.assertEqual(opener.open.call_count, 1)

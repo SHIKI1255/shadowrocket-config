@@ -33,8 +33,13 @@ class RetryTests(unittest.TestCase):
             http.request_bytes(req, limit=10)
         self.assertEqual(get.call_count, 3)
 
+    def http_error(self, *args):
+        err = urllib.error.HTTPError(*args)
+        self.addCleanup(err.close)
+        return err
+
     def test_auth_not_found_tls_and_non_get_do_not_retry(self):
-        for exc in [urllib.error.HTTPError("u", c, "", {}, None) for c in (400,401,403,404)] + [ssl.SSLError(), urllib.error.URLError(ssl.CertificateError())]:
+        for exc in [self.http_error("u", c, "", {}, None) for c in (400,401,403,404)] + [ssl.SSLError(), urllib.error.URLError(ssl.CertificateError())]:
             with patch.object(http.urllib.request, "urlopen", side_effect=exc) as get, patch.object(http.time, "sleep") as sleep, self.assertRaises(Exception):
                 http.request_bytes(urllib.request.Request("https://api.github.com/x"), limit=10)
             self.assertEqual(get.call_count, 1);sleep.assert_not_called()
@@ -43,10 +48,10 @@ class RetryTests(unittest.TestCase):
         get.assert_not_called()
 
     def test_rate_limit_delay_and_invalid_payload_are_not_rewritten(self):
-        exc = urllib.error.HTTPError("u",429,"",{"Retry-After":"9999"},None)
+        exc = self.http_error("u",429,"",{"Retry-After":"9999"},None)
         self.assertEqual(http.delay(exc,0),60)
         for code in (429,500,502,503,504):
-            self.assertTrue(http.transient(urllib.error.HTTPError("u",code,"",{},None)))
+            self.assertTrue(http.transient(self.http_error("u",code,"",{},None)))
         with patch.object(http.urllib.request, "urlopen", return_value=self.response(b"invalid json")) as get:
             self.assertEqual(http.request_bytes(urllib.request.Request("https://api.github.com/x"),limit=10),b"invalid json")
             get.assert_called_once()
@@ -101,7 +106,7 @@ class MonitoringTests(unittest.TestCase):
     def test_workflow_preserves_validation_and_restricts_monitor(self):
         text=(health.ROOT/".github/workflows/update.yml").read_text()
         self.assertIn("Offline reproducibility check",text)
-        self.assertIn("if ($original -cne $replayed)",text)
+        self.assertIn('cmp -s "$RUNNER_TEMP/release/SHA256SUMS" "$RUNNER_TEMP/replay/SHA256SUMS"',text)
         self.assertIn("Verify anonymous fixed and rolling download hashes",text)
         monitor=text.split("  monitor:\n")[1].split("  maintenance:\n")[0]
         self.assertIn("github.ref == 'refs/heads/main'",monitor)

@@ -61,8 +61,8 @@ Hosts 内容更新时间：**2026-11-20 08:02:32 +08:00**。完整同步 **16 �
 `GeekSpeed-Hosts.sgmodule` 是唯一生效文件，直接由 `main` 分发，不进入 `release` 或公共规则生成器。
 机场订阅更新、GitHub 模块发布、手机刷新是三个独立环节；手机仍由使用者手动刷新。
 
-部署目标：每天北京时间 **09:00** 的独立本机任务，模型 **GPT-6 Luna**、推理 **high**。实际启用状态、运行及异常查看应用的任务记录。
-电脑须开机、应用须运行；不承诺离线时执行或补跑。任务执行固定程序，不自行修改脚本、调整门槛或手工挑选 IP。
+部署目标：规划为 macOS 本机每日北京时间 **09:00** 的独立自动任务（当前暂未开启，待核对本机订阅索引与合入 `main` 后再启用）。
+电脑须开机、调度服务须运行；不承诺离线时执行或补跑。任务执行固定程序，不自行修改脚本、调整门槛或手工挑选 IP。
 
 ### 同步规则
 
@@ -79,16 +79,16 @@ Hosts 内容更新时间：**2026-11-20 08:02:32 +08:00**。完整同步 **16 �
 
 ### 本机程序
 
-公共规则构建和模块格式校验仍仅用 Python 3.12 标准库。
-同步器额外依赖已安装的 `PyYAML==6.0.3`；本机缺失或版本不同则报告，不自动安装、升级或降级。
-GitHub 使用本机已有 `gh` 登录。运行前对照已发布程序版本；代码更新后应人工同步本机源码，不自动执行下载的程序。
+公共规则构建和模块格式校验仍仅用 Python 3.14 标准库（兼容 Python 3.12+）。
+同步器额外依赖仓库独立 `.venv` 中安装的 `PyYAML==6.0.3`；缺失或版本不同则报告，不自动安装、升级或降级。
+GitHub 使用本机已有 `gh` 登录。运行前对照已发布程序版本；代码更新后应人工同步并合入 `main`，不自动执行下载的程序。
 
-从仓库目录在 PowerShell 7 中调用，`<state-directory>` 必须是已登记的仓库外本机输出目录：
+从仓库目录在 zsh 中调用，`<state-directory>` 必须是已登记的仓库外本机输出目录：
 
-```powershell
-python -B scripts/sync_hosts.py --check --state-dir <state-directory>
-python -B scripts/sync_hosts.py --publish --state-dir <state-directory>
-python -B scripts/validate_hosts.py
+```zsh
+.venv/bin/python -B scripts/sync_hosts.py --check --state-dir <state-directory>
+.venv/bin/python -B scripts/sync_hosts.py --publish --state-dir <state-directory>
+python3.14 -B -S scripts/validate_hosts.py
 ```
 
 `--check` 拉取并报告脱敏差异，不创建 PR；`--publish` 才允许发布。

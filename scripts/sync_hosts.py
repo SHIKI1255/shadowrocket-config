@@ -1,6 +1,6 @@
 """Local-only Hosts synchronizer. Private YAML and URLs never leave memory.
 
-Run from PowerShell with --check or --publish and an explicit external --state-dir.
+Run locally with --check or --publish and an explicit external --state-dir.
 GitHub writes are limited to the two public module files, through a checked PR.
 """
 from __future__ import annotations
@@ -70,10 +70,18 @@ def load_yaml(content: bytes):
         raise HostsError("yaml_invalid") from None
 
 
+def profiles_index_path(platform: str | None = None) -> Path:
+    target = sys.platform if platform is None else platform
+    if target == "darwin":
+        return (Path.home() / "Library/Application Support/io.github.clash-verge-rev.clash-verge-rev"
+                / "profiles.yaml")
+    return (Path.home() / "AppData/Roaming/io.github.clash-verge-rev.clash-verge-rev"
+            / "profiles.yaml")
+
+
 def source_url():
     try:
-        path = (Path.home() / "AppData/Roaming/io.github.clash-verge-rev.clash-verge-rev"
-                / "profiles.yaml")
+        path = profiles_index_path()
         require(path.stat().st_size <= MAX_BYTES, "source_index_size")
         index = load_yaml(path.read_bytes())
         require(isinstance(index, dict) and isinstance(index.get("items"), list), "source_index")

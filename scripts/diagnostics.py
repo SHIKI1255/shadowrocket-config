@@ -17,10 +17,11 @@ QUANTITY = ("Abnormal ", "Too many added rules:", "Too many removed rules:",
 
 
 def analyze(conf, inputs, previous, accepted):
-    reports, states, all_stats, proposed = {}, {}, {}, copy.deepcopy(accepted)
+    reports, states, all_stats, assembled, proposed = {}, {}, {}, {}, copy.deepcopy(accepted)
     changed_gates = []
     for client in ("shadowrocket", "clash"):
         rules, stats, conflicts, duplicates, _ = core.assemble(conf, inputs, client)
+        assembled[client] = rules
         e.check_conflicts(conflicts, accepted[client]["allowed_conflicts"])
         core.evaluate(rules, client)
         all_stats[client] = stats
@@ -65,10 +66,11 @@ def analyze(conf, inputs, previous, accepted):
                            "conflicts": len(conflicts), "duplicates": duplicates}
     core.check_source_parity(all_stats, conf)
     qrules, _, conflicts, _, _ = core.assemble(conf, inputs, "quantumultx")
+    assembled["quantumultx"] = qrules
     core.evaluate(qrules, "quantumultx")
     core.q.check_native_conflicts([core.q.convert(r) for r in qrules], conflicts)
     for client in core.CLIENTS:
-        rules, *_ = core.assemble(conf, inputs, client)
+        rules = assembled[client]
         voice = [r for r in rules if r.source == "voice"]
         if not voice or any(e.route(rules, ip=r.value.split("/")[0])["policy"] != "PROXY"
                             for r in voice):

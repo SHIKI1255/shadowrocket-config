@@ -26,6 +26,18 @@ class PublishTests(unittest.TestCase):
             with self.assertRaises(b.BuildError):
                 p.verified_files(path)
 
+    def test_inner_symlink_artifact_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp)
+            self.make_release(path)
+            target = path / 'shadowrocket.conf'
+            target.unlink()
+            outside = Path(temp) / 'outside.conf'
+            outside.write_bytes(b'good')
+            target.symlink_to(outside)
+            with self.assertRaisesRegex(b.BuildError, 'Symlink artifact'):
+                p.verified_files(path)
+
     def test_pr_cannot_publish(self):
         with patch.dict(os.environ, {'GITHUB_REPOSITORY': b.REPOSITORY, 'GITHUB_REF': 'refs/heads/main',
                                      'GITHUB_EVENT_NAME': 'pull_request'}), patch('publish.api') as api:

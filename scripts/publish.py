@@ -13,6 +13,16 @@ import urllib.request
 from build import API, REPOSITORY, BuildError, digest, require
 
 
+def _ensure_no_inner_symlink(directory: Path, rel_path: str) -> Path:
+    base = directory.resolve()
+    current = directory
+    for part in Path(rel_path).parts:
+        current = current / part
+        require(not current.is_symlink(), "Symlink artifact")
+    require(current.resolve().is_relative_to(base), "Symlink artifact")
+    return current
+
+
 def verified_files(directory: Path) -> dict[str, bytes]:
     require(not directory.is_symlink(), "Symlink output is not publishable")
     sums = (directory / "SHA256SUMS").read_bytes()
@@ -22,9 +32,8 @@ def verified_files(directory: Path) -> dict[str, bytes]:
         expected, path = line.split("  ", 1)
         require(not path.startswith("/") and ".." not in path.split("/") and path not in files,
                 "Unsafe/duplicate release path")
-        require(not any(p.is_symlink() for p in (directory / path, *(directory / path).parents)),
-                "Symlink artifact")
-        data = (directory / path).read_bytes()
+        target = _ensure_no_inner_symlink(directory, path)
+        data = target.read_bytes()
         require(digest(data) == expected, f"Release hash mismatch: {path}")
         files[path] = data
     files["SHA256SUMS"] = sums
