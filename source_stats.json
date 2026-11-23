@@ -11173,8 +11173,8 @@
       "skipped": []
     },
     "gemini": {
-      "raw_count": 49,
-      "retained_count": 49,
+      "raw_count": 50,
+      "retained_count": 50,
       "rules": [
         "DOMAIN-SUFFIX,deepmind.com,PROXY",
         "DOMAIN-SUFFIX,deepmind.google,PROXY",
@@ -11224,7 +11224,8 @@
         "DOMAIN,antigravity.googleapis.com,PROXY",
         "DOMAIN-SUFFIX,antigravity.google,PROXY",
         "DOMAIN-SUFFIX,antigravity-unleash.goog,PROXY",
-        "DOMAIN-SUFFIX,stitch.withgoogle.com,PROXY"
+        "DOMAIN-SUFFIX,stitch.withgoogle.com,PROXY",
+        "DOMAIN-SUFFIX,gemma.ai,PROXY"
       ],
       "skipped": []
     },
@@ -33188,8 +33189,8 @@
       "skipped": []
     },
     "gemini": {
-      "raw_count": 49,
-      "retained_count": 49,
+      "raw_count": 50,
+      "retained_count": 50,
       "rules": [
         "DOMAIN-SUFFIX,deepmind.com,PROXY",
         "DOMAIN-SUFFIX,deepmind.google,PROXY",
@@ -33239,7 +33240,8 @@
         "DOMAIN,antigravity.googleapis.com,PROXY",
         "DOMAIN-SUFFIX,antigravity.google,PROXY",
         "DOMAIN-SUFFIX,antigravity-unleash.goog,PROXY",
-        "DOMAIN-SUFFIX,stitch.withgoogle.com,PROXY"
+        "DOMAIN-SUFFIX,stitch.withgoogle.com,PROXY",
+        "DOMAIN-SUFFIX,gemma.ai,PROXY"
       ],
       "skipped": []
     },

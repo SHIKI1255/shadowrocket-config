@@ -1,5 +1,5 @@
 {
-  "config_sha256": "0e16c7e03dae636c995b80e1a7957a270f097112ddfd6d881059bd48adf0f045",
+  "config_sha256": "97ef142bbe22cf93f897b375c90f189c59e126e6acfcb9b6ddd8eb38f109c9ea",
   "conflicts": [
     {
       "later": "DIRECT",
@@ -2904,9 +2904,9 @@
       "policy": "PROXY"
     }
   ],
-  "rules": 14600,
+  "rules": 14601,
   "schema_version": 2,
-  "shared_version": "c31666ba866ec36611a7101894a632773cbcb0067c1cc6806b63cec3c17bc38a",
+  "shared_version": "f68e6a0b8d3bff36654436d1dcbc60ef313e94d81716a59edf8bdf1c498f893b",
   "source_files_sha256": {
     "config/base.conf": "d8405d2cbe6773ae64d861a80994ad29845a1167c1f8ed0bda997849fd723acb",
     "config/shared.json": "648d492aa8922dc7ccfd51c40cf9c7e3a704e4d7c05652a4f91d5353c87b1bbf",

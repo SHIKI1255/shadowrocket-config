@@ -1251,6 +1251,13 @@
       "rule": "DOMAIN-SUFFIX,stitch.withgoogle.com,PROXY"
     },
     {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN-SUFFIX,gemma.ai,PROXY"
+    },
+    {
       "category": "voice",
       "origins": [
         "voice"
@@ -115557,6 +115564,13 @@
       "rule": "DOMAIN-SUFFIX,stitch.withgoogle.com,PROXY"
     },
     {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN-SUFFIX,gemma.ai,PROXY"
+    },
+    {
       "category": "voice",
       "origins": [
         "voice"
@@ -218018,6 +218032,13 @@
         "gemini"
       ],
       "rule": "DOMAIN-SUFFIX,stitch.withgoogle.com,PROXY"
+    },
+    {
+      "category": "gemini",
+      "origins": [
+        "gemini"
+      ],
+      "rule": "DOMAIN-SUFFIX,gemma.ai,PROXY"
     },
     {
       "category": "voice",
