@@ -28,8 +28,10 @@ Public rule/source/conversion authority: SHIKI1255/shadowrocket-config/shared.
 Consumers read versioned JSON data only; never execute downloaded source code.
 Do not reintroduce local custom/source copies. Client templates and protocol contracts stay here.
 
-Hosts synchronization: only modules/GeekSpeed-Hosts.sgmodule and modules/README.md
-may be published by the recurring task. Complete-set changes require two matching
-provider reads and the quantity gate. Never publish private subscriptions or raw
-responses. Keep state outside the checkout; do not weaken guards, merge stale
-pending PRs, force-push or change unrelated files to recover a scheduled failure.
+Hosts synchronization: provider entry IPs and Hosts modules are never published
+to this public repository. Local-only synchronization writes a `#!url`-free
+`.sgmodule` atomically to the user's private local/iCloud Shadowrocket Modules
+directory using external `--config` and `--state-dir` outside the checkout.
+Complete-set changes require two matching provider reads and the quantity gate.
+Never publish private subscriptions, provider entry IPs, or raw responses; do not
+weaken guards or change unrelated files to recover a scheduled failure.

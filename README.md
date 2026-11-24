@@ -2,7 +2,7 @@
 
 公共域名、上游来源、分类、顺序和回归用例集中在[唯一维护入口](https://github.com/SHIKI1255/shadowrocket-config/tree/main/shared)。本仓库保留客户端模板和发布；不要另建一份个人规则清单。
 
-导入[完整配置](https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/release/shadowrocket.conf)，节点订阅仍由你维护。[可选 GeekSpeed Hosts 模块](modules/README.md)独立管理，地址和内容本轮不变。
+导入[完整配置](https://raw.githubusercontent.com/SHIKI1255/shadowrocket-config/release/shadowrocket.conf)，节点订阅仍由你维护。[可选本地私有 Hosts 同步说明](modules/README.md)独立在本机维护，本公开仓库不发布任何服务商入口 IP 或模块地址。
 
 DNS/IPv6/UDP 回退/重写保持原设置；业务规则完整展开在配置内，不增加多个远程分流订阅。
 

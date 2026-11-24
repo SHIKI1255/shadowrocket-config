@@ -1,41 +1,42 @@
-"""Local-only Hosts synchronizer. Private YAML and URLs never leave memory.
+"""Local-only Hosts synchronizer writing to a private local/iCloud Shadowrocket module.
 
-Run locally with --check or --publish and an explicit external --state-dir.
-GitHub writes are limited to the two public module files, through a checked PR.
+Private subscription URLs, credentials and raw YAML never leave memory or enter Git.
+Run locally with --config <external_config.json> --state-dir <external_outputs_dir>
+and either --check (read-only) or --sync (atomic local write + local backup).
 """
 from __future__ import annotations
 
 import argparse
-import base64
 from contextlib import contextmanager
-from datetime import datetime
+from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
 import re
 import socket
-import subprocess
 import sys
 import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import uuid
 
-from hosts_core import (ALLOWED_FILES, HostsError, MODULE, README, REPOSITORY, RAW_ROOT,
-                        SHA, BEIJING, check_quantity, differences, digest, normalize_hosts,
-                        format_timestamp, module_timestamp,
-                        ordered_hosts, parse_module, render_module, require,
-                        update_readme, validate_readme)
+from hosts_core import (BEIJING, LABEL, HostsError, check_quantity, differences, digest,
+                        format_timestamp, normalize_hosts, ordered_hosts, parse_module,
+                        render_module, require)
 
 ROOT = Path(__file__).resolve().parents[1]
-PROFILE_UID = "RJxK8goR5EX6"
-SOURCE_HOST = "api.geekspeed.org"
 MAX_BYTES = 10 * 1024 * 1024
-BRANCH_PREFIX = "automation/geekspeed-hosts-"
-WORKFLOW = ".github/workflows/hosts.yml"
-READBACK_DELAYS = (5, 10, 20, 40, 60, 60, 60)
-RUNTIME_FILES = ("scripts/hosts_core.py", "scripts/sync_hosts.py", "scripts/validate_hosts.py",
-                 "requirements-hosts.txt", WORKFLOW)
+MAX_CONFIG_BYTES = 64 * 1024
+MAX_BACKUPS = 10
+UID_RE = re.compile(r"[A-Za-z0-9_-]{1,64}")
+
+
+def _ensure_outside_repo(path: Path, code: str) -> Path:
+    require(path.is_absolute() and not path.is_symlink(), code)
+    resolved = path.resolve()
+    require(ROOT not in resolved.parents and resolved != ROOT, code)
+    return path
 
 
 def load_yaml(content: bytes):
@@ -70,6 +71,44 @@ def load_yaml(content: bytes):
         raise HostsError("yaml_invalid") from None
 
 
+def load_config(config_path: Path) -> dict:
+    try:
+        _ensure_outside_repo(config_path, "config_location")
+        require(config_path.is_file() and config_path.stat().st_size <= MAX_CONFIG_BYTES,
+                "config_invalid")
+        raw = json.loads(config_path.read_text(encoding="utf-8"))
+    except HostsError:
+        raise
+    except Exception:
+        raise HostsError("config_invalid") from None
+    require(isinstance(raw, dict), "config_invalid")
+    uid = raw.get("profile_uid")
+    host = raw.get("source_host")
+    source_path = raw.get("source_path")
+    module_name = raw.get("module_name")
+    module_desc = raw.get("module_desc")
+    target_raw = raw.get("target_path")
+    require(type(uid) is str and bool(UID_RE.fullmatch(uid)), "config_invalid")
+    require(type(host) is str and host == host.lower() and "." in host and len(host) <= 253
+            and all(LABEL.fullmatch(x) for x in host.split(".")), "config_invalid")
+    require(type(source_path) is str and source_path.startswith("/")
+            and not any(c in source_path for c in "?#\r\n\x00 "), "config_invalid")
+    require(type(module_name) is str and bool(module_name.strip()), "config_invalid")
+    require(type(module_desc) is str and bool(module_desc.strip()), "config_invalid")
+    require(type(target_raw) is str and target_raw.endswith(".sgmodule"), "config_invalid")
+    target = Path(target_raw)
+    _ensure_outside_repo(target, "target_location")
+    require(not target.parent.is_symlink() and target.parent.is_dir(), "target_dir_missing")
+    return {
+        "profile_uid": uid,
+        "source_host": host,
+        "source_path": source_path,
+        "module_name": module_name,
+        "module_desc": module_desc,
+        "target_path": target,
+    }
+
+
 def profiles_index_path(platform: str | None = None) -> Path:
     target = sys.platform if platform is None else platform
     if target == "darwin":
@@ -79,20 +118,21 @@ def profiles_index_path(platform: str | None = None) -> Path:
             / "profiles.yaml")
 
 
-def source_url():
+def source_url(config: dict) -> str:
     try:
         path = profiles_index_path()
         require(path.stat().st_size <= MAX_BYTES, "source_index_size")
         index = load_yaml(path.read_bytes())
         require(isinstance(index, dict) and isinstance(index.get("items"), list), "source_index")
-        matches = [p for p in index["items"] if isinstance(p, dict) and p.get("uid") == PROFILE_UID]
+        matches = [p for p in index["items"]
+                   if isinstance(p, dict) and p.get("uid") == config["profile_uid"]]
         require(len(matches) == 1 and matches[0].get("type") == "remote", "source_identity")
         url = matches[0].get("url")
         require(type(url) is str, "source_url")
         parsed = urllib.parse.urlsplit(url)
-        require(parsed.scheme == "https" and parsed.hostname == SOURCE_HOST
+        require(parsed.scheme == "https" and parsed.hostname == config["source_host"]
                 and parsed.port in (None, 443) and not parsed.username and not parsed.password
-                and parsed.path == "/api/v1/client/subscribe" and not parsed.fragment
+                and parsed.path == config["source_path"] and not parsed.fragment
                 and bool(urllib.parse.parse_qs(parsed.query).get("token")), "source_origin")
         return url
     except HostsError:
@@ -106,10 +146,10 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         raise HostsError("redirect_rejected")
 
 
-def download(url: str, *, private=False, sleeper=time.sleep, opener=None) -> bytes:
+def download(url: str, *, sleeper=time.sleep, opener=None) -> bytes:
     opener = opener or urllib.request.build_opener(NoRedirect())
-    headers = {"User-Agent": "Clash.Meta" if private else "Hosts-module-validator",
-               "Accept": "text/yaml,application/yaml,text/plain" if private else "text/plain",
+    headers = {"User-Agent": "Clash.Meta",
+               "Accept": "text/yaml,application/yaml,text/plain",
                "Cache-Control": "no-cache"}
     for attempt in range(3):
         try:
@@ -132,7 +172,7 @@ def download(url: str, *, private=False, sleeper=time.sleep, opener=None) -> byt
     raise HostsError("download_exhausted")
 
 
-def subscription(data: bytes):
+def subscription(data: bytes) -> dict:
     parsed = load_yaml(data)
     require(isinstance(parsed, dict), "subscription_shape")
     hosts = normalize_hosts(parsed.get("hosts"))
@@ -148,150 +188,71 @@ def subscription(data: bytes):
     return {"hosts": hosts, "references": references, "node_count": len(proxies)}
 
 
-def candidate(previous, readme, base_sha, fetch, sleeper=time.sleep, now=None):
-    first = subscription(fetch())
-    if first["hosts"] == previous:
-        return None
-    sleeper(10)
-    second = subscription(fetch())
-    require(first["hosts"] == second["hosts"], "source_changed_between_reads")
-    check_quantity(previous, second["hosts"])
-    hosts = ordered_hosts(previous, second["hosts"])
-    checked_at = format_timestamp(now if now is not None else datetime.now(BEIJING))
-    files = {
-        MODULE: render_module(hosts, checked_at),
-        README: update_readme(readme, hosts, second["references"], second["node_count"],
-                              checked_at, base_sha).encode("utf-8"),
-    }
-    require(parse_module(files[MODULE]) == second["hosts"], "roundtrip_mismatch")
-    validate_readme(files[README].decode("utf-8"), hosts, module_timestamp(files[MODULE]))
-    return {"files": files, "diff": differences(previous, hosts), "hosts_count": len(hosts),
-            "checked_at": checked_at}
+def check_target_ready(target: Path) -> None:
+    require(not target.parent.is_symlink() and target.parent.is_dir(), "target_dir_missing")
+    require(not target.is_symlink(), "target_symlink")
+    placeholder = target.parent / f".{target.name}.icloud"
+    require(not placeholder.exists(), "icloud_placeholder_present")
 
 
-class GitHub:
-    def api(self, path, payload=None, method=None):
-        args = ["gh", "api", "--hostname", "github.com", "--method",
-                method or ("POST" if payload is not None else "GET"),
-                f"repos/{REPOSITORY}/{path}"]
-        data = None
-        if payload is not None:
-            args += ["--input", "-"]
-            data = json.dumps(payload, ensure_ascii=False)
-        env = dict(os.environ, GH_PROMPT_DISABLED="1", NO_COLOR="1")
-        for key in ("GH_DEBUG", "GH_FORCE_TTY", "GH_PAGER", "PAGER"):
-            env.pop(key, None)
+def atomic_write_bytes(path: Path, content: bytes, mode: int = 0o600) -> None:
+    tmp = path.parent / f".{path.name}.{os.getpid()}.{uuid.uuid4().hex[:8]}.tmp"
+    try:
+        fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_EXCL, mode)
         try:
-            result = subprocess.run(args, input=data, capture_output=True, text=True,
-                                    encoding="utf-8", errors="replace", env=env, timeout=60)
-            require(result.returncode == 0, "github_request_failed")
-            return json.loads(result.stdout)
-        except HostsError:
-            raise
+            with os.fdopen(fd, "wb") as handle:
+                handle.write(content)
+                handle.flush()
+                os.fsync(handle.fileno())
         except Exception:
-            raise HostsError("github_unavailable") from None
+            raise
+        os.replace(tmp, path)
+    finally:
+        if tmp.exists():
+            try:
+                tmp.unlink()
+            except OSError:
+                pass
 
-    def head(self):
-        sha = self.api("git/ref/heads/main")["object"]["sha"]
-        require(SHA.fullmatch(sha), "invalid_revision")
-        return sha
 
-    def file(self, path, sha):
-        require(SHA.fullmatch(sha), "invalid_revision")
-        result = self.api(f"contents/{path}?ref={sha}")
-        require(result.get("type") == "file" and result.get("path") == path
-                and result.get("encoding") == "base64", "github_file_shape")
-        return base64.b64decode(result["content"])
+def backup_existing(state_dir: Path, target: Path, moment: datetime) -> str | None:
+    if not target.is_file():
+        return None
+    backups_dir = state_dir / "backups"
+    backups_dir.mkdir(parents=True, exist_ok=True)
+    stamp = moment.astimezone(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    name = f"{target.stem}-{stamp}-{uuid.uuid4().hex[:6]}.sgmodule"
+    backup_path = backups_dir / name
+    atomic_write_bytes(backup_path, target.read_bytes())
+    existing = sorted(backups_dir.glob(f"{target.stem}-*.sgmodule"))
+    for stale in existing[:-MAX_BACKUPS]:
+        stale.unlink()
+    return name
 
-    def open_sync_prs(self):
-        rows = self.api("pulls?state=open&per_page=100")
-        require(isinstance(rows, list) and len(rows) < 100, "too_many_open_prs")
-        return [p for p in rows if p.get("head", {}).get("ref", "").startswith(BRANCH_PREFIX)]
 
-    def check_runner(self, base):
-        for path in RUNTIME_FILES:
-            local = (ROOT / path).read_bytes().replace(b"\r\n", b"\n")
-            remote = self.file(path, base).replace(b"\r\n", b"\n")
-            require(local == remote, "runner_version_mismatch")
-
-    def create_pr(self, base, files):
-        require(set(files) == set(ALLOWED_FILES), "publication_scope")
-        require(self.head() == base and not self.open_sync_prs(), "publication_concurrent")
-        parent = self.api(f"git/commits/{base}")
-        tree = self.api("git/trees", {"base_tree": parent["tree"]["sha"], "tree": [
-            {"path": path, "mode": "100644", "type": "blob", "content": files[path].decode("utf-8")}
-            for path in ALLOWED_FILES]})
-        commit = self.api("git/commits", {"message": "Synchronize complete GeekSpeed Hosts",
-                                          "tree": tree["sha"], "parents": [base]})
-        head = commit["sha"]
-        require(SHA.fullmatch(head), "invalid_revision")
-        branch = BRANCH_PREFIX + digest(files[MODULE])[:12] + "-" + base[:8]
-        self.api("git/refs", {"ref": "refs/heads/" + branch, "sha": head})
-        pr = self.api("pulls", {"title": "Synchronize complete GeekSpeed Hosts",
-            "head": branch, "base": "main", "body":
-            "Update the complete optional Hosts module from two matching local provider reads. "
-            "Only the module and its documentation change. The private subscription stays in memory.\n\n"
-            "Validation: strict YAML and module round-trip, quantity gate, matching content timestamps, "
-            "reference counts and scoped PR CI. The source must still match immediately before merge. "
-            "Mobile connectivity requires separate verification.\n\n"
-            f"Previous fixed module: {RAW_ROOT}/{base}/{MODULE}\n"})
-        return {"base": base, "head": head, "number": pr["number"],
-                "hashes": {path: digest(files[path]) for path in ALLOWED_FILES}}
-
-    def review(self, pending):
-        number, head, base = pending["number"], pending["head"], pending["base"]
-        pr = self.api(f"pulls/{number}")
-        require(pr.get("state") == "open" and not pr.get("draft")
-                and pr["head"]["sha"] == head and pr["base"]["ref"] == "main"
-                and pr["base"]["sha"] == base and pr.get("commits") == 1
-                and pr["head"]["repo"]["full_name"] == REPOSITORY, "pr_identity_changed")
-        changed = self.api(f"pulls/{number}/files?per_page=100")
-        require(len(changed) == 2 and {f["filename"] for f in changed} == set(ALLOWED_FILES)
-                and all(f["status"] == "modified" for f in changed), "publication_scope")
-        for path in ALLOWED_FILES:
-            require(digest(self.file(path, head)) == pending["hashes"][path], "candidate_changed")
-        require(self.head() == base, "main_advanced")
-
-    def wait_ci(self, pending, sleeper=time.sleep, attempts=40):
-        for attempt in range(attempts):
-            self.review(pending)
-            runs = self.api(f"actions/runs?event=pull_request&head_sha={pending['head']}&per_page=100")
-            rows = runs.get("workflow_runs", [])
-            require(len(rows) < 100, "ci_ambiguous")
-            latest = {}
-            for run in sorted(rows, key=lambda r: r["id"], reverse=True):
-                if run.get("head_sha") == pending["head"]:
-                    latest.setdefault(run["path"], run)
-            if WORKFLOW in latest:
-                require(all(r.get("conclusion") in (None, "success", "skipped")
-                            for r in latest.values()), "ci_failed")
-                if all(r["status"] == "completed" for r in latest.values()):
-                    require(latest[WORKFLOW]["conclusion"] == "success", "ci_failed")
-                    return
-            if attempt < attempts - 1:
-                sleeper(15)
-        raise HostsError("ci_pending")
-
-    def merge(self, pending):
-        self.review(pending)
-        head_commit = self.api(f"git/commits/{pending['head']}")
-        require([p["sha"] for p in head_commit["parents"]] == [pending["base"]], "pr_identity_changed")
-        # A non-forced fast-forward of this merge commit is an atomic concurrency guard:
-        # any independent advance of main is not its ancestor and GitHub rejects it.
-        merged = self.api("git/commits", {
-            "message": f"Merge pull request #{pending['number']}: synchronize GeekSpeed Hosts",
-            "tree": head_commit["tree"]["sha"], "parents": [pending["base"], pending["head"]]})
-        sha = merged["sha"]
-        require(SHA.fullmatch(sha) and self.head() == pending["base"], "main_advanced")
-        self.api("git/refs/heads/main", {"sha": sha, "force": False}, method="PATCH")
-        require(self.head() == sha, "merge_readback")
-        return sha
+def load_baseline(state_dir: Path, target: Path, config: dict) -> tuple[dict[str, str] | None, bytes | None]:
+    current_copy = state_dir / "current.sgmodule"
+    state_file = state_dir / "state.json"
+    mod_kw = {"module_name": config["module_name"], "module_desc": config["module_desc"]}
+    target_bytes = target.read_bytes() if target.is_file() else None
+    if target_bytes is not None:
+        # Fail closed if the existing file still contains a remote #!url directive.
+        parse_module(target_bytes, **mod_kw)
+    if current_copy.is_file():
+        saved_bytes = current_copy.read_bytes()
+        if state_file.is_file():
+            meta = json.loads(state_file.read_text(encoding="utf-8"))
+            require(isinstance(meta, dict) and meta.get("module_sha256") == digest(saved_bytes),
+                    "state_hash_mismatch")
+        return parse_module(saved_bytes, **mod_kw), target_bytes
+    if target_bytes is not None:
+        return parse_module(target_bytes, **mod_kw), target_bytes
+    return None, None
 
 
 @contextmanager
 def runtime_lock(directory: Path):
-    require(directory.is_absolute() and ROOT not in directory.resolve().parents
-            and directory.resolve() != ROOT, "state_location")
+    _ensure_outside_repo(directory, "state_location")
     directory.mkdir(parents=True, exist_ok=True)
     handle = (directory / "run.lock").open("a+b")
     locked = False
@@ -324,133 +285,98 @@ def runtime_lock(directory: Path):
         handle.close()
 
 
-def save_state(directory: Path, value):
-    temporary = directory / "publication.next.json"
-    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    os.replace(temporary, directory / "publication.json")
+def run(config_path: Path, state_dir: Path, *, sync: bool = False, init: bool = False,
+        sleeper=time.sleep, downloader=download, now: datetime | None = None) -> dict:
+    with runtime_lock(state_dir):
+        config = load_config(config_path)
+        target: Path = config["target_path"]
+        mod_kw = {"module_name": config["module_name"], "module_desc": config["module_desc"]}
+        check_target_ready(target)
+        previous, target_bytes = load_baseline(state_dir, target, config)
+        if previous is None:
+            require(init, "baseline_missing")
+        url = source_url(config)
+        first = subscription(downloader(url))
+        target_matches_previous = (
+            previous is not None
+            and target_bytes is not None
+            and parse_module(target_bytes, **mod_kw) == previous
+        )
+        if previous is not None and first["hosts"] == previous and target_matches_previous:
+            return {
+                "status": "unchanged",
+                "hosts_count": len(previous),
+                "target_verified": True,
+                "source_checked": True,
+            }
+        sleeper(10)
+        second = subscription(downloader(url))
+        require(first["hosts"] == second["hosts"], "source_changed_between_reads")
+        if previous is not None:
+            check_quantity(previous, second["hosts"])
+            hosts = ordered_hosts(previous, second["hosts"])
+            diff = differences(previous, hosts)
+        else:
+            hosts = second["hosts"]
+            diff = differences({}, hosts)
+        moment = now if now is not None else datetime.now(BEIJING)
+        checked_at = format_timestamp(moment)
+        rendered = render_module(hosts, checked_at, **mod_kw)
+        expected_sha = digest(rendered)
+        summary = {
+            "hosts_count": len(hosts),
+            "node_count": second["node_count"],
+            "referenced_entries": sum(1 for count in second["references"].values() if count > 0),
+            "diff": diff,
+            "checked_at": checked_at,
+            "source_checked": True,
+        }
+        if not sync:
+            return {"status": "candidate", "module_sha256": expected_sha, **summary}
+        check_target_ready(target)
+        backup_name = backup_existing(state_dir, target, moment)
+        atomic_write_bytes(target, rendered)
+        readback = target.read_bytes()
+        require(digest(readback) == expected_sha
+                and parse_module(readback, **mod_kw) == hosts, "target_readback_mismatch")
+        atomic_write_bytes(state_dir / "current.sgmodule", rendered)
+        state = {
+            "schema_version": 1,
+            "module_sha256": expected_sha,
+            "hosts_count": len(hosts),
+            "checked_at": checked_at,
+            "target_name": target.name,
+            "last_backup": backup_name,
+        }
+        atomic_write_bytes(
+            state_dir / "state.json",
+            (json.dumps(state, ensure_ascii=False, indent=2) + "\n").encode("utf-8"),
+        )
+        return {
+            "status": "synced",
+            "module_sha256": expected_sha,
+            "target_name": target.name,
+            "backup": backup_name,
+            **summary,
+        }
 
 
-class PublicationError(HostsError):
-    """Readback failure with only validated public identifiers and fixed stages."""
-    def __init__(self, code, details):
-        super().__init__(code)
-        self.details = dict(details)
-
-
-def verify_published_once(gh, pending, downloader=download):
-    details = {"phase": "merge_visibility", "merged": False}
-    try:
-        require(type(pending.get("number")) is int and pending["number"] > 0,
-                "publication_state_invalid")
-        details["pr"] = pending["number"]
-        known_sha = pending.get("merged_sha")
-        if known_sha is not None:
-            require(isinstance(known_sha, str) and SHA.fullmatch(known_sha),
-                    "publication_state_invalid")
-            details.update(merged=True, commit=known_sha)
-        require(set(pending["hashes"]) == set(ALLOWED_FILES), "publication_scope")
-        pr = gh.api(f"pulls/{pending['number']}")
-        sha = pr.get("merge_commit_sha")
-        require(pr.get("merged") and isinstance(sha, str) and SHA.fullmatch(sha),
-                "merge_pending")
-        require(known_sha is None or known_sha == sha, "merge_readback")
-        details.update(merged=True, commit=sha)
-        for path in ALLOWED_FILES:
-            expected = pending["hashes"][path]
-            details.update(pending_file=path, phase="published_api")
-            require(digest(gh.file(path, sha)) == expected, "published_hash_mismatch")
-            details["phase"] = "fixed_raw"
-            require(digest(downloader(f"{RAW_ROOT}/{sha}/{path}")) == expected, "fixed_raw_pending")
-            details["phase"] = "rolling_raw"
-            require(digest(downloader(f"{RAW_ROOT}/main/{path}")) == expected, "rolling_raw_pending")
-        return sha
-    except HostsError as exc:
-        raise PublicationError(exc.code, details) from None
-
-
-def verify_published(gh, pending, downloader=download, sleeper=time.sleep):
-    # GitHub may report an open PR briefly after an atomic merge; Raw can lag too.
-    # Retry readback only, never repeat a commit, ref update or merge.
-    for attempt in range(len(READBACK_DELAYS) + 1):
-        try:
-            return verify_published_once(gh, pending, downloader)
-        except PublicationError as exc:
-            exc.details.update(attempt=attempt + 1, retry_count=attempt)
-            if (exc.code not in {"merge_pending", "fixed_raw_pending", "rolling_raw_pending"}
-                    or attempt == len(READBACK_DELAYS)):
-                raise
-            print(json.dumps({"status": "publication_pending", "reason": exc.code,
-                              **exc.details, "next_retry_seconds": READBACK_DELAYS[attempt]}), flush=True)
-            sleeper(READBACK_DELAYS[attempt])
-
-
-def run(directory: Path, publish=False, gh=None, sleeper=time.sleep, downloader=download):
-    gh = gh or GitHub()
-    with runtime_lock(directory):
-        state_path = directory / "publication.json"
-        if state_path.exists():
-            pending = json.loads(state_path.read_text(encoding="utf-8"))
-            if pending and not pending.get("verified"):
-                # Recover the old publication before checking a fresh source under this lock.
-                sha = verify_published(gh, pending, downloader, sleeper)
-                pending.update(verified=True, merged_sha=sha)
-                save_state(directory, pending)
-                print(json.dumps({"status": "publication_recovered", "commit": sha,
-                                  "pr": pending["number"], "source_checked": False}), flush=True)
-        require(not gh.open_sync_prs(), "existing_sync_pr")
-        base = gh.head()
-        gh.check_runner(base)
-        previous_module = gh.file(MODULE, base)
-        previous = parse_module(previous_module)
-        readme = gh.file(README, base).decode("utf-8")
-        validate_readme(readme, previous, module_timestamp(previous_module))
-        url = source_url()
-        result = candidate(previous, readme, base,
-                           lambda: downloader(url, private=True), sleeper=sleeper)
-        if result is None:
-            return {"status": "unchanged", "commit": base, "hosts_count": len(previous),
-                    "source_checked": True}
-        summary = {"hosts_count": result["hosts_count"], "diff": result["diff"],
-                   "checked_at": result["checked_at"], "source_checked": True}
-        if not publish:
-            return {"status": "candidate", "base": base, **summary}
-        pending = gh.create_pr(base, result["files"])
-        save_state(directory, pending)
-        # This public URL can be attached to the scheduled task while CI is running.
-        print(json.dumps({"status": "pr_created", "pr": pending["number"],
-                          "url": f"https://github.com/{REPOSITORY}/pull/{pending['number']}"}), flush=True)
-        gh.wait_ci(pending, sleeper=sleeper)
-        # CI may take minutes. A stale candidate must never advance main.
-        latest = subscription(downloader(url, private=True))
-        require(latest["hosts"] == parse_module(result["files"][MODULE]), "source_changed_before_merge")
-        sha = gh.merge(pending)
-        pending["merged_sha"] = sha
-        print(json.dumps({"status": "merged", "pr": pending["number"], "commit": sha,
-                          "publication_verified": False}), flush=True)
-        save_state(directory, pending)
-        verified_sha = verify_published(gh, pending, downloader, sleeper)
-        require(verified_sha == sha, "merge_readback")
-        pending["verified"] = True
-        save_state(directory, pending)
-        return {"status": "published", "commit": sha, "pr": pending["number"],
-                "module_sha256": pending["hashes"][MODULE],
-                "rollback": f"{RAW_ROOT}/{base}/{MODULE}", **summary}
-
-
-def main(argv=None):
+def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--check", action="store_true")
-    mode.add_argument("--publish", action="store_true")
+    mode.add_argument("--sync", action="store_true")
+    parser.add_argument("--init", action="store_true",
+                        help="Explicitly allow initial baseline creation when no prior local module exists")
+    parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--state-dir", type=Path, required=True)
     args = parser.parse_args(argv)
     try:
-        result = run(args.state_dir, publish=args.publish)
+        result = run(args.config, args.state_dir, sync=args.sync, init=args.init)
         print(json.dumps(result, ensure_ascii=False), flush=True)
         return 0
     except HostsError as exc:
-        details = exc.details if isinstance(exc, PublicationError) else {}
-        print(json.dumps({"status": "needs_attention", "reason": exc.code, **details}), flush=True)
+        print(json.dumps({"status": "needs_attention", "reason": exc.code}), flush=True)
     except KeyboardInterrupt:
         print(json.dumps({"status": "needs_attention", "reason": "interrupted"}), flush=True)
     except Exception:

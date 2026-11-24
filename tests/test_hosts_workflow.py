@@ -45,9 +45,7 @@ class WorkflowTriggerTests(unittest.TestCase):
         cases = [
             ([UPDATE], (True, True)),
             ([UPDATE, "tests/test_hosts_workflow.py"], (True, True)),
-            (["modules/GeekSpeed-Hosts.sgmodule"], (False, True)),
             (["modules/README.md"], (False, True)),
-            (["modules/GeekSpeed-Hosts.sgmodule", "modules/README.md"], (False, True)),
             (["scripts/sync_hosts.py", "tests/test_hosts_sync.py"], (True, True)),
             (["tests/test_hosts_sync.py"], (True, True)),
             (["tests/test_hosts_workflow.py"], (True, True)),
