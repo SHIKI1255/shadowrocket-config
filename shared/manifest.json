@@ -1,8 +1,8 @@
 {
-  "bundle_sha256": "f2a450a4ea36a4162dc452c85e865e5c9a82cb44ac9d097bd46cb7b19278712f",
-  "provenance_sha256": "f7854bb7eaee8d597032961ab090ea5b5aec1c66b13eaf4adb66e5d22ef4f6b4",
+  "bundle_sha256": "3a8e42f9d3906b72b7a9e1d2919683fbaac09f251aa49805c1325bba85f38ff8",
+  "provenance_sha256": "57a59484fed92bc4ec69178f6a3503e619578979728512c377f20f6f98a2efa1",
   "schema_version": 1,
-  "shared_version": "f68e6a0b8d3bff36654436d1dcbc60ef313e94d81716a59edf8bdf1c498f893b",
+  "shared_version": "3a8099072ed13ffe8e5f7b8ae91df7e94b5591cecf3f2a131dc50bb4b5273084",
   "source_files_sha256": {
     "shared/README.md": "563e015954fd5d765e769085258826cb6aaa5172a48ffa8a3c9be98ac53c8dcc",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
@@ -24,7 +24,7 @@
       "repo": "blackmatrix7/ios_rule_script"
     },
     "v2fly": {
-      "commit": "dfa5b1c2258289bdbee70d06352cca23b9bdac7f",
+      "commit": "98c43cad27fa8f02043858763709fe4a95432ffb",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community"

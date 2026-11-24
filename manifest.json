@@ -1,5 +1,5 @@
 {
-  "config_sha256": "97ef142bbe22cf93f897b375c90f189c59e126e6acfcb9b6ddd8eb38f109c9ea",
+  "config_sha256": "3eafb452be653c4afde76cfeb20c19d4656319d6c8613bc5ce02983436e9f86f",
   "conflicts": [
     {
       "later": "DIRECT",
@@ -2904,9 +2904,9 @@
       "policy": "PROXY"
     }
   ],
-  "rules": 14601,
+  "rules": 14634,
   "schema_version": 2,
-  "shared_version": "f68e6a0b8d3bff36654436d1dcbc60ef313e94d81716a59edf8bdf1c498f893b",
+  "shared_version": "3a8099072ed13ffe8e5f7b8ae91df7e94b5591cecf3f2a131dc50bb4b5273084",
   "source_files_sha256": {
     "config/base.conf": "d8405d2cbe6773ae64d861a80994ad29845a1167c1f8ed0bda997849fd723acb",
     "config/shared.json": "648d492aa8922dc7ccfd51c40cf9c7e3a704e4d7c05652a4f91d5353c87b1bbf",
@@ -2959,5 +2959,5 @@
     "tests/test_voice_transition.py": "93e15fe6d08954ec23793ecc1880206ce4bb583cfe6b955d7cdf3ab3f78d2049"
   },
   "validation": "Static generation verified; client parsing and real network acceptance are separate.",
-  "voice_ip_cases": 411
+  "voice_ip_cases": 444
 }
