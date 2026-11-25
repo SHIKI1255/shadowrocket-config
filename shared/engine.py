@@ -1,32 +1,38 @@
-"""Deterministic Mihomo rule resources. Python 3.12+ standard library only."""
+"""Deterministic routing rule engine. Python 3.12+ standard library only."""
 from __future__ import annotations
 
-import argparse
-from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 import fnmatch
 from functools import lru_cache
 import hashlib
 import http.client
 import ipaddress
-import io
 import json
 import os
 from pathlib import Path
 import re
-import sys
 import urllib.error
 import urllib.parse
 import urllib.request
-import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = "SHIKI1255/shadowrocket-config"
 RAW = "https://raw.githubusercontent.com/"
 API = "https://api.github.com/"
+CODELOAD = "https://codeload.github.com/"
 MAX_BYTES = 8 * 1024 * 1024
-KINDS = {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD", "DOMAIN-WILDCARD", "DOMAIN-REGEX",
-         "IP-CIDR", "IP-ASN", "PROCESS-NAME", "USER-AGENT", "GEOIP", "MATCH", "FINAL"}
+APPROVED_HOSTS = {
+    "raw.githubusercontent.com",
+    "api.github.com",
+    "codeload.github.com",
+    "openai.com",
+    "core.telegram.org",
+}
+KINDS = {
+    "DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD", "DOMAIN-WILDCARD", "DOMAIN-REGEX",
+    "IP-CIDR", "IP-ASN", "PROCESS-NAME", "USER-AGENT", "GEOIP", "MATCH", "FINAL",
+}
+V2FLY_KNOWN_ATTRS = {"@ads", "@telemetry", "@cn", "@!cn"}
 
 
 class BuildError(ValueError):
@@ -49,15 +55,16 @@ def require(condition, message):
 def fetch(url: str, *, missing_ok=False) -> bytes | None:
     from scripts.public_http import request_bytes
     parsed = urllib.parse.urlparse(url)
-    require(parsed.scheme == "https" and parsed.hostname in
-            {"raw.githubusercontent.com", "api.github.com", "openai.com"},
+    require(parsed.scheme == "https" and parsed.hostname in APPROVED_HOSTS,
             "Unapproved source URL")
     require(not parsed.username and not parsed.password and not parsed.query,
             "Credentials and query strings are not source URLs")
-    headers = {"User-Agent": "clash-config-builder/1", "Accept": "application/vnd.github+json"}
-    token = os.environ.get("GITHUB_TOKEN")
-    if parsed.hostname == "api.github.com" and token:
-        headers["Authorization"] = "Bearer " + token
+    headers = {"User-Agent": "SHIKI1255-Rules/2"}
+    if parsed.hostname == "api.github.com":
+        headers["Accept"] = "application/vnd.github+json"
+        token = os.environ.get("GITHUB_TOKEN")
+        if token:
+            headers["Authorization"] = "Bearer " + token
     try:
         data = request_bytes(urllib.request.Request(url, headers=headers),
                              limit=MAX_BYTES, expected_host=parsed.hostname)
@@ -152,10 +159,154 @@ def records(text: str):
             yield number, line
 
 
-def parse_source(spec: dict, data: bytes) -> tuple[list[Rule], dict]:
+def _parse_include_filters(tags: list[str]) -> tuple[set[str], set[str]]:
+    pos, neg = set(), set()
+    for tag in tags:
+        require(re.fullmatch(r"@-?!?[a-z0-9_-]+", tag) is not None,
+                "Unknown v2fly include attribute: " + tag)
+        if tag.startswith("@-"):
+            target = "@" + tag[2:]
+            require(target in V2FLY_KNOWN_ATTRS,
+                    "Unknown v2fly attribute semantics: " + tag)
+            neg.add(target)
+        else:
+            require(tag in V2FLY_KNOWN_ATTRS,
+                    "Unknown v2fly attribute semantics: " + tag)
+            pos.add(tag)
+    return pos, neg
+
+
+def expand_v2fly_entries(
+    entry_name: str,
+    v2fly_data: dict[str, str],
+    *,
+    stack: tuple[str, ...] = (),
+) -> list[tuple[str, int, str, set[str]]]:
+    """Recursively expand v2fly data files with cycle detection and attribute filtering."""
+    require(entry_name not in stack, f"v2fly include cycle: {' -> '.join((*stack, entry_name))}")
+    require(entry_name in v2fly_data, f"Missing v2fly data file: {entry_name}")
+    expanded: list[tuple[str, int, str, set[str]]] = []
+    for number, raw_line in records(v2fly_data[entry_name]):
+        content = raw_line.split("#", 1)[0].strip()
+        if not content:
+            continue
+        fields = content.split()
+        entry, tags = fields[0], fields[1:]
+        if entry.startswith("include:"):
+            sub = entry.split(":", 1)[1]
+            require(re.fullmatch(r"[a-zA-Z0-9_!.-]+", sub) is not None and ".." not in sub,
+                    f"{entry_name}:{number}: Invalid v2fly include target: {sub}")
+            try:
+                pos, neg = _parse_include_filters(tags)
+            except BuildError as exc:
+                raise BuildError(f"{entry_name}:{number}: {exc}") from exc
+            for src_file, src_line, sub_entry, sub_tags in expand_v2fly_entries(
+                sub, v2fly_data, stack=(*stack, entry_name)
+            ):
+                if pos and not pos.issubset(sub_tags):
+                    continue
+                if neg and (neg & sub_tags):
+                    continue
+                expanded.append((src_file, src_line, sub_entry, set(sub_tags)))
+        else:
+            require(all(re.fullmatch(r"@!?[a-z0-9_-]+", x) for x in tags),
+                    f"{entry_name}:{number}: Unknown v2fly attributes")
+            expanded.append((entry_name, number, entry, set(tags)))
+    return expanded
+
+
+def _v2fly_name(path: str) -> str:
+    return path.removeprefix("data/")
+
+
+def parse_source(
+    spec: dict,
+    data: bytes | None,
+    *,
+    v2fly_data: dict[str, str] | None = None,
+) -> tuple[list[Rule], dict]:
     source, policy, fmt = spec["id"], spec["policy"], spec["format"]
-    text = decode(data)
     result, skipped, raw_count = [], [], 0
+    seen_rules: set[str] = set()
+
+    if fmt == "v2fly" and v2fly_data is not None:
+        raw_paths = spec.get("paths") or [spec["path"]]
+        entries: list[tuple[str, int, str, set[str]]] = []
+        for path in raw_paths:
+            entries.extend(expand_v2fly_entries(_v2fly_name(path), v2fly_data))
+        require_attrs = set(spec.get("require_attrs", []))
+        exclude_attrs = set(spec.get("exclude_attrs", []))
+        exclude_domains = set(spec.get("exclude_domains", []))
+        allow = spec.get("allow_rules")
+        skip_regex = bool(spec.get("skip_regex", False))
+        regex_overrides = spec.get("regex_overrides")
+
+        for origin_file, number, entry, tag_set in entries:
+            raw_count += 1
+            loc = f"{source}({origin_file}):{number}"
+            try:
+                unknown = tag_set - V2FLY_KNOWN_ATTRS
+                require(not unknown, "Unknown v2fly attribute semantics: " + " ".join(sorted(unknown)))
+                prefix, value = entry.split(":", 1) if ":" in entry else ("domain", entry)
+                if prefix == "regexp":
+                    # Always validate regex syntax before any override or exclusion.
+                    parse_rule("DOMAIN-REGEX," + value, policy, source)
+                    if regex_overrides is not None:
+                        mapped = regex_overrides.get(value)
+                        if mapped is not None:
+                            rule = parse_rule(mapped, policy, source)
+                        elif skip_regex:
+                            skipped.append({"line": number, "file": origin_file, "rule": f"DOMAIN-REGEX,{value},{policy}", "reason": "regex skipped"})
+                            continue
+                        else:
+                            raise BuildError("Unknown regexp; manual semantic review required")
+                    elif skip_regex:
+                        skipped.append({"line": number, "file": origin_file, "rule": f"DOMAIN-REGEX,{value},{policy}", "reason": "regex skipped"})
+                        continue
+                    else:
+                        rule = parse_rule("DOMAIN-REGEX," + value, policy, source)
+                else:
+                    mapping = {"domain": "DOMAIN-SUFFIX", "full": "DOMAIN"}
+                    require(prefix in mapping, f"Unknown v2fly syntax: {prefix}")
+                    rule = parse_rule(f"{mapping[prefix]},{value}", policy, source)
+                if "@ads" in tag_set:
+                    skipped.append({"line": number, "file": origin_file, "rule": rule.line, "reason": "ads attribute"})
+                    continue
+                if "@telemetry" in tag_set:
+                    skipped.append({"line": number, "file": origin_file, "rule": rule.line, "reason": "telemetry attribute"})
+                    continue
+                if require_attrs and not require_attrs.issubset(tag_set):
+                    skipped.append({"line": number, "file": origin_file, "rule": rule.line, "reason": "attribute filter"})
+                    continue
+                if exclude_attrs and (exclude_attrs & tag_set):
+                    skipped.append({"line": number, "file": origin_file, "rule": rule.line, "reason": "attribute filter"})
+                    continue
+                if rule.value in exclude_domains:
+                    skipped.append({"line": number, "file": origin_file, "rule": rule.line, "reason": "domestic compatibility"})
+                    continue
+                if allow is not None and rule.selector not in allow:
+                    skipped.append({"line": number, "file": origin_file, "rule": rule.line, "reason": "allowlist filter"})
+                    continue
+                if rule.line not in seen_rules:
+                    seen_rules.add(rule.line)
+                    result.append(rule)
+            except (ValueError, TypeError) as exc:
+                raise BuildError(f"{loc}: {exc}") from exc
+
+        for extra_domain in spec.get("extra_domains", []):
+            rule = parse_rule(f"DOMAIN-SUFFIX,{extra_domain}", policy, source)
+            raw_count += 1
+            if rule.line not in seen_rules:
+                seen_rules.add(rule.line)
+                result.append(rule)
+
+        require(raw_count > 0 and result, f"Empty rules: {source}")
+        stats = {"raw_count": raw_count, "retained_count": len(result),
+                 "rules": [r.line for r in result], "skipped": skipped}
+        return result, stats
+
+    require(data is not None, f"Missing raw data for source: {source}")
+    text = decode(data)
     if fmt == "voice":
         obj = json.loads(text)
         require(set(obj) == {"creationTime", "prefixes"} and isinstance(obj["prefixes"], list),
@@ -170,50 +321,78 @@ def parse_source(spec: dict, data: bytes) -> tuple[list[Rule], dict]:
             require(network.prefixlen >= (24 if network.version == 4 else 48), "Voice range too broad")
             lines.append(f"IP-CIDR,{network},no-resolve")
         lines = list(enumerate(lines, 1))
+    elif fmt == "cidr_list":
+        min_v4 = int(spec.get("min_ipv4_prefix", 19))
+        min_v6 = int(spec.get("min_ipv6_prefix", 32))
+        lines = []
+        for number, line in records(text):
+            try:
+                network = ipaddress.ip_network(line, strict=True)
+            except ValueError as exc:
+                raise BuildError(f"{source}:{number}: Invalid CIDR: {line}") from exc
+            require(network.is_global, f"{source}:{number}: Invalid/private network: {line}")
+            limit = min_v4 if network.version == 4 else min_v6
+            require(network.prefixlen >= limit, f"{source}:{number}: CIDR range too broad: {line}")
+            lines.append((number, f"IP-CIDR,{network},no-resolve"))
     else:
         lines = list(records(text))
+
+    require_attrs = set(spec.get("require_attrs", []))
+    exclude_attrs = set(spec.get("exclude_attrs", []))
+    skip_regex = bool(spec.get("skip_regex", False))
+
     for number, line in lines:
         raw_count += 1
         try:
-            if fmt in {"clash", "shadowrocket", "voice"}:
+            if fmt in {"clash", "shadowrocket", "voice", "cidr_list"}:
                 rule = parse_rule(line, policy, source)
-                require(fmt != "shadowrocket" or rule.kind not in {"DOMAIN-REGEX", "PROCESS-NAME"}, "Unsupported Shadowrocket source syntax")
+                require(fmt != "shadowrocket" or rule.kind not in {"DOMAIN-REGEX", "PROCESS-NAME"},
+                        "Unsupported Shadowrocket source syntax")
             elif fmt == "domain_set":
                 require("," not in line and " " not in line, "Unknown domain-set syntax")
                 prefix = "DOMAIN-SUFFIX" if line.startswith((".", "+.")) else "DOMAIN"
-                value = line[2:] if line.startswith("+.") else line.lstrip('.')
+                value = line[2:] if line.startswith("+.") else line.lstrip(".")
                 rule = parse_rule(f"{prefix},{value}", policy, source)
             elif fmt == "v2fly":
                 fields = line.split("#", 1)[0].split()
                 require(bool(fields) and all(re.fullmatch(r"@!?[a-z0-9_-]+", x) for x in fields[1:]),
                         "Unknown v2fly attributes")
                 entry, tags = fields[0], fields[1:]
-                # v2fly #4143 adds telemetry metadata while retaining @ads. Only
-                # that reviewed pair preserves the ads exclusion. v2fly #4268 adds
-                # standalone @telemetry on the Claude source; that exact form is
-                # reviewed for Claude only and is excluded as telemetry metadata.
-                # Standalone telemetry elsewhere and new combinations need review.
                 tag_set = set(tags)
-                require(tag_set <= {"@ads", "@!cn"} or tag_set == {"@ads", "@telemetry"}
-                        or (source == "claude" and tag_set == {"@telemetry"}),
-                        "Unknown v2fly attribute semantics: " + " ".join(tags))
+                unknown = tag_set - V2FLY_KNOWN_ATTRS
+                require(not unknown, "Unknown v2fly attribute semantics: " + " ".join(sorted(unknown)))
                 prefix, value = entry.split(":", 1) if ":" in entry else ("domain", entry)
                 if prefix == "regexp":
+                    parse_rule("DOMAIN-REGEX," + value, policy, source)
                     if "regex_overrides" in spec:
                         mapped = spec["regex_overrides"].get(value)
-                        require(mapped is not None, "Unknown regexp; manual semantic review required")
-                        rule = parse_rule(mapped, policy, source)
+                        if mapped is not None:
+                            rule = parse_rule(mapped, policy, source)
+                        elif skip_regex:
+                            skipped.append({"line": number, "rule": f"DOMAIN-REGEX,{value},{policy}", "reason": "regex skipped"})
+                            continue
+                        else:
+                            raise BuildError("Unknown regexp; manual semantic review required")
+                    elif skip_regex:
+                        skipped.append({"line": number, "rule": f"DOMAIN-REGEX,{value},{policy}", "reason": "regex skipped"})
+                        continue
                     else:
                         rule = parse_rule("DOMAIN-REGEX," + value, policy, source)
                 else:
                     mapping = {"domain": "DOMAIN-SUFFIX", "full": "DOMAIN"}
                     require(prefix in mapping, f"Unknown v2fly syntax: {prefix}")
                     rule = parse_rule(f"{mapping[prefix]},{value}", policy, source)
-                if "@ads" in tags:
+                if "@ads" in tag_set:
                     skipped.append({"line": number, "rule": rule.line, "reason": "ads attribute"})
                     continue
-                if "@telemetry" in tags:
+                if "@telemetry" in tag_set:
                     skipped.append({"line": number, "rule": rule.line, "reason": "telemetry attribute"})
+                    continue
+                if require_attrs and not require_attrs.issubset(tag_set):
+                    skipped.append({"line": number, "rule": rule.line, "reason": "attribute filter"})
+                    continue
+                if exclude_attrs and (exclude_attrs & tag_set):
+                    skipped.append({"line": number, "rule": rule.line, "reason": "attribute filter"})
                     continue
             else:
                 raise BuildError(f"Unknown source format: {fmt}")
@@ -222,11 +401,21 @@ def parse_source(spec: dict, data: bytes) -> tuple[list[Rule], dict]:
                 continue
             allow = spec.get("allow_rules")
             if allow is not None and rule.selector not in allow:
-                skipped.append({"line": number, "rule": rule.line, "reason": "Copilot ownership filter"})
+                skipped.append({"line": number, "rule": rule.line, "reason": "allowlist filter"})
                 continue
-            result.append(rule)
+            if rule.line not in seen_rules:
+                seen_rules.add(rule.line)
+                result.append(rule)
         except (ValueError, TypeError) as exc:
             raise BuildError(f"{source}:{number}: {exc}") from exc
+
+    for extra_domain in spec.get("extra_domains", []):
+        rule = parse_rule(f"DOMAIN-SUFFIX,{extra_domain}", policy, source)
+        raw_count += 1
+        if rule.line not in seen_rules:
+            seen_rules.add(rule.line)
+            result.append(rule)
+
     require(raw_count > 0 and result, f"Empty rules: {source}")
     stats = {"raw_count": raw_count, "retained_count": len(result),
              "rules": [r.line for r in result], "skipped": skipped}
@@ -252,26 +441,84 @@ def merge_rules(rules: list[Rule]) -> tuple[list[Rule], list[dict], int]:
     return unique, sorted(conflicts.values(), key=lambda x: json.dumps(x, sort_keys=True)), duplicates
 
 
-def check_limits(stats: dict, baseline: dict, limits: dict):
+def check_bounds(stats: dict, sources_conf: dict[str, dict], limits: dict):
+    """Static absolute sanity bounds per source (prevents collapse/explosion without freezing history)."""
+    default_min = int(limits.get("min_absolute_rules", 1))
+    for name, current in stats.items():
+        spec = sources_conf.get(name, {})
+        min_rules = int(spec.get("min_rules", default_min))
+        max_rules = spec.get("max_rules")
+        require(current["retained_count"] >= min_rules and current["raw_count"] >= min_rules,
+                f"Abnormal {name} retained_count: below min_rules {min_rules} ({current['retained_count']})")
+        if max_rules is not None:
+            require(current["retained_count"] <= int(max_rules),
+                    f"Abnormal {name} retained_count: above max_rules {max_rules} ({current['retained_count']})")
+
+
+def check_limits(stats: dict, baseline: dict, limits: dict, *, sources_conf: dict[str, dict] | None = None):
     require(set(stats) == set(baseline), "Source inventory changed: review baseline")
+    small_threshold = int(limits.get("small_source_threshold", 0))
+    small_delta = int(limits.get("small_source_delta", 0))
+    default_min = int(limits.get("min_absolute_rules", 1))
+
     for name, current in stats.items():
         old = baseline[name]
+        spec = (sources_conf or {}).get(name, {})
+        min_rules = int(spec.get("min_rules", old.get("min_rules", default_min)))
+        max_rules = spec.get("max_rules", old.get("max_rules"))
+
+        if spec.get("dynamic_ip") or old.get("dynamic_ip"):
+            require(current["retained_count"] >= min_rules and current["raw_count"] >= min_rules,
+                    f"Abnormal {name} retained_count: {old['retained_count']} -> {current['retained_count']}")
+            if max_rules is not None:
+                require(current["retained_count"] <= int(max_rules),
+                        f"Abnormal {name} retained_count: {old['retained_count']} -> {current['retained_count']}")
+            continue
+
+        is_small = small_threshold > 0 and old["retained_count"] < small_threshold
         for key in ("raw_count", "retained_count"):
             require(old[key] > 0, f"Invalid baseline: {name}")
+            if max_rules is not None and key == "retained_count":
+                require(current[key] <= int(max_rules),
+                        f"Abnormal {name} {key}: {old[key]} -> {current[key]}")
+            if key == "retained_count":
+                require(current[key] >= min_rules,
+                        f"Abnormal {name} {key}: {old[key]} -> {current[key]}")
             ratio = current[key] / old[key]
-            require(limits["min_ratio"] <= ratio <= limits["max_ratio"],
+            within_ratio = limits["min_ratio"] <= ratio <= limits["max_ratio"]
+            within_small = is_small and abs(current[key] - old[key]) <= small_delta
+            require(within_ratio or within_small,
                     f"Abnormal {name} {key}: {old[key]} -> {current[key]}")
+
         if "rules" in old:
             before, after = set(old["rules"]), set(current["rules"])
-            require(len(before - after) / len(before) <= limits["max_removed_ratio"],
-                    f"Too many removed rules: {name}")
-            require(len(after - before) / len(before) <= limits["max_added_ratio"],
-                    f"Too many added rules: {name}")
+            removed = len(before - after)
+            added = len(after - before)
+            if is_small:
+                require(not before or bool(before & after),
+                        f"Too many removed rules: {name}")
+                max_rem = max(int(len(before) * limits["max_removed_ratio"]), small_delta)
+                max_add = max(int(len(before) * limits["max_added_ratio"]), small_delta)
+                require(removed <= max_rem, f"Too many removed rules: {name}")
+                require(added <= max_add, f"Too many added rules: {name}")
+            else:
+                require(removed / len(before) <= limits["max_removed_ratio"],
+                        f"Too many removed rules: {name}")
+                require(added / len(before) <= limits["max_added_ratio"],
+                        f"Too many added rules: {name}")
 
 
-def check_conflicts(conflicts: list[dict], allowed: list[dict]):
+def check_conflicts(conflicts: list[dict], allowed: list[dict], allowed_categories: list[dict] | None = None):
     approved = {json.dumps(row, sort_keys=True) for row in allowed}
-    unknown = [row for row in conflicts if json.dumps(row, sort_keys=True) not in approved]
+    approved_cats = {
+        (row["winner"], row["winner_source"], row["later"], row["later_source"])
+        for row in (allowed_categories or [])
+    }
+    unknown = [
+        row for row in conflicts
+        if json.dumps(row, sort_keys=True) not in approved
+        and (row["winner"], row["winner_source"], row["later"], row["later_source"]) not in approved_cats
+    ]
     require(not unknown, "Unregistered policy conflicts: " + json.dumps(unknown, ensure_ascii=False))
 
 
@@ -342,5 +589,3 @@ def check_cases(rules: list[Rule], cases: list[dict]) -> list[dict]:
         check_case_result(case, actual)
         results.append({**case, "actual": actual})
     return results
-
-

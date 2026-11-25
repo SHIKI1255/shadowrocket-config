@@ -95,6 +95,34 @@ class ConversionTests(unittest.TestCase):
             with self.subTest(entry=entry), self.assertRaises(b.BuildError):
                 self.parse(json.dumps(obj), 'voice')
 
+    def test_cidr_list_validates_global_and_prefix_limits(self):
+        result, stats = self.parse('91.108.56.0/22\n149.154.160.0/20\n2001:b28:f23d::/48\n2a0a:f280::/32\n', 'cidr_list')
+        self.assertEqual((stats['raw_count'], stats['retained_count']), (4, 4))
+        self.assertTrue(all(r.kind == 'IP-CIDR' and r.options == ('no-resolve',) for r in result))
+        for bad in ('10.0.0.0/24', '91.108.0.0/16', '2001:b28::/24', '91.108.56.1/22', 'not-a-cidr'):
+            with self.subTest(bad=bad), self.assertRaises(b.BuildError):
+                self.parse(bad + '\n', 'cidr_list')
+
+    def test_v2fly_include_expansion_attr_filters_and_cycle_guard(self):
+        v2data = {
+            'root': 'include:child @-!cn\ninclude:extra @cn\nroot.example\n',
+            'child': 'ok.example\noverseas.example @!cn\ntracker.example @telemetry\n',
+            'extra': 'cn.example @cn\nglobal.example\n',
+            'a': 'include:b\n',
+            'b': 'include:a\n',
+        }
+        rules, stats = b.parse_source({'id': 'test', 'path': 'data/root', 'format': 'v2fly', 'policy': 'DIRECT'}, None, v2fly_data=v2data)
+        self.assertEqual([r.line for r in rules], [
+            'DOMAIN-SUFFIX,ok.example,DIRECT',
+            'DOMAIN-SUFFIX,cn.example,DIRECT',
+            'DOMAIN-SUFFIX,root.example,DIRECT',
+        ])
+        self.assertEqual(stats['retained_count'], 3)
+        with self.assertRaises(b.BuildError):
+            b.parse_source({'id': 'cyc', 'path': 'data/a', 'format': 'v2fly', 'policy': 'PROXY'}, None, v2fly_data=v2data)
+        with self.assertRaises(b.BuildError):
+            b.parse_source({'id': 'miss', 'path': 'data/missing', 'format': 'v2fly', 'policy': 'PROXY'}, None, v2fly_data=v2data)
+
 class RoutingTests(unittest.TestCase):
     def test_first_match_and_exact_dedup(self):
         original = rules('DOMAIN-SUFFIX,example.com,DIRECT', 'DOMAIN-SUFFIX,example.com,PROXY',
@@ -153,13 +181,22 @@ class RoutingTests(unittest.TestCase):
     def test_expected_rule_rejects_missing_broader_and_preempted_matches(self):
         cases = core.case_rows('shadowrocket')
         for case in (c for c in cases if 'expected_rule' in c):
-            domain = case['input']['domain']
             opposite = 'DIRECT' if case['policy'] == 'PROXY' else 'PROXY'
-            variants = {
-                'missing': rules('FINAL,' + opposite),
-                'broader_same_policy': rules('DOMAIN-KEYWORD,' + domain.rsplit('.', 1)[-1] + ',' + case['policy']),
-                'earlier_opposite': rules('DOMAIN,' + domain + ',' + opposite, case['expected_rule']),
-            }
+            if 'domain' in case['input']:
+                domain = case['input']['domain']
+                variants = {
+                    'missing': rules('FINAL,' + opposite),
+                    'broader_same_policy': rules('DOMAIN-KEYWORD,' + domain.rsplit('.', 1)[-1] + ',' + case['policy']),
+                    'earlier_opposite': rules('DOMAIN,' + domain + ',' + opposite, case['expected_rule']),
+                }
+            else:
+                ip = case['input']['ip']
+                suffix = '/128' if ':' in ip else '/32'
+                variants = {
+                    'missing': rules('FINAL,' + opposite),
+                    'broader_same_policy': rules('FINAL,' + case['policy']),
+                    'earlier_opposite': rules('IP-CIDR,' + ip + suffix + ',' + opposite + ',no-resolve', case['expected_rule']),
+                }
             for reason, rr in variants.items():
                 with self.subTest(case=case['name'], reason=reason), self.assertRaises(b.BuildError):
                     b.check_cases(rr, [case])
@@ -199,15 +236,24 @@ class QuantumultConversion(unittest.TestCase):
     def test_native_expected_rule_guards_after_conversion(self):
         cases = core.case_rows('quantumultx')
         for case in (c for c in cases if 'expected_rule' in c):
-            domain = case['input']['domain']
             good = self.native(case['expected_rule'])
             b.check_case_result(case, q.route_native(good, **case['input']), context='Native routing')
             opposite = 'DIRECT' if case['policy'] == 'PROXY' else 'PROXY'
-            variants = {
-                'missing': self.native('FINAL,' + opposite),
-                'broader_same_policy': self.native('DOMAIN-KEYWORD,' + domain.rsplit('.', 1)[-1] + ',' + case['policy']),
-                'earlier_opposite': self.native('DOMAIN,' + domain + ',' + opposite, case['expected_rule']),
-            }
+            if 'domain' in case['input']:
+                domain = case['input']['domain']
+                variants = {
+                    'missing': self.native('FINAL,' + opposite),
+                    'broader_same_policy': self.native('DOMAIN-KEYWORD,' + domain.rsplit('.', 1)[-1] + ',' + case['policy']),
+                    'earlier_opposite': self.native('DOMAIN,' + domain + ',' + opposite, case['expected_rule']),
+                }
+            else:
+                ip = case['input']['ip']
+                suffix = '/128' if ':' in ip else '/32'
+                variants = {
+                    'missing': self.native('FINAL,' + opposite),
+                    'broader_same_policy': self.native('FINAL,' + case['policy']),
+                    'earlier_opposite': self.native('IP-CIDR,' + ip + suffix + ',' + opposite + ',no-resolve', case['expected_rule']),
+                }
             for reason, rr in variants.items():
                 with self.subTest(case=case['name'], reason=reason), self.assertRaises(b.BuildError):
                     b.check_case_result(case, q.route_native(rr, **case['input']), context='Native routing')

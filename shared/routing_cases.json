@@ -4447,5 +4447,281 @@
         "expected_category": "personal_proxy"
       }
     }
+  },
+  {
+    "name": "v2 xAI root",
+    "input": {
+      "domain": "x.ai"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,x.ai,PROXY",
+        "expected_category": "xai"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,x.ai,PROXY",
+        "expected_category": "xai"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,x.ai,PROXY",
+        "expected_category": "xai"
+      }
+    }
+  },
+  {
+    "name": "v2 xAI Grok",
+    "input": {
+      "domain": "grok.com"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,grok.com,PROXY",
+        "expected_category": "xai"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,grok.com,PROXY",
+        "expected_category": "xai"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,grok.com,PROXY",
+        "expected_category": "xai"
+      }
+    }
+  },
+  {
+    "name": "v2 GitHub Actions Azure Blob",
+    "input": {
+      "domain": "productionresultssa0.blob.core.windows.net"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN,productionresultssa0.blob.core.windows.net,PROXY",
+        "expected_category": "github"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN,productionresultssa0.blob.core.windows.net,PROXY",
+        "expected_category": "github"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN,productionresultssa0.blob.core.windows.net,PROXY",
+        "expected_category": "github"
+      }
+    }
+  },
+  {
+    "name": "v2 GitHub short link",
+    "input": {
+      "domain": "gh.io"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,gh.io,PROXY",
+        "expected_category": "github"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,gh.io,PROXY",
+        "expected_category": "github"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,gh.io,PROXY",
+        "expected_category": "github"
+      }
+    }
+  },
+  {
+    "name": "v2 Gemini Antigravity",
+    "input": {
+      "domain": "antigravity.google"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,antigravity.google,PROXY",
+        "expected_category": "gemini"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,antigravity.google,PROXY",
+        "expected_category": "gemini"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,antigravity.google,PROXY",
+        "expected_category": "gemini"
+      }
+    }
+  },
+  {
+    "name": "v2 Official Telegram IPv4",
+    "input": {
+      "ip": "91.108.56.1"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "IP-CIDR,91.108.56.0/22,PROXY,no-resolve",
+        "expected_category": "telegram"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "IP-CIDR,91.108.56.0/22,PROXY",
+        "expected_category": "telegram"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "IP-CIDR,91.108.56.0/22,PROXY,no-resolve",
+        "expected_category": "telegram"
+      }
+    }
+  },
+  {
+    "name": "v2 Official Telegram IPv6",
+    "input": {
+      "ip": "2001:b28:f23d::1"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "IP-CIDR,2001:b28:f23d::/48,PROXY,no-resolve",
+        "expected_category": "telegram"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "IP-CIDR,2001:b28:f23d::/48,PROXY",
+        "expected_category": "telegram"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "IP-CIDR,2001:b28:f23d::/48,PROXY,no-resolve",
+        "expected_category": "telegram"
+      }
+    }
+  },
+  {
+    "name": "v2 China DeepSeek",
+    "input": {
+      "domain": "deepseek.com"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,deepseek.com,DIRECT",
+        "expected_category": "china"
+      },
+      "quantumultx": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,deepseek.com,DIRECT",
+        "expected_category": "china"
+      },
+      "clash": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,deepseek.com,DIRECT",
+        "expected_category": "china"
+      }
+    }
+  },
+  {
+    "name": "v2 China Doubao",
+    "input": {
+      "domain": "doubao.com"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,doubao.com,DIRECT",
+        "expected_category": "china"
+      },
+      "quantumultx": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,doubao.com,DIRECT",
+        "expected_category": "china"
+      },
+      "clash": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,doubao.com,DIRECT",
+        "expected_category": "china"
+      }
+    }
+  },
+  {
+    "name": "v2 Steam CN download",
+    "input": {
+      "domain": "steamcontent.com"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,steamcontent.com,DIRECT",
+        "expected_category": "steam_cn"
+      },
+      "quantumultx": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,steamcontent.com,DIRECT",
+        "expected_category": "steam_cn"
+      },
+      "clash": {
+        "policy": "DIRECT",
+        "expected_rule": "DOMAIN-SUFFIX,steamcontent.com,DIRECT",
+        "expected_category": "steam_cn"
+      }
+    }
+  },
+  {
+    "name": "v2 Steam global store",
+    "input": {
+      "domain": "steampowered.com"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,steampowered.com,PROXY",
+        "expected_category": "steam"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,steampowered.com,PROXY",
+        "expected_category": "steam"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,steampowered.com,PROXY",
+        "expected_category": "steam"
+      }
+    }
+  },
+  {
+    "name": "v2 Crypto Hyperliquid",
+    "input": {
+      "domain": "hyperliquid.xyz"
+    },
+    "expect": {
+      "shadowrocket": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,hyperliquid.xyz,PROXY",
+        "expected_category": "crypto"
+      },
+      "quantumultx": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,hyperliquid.xyz,PROXY",
+        "expected_category": "crypto"
+      },
+      "clash": {
+        "policy": "PROXY",
+        "expected_rule": "DOMAIN-SUFFIX,hyperliquid.xyz,PROXY",
+        "expected_category": "crypto"
+      }
+    }
   }
 ]

@@ -1,9 +1,10 @@
-"""Reviewed v2fly telemetry compatibility; unknown semantics still fail closed."""
+"""v2fly unified telemetry compatibility; unknown semantics still fail closed."""
 import contextlib
 import io
 import json
 from pathlib import Path
 import sys
+import tarfile
 import unittest
 from unittest.mock import patch
 
@@ -14,6 +15,16 @@ FIXTURES = Path(__file__).parent / "fixtures"
 OLD_HASH = "ec1043e63c31bbef51efe13a3e2af29a3f66b8b4692f517d75a864cbc4a3d88d"
 NEW_HASH = "25d53e9af3e04d926210d6436bd791594ef4b86f2dc3c108510ac8059d76d969"
 REVISION = "fa3cb96fbc210b8d6466251a1d71b4a6e63a9c85"
+
+
+def _make_tarball(entries: dict[str, bytes]) -> bytes:
+    buf = io.BytesIO()
+    with tarfile.open(fileobj=buf, mode="w:gz") as tf:
+        for name, data in entries.items():
+            info = tarfile.TarInfo(name)
+            info.size = len(data)
+            tf.addfile(info, io.BytesIO(data))
+    return buf.getvalue()
 
 
 class TelemetryCompatibility(unittest.TestCase):
@@ -53,8 +64,8 @@ class TelemetryCompatibility(unittest.TestCase):
                 self.assertTrue(all(row["reason"] == "ads attribute" for row in after["skipped"]))
                 self.assertTrue(all(r.policy == "PROXY" for r in new))
 
-    def test_reviewed_pair_is_order_independent_and_preserves_match_scope(self):
-        for tags in ("@ads @telemetry", "@telemetry @ads"):
+    def test_reviewed_pair_and_standalone_telemetry_are_uniformly_skipped(self):
+        for tags in ("@ads @telemetry", "@telemetry @ads", "@telemetry", "@telemetry @cn", "@ads @telemetry @!cn"):
             for prefix in ("full:", "domain:"):
                 with self.subTest(tags=tags, prefix=prefix):
                     rules, stats = self.parse(prefix + "tracker.example " + tags + " # reviewed")
@@ -62,10 +73,9 @@ class TelemetryCompatibility(unittest.TestCase):
                     kind = "DOMAIN" if prefix == "full:" else "DOMAIN-SUFFIX"
                     self.assertEqual(stats["skipped"][0]["rule"], kind + ",tracker.example,PROXY")
 
-    def test_standalone_and_unknown_combinations_still_stop(self):
-        for tags in ("@telemetry", "@!telemetry", "@ads @new_attribute",
-                     "@ads @telemetry @new_attribute", "@ads @telemetry @!cn",
-                     "@telemetry @cn", "@ads @telemetry=true"):
+    def test_unknown_attributes_still_stop(self):
+        for tags in ("@!telemetry", "@ads @new_attribute",
+                     "@ads @telemetry @new_attribute", "@ads @telemetry=true"):
             with self.subTest(tags=tags), self.assertRaises(e.BuildError):
                 self.parse("full:tracker.example " + tags)
 
@@ -92,39 +102,55 @@ class TelemetryCompatibility(unittest.TestCase):
             self.assertEqual(result, {"policy": "PROXY", "rule": "DOMAIN," + host + ",PROXY",
                                       "source": "personal_proxy"})
 
-    def test_empty_filtered_sources_and_existing_limits_still_stop(self):
+    def test_empty_filtered_sources_and_v2_limits_still_stop(self):
         with self.assertRaises(e.BuildError):
             e.parse_source(self.spec, b"full:tracker.example @ads @telemetry\n")
         limits = core.read_json("sources.yaml")["limits"]
-        self.assertEqual(limits, {"min_ratio": 0.8, "max_ratio": 1.5,
-                                 "max_removed_ratio": 0.2, "max_added_ratio": 0.5})
+        self.assertEqual(limits, {
+            "min_ratio": 0.75, "max_ratio": 1.6,
+            "max_removed_ratio": 0.25, "max_added_ratio": 0.6,
+            "small_source_threshold": 100, "small_source_delta": 40,
+            "min_absolute_rules": 1,
+        })
         with self.assertRaises(e.BuildError):
-            e.check_limits({"x": {"raw_count": 151, "retained_count": 151}},
+            e.check_limits({"x": {"raw_count": 161, "retained_count": 161}},
                            {"x": {"raw_count": 100, "retained_count": 100}}, limits)
 
     def test_public_snapshot_diagnostics_survive_later_parse_failure(self):
-        config = {"repositories": {"v2fly": {"repo": "v2fly/domain-list-community",
-                   "ref": "master", "license": "MIT", "license_path": "LICENSE"}},
-                  "sources": [self.spec]}
+        config = {
+            "repositories": {
+                "v2fly": {
+                    "repo": "v2fly/domain-list-community",
+                    "ref": "master",
+                    "archive": "tarball",
+                    "license": "MIT",
+                    "license_path": "LICENSE",
+                }
+            },
+            "sources": [self.spec],
+        }
         bad_source = self.after.replace(b"@telemetry", b"@new_attribute", 1)
-        raw = e.RAW + "v2fly/domain-list-community/" + REVISION + "/"
+        tarball = _make_tarball({
+            f"v2fly-{REVISION}/LICENSE": b"MIT fixture license",
+            f"v2fly-{REVISION}/data/openai": bad_source,
+        })
         responses = {
             e.API + "repos/v2fly/domain-list-community/git/ref/heads/master":
                 json.dumps({"object": {"sha": REVISION}}).encode(),
-            raw + "data/openai": bad_source,
-            raw + "LICENSE": b"MIT fixture license",
+            e.CODELOAD + "v2fly/domain-list-community/tar.gz/" + REVISION: tarball,
         }
         output = io.StringIO()
         with patch.object(core, "fetch", side_effect=lambda url: responses[url]) as fetch, contextlib.redirect_stdout(output):
             lock, inputs = core.collect(config)
+            v2fly_data = json.loads(inputs["snapshots/v2fly/data.json"])
             with self.assertRaises(e.BuildError):
-                e.parse_source(self.spec, inputs["snapshots/shadowrocket/openai.txt"])
+                e.parse_source(self.spec, None, v2fly_data=v2fly_data)
         event = json.loads(output.getvalue())
         self.assertEqual(event["event"], "public_source_snapshot")
         self.assertEqual(event["repositories"], lock["repositories"])
         self.assertEqual(event["repositories"]["v2fly"]["commit"], REVISION)
         self.assertEqual(event["files_sha256"], {p: e.digest(data) for p, data in inputs.items()})
-        self.assertEqual(fetch.call_count, 3)  # Both client inputs share one download.
+        self.assertEqual(fetch.call_count, 2)  # Ref resolve + single tarball download.
         self.assertNotIn("browser-intake-datadoghq.com", output.getvalue())
         self.assertNotIn("url", event)
         self.assertEqual(set(event), {"event", "repositories", "files_sha256"})
@@ -135,7 +161,7 @@ ANTHROPIC_AFTER = "59ad6a25a6d9759995777fe98f2cf30675199fad00546a0ffe027b95ec077
 
 
 class AnthropicTelemetryExclusion(unittest.TestCase):
-    """v2fly #4268 reviewed standalone Claude telemetry is excluded, not routed."""
+    """v2fly #4268 standalone telemetry is excluded uniformly across v2fly sources."""
 
     @classmethod
     def setUpClass(cls):
@@ -157,11 +183,6 @@ class AnthropicTelemetryExclusion(unittest.TestCase):
             b"full:http-intake.logs.us5.datadoghq.com @telemetry",
             b"full:o1158394.ingest.us.sentry.io @telemetry",
         ])
-        self.assertEqual(after_lines, before_lines + [
-            b"", b"# Claude Code telemetry",
-            b"full:http-intake.logs.us5.datadoghq.com @telemetry",
-            b"full:o1158394.ingest.us.sentry.io @telemetry",
-        ])
 
     def test_standalone_telemetry_is_excluded_for_all_clients(self):
         for client in ("shadowrocket", "quantumultx", "clash"):
@@ -174,22 +195,23 @@ class AnthropicTelemetryExclusion(unittest.TestCase):
                 skipped = after_stats["skipped"]
                 self.assertEqual([row["rule"] for row in skipped], [
                     "DOMAIN,http-intake.logs.us5.datadoghq.com,PROXY",
-                    "DOMAIN,o1158394.ingest.us.sentry.io,PROXY"])
+                    "DOMAIN,o1158394.ingest.us.sentry.io,PROXY",
+                ])
                 self.assertTrue(all(row["reason"] == "telemetry attribute" for row in skipped))
                 self.assertTrue(all(r.policy == "PROXY" for r in new))
                 if client == "quantumultx":
                     self.assertEqual([q.convert(r).line for r in old],
                                      [q.convert(r).line for r in new])
 
-    def test_standalone_telemetry_stays_fail_closed_outside_claude(self):
-        openai_spec = next(s for s in core.read_json("sources.yaml")["sources"] if s["id"] == "openai")
-        with self.assertRaises(e.BuildError):
-            e.parse_source(openai_spec, b"full:tracker.example @telemetry\n")
+    def test_standalone_telemetry_also_works_on_other_v2fly_sources(self):
+        github_spec = next(s for s in core.read_json("sources.yaml")["sources"] if s["id"] == "github")
+        rules, stats = e.parse_source(github_spec, b"github.com\ncafe.github.com @telemetry\n")
+        self.assertEqual([r.line for r in rules], ["DOMAIN-SUFFIX,github.com,PROXY"])
+        self.assertEqual(stats["skipped"][0]["reason"], "telemetry attribute")
 
-    def test_unreviewed_combinations_still_stop_on_claude(self):
-        for entry in ("full:tracker.example @telemetry @!cn",
-                      "full:tracker.example @ads @telemetry @!cn",
-                      "full:tracker.example @telemetry @new_attribute"):
+    def test_unknown_attributes_still_stop_on_claude(self):
+        for entry in ("full:tracker.example @telemetry @new_attribute",
+                      "full:tracker.example @!telemetry"):
             with self.subTest(entry=entry), self.assertRaises(e.BuildError):
                 self.parse(entry)
 

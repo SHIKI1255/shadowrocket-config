@@ -1,764 +1,264 @@
 {
+  "allowed_category_conflicts": [
+    {
+      "later": "PROXY",
+      "later_source": "tiktok",
+      "winner": "DIRECT",
+      "winner_source": "personal_direct"
+    },
+    {
+      "later": "PROXY",
+      "later_source": "proxy",
+      "winner": "DIRECT",
+      "winner_source": "personal_direct"
+    },
+    {
+      "later": "DIRECT",
+      "later_source": "apple",
+      "winner": "PROXY",
+      "winner_source": "personal_proxy"
+    },
+    {
+      "later": "DIRECT",
+      "later_source": "microsoft",
+      "winner": "PROXY",
+      "winner_source": "personal_proxy"
+    },
+    {
+      "later": "DIRECT",
+      "later_source": "china",
+      "winner": "PROXY",
+      "winner_source": "personal_proxy"
+    },
+    {
+      "later": "DIRECT",
+      "later_source": "microsoft",
+      "winner": "PROXY",
+      "winner_source": "github"
+    },
+    {
+      "later": "DIRECT",
+      "later_source": "apple",
+      "winner": "PROXY",
+      "winner_source": "google"
+    },
+    {
+      "later": "DIRECT",
+      "later_source": "china",
+      "winner": "PROXY",
+      "winner_source": "google"
+    },
+    {
+      "later": "DIRECT",
+      "later_source": "china",
+      "winner": "PROXY",
+      "winner_source": "tiktok"
+    },
+    {
+      "later": "PROXY",
+      "later_source": "steam",
+      "winner": "DIRECT",
+      "winner_source": "steam_cn"
+    },
+    {
+      "later": "PROXY",
+      "later_source": "proxy",
+      "winner": "DIRECT",
+      "winner_source": "steam_cn"
+    },
+    {
+      "later": "PROXY",
+      "later_source": "proxy",
+      "winner": "DIRECT",
+      "winner_source": "apple"
+    },
+    {
+      "later": "PROXY",
+      "later_source": "proxy",
+      "winner": "DIRECT",
+      "winner_source": "microsoft"
+    },
+    {
+      "later": "PROXY",
+      "later_source": "proxy",
+      "winner": "DIRECT",
+      "winner_source": "bilibili"
+    },
+    {
+      "later": "DIRECT",
+      "later_source": "china",
+      "winner": "PROXY",
+      "winner_source": "proxy"
+    }
+  ],
   "clash": {
-    "allowed_conflicts": [
-      {
-        "later": "DIRECT",
-        "later_source": "apple",
-        "selector": "DOMAIN-SUFFIX,crashlytics.com",
-        "winner": "PROXY",
-        "winner_source": "google"
-      },
-      {
-        "later": "DIRECT",
-        "later_source": "china",
-        "selector": "DOMAIN-SUFFIX,tiktokd.net",
-        "winner": "PROXY",
-        "winner_source": "tiktok"
-      },
-      {
-        "later": "DIRECT",
-        "later_source": "china",
-        "selector": "DOMAIN-SUFFIX,tiktokd.org",
-        "winner": "PROXY",
-        "winner_source": "tiktok"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-KEYWORD,1drv",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-KEYWORD,onedrive",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-KEYWORD,skydrive",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,apple-dns.net",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,appsto.re",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,aspnetcdn.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,azure.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,azureedge.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,azurewebsites.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,bing.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,bing.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,bingapis.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,digicert.com",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,edgesuite.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,fabric.io",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,gfx.ms",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,helpshift.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,here.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,hockeyapp.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,itun.es",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,live.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,live.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,livefilestore.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsoft-falcon.io",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsoft.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsoftapp.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsoftpersonalcontent.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsofttranslator.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,msedge.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,msn.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,msn.com.tw",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,onenote.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,sfx.ms",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,shazam.com",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,skype.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,tenor.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      }
-    ],
+    "allowed_conflicts": [],
     "sources": {
       "apple": {
-        "raw_count": 1593,
-        "retained_count": 1593
-      },
-      "apple_domains": {
-        "raw_count": 1560,
-        "retained_count": 1560
+        "raw_count": 1703,
+        "retained_count": 1696
       },
       "bilibili": {
-        "raw_count": 129,
-        "retained_count": 129
+        "raw_count": 53,
+        "retained_count": 49
       },
       "china": {
-        "raw_count": 3721,
-        "retained_count": 3721
-      },
-      "china_domains": {
-        "raw_count": 3689,
-        "retained_count": 3689
+        "raw_count": 9079,
+        "retained_count": 8095
       },
       "claude": {
         "raw_count": 21,
-        "retained_count": 19,
-        "reviewed_transition": {
-          "from_sha256": "3c55f91b630ea75919b4eb502916f84b511e07c4e1ec55873d61a02df59edfef",
-          "to_sha256": "48c97b9f45197186a22aa19ccea38cdcaa09653ff8afd6e85e7bccf9f234e261"
-        }
-      },
-      "copilot": {
-        "raw_count": 51,
-        "retained_count": 16
+        "retained_count": 19
       },
       "crypto": {
-        "raw_count": 204,
-        "retained_count": 204
+        "raw_count": 241,
+        "retained_count": 241
       },
       "gemini": {
-        "raw_count": 46,
-        "retained_count": 46
+        "raw_count": 50,
+        "retained_count": 50
       },
       "github": {
-        "raw_count": 31,
-        "retained_count": 31
+        "raw_count": 66,
+        "retained_count": 62
       },
       "google": {
-        "raw_count": 701,
-        "retained_count": 701
+        "raw_count": 1126,
+        "retained_count": 944
       },
       "microsoft": {
-        "raw_count": 670,
-        "retained_count": 670
+        "raw_count": 766,
+        "retained_count": 743
       },
       "openai": {
-        "raw_count": 23,
-        "retained_count": 20
+        "raw_count": 25,
+        "retained_count": 21
       },
       "proxy": {
-        "raw_count": 6962,
-        "retained_count": 6962
+        "raw_count": 4462,
+        "retained_count": 4462
       },
-      "proxy_domains": {
-        "raw_count": 6836,
-        "retained_count": 6836
+      "proxy_v2fly": {
+        "raw_count": 2074,
+        "retained_count": 1909
       },
       "steam": {
-        "raw_count": 54,
-        "retained_count": 54
+        "raw_count": 61,
+        "retained_count": 41
       },
       "steam_cn": {
-        "raw_count": 17,
-        "retained_count": 17
+        "raw_count": 64,
+        "retained_count": 20
       },
       "telegram": {
-        "raw_count": 46,
-        "retained_count": 46
+        "raw_count": 21,
+        "retained_count": 21
+      },
+      "telegram_ip": {
+        "raw_count": 14,
+        "retained_count": 14
       },
       "tiktok": {
-        "raw_count": 37,
-        "retained_count": 35
+        "raw_count": 40,
+        "retained_count": 38
       },
       "twitter": {
-        "raw_count": 33,
-        "retained_count": 33
+        "raw_count": 24,
+        "retained_count": 23
       },
       "voice": {
-        "raw_count": 411,
-        "retained_count": 411,
-        "reviewed_transition": {
-          "from_sha256": "5430bb229a1a721291576f0382127ec7193878f1dbfc818c7aa4892940b3d3f7",
-          "to_sha256": "020f85cc14349ac30fd10e28b8e61311def35d9a4b0b1b5e9a595c05a869979d"
-        }
+        "raw_count": 444,
+        "retained_count": 444
+      },
+      "xai": {
+        "raw_count": 5,
+        "retained_count": 5
       }
     }
   },
+  "schema_version": 2,
   "shadowrocket": {
-    "allowed_conflicts": [
-      {
-        "later": "DIRECT",
-        "later_source": "apple",
-        "selector": "DOMAIN-SUFFIX,crashlytics.com",
-        "winner": "PROXY",
-        "winner_source": "google"
-      },
-      {
-        "later": "DIRECT",
-        "later_source": "china",
-        "selector": "DOMAIN-SUFFIX,tiktokd.net",
-        "winner": "PROXY",
-        "winner_source": "tiktok"
-      },
-      {
-        "later": "DIRECT",
-        "later_source": "china",
-        "selector": "DOMAIN-SUFFIX,tiktokd.org",
-        "winner": "PROXY",
-        "winner_source": "tiktok"
-      },
-      {
-        "later": "DIRECT",
-        "later_source": "china",
-        "selector": "USER-AGENT,hearthstone*",
-        "winner": "PROXY",
-        "winner_source": "proxy"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-KEYWORD,1drv",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-KEYWORD,onedrive",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-KEYWORD,skydrive",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,apple-dns.net",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,appsto.re",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,aspnetcdn.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,azure.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,azureedge.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,azurewebsites.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,bing.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,bing.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,bingapis.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,digicert.com",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,edgesuite.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,fabric.io",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,gfx.ms",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,helpshift.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,here.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,hockeyapp.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,itun.es",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,live.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,live.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,livefilestore.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsoft-falcon.io",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsoft.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsoftapp.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsoftpersonalcontent.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,microsofttranslator.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,msedge.net",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,msn.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,msn.com.tw",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,onenote.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,sfx.ms",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,shazam.com",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,skype.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "DOMAIN-SUFFIX,tenor.com",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "USER-AGENT,OneDrive*",
-        "winner": "DIRECT",
-        "winner_source": "microsoft"
-      },
-      {
-        "later": "PROXY",
-        "later_source": "proxy",
-        "selector": "USER-AGENT,com.apple.trustd*",
-        "winner": "DIRECT",
-        "winner_source": "apple"
-      }
-    ],
+    "allowed_conflicts": [],
     "sources": {
       "apple": {
-        "raw_count": 43,
-        "retained_count": 43
-      },
-      "apple_domains": {
-        "raw_count": 1560,
-        "retained_count": 1560
+        "raw_count": 1703,
+        "retained_count": 1696
       },
       "bilibili": {
-        "raw_count": 127,
-        "retained_count": 127
+        "raw_count": 53,
+        "retained_count": 49
       },
       "china": {
-        "raw_count": 63,
-        "retained_count": 63
-      },
-      "china_domains": {
-        "raw_count": 3689,
-        "retained_count": 3689
+        "raw_count": 9079,
+        "retained_count": 8095
       },
       "claude": {
         "raw_count": 21,
-        "retained_count": 19,
-        "reviewed_transition": {
-          "from_sha256": "3c55f91b630ea75919b4eb502916f84b511e07c4e1ec55873d61a02df59edfef",
-          "to_sha256": "48c97b9f45197186a22aa19ccea38cdcaa09653ff8afd6e85e7bccf9f234e261"
-        }
-      },
-      "copilot": {
-        "raw_count": 51,
-        "retained_count": 16
+        "retained_count": 19
       },
       "crypto": {
-        "raw_count": 201,
-        "retained_count": 201
+        "raw_count": 241,
+        "retained_count": 241
       },
       "gemini": {
-        "raw_count": 43,
-        "retained_count": 43
+        "raw_count": 50,
+        "retained_count": 50
       },
       "github": {
-        "raw_count": 31,
-        "retained_count": 31
+        "raw_count": 66,
+        "retained_count": 62
       },
       "google": {
-        "raw_count": 698,
-        "retained_count": 698
+        "raw_count": 1126,
+        "retained_count": 944
       },
       "microsoft": {
-        "raw_count": 671,
-        "retained_count": 671
+        "raw_count": 766,
+        "retained_count": 743
       },
       "openai": {
-        "raw_count": 23,
-        "retained_count": 20
+        "raw_count": 25,
+        "retained_count": 21
       },
       "proxy": {
-        "raw_count": 134,
-        "retained_count": 134
+        "raw_count": 4462,
+        "retained_count": 4462
       },
-      "proxy_domains": {
-        "raw_count": 6798,
-        "retained_count": 6798
+      "proxy_v2fly": {
+        "raw_count": 2074,
+        "retained_count": 1909
       },
       "steam": {
-        "raw_count": 54,
-        "retained_count": 54
+        "raw_count": 61,
+        "retained_count": 41
       },
       "steam_cn": {
-        "raw_count": 17,
-        "retained_count": 17
+        "raw_count": 64,
+        "retained_count": 20
       },
       "telegram": {
-        "raw_count": 40,
-        "retained_count": 40
+        "raw_count": 21,
+        "retained_count": 21
+      },
+      "telegram_ip": {
+        "raw_count": 14,
+        "retained_count": 14
       },
       "tiktok": {
-        "raw_count": 37,
-        "retained_count": 35
+        "raw_count": 40,
+        "retained_count": 38
       },
       "twitter": {
-        "raw_count": 33,
-        "retained_count": 33
+        "raw_count": 24,
+        "retained_count": 23
       },
       "voice": {
-        "raw_count": 411,
-        "retained_count": 411,
-        "reviewed_transition": {
-          "from_sha256": "5430bb229a1a721291576f0382127ec7193878f1dbfc818c7aa4892940b3d3f7",
-          "to_sha256": "020f85cc14349ac30fd10e28b8e61311def35d9a4b0b1b5e9a595c05a869979d"
-        }
+        "raw_count": 444,
+        "retained_count": 444
+      },
+      "xai": {
+        "raw_count": 5,
+        "retained_count": 5
       }
     }
   }

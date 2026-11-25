@@ -26,7 +26,7 @@ class EvidenceTests(unittest.TestCase):
             core.collect(conf,capture=lambda lock,files:captured.append((lock,files)))
         self.assertEqual(len(captured),1)
         lock,files=captured[0]
-        self.assertEqual(set(files),{"snapshots/shadowrocket/one.txt","snapshots/clash/one.txt"})
+        self.assertEqual(set(files),{"snapshots/sources/one.txt"})
         self.assertEqual(set(lock["files"]),set(files))
         self.assertTrue(all(lock["files"][p]["sha256"]==e.digest(v) for p,v in files.items()))
 
@@ -66,8 +66,8 @@ class EvidenceTests(unittest.TestCase):
             d.analyze(conf,{},previous,baseline)
 
     def test_partial_snapshot_hashes_and_errors_do_not_leak_exception_text(self):
-        conf={"sources":[{"id":"voice"}],"repositories":{}}
-        data=b"public-source";name="snapshots/shadowrocket/voice.txt"
+        conf={"sources":[{"id":"voice"},{"id":"telegram_ip"}],"repositories":{}}
+        data=b"public-source";name="snapshots/sources/voice.txt"
         context={"conf":conf,"inputs":{name:data},
                  "lock":{"files":{name:{"sha256":e.digest(data)}}}}
         env={"GITHUB_SHA":"a"*40,"GITHUB_RUN_ID":"1"}

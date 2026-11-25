@@ -19,13 +19,27 @@ DOMAIN-SUFFIX,apple-relay.fastly-edge.com,PROXY
 DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,PROXY
 DOMAIN,cp4.cloudflare.com,PROXY
 
-# Copilot entry points; preserve earlier overrides ahead of Microsoft DIRECT.
-# Four exact Bing gateways are maintained by the filtered copilot source.
-# Their expected-rule tests guard against removal or a broader replacement.
+# Microsoft Copilot entry points and Bing gateways ahead of Microsoft DIRECT.
+# Absorbed directly here after retiring the stale upstream Copilot list.
 DOMAIN-SUFFIX,copilot.microsoft.com,PROXY
 DOMAIN-SUFFIX,copilot.bing.com,PROXY
 DOMAIN-SUFFIX,copilot.com,PROXY
 DOMAIN-SUFFIX,copilot.cloud.microsoft,PROXY
+DOMAIN,api.msn.com,PROXY
+DOMAIN,assets.msn.com,PROXY
+DOMAIN,gateway.bingviz.microsoft.net,PROXY
+DOMAIN,gateway.bingviz.microsoftapp.net,PROXY
+DOMAIN,in.appcenter.ms,PROXY
+DOMAIN,location.microsoft.com,PROXY
+DOMAIN,odc.officeapps.live.com,PROXY
+DOMAIN,r.bing.com,PROXY
+DOMAIN,self.events.data.microsoft.com,PROXY
+DOMAIN,services.bingapis.com,PROXY
+DOMAIN,sydney.bing.com,PROXY
+DOMAIN,www.bing.com,PROXY
+DOMAIN-SUFFIX,api.microsoftapp.net,PROXY
+DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io,PROXY
+DOMAIN-SUFFIX,edgeservices.bing.com,PROXY
 
 # Configuration download and proxy DNS endpoints.
 # Keep these early guards even when an upstream contains the same selector.
@@ -59,7 +73,6 @@ DOMAIN,humb.apple.com,PROXY
 
 # Legacy login compatibility; current necessity is unverified, not an official requirement.
 # Retain these scoped exceptions pending device login/challenge regression testing.
-# https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket/OpenAI/OpenAI.list
 DOMAIN,openai-api.arkoselabs.com,PROXY
 DOMAIN-SUFFIX,client-api.arkoselabs.com,PROXY
 DOMAIN,api.statsig.com,PROXY
@@ -68,7 +81,6 @@ DOMAIN-SUFFIX,featuregates.org,PROXY
 
 # Legacy ACL4SSR TikTok compatibility; no ongoing ACL4SSR download dependency.
 # byteoversea/ibytedtos intentionally retain priority over later general sources.
-# https://github.com/ACL4SSR/ACL4SSR/blob/master/Clash/Ruleset/TikTok.list
 DOMAIN-SUFFIX,byteoversea.com,PROXY
 DOMAIN-SUFFIX,ibytedtos.com,PROXY
 DOMAIN-SUFFIX,ipstatp.com,PROXY

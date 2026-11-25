@@ -27,7 +27,7 @@ def build(manifest, payload, inputs):
     files=dict(inputs)
     files.update(render(ROOT, CLIENT, payload, CONTRACT))
     for path,text in payload['licenses'].items():
-        require(path in {'licenses/blackmatrix7.txt','licenses/v2fly.txt'}, 'Unknown license path')
+        require(path in {'licenses/v2fly.txt','licenses/metacubex.txt'}, 'Unknown license path')
         files[path]=text.encode()
     files['THIRD_PARTY.md']=(ROOT/'docs/third_party.md').read_bytes()
     if CLIENT=='clash': files['INSTALL.md']=(ROOT/'docs/install.md').read_bytes()
