@@ -1,33 +1,36 @@
 {
-  "bundle_sha256": "3a8e42f9d3906b72b7a9e1d2919683fbaac09f251aa49805c1325bba85f38ff8",
-  "provenance_sha256": "57a59484fed92bc4ec69178f6a3503e619578979728512c377f20f6f98a2efa1",
+  "bundle_sha256": "c322882dfd2b79b9371bc564f7891f88bef96ab22fab36ed6f2fe69d4694fd01",
+  "provenance_sha256": "b7f8d97862bfffeebf13fa071112355ab39fe797867a540d88c494ab0f374b58",
   "schema_version": 1,
-  "shared_version": "3a8099072ed13ffe8e5f7b8ae91df7e94b5591cecf3f2a131dc50bb4b5273084",
+  "shared_version": "044f44dc6172de33511944371506d8881d4f25f7f6beb1e3e4eefff1f7002064",
   "source_files_sha256": {
-    "shared/README.md": "563e015954fd5d765e769085258826cb6aaa5172a48ffa8a3c9be98ac53c8dcc",
+    "shared/README.md": "edc5514f674f933d1aca7046f29a2432b9a6f52c696d0f6195a61277aed7b77b",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
-    "shared/baseline.json": "a5d3d1ee67d20a21c66a0796e56dfcef66c60f25b3ac6019bb1ae4f2ef3bac1a",
-    "shared/categories.json": "62840a0df1769f5972dd3d929471997e62ef9542a964e49ed8d8a636e0e599dd",
-    "shared/core.py": "d34626cb841fa1d8eaeba35331e04ae1b3b54568d602df787bc5e4ca04f45145",
-    "shared/custom.list": "eaf5efe87665ab745d81c2a8b3d59857d85320d88fb86165f60130ba060996c8",
-    "shared/engine.py": "55efc5b6bb719719069ea405bce5c78a6b21ce3c3cd1e74aae8b4699ecc0e363",
+    "shared/baseline.json": "9d6cdc73f3d7bc8476ed11283d6c973b9cecbc676630170add20ded6b17456a8",
+    "shared/categories.json": "1fcd24dbaf15e9760ca6184b20e730aa841328ec1457db3cb9d31325d65ee144",
+    "shared/core.py": "d28afc97e843a3cf4e47357edf52246a90c154967001a1ac57f65bacf13916f3",
+    "shared/custom.list": "9a21ccdbe60a7736826af4951073376ca3cd7202a76cd4ab39a34b8fee8f0425",
+    "shared/engine.py": "fe20379725f561e1a93b208e9f103820dce4a07a6b54715fc53b0276cfb08b63",
     "shared/platforms.json": "9b643e1fc056cc14723d085312f5b8f1dff34df1410cbf1bd353b8f9250edbb3",
     "shared/quantumult.py": "6c9db71793715c73c16f7c632b1bf1e4e990e59a3ec24c9b8ca0f273b375f89d",
-    "shared/routing_cases.json": "9c4bcc4dc21d4ffa879226af38bc0a9e03d1bb2fd347579dd8fff845c8391d24",
-    "shared/sources.yaml": "8df2864fac0ee86a7892deac917843413993a393c1ba8d3084ea33ab29170ce1"
+    "shared/routing_cases.json": "7dd704dfcb915d1729dc8b7d3d5df86d5fd34d726b4232d8eb1019afafa70134",
+    "shared/sources.yaml": "c2108d6203510e3dba45bd17609f6741a5f97635506143f15b0c6be08774a17c"
   },
   "upstreams": {
-    "blackmatrix7": {
-      "commit": "0b6897dc17e0c513d25449c935a9694818e32f0c",
-      "license": "GPL-2.0",
-      "ref": "master",
-      "repo": "blackmatrix7/ios_rule_script"
+    "metacubex": {
+      "commit": "ce616601064422e7acfe75ea201549dc7372becf",
+      "license": "GPL-3.0",
+      "license_commit": "4178770badecb1b349fbcd62c737e0d7a2079729",
+      "license_ref": "master",
+      "ref": "meta",
+      "repo": "MetaCubeX/meta-rules-dat"
     },
     "v2fly": {
       "commit": "98c43cad27fa8f02043858763709fe4a95432ffb",
       "license": "MIT",
       "ref": "master",
-      "repo": "v2fly/domain-list-community"
+      "repo": "v2fly/domain-list-community",
+      "tarball_sha256": "b2f3781253cc62041ab73a5526beee2130ea8051f57408535446e18682c42a7a"
     }
   }
 }
