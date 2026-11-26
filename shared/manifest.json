@@ -2,7 +2,7 @@
   "bundle_sha256": "c322882dfd2b79b9371bc564f7891f88bef96ab22fab36ed6f2fe69d4694fd01",
   "provenance_sha256": "b7f8d97862bfffeebf13fa071112355ab39fe797867a540d88c494ab0f374b58",
   "schema_version": 1,
-  "shared_version": "ed620ee5a72165a5897121ceb5857ef0fdb9ae5970701cf20334b9d981d9afcf",
+  "shared_version": "faedd376c8503a14bcb2fd791ae8fa5b19077e9354f191c849eab1ebf0f5aec3",
   "source_files_sha256": {
     "shared/README.md": "edc5514f674f933d1aca7046f29a2432b9a6f52c696d0f6195a61277aed7b77b",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
@@ -18,7 +18,7 @@
   },
   "upstreams": {
     "metacubex": {
-      "commit": "ebdf916c315bb0411a7ce323a7a6c002e15146a7",
+      "commit": "69f94483c308940c277035c66eb78ff529efd977",
       "license": "GPL-3.0",
       "license_commit": "4178770badecb1b349fbcd62c737e0d7a2079729",
       "license_ref": "master",

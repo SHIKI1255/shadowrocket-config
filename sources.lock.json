@@ -10,7 +10,7 @@
     },
     "snapshots/sources/proxy.txt": {
       "sha256": "a23022758a4a686213a7bf32b412a3138220d92a91755e9f0bcfd54bfd20d51f",
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/ebdf916c315bb0411a7ce323a7a6c002e15146a7/geo/geosite/gfw.list"
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/69f94483c308940c277035c66eb78ff529efd977/geo/geosite/gfw.list"
     },
     "snapshots/sources/telegram_ip.txt": {
       "sha256": "3ecd072cedf72eceee6961b18a51e37f905d5ce4a656a5d24cf5fea63e6ec651",
@@ -27,7 +27,7 @@
   },
   "repositories": {
     "metacubex": {
-      "commit": "ebdf916c315bb0411a7ce323a7a6c002e15146a7",
+      "commit": "69f94483c308940c277035c66eb78ff529efd977",
       "license": "GPL-3.0",
       "license_commit": "4178770badecb1b349fbcd62c737e0d7a2079729",
       "license_ref": "master",
