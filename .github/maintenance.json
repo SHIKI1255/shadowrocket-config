@@ -1,10 +1,10 @@
 {
-  "checked_at_utc": "2026-10-28T06:50:49Z",
+  "checked_at_utc": "2026-11-27T19:22:25Z",
   "note": "Maintenance activity only; failed validation never authorizes a release.",
   "publication_result": "success",
-  "published_release_commit": "4a58b1529e2c4781ed5907df7424a956f521cfea",
-  "run_url": "https://github.com/SHIKI1255/shadowrocket-config/actions/runs/40646224229",
+  "published_release_commit": "e74ebf7aa983dea5437227f815736851d7c56741",
+  "run_url": "https://github.com/SHIKI1255/shadowrocket-config/actions/runs/46056099296",
   "schema_version": 1,
-  "source_commit": "417303f13980048b3980f6fd2185557c601467fa",
+  "source_commit": "c8fa5b6098b91722830dd16b9cffd3d8fe0c2369",
   "validation_result": "success"
 }
