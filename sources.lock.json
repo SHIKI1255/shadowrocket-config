@@ -6,11 +6,11 @@
     },
     "licenses/v2fly.txt": {
       "sha256": "b9d84a22870d3f21c91a4c6e410c9cc51d00902f5233ad0c84011479244bf7d2",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/99b3169c537639873b56499d3412232b52b6b59b/LICENSE"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/f68dab92e2ce656bbd81a4ae424de79b179f0f77/LICENSE"
     },
     "snapshots/sources/proxy.txt": {
       "sha256": "a23022758a4a686213a7bf32b412a3138220d92a91755e9f0bcfd54bfd20d51f",
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/69f94483c308940c277035c66eb78ff529efd977/geo/geosite/gfw.list"
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/59032b3daac1d1a2643a77d6189c2a882900d54a/geo/geosite/gfw.list"
     },
     "snapshots/sources/telegram_ip.txt": {
       "sha256": "3ecd072cedf72eceee6961b18a51e37f905d5ce4a656a5d24cf5fea63e6ec651",
@@ -22,12 +22,12 @@
     },
     "snapshots/v2fly/data.json": {
       "sha256": "00c5e3d4e9417fdfa2daec9056b96735f2f26c166b7d84dc8921c392db6c3f35",
-      "url": "https://codeload.github.com/v2fly/domain-list-community/tar.gz/99b3169c537639873b56499d3412232b52b6b59b"
+      "url": "https://codeload.github.com/v2fly/domain-list-community/tar.gz/f68dab92e2ce656bbd81a4ae424de79b179f0f77"
     }
   },
   "repositories": {
     "metacubex": {
-      "commit": "69f94483c308940c277035c66eb78ff529efd977",
+      "commit": "59032b3daac1d1a2643a77d6189c2a882900d54a",
       "license": "GPL-3.0",
       "license_commit": "4178770badecb1b349fbcd62c737e0d7a2079729",
       "license_ref": "master",
@@ -35,11 +35,11 @@
       "repo": "MetaCubeX/meta-rules-dat"
     },
     "v2fly": {
-      "commit": "99b3169c537639873b56499d3412232b52b6b59b",
+      "commit": "f68dab92e2ce656bbd81a4ae424de79b179f0f77",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community",
-      "tarball_sha256": "fc7b6d59768faf60512ce84872727f4a4f7031383213d1818334e9ec1ea32ad3"
+      "tarball_sha256": "3a4ded640d3ffcb2e0ebcbcc04d65508c1d188d4e741444fd059b77089a9dbf2"
     }
   },
   "schema_version": 3
