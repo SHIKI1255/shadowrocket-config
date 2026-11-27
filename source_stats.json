@@ -15569,8 +15569,8 @@
       ]
     },
     "microsoft": {
-      "raw_count": 766,
-      "retained_count": 743,
+      "raw_count": 767,
+      "retained_count": 744,
       "rules": [
         "DOMAIN-SUFFIX,azure,DIRECT",
         "DOMAIN-SUFFIX,21vbc.com,DIRECT",
@@ -16259,6 +16259,7 @@
         "DOMAIN-SUFFIX,yammer.com,DIRECT",
         "DOMAIN-SUFFIX,skype-edf.akadns.net,DIRECT",
         "DOMAIN-SUFFIX,skypedata.akadns.net,DIRECT",
+        "DOMAIN,aurora-customization-usw2.lithium.com,DIRECT",
         "DOMAIN,img-prod-cms-rt-microsoft-com.akamaized.net,DIRECT",
         "DOMAIN,img-s-msn-com.akamaized.net,DIRECT",
         "DOMAIN,mwf-service.akamaized.net,DIRECT",
@@ -16421,25 +16422,25 @@
         },
         {
           "file": "microsoft",
-          "line": 319,
+          "line": 320,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,clarity.ms,DIRECT"
         },
         {
           "file": "microsoft",
-          "line": 320,
+          "line": 321,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,microsoftads.com,DIRECT"
         },
         {
           "file": "microsoft",
-          "line": 321,
+          "line": 322,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,msads.net,DIRECT"
         },
         {
           "file": "microsoft",
-          "line": 322,
+          "line": 323,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,nelreports.net,DIRECT"
         }
@@ -40334,8 +40335,8 @@
       ]
     },
     "microsoft": {
-      "raw_count": 766,
-      "retained_count": 743,
+      "raw_count": 767,
+      "retained_count": 744,
       "rules": [
         "DOMAIN-SUFFIX,azure,DIRECT",
         "DOMAIN-SUFFIX,21vbc.com,DIRECT",
@@ -41024,6 +41025,7 @@
         "DOMAIN-SUFFIX,yammer.com,DIRECT",
         "DOMAIN-SUFFIX,skype-edf.akadns.net,DIRECT",
         "DOMAIN-SUFFIX,skypedata.akadns.net,DIRECT",
+        "DOMAIN,aurora-customization-usw2.lithium.com,DIRECT",
         "DOMAIN,img-prod-cms-rt-microsoft-com.akamaized.net,DIRECT",
         "DOMAIN,img-s-msn-com.akamaized.net,DIRECT",
         "DOMAIN,mwf-service.akamaized.net,DIRECT",
@@ -41186,25 +41188,25 @@
         },
         {
           "file": "microsoft",
-          "line": 319,
+          "line": 320,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,clarity.ms,DIRECT"
         },
         {
           "file": "microsoft",
-          "line": 320,
+          "line": 321,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,microsoftads.com,DIRECT"
         },
         {
           "file": "microsoft",
-          "line": 321,
+          "line": 322,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,msads.net,DIRECT"
         },
         {
           "file": "microsoft",
-          "line": 322,
+          "line": 323,
           "reason": "ads attribute",
           "rule": "DOMAIN-SUFFIX,nelreports.net,DIRECT"
         }

@@ -6,7 +6,7 @@
     },
     "licenses/v2fly.txt": {
       "sha256": "b9d84a22870d3f21c91a4c6e410c9cc51d00902f5233ad0c84011479244bf7d2",
-      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/e5f669692b33c189efc96cb1a972c69b390bbbc8/LICENSE"
+      "url": "https://raw.githubusercontent.com/v2fly/domain-list-community/99b3169c537639873b56499d3412232b52b6b59b/LICENSE"
     },
     "snapshots/sources/proxy.txt": {
       "sha256": "a23022758a4a686213a7bf32b412a3138220d92a91755e9f0bcfd54bfd20d51f",
@@ -21,8 +21,8 @@
       "url": "https://openai.com/chatgpt-voice.json"
     },
     "snapshots/v2fly/data.json": {
-      "sha256": "9c8273f843c874f6d4d09caf9a5b3b8ab48b6209344fcaafb73074f04ac7835d",
-      "url": "https://codeload.github.com/v2fly/domain-list-community/tar.gz/e5f669692b33c189efc96cb1a972c69b390bbbc8"
+      "sha256": "00c5e3d4e9417fdfa2daec9056b96735f2f26c166b7d84dc8921c392db6c3f35",
+      "url": "https://codeload.github.com/v2fly/domain-list-community/tar.gz/99b3169c537639873b56499d3412232b52b6b59b"
     }
   },
   "repositories": {
@@ -35,11 +35,11 @@
       "repo": "MetaCubeX/meta-rules-dat"
     },
     "v2fly": {
-      "commit": "e5f669692b33c189efc96cb1a972c69b390bbbc8",
+      "commit": "99b3169c537639873b56499d3412232b52b6b59b",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community",
-      "tarball_sha256": "10d4cce27d5b97ec28acb5b6c739b9a32a65281a14b8c7965e486f4f0c9ba8b4"
+      "tarball_sha256": "fc7b6d59768faf60512ce84872727f4a4f7031383213d1818334e9ec1ea32ad3"
     }
   },
   "schema_version": 3

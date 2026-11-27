@@ -31456,6 +31456,13 @@
       "origins": [
         "microsoft"
       ],
+      "rule": "DOMAIN,aurora-customization-usw2.lithium.com,DIRECT"
+    },
+    {
+      "category": "microsoft",
+      "origins": [
+        "microsoft"
+      ],
       "rule": "DOMAIN,img-prod-cms-rt-microsoft-com.akamaized.net,DIRECT"
     },
     {
@@ -158455,6 +158462,13 @@
       "origins": [
         "microsoft"
       ],
+      "rule": "DOMAIN,aurora-customization-usw2.lithium.com,DIRECT"
+    },
+    {
+      "category": "microsoft",
+      "origins": [
+        "microsoft"
+      ],
       "rule": "DOMAIN,img-prod-cms-rt-microsoft-com.akamaized.net,DIRECT"
     },
     {
@@ -285448,6 +285462,13 @@
         "microsoft"
       ],
       "rule": "DOMAIN-SUFFIX,skypedata.akadns.net,DIRECT"
+    },
+    {
+      "category": "microsoft",
+      "origins": [
+        "microsoft"
+      ],
+      "rule": "DOMAIN,aurora-customization-usw2.lithium.com,DIRECT"
     },
     {
       "category": "microsoft",

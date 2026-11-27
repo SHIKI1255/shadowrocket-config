@@ -1,8 +1,8 @@
 {
-  "bundle_sha256": "c322882dfd2b79b9371bc564f7891f88bef96ab22fab36ed6f2fe69d4694fd01",
-  "provenance_sha256": "b7f8d97862bfffeebf13fa071112355ab39fe797867a540d88c494ab0f374b58",
+  "bundle_sha256": "75dacb9e7675b2dcf2f7c712bc3c44ea90146492015d8bf3a5aa7d93b93eb91b",
+  "provenance_sha256": "a19f4612a5662fbf820a1f25189cef404b4af2d73777d8f44e46c7bac47d315b",
   "schema_version": 1,
-  "shared_version": "faedd376c8503a14bcb2fd791ae8fa5b19077e9354f191c849eab1ebf0f5aec3",
+  "shared_version": "fb75c9bfff39cdf00e7d367e576bd5c322f3e6f80d501c3b08e9bc47bb449a68",
   "source_files_sha256": {
     "shared/README.md": "edc5514f674f933d1aca7046f29a2432b9a6f52c696d0f6195a61277aed7b77b",
     "shared/__init__.py": "72d5697377f9b7450ac2fea5bdcdb23d3e38afff30e14470b8c403ccf5496540",
@@ -26,11 +26,11 @@
       "repo": "MetaCubeX/meta-rules-dat"
     },
     "v2fly": {
-      "commit": "e5f669692b33c189efc96cb1a972c69b390bbbc8",
+      "commit": "99b3169c537639873b56499d3412232b52b6b59b",
       "license": "MIT",
       "ref": "master",
       "repo": "v2fly/domain-list-community",
-      "tarball_sha256": "10d4cce27d5b97ec28acb5b6c739b9a32a65281a14b8c7965e486f4f0c9ba8b4"
+      "tarball_sha256": "fc7b6d59768faf60512ce84872727f4a4f7031383213d1818334e9ec1ea32ad3"
     }
   }
 }
